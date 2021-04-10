@@ -1,6 +1,7 @@
 ## O2EZ BOT
 
 Requirements
+
 [Python (3.9+)](https://www.python.org/downloads/)
 
 Installation
