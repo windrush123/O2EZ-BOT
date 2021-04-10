@@ -7,10 +7,10 @@
 ### Installation
 
 We need a specific modules to be installed in order to run our bot.
-Open the Powershell and type each.
+Open the Powershell and type.
 ```pip install -r requirements.txt```
 
-if some modules are not installed correctly, try.
+if some modules are not corectly installed, try.
 ```
 python pip install discord.py
 python pip install pyodbc
