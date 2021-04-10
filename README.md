@@ -1,10 +1,10 @@
-## O2EZ BOT
+# O2EZ BOT
 
-# Requirements
+###### Requirements
 
 [Python (3.9+)](https://www.python.org/downloads/)
 
-# Installation
+###### Installation
 
 We need a specific modules to be installed in order to run our bot.
 Open the Powershell and type each.
