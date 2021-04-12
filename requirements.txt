@@ -1,0 +1,8 @@
+<<<<<<< HEAD
+discord.py==1.7.1
+pyodbc==4.0.30
+=======
+discord.py==1.7.1
+pyodbc==4.0.30
+>>>>>>> 40913dfe7853f7c02faff48a8b435e4283af5f3d
+python-dotenv==0.17.0
