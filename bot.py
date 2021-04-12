@@ -50,7 +50,7 @@ async def startserver(ctx):
 @commands.has_role('MR GM')
 async def stopserver(ctx):
     os.system(os.getenv('SERVER_PATH') + "Stop_Server.bat")
-    print('[%s][%s] has started the Server' % (now,ctx.message.author))
-    await ctx.send('[%s] has started the Server' % (ctx.message.author))
+    print('[%s][%s] has stopped the Server' % (now,ctx.message.author))
+    await ctx.send('[%s] has stopped the Server' % (ctx.message.author))
 
 bot.run(os.getenv('TOKEN'))
