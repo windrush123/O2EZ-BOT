@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import os
 import discord
 import pyodbc
