@@ -5,7 +5,7 @@ A Discord Bot for O2Jam Account Verification and Monitoring.
 ## Requirements
 [Python (3.9+)](https://www.python.org/downloads/)
 
-#Installation
+# Installation
 We need a specific modules to be installed in order to run our bot.
 Open the Powershell and type each.
 ```pip install -r requirements.txt```
