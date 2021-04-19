@@ -1,8 +1,8 @@
-## O2EZ BOT
+# O2EZ BOT
 
 A Discord Bot for O2Jam Account Verification and Monitoring.
 
-# Requirements
+## Requirements
 [Python (3.9+)](https://www.python.org/downloads/)
 
 #Installation
