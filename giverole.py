@@ -35,7 +35,7 @@ bot = commands.Bot(command_prefix='!', intents=intents)
 @bot.event
 async def on_ready():
     invitelink = sys.argv[1]
-    channel = bot.get_channel(int(os.getenv('botchannel')))
+    channel = bot.get_channel(int(os.getenv('privatechannelmsg')))
     cursor = conncreate
     a = cursor.execute("SELECT discorduid FROM dbo.discordinv WHERE invlink=?", invitelink)
     for row in a:
@@ -50,12 +50,13 @@ async def on_ready():
     for row in a:
         memberid = (row.id)
         username = (row.userid)
-    logger.info("USER REGISTERED: [%s] %s : %s[%s] = %s" % (memberid, username, member, discorduid, invitelink))
+    #logger.info("USER REGISTERED: [%s] %s : %s[%s] = %s" % (memberid, username, member, discorduid, invitelink))
+    print("USER REGISTERED: [%s] %s : %s[%s] = %s" % (memberid, username, member, discorduid, invitelink))
     print("Deleting Record Invite Link: [%s]" % (invitelink))
     cursor.execute("DELETE FROM dbo.discordinv WHERE invlink=?", invitelink)
     cursor.commit()
     print("Record Delete!")
-#    logger.info("RECORD DELETED: invite Link = %s" % (invitelink))
+    #logger.info("RECORD DELETED: invite Link = %s" % (invitelink))
     time.sleep(3)
     exit()
 
