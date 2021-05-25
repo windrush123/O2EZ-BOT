@@ -215,10 +215,11 @@ async def unstuck(ctx):
 @bot.command(name='online')
 @commands.has_role(os.getenv('memberrole'))
 async def online(ctx):
+
     print('[%s][%s#%s] has printed Online users' % (now,ctx.message.author.name,ctx.message.author.discriminator))
     cursor = conncreate
     pageCount = usercount = maxusercount = 0
-    pages = users = ign = []
+    pages, users, ign = [], [], []
     a = cursor.execute("SELECT * FROM dbo.T_o2jam_login")
     x = ''
     for t in a: maxusercount += 1
@@ -231,6 +232,7 @@ async def online(ctx):
             for row in b:        
                 x += str("- " + row.USER_NICKNAME + "\n")   
             usercount += 1
+            print(name)
             if (usercount % 10 == 0):
                 pageCount += 1
                 users.append("%s" % (x))
