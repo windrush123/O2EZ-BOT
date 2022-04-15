@@ -1,4 +1,5 @@
 from asyncio.windows_events import NULL
+from email import message
 import os
 import sys
 import discord
@@ -88,7 +89,6 @@ async def on_member_join(member):
                     return None
                 await PrivChannel.send("`%s#%s` has joined the server using direct invite `Invite Code: %s`" % (member.name, member.discriminator, invite.code))
                 print("[%s] %s#%s has joined the server using direct invite Invite Code: %s" % (now, member.name, member.discriminator, invite.code))
-
 
     #if user new to server and uses bot generated invite code
     if ban == 0 and botinvite == 1:
@@ -183,6 +183,31 @@ async def on_member_remove(member):
 
     #updates the invite code list when someone leaves    
     invites[member.guild.id] = await member.guild.invites()
+
+#----------------------------------
+# User Commands
+#----------------------------------
+
+@bot.remove_command('help')
+@bot.command(name='help')
+@commands.has_role(os.getenv('memberrole'))
+async def help(ctx):
+    await ctx.send(
+        '''```
+General Category:
+ !help
+    Shows this message
+ !online
+    hows who is currently online in the server
+
+User Related:
+ !profile
+    Shows your detailed profile
+ !unstuck
+    Try this command if you successfully login to the server but you can't get passed into Channel Selection
+ !accountdetails
+    If you forget your username and password. (Make sure your DMs are open). ```
+            ''')
 
 @bot.command(name='unstuck')
 @commands.has_role(os.getenv('memberrole'))
@@ -327,9 +352,57 @@ async def profile(ctx, *, member: discord.Member=None):
             else: await ctx.send("Profile not found, users have to play once before getting a profile.")
         else: await ctx.send("User not yet Registered!")
 
+@bot.command(name='accountdetails')
+@commands.has_role(os.getenv('memberrole'))
+async def accountdetails(ctx):
+    cursor = conncreate
+    registered = 0
+    discorduid = ctx.message.author.id 
+    user = cursor.execute("SELECT usernick from dbo.member where discorduid=?", discorduid)
+    print("[%s][%s#%s] Tries to remember their password." % (now,ctx.message.author.name,ctx.message.author.discriminator))
+    for row in user:
+        registered =+ 1
+    if registered >= 1:
+        username_search = cursor.execute("SELECT usernick,passwd from dbo.member where discorduid=?", discorduid)
+        for row in username_search:
+            username_field = (row.usernick)
+            password_field = (row.passwd)
+        try:
+            await ctx.message.author.send("\nMessage will be deleted in 15 seconds.\n```username: %s \npassword: %s```" % (username_field.strip(), password_field.strip()), delete_after=15)
+        # if a bot cannot message a user
+        except discord.Forbidden:
+            print ("Error DMing the user (Forbidden)")
+            return await ctx.send("The Bot cannot directly message you. Please check your discord profile settings for any possible conflicts.")
+        except discord.HTTPException:
+            print ("Error DMing the user (HTTTPException)")
+            return await ctx.send("The Bot cannot directly message you. Please check your discord profile settings for any possible conflicts.")
+    else: 
+        print("Error: User not Found.")
+        await ctx.send("Error: User not Found.")
+    
 #-----------------------------------------------
 #               Admin Commands
 #-----------------------------------------------
+
+@bot.command(name='helpadmin')
+@commands.has_role(os.getenv('adminrole'))
+async def helpadmin(ctx):
+    await ctx.send(
+        '''```
+General Category:
+ !helpadmin
+    Shows this message
+ !createinv
+    Create an invite link
+ !deleteinv [invite link or code]
+    Deletes an invite link
+ !syncnames
+    Sync players name to their discord
+ !startserver
+    Start the O2Jam Server
+ !stopserver
+    Stop the O2Jam Server
+ ```''')
 
 @bot.command(name='createinv')
 @commands.has_role(os.getenv('adminrole'))
@@ -412,6 +485,16 @@ async def stopserver(ctx):
 #           Error Handling
 #-----------------------------------------------
 
+#@help.error
+#async def help_error(ctx, error):
+#    if isinstance(error, (commands.MissingRole, commands.MissingAnyRole)):
+#        print("[%s][%s#%s] !help command error, No Role!" % (now,ctx.message.author.name,ctx.message.author.discriminator)) 
+
+@helpadmin.error
+async def helpadmin_error(ctx, error):
+    if isinstance(error, (commands.MissingRole, commands.MissingAnyRole)): 
+        print("[%s][%s#%s] !helpadmin command error, No Role!" % (now,ctx.message.author.name,ctx.message.author.discriminator)) 
+
 @profile.error
 async def profile_error(ctx, error):
     if isinstance(error, (commands.MissingRole, commands.MissingAnyRole)):
@@ -452,5 +535,15 @@ async def online_error(ctx, error):
 async def unstuck_error(ctx, error):
     if isinstance(error, (commands.MissingRole, commands.MissingAnyRole)):
         print("[%s][%s#%s] is trying to unstuck but has no role." % (now,ctx.message.author.name,ctx.message.author.discriminator))
+
+@syncnames.error
+async def syncnames_error(ctx, error):
+    if isinstance(error, (commands.MissingRole, commands.MissingAnyRole)):
+        print("[%s][%s#%s] is trying to sync names." % (now,ctx.message.author.name,ctx.message.author.discriminator))
+
+@syncnames.error
+async def accountdetails_error(ctx, error):
+    if isinstance(error, (commands.MissingRole, commands.MissingAnyRole)):
+        print("[%s][%s#%s] is trying to sync names." % (now,ctx.message.author.name,ctx.message.author.discriminator))
 
 bot.run(os.getenv('TOKEN'))
