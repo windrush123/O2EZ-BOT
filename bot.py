@@ -156,8 +156,8 @@ async def on_member_remove(member):
             print("[%s][IGN:%s] %s#%s has left the server" % (now, usernick.strip(), member.name, member.discriminator))
             print("[%s][IGN:%s] has been added into banishment table" % (now, usernick.strip()))
         else:
-            PublicembedVar = discord.Embed(title="%s#%s has left the server" % (member.name, member.discriminator), description="In-Game Name: Not Registered", color=0xff0000)
-            await PubChannel.send(embed=PublicembedVar)
+            #PublicembedVar = discord.Embed(title="%s#%s has left the server" % (member.name, member.discriminator), description="In-Game Name: Not Registered", color=0xff0000)
+            #await PubChannel.send(embed=PublicembedVar)
             print("[%s] %s#%s HAS LEFT THE SERVER BUT DATA NOT FOUND IN T_O2jam_Charinfo!!!" % (now, member.name, member.discriminator))
             await PrivChannel.send("%s#%s Has left the server but data is not found in T_o2jam_charinfo!" % (member.name, member.discriminator)) 
     #if player did not registered before leaving
@@ -215,7 +215,6 @@ async def unstuck(ctx):
 @bot.command(name='online')
 @commands.has_role(os.getenv('memberrole'))
 async def online(ctx):
-
     print('[%s][%s#%s] has printed Online users' % (now,ctx.message.author.name,ctx.message.author.discriminator))
     cursor = conncreate
     pageCount = usercount = maxusercount = 0
@@ -232,7 +231,6 @@ async def online(ctx):
             for row in b:        
                 x += str("- " + row.USER_NICKNAME + "\n")   
             usercount += 1
-            print(name)
             if (usercount % 10 == 0):
                 pageCount += 1
                 users.append("%s" % (x))
@@ -326,9 +324,8 @@ async def profile(ctx, *, member: discord.Member=None):
                 else: embed.set_footer(text="🔴 Offline")          
                 await ctx.send(embed=embed)
                 print("[%s][%s#%s] Printed a Profile!" % (now,ctx.message.author.name,ctx.message.author.discriminator))
-            else: await ctx.send("Profile Not Found!")
+            else: await ctx.send("Profile not found, users have to play once before getting a profile.")
         else: await ctx.send("User not yet Registered!")
-
 
 #-----------------------------------------------
 #               Admin Commands
@@ -338,7 +335,8 @@ async def profile(ctx, *, member: discord.Member=None):
 @commands.has_role(os.getenv('adminrole'))
 async def createinv(ctx):
     #creating invite link
-    invitelink = await ctx.channel.create_invite(max_uses=1,unique=True)
+    RegistrationChannel = bot.get_channel(int(os.getenv('registrationchannel')))
+    invitelink = await RegistrationChannel.create_invite(max_uses=1,unique=True)
     discordlink = invitelink.url
     invlink = discordlink.replace("https://discord.gg/","") 
     #storing in db
@@ -370,6 +368,29 @@ async def deleteinv(ctx, invlink):
         await bot.delete_invite(invlink)
     else:
         await ctx.send("Invite code not Found")
+
+
+# Sync player names
+@bot.command(name='syncnames')
+@commands.has_role(os.getenv('adminrole'))
+async def syncnames(ctx):
+    ign = users = []
+    guild = ctx.guild
+    adminrole = guild.get_role(int(os.getenv('adminroleid')))
+    cursor = conncreate
+    a = cursor.execute("SELECT * FROM dbo.member")
+    for row in a:
+        users.append(row.discorduid)
+    for discorduid in users:
+        if guild.get_member(int(discorduid)):
+            member = guild.get_member(int(discorduid))
+            if adminrole in member.roles:
+                print("%s is an admin, skipping." % (member))
+            else:
+                b = cursor.execute("SELECT usernick FROM dbo.member WHERE discorduid=?",discorduid)
+                for row in b:
+                    print("setting nickname %s to %s" % (member,row.usernick))
+                    await member.edit(nick=row.usernick)
 
 
 @bot.command(name='startserver')

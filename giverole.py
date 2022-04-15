@@ -43,9 +43,13 @@ async def on_ready():
     cursor.execute("UPDATE dbo.member SET discorduid=? WHERE invlink=?", discorduid, invitelink)
     cursor.commit()
     guild = bot.get_guild(int(os.getenv('guildid')))
-    member = guild.get_member(discorduid)      
+    member = guild.get_member(discorduid)
     role = discord.utils.get(member.guild.roles, name="Member")
     await member.add_roles(role)
+    b = cursor.execute("SELECT usernick FROM dbo.member WHERE discorduid=?",discorduid)
+    for row in b:
+        print("setting nickname %s to %s" % (member,row.usernick))
+        await member.edit(nick=row.usernick)
     a = cursor.execute("SELECT id,userid,discorduid,invlink FROM dbo.member WHERE invlink=?", invitelink)
     for row in a:
         memberid = (row.id)
