@@ -198,7 +198,7 @@ General Category:
  !help
     Shows this message
  !online
-    hows who is currently online in the server
+    Shows who is currently online in the server
 
 User Related:
  !profile
@@ -233,7 +233,7 @@ async def unstuck(ctx):
             print('[%s][%s] Unstuck ID: [%s]' % (now,sender,userids.strip()))
             await ctx.send('[%s] Successfully unstucked!' % (userids.strip()))
         else:
-            await ctx.send('Your account is not stucked.')
+            await ctx.send('Your account is not stuck.')
     else:
         await ctx.send('Username not found!')
 
@@ -348,7 +348,7 @@ async def profile(ctx, *, member: discord.Member=None):
                 if onlinestatus >= 1: embed.set_footer(text="🟢 Online")               
                 else: embed.set_footer(text="🔴 Offline")          
                 await ctx.send(embed=embed)
-                print("[%s][%s#%s] Printed a Profile!" % (now,ctx.message.author.name,ctx.message.author.discriminator))
+                print("[%s][%s#%s] printed their profile." % (now,ctx.message.author.name,ctx.message.author.discriminator))
             else: await ctx.send("Profile not found, users have to play once before getting a profile.")
         else: await ctx.send("User not yet Registered!")
 
@@ -359,26 +359,28 @@ async def accountdetails(ctx):
     registered = 0
     discorduid = ctx.message.author.id 
     user = cursor.execute("SELECT usernick from dbo.member where discorduid=?", discorduid)
-    print("[%s][%s#%s] Tries to remember their password." % (now,ctx.message.author.name,ctx.message.author.discriminator))
+    print("[%s][%s#%s] asked for their account details." % (now,ctx.message.author.name,ctx.message.author.discriminator))
+    await ctx.message.delete()
     for row in user:
         registered =+ 1
     if registered >= 1:
-        username_search = cursor.execute("SELECT usernick,passwd from dbo.member where discorduid=?", discorduid)
+        username_search = cursor.execute("SELECT userid,passwd from dbo.member where discorduid=?", discorduid)
         for row in username_search:
-            username_field = (row.usernick)
+            username_field = (row.userid)
             password_field = (row.passwd)
         try:
-            await ctx.message.author.send("\nMessage will be deleted in 15 seconds.\n```username: %s \npassword: %s```" % (username_field.strip(), password_field.strip()), delete_after=15)
+            await ctx.message.author.send("\nThis message will be deleted in 15 seconds.\n```username: %s \npassword: %s```" % (username_field.strip(), password_field.strip()), delete_after=15)
+
         # if a bot cannot message a user
         except discord.Forbidden:
             print ("Error DMing the user (Forbidden)")
-            return await ctx.send("The Bot cannot directly message you. Please check your discord profile settings for any possible conflicts.")
+            return await ctx.send("<@%s> Failed to send details, please check this server's privacy settings and allow direct messages." % ctx.message.author.id)
         except discord.HTTPException:
             print ("Error DMing the user (HTTTPException)")
-            return await ctx.send("The Bot cannot directly message you. Please check your discord profile settings for any possible conflicts.")
+            return await ctx.send("Forbidden 400, contact a server admin for help.")
     else: 
         print("Error: User not Found.")
-        await ctx.send("Error: User not Found.")
+        await ctx.send("%s Error: User not Found." % (ctx.message.author.mention))
     
 #-----------------------------------------------
 #               Admin Commands
@@ -398,11 +400,14 @@ General Category:
     Deletes an invite link
  !syncnames
     Sync players name to their discord
+ !relinkdiscord [IGN] [Discorduid]
+    Link user to his current discorduid
+ !relinkinvite [Invite Link/Code] [Discorduid]
+    Link discorduid to invite code
  !startserver
     Start the O2Jam Server
  !stopserver
-    Stop the O2Jam Server
- ```''')
+    Stop the O2Jam Server```''')
 
 @bot.command(name='createinv')
 @commands.has_role(os.getenv('adminrole'))
@@ -435,13 +440,13 @@ async def deleteinv(ctx, invlink):
     if invite_count >= 1:       
         embed=discord.Embed(title="Invite Code found: `%s`" % invitelink, description="Deleted Successfully!", color=0xff0000)
         cursor.execute("DELETE FROM dbo.discordinv WHERE invlink=?", invlink)
-        cursor.commit()   
-        print("[%s][%s] Invite Code: DELETED" %(now,invlink))      
+        cursor.commit()
+        sender = ctx.message.author   
+        print("[%s][%s] DELETED Invite Code: %s" %(now, sender, invlink))      
         await ctx.send(embed=embed)
         await bot.delete_invite(invlink)
     else:
         await ctx.send("Invite code not Found")
-
 
 # Sync player names
 @bot.command(name='syncnames')
@@ -450,21 +455,59 @@ async def syncnames(ctx):
     ign = users = []
     guild = ctx.guild
     adminrole = guild.get_role(int(os.getenv('adminroleid')))
+    print("[%s][%s] syncnames command" % (now, ctx.message.author))
     cursor = conncreate
     a = cursor.execute("SELECT * FROM dbo.member")
     for row in a:
         users.append(row.discorduid)
     for discorduid in users:
-        if guild.get_member(int(discorduid)):
-            member = guild.get_member(int(discorduid))
-            if adminrole in member.roles:
-                print("%s is an admin, skipping." % (member))
-            else:
-                b = cursor.execute("SELECT usernick FROM dbo.member WHERE discorduid=?",discorduid)
-                for row in b:
-                    print("setting nickname %s to %s" % (member,row.usernick))
-                    await member.edit(nick=row.usernick)
+        try:
+            if guild.get_member(int(discorduid)):
+                member = guild.get_member(int(discorduid))
+                if adminrole in member.roles:
+                    print("%s is an admin, skipping." % (member))
+                else:
+                    b = cursor.execute("SELECT usernick FROM dbo.member WHERE discorduid=?",discorduid)
+                    for row in b:
+                        print("setting nickname %s to %s" % (member,row.usernick))
+                        await member.edit(nick=row.usernick)
+        except TypeError:  
+            print("[%s] Sync Names finished!" % (now))
+            break
+           
 
+@bot.command(name='relinkdiscord')
+@commands.has_role(os.getenv('adminrole'))
+async def relinkdiscord(ctx, ign, discorduid):
+    cursor = conncreate
+    registered = 0
+    a = cursor.execute("SELECT usernick FROM dbo.member WHERE usernick=?", ign)
+    for row in a:
+        user = (row.usernick)
+        registered =+ 1
+    if registered >= 1:
+        cursor.execute("UPDATE dbo.member SET discorduid=? WHERE usernick=?", discorduid, user.strip())
+        cursor.commit()
+        print("[%s] Updating %s discorduid to %s" % (now, user.strip(), discorduid))
+        await ctx.send("`%s` discorduid set to `%s`" % (user.strip(), discorduid))
+    else: await ctx.send("IGN not found!")
+
+@bot.command(name='relinkinvite')
+@commands.has_role(os.getenv('adminrole'))
+async def relinkinvite(ctx, invlink, discorduid):
+    cursor = conncreate
+    invitelink_found = 0
+    invitelink = invlink.replace("https://discord.gg/","")
+    a = cursor.execute("SELECT invlink FROM dbo.discordinv WHERE invlink=?", invitelink)
+    for row in a:
+        invitelink = (row.invlink)
+        invitelink_found =+ 1
+    if invitelink_found >= 1:
+        cursor.execute("UPDATE dbo.discordinv SET discorduid=?,used='True' WHERE invlink=?", discorduid, invitelink)
+        cursor.commit()
+        print("[%s] Updating Invite code %s discorduid -> %s" % (now, invitelink, ctx.message.author))
+        await ctx.send("Successfully relinked discord invite `%s` to user <@%s>" % (invitelink, discorduid))
+    else: await ctx.send("Invite Code not found!")
 
 @bot.command(name='startserver')
 @commands.has_role(os.getenv('adminrole'))
@@ -524,7 +567,7 @@ async def deleteinv_error(ctx, error):
         print("[%s][%s#%s] is trying to delete an invite link." % (now, ctx.message.author.name,ctx.message.author.discriminator))
         #await ctx.send("You don't have enough permision.")
     elif isinstance(error, (commands.MissingRequiredArgument)):
-        await ctx.send("`!deleteinv [Invite Link/Code]`")
+        await ctx.send("Invalid Syntax: `!deleteinv [Invite Link/Code]`")
 
 @online.error
 async def online_error(ctx, error):
@@ -541,7 +584,21 @@ async def syncnames_error(ctx, error):
     if isinstance(error, (commands.MissingRole, commands.MissingAnyRole)):
         print("[%s][%s#%s] is trying to sync names." % (now,ctx.message.author.name,ctx.message.author.discriminator))
 
-@syncnames.error
+@relinkdiscord.error
+async def relinkdiscord_error(ctx, error):
+    if isinstance(error, (commands.MissingRole, commands.MissingAnyRole)):
+        print("[%s][%s#%s] is trying to use the command `!relinkdiscord`." % (now,ctx.message.author.name,ctx.message.author.discriminator))
+    if isinstance(error, (commands.MissingRequiredArgument)):
+        await ctx.send("Invalid Syntax: `!relinkdiscord [IGN] [DiscordUID]`")
+
+@relinkinvite.error
+async def relinkinvite_error(ctx, error):
+    if isinstance(error, (commands.MissingRole, commands.MissingAnyRole)):
+        print("[%s][%s#%s] is trying to use the command `!relinkinvite`." % (now,ctx.message.author.name,ctx.message.author.discriminator))
+    if isinstance(error, (commands.MissingRequiredArgument)):
+        await ctx.send("Invalid Syntax: `!relinkinvite [Invite Link/Code] [DiscordUID]`")
+   
+@accountdetails.error
 async def accountdetails_error(ctx, error):
     if isinstance(error, (commands.MissingRole, commands.MissingAnyRole)):
         print("[%s][%s#%s] is trying to sync names." % (now,ctx.message.author.name,ctx.message.author.discriminator))
