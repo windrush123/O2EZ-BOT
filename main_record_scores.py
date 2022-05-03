@@ -9,8 +9,8 @@ from pathlib import Path
 from dotenv import load_dotenv
 from datetime import datetime, timedelta
 
-from recently_played import read_scores
-from send_recentlyplayed import message_recentlyplayed
+import recently_played
+#import send_recentlyplayed
 
 #load_dotenv()
 
@@ -18,8 +18,9 @@ print("main ONLINE")
 starttime = time.time()
 def main():
     while True:
-        read_scores()
-        asyncio.run(message_recentlyplayed())
+        recently_played.Record_Scores.read_scores()
+        
+        asyncio.run(recently_played.Record_Scores.discord_send_score())
         time.sleep(30 - time.time() % 30)
 
 main()

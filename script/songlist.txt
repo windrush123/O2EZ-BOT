@@ -1,0 +1,27 @@
+						EASY		NORMAL		HARD	
+ID	OJN ID	CHART NAME	CHART ARTIST	BPM	CHARTER	LEVEL	NOTECOUNT	LEVEL	NOTE COUNT	LEVEL	NOTE COUNT
+1	1	Orange	"Rie Kugimiya, Eri Kitamura & Yu"	140	t0mlee3 vs. tomlee3	50	5068	50	5068	50	5068
+2	2	phantasia ballad	fripSide NAO - Demetori	168	Eleventh	68	5935	68	5935	68	5935
+3	3	D.O.A	Hatsune Miku	180	th	53	4022	53	4022	53	4022
+4	4	Ice Angel	Yooh	168	pporse	38	6009	38	6009	38	6009
+5	5	Kuusou Sekai to Omocha no Shinzo	mafumafu	190	Cuppp	91	7100	91	7100	91	7100
+6	6	Hana no Iro	nano.RIPE	180	Genesis	62	4211	62	4211	62	4211
+7	7	Kawaki Wo Ameku	Minami	129	Flexo123	69	7043	69	7043	69	7043
+8	8	Black Hole -I-	m1dy	175	活死人√	96	4524	67	4524	67	4524
+9	9	Black Hole -V-	m1dy	203	活死人√	65	3258	65	3258	85	3258
+10	10	Still Into You	Paramore	136	Edifier (isroxck)	80	7067	80	7067	80	7067
+11	11	Shinsaku no Shiawase wa Kochira!	Chino(CV.Minase Inori)	175	LostCool	70	9027	70	9027	70	9027
+12	12	Meltdown [Ryu Remix]	Hatsune Miku	177	CRS	37	3090	44	3090	54	3090
+13	13	Dear my Friend	ELISA	155	ExiT	50	5000	60	5000	70	5000
+14	14	Future Gazer	fripSide	151.8	Genesis	76	6263	76	6263	76	6263
+15	15	Childish War	Kradness & Reol	175	Kanasando & Hyeri	85	6764	85	6764	85	6764
+16	16	[SHD]Electric Romeo	Globus-europa	141	Genesis	59	4275	59	3774	59	4275
+17	17	Po Pi Po (Ryu Remix)	Hatsune Miku	168	Tasarr_ & 澜斥	63	5008	63	5008	63	5008
+18	18	choux a la cr?me	kamome sano	192	Kanasando	75	3172	46	2441	75	3172
+19	19	Probem(nightcore Ver.)	Ariana Grande	123	Kanasando	66	2740	66	2740	66	2740
+20	20	Cirno's Perfect Math Class	IOSYS	175	Brian.Han	70	5774	70	5774	70	5774
+21	21	Night of Knights	COOL&Create	189	Nong	70	4857	70	4857	70	4857
+22	22	ANTI THE HOLIC (Easy Ver.)	Megurine Luka & Kagamine Rin	170	Eleventh	62	5548	62	5548	62	5548
+23	23	STEP(TV Size)	ClariS	146	Kanasando	71	2317	71	2317	71	2317
+24	24	OVERDRIVERS	P*Light (Feat. mow*2)	177	Hyeri & ExiT	66	3321	66	3321	66	3321
+25	25	Shinryaku no susume	ULTRA PRISM	185	Genesis	88	6416	88	6416	88	6416
