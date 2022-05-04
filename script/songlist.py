@@ -18,9 +18,12 @@ def main():
     line_count = 0 # To ignore the top bar of the text file (ID, OJN_ID, CHART_NAME, etc...) text.
     for line in song_lines:
         line_count += 1
+        
+        # Convert txt lines into array
         line = line.strip('\n')
         re.split(r't\+', line)
         line = line.split("\t")
+
         cursor = conncreate
         cursor.execute("""INSERT INTO dbo.songlist (ojn_id, chart_name, chart_artist,
         bpm, charter, easy_level, easy_notecount, normal_level, normal_notecount,
