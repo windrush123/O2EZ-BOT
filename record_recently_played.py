@@ -26,28 +26,9 @@ conncreate = pyodbc.connect('driver={%s};server=%s;database=%s;uid=%s;pwd=%s' %
 
 print("recently_played Online")
 
-# Variables
-usernick = ''
-id = 0
-chart_id = 0
-channel = ''
-chart_name = ''
-chart_artist = ''
-chart_difficulty = ''
-chart_level = '' 
-cool = 0
-good = 0
-bad = 0
-miss = 0
-maxcombo = 0
-maxjam = 0
-total_scores = 0
-date_played  = ''
-date_verified = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-score_id = 0
+verified_score_format = []
 
 def read_scores():
-    print("Reading new scores....")
     scores_files_dir = glob.glob(os.path.join(main_path, '**'))
     latest_folder = scores_files_dir[-2:]
     x = len(latest_folder)
@@ -70,36 +51,48 @@ def read_scores():
                     line = line.split("\t") 
                     time_played = datetime.strptime(line[1], '%Y-%m-%d %H:%M:%S')
 
+                    # This is where Verification begins
                     # if scores within the timeframe
-                    if abs(datetime.now() - time_played) < timedelta(seconds=60): 
-                        print("Within 30 secs")
+                    refresh_timer = os.getenv('timer_scorereading')
+                    if abs(datetime.now() - time_played) < timedelta(seconds=refresh_timer):
+                        verified_score_format.clear() 
+                        date_verified = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+                        verified_score_format.append(line[3]) # usernick
+                        verified_score_format.append(line[2]) # userid
                         #Check what channel user played
                         if "15030" in verifying_filename: channel_played = 1                      
                         elif "15031" in verifying_filename: channel_played = 2
-                        else: print("ERROR: CANNOT FIND CHANNEL PORT")                           
+                        else:
+                            channel_played = 404 
+                            print("ERROR: CANNOT FIND CHANNEL PORT") 
+                        verified_score_format.append(channel_played) # channel                          
                         cursor = conncreate
                         songlist = cursor.execute("SELECT chart_id,chart_name,chart_artist FROM dbo.songlist WHERE ojn_id=? ", line[4])       
                         for row in songlist:
-                            chart_id = (row.chart_id)
-                            chart_name = (row.chart_name)
-                            chart_artist = (row.chart_artist)
-                        find_chart_level = cursor.execute("SELECT easy_level,normal_level,hard_level FROM dbo.songlist where ojn_id=?", line[4])
-                        for row in find_chart_level:
-                                if line[5] == 0: chart_level = (row.easy_level)
-                                elif line[5] == 1: chart_level = (row.normal_level)
-                                else: chart_level = (row.hard_level)
+                            verified_score_format.append(row.chart_id) # chart_id
+                            verified_score_format.append(row.chart_name) # chart_name
+                            verified_score_format.append(row.chart_artist) # chart_artist
+                        verified_score_format.append(line[5]) # chart_diff
 
-                        usernick = line[3]
-                        id = line[2]
-                        chart_difficulty = line[5]
-                        cool = line[7]
-                        good = line[8]
-                        bad = line[9]
-                        miss = line[10]
-                        maxcombo = line[11]
-                        maxjam = line[12]
-                        total_scores = line[13]
-                        date_played = line[1]
+                        # Find Chart Level
+                        find_chart_level = cursor.execute("SELECT easy_level,normal_level,hard_level FROM dbo.songlist where ojn_id=?", line[4])
+                        chart_level = 0
+                        for row in find_chart_level:
+                            # Chart_level
+                            if line[5] == 0:  chart_level = (row.easy_level)
+                            elif line[5] == 1: chart_level = (row.normal_level)   
+                            else: chart_level = (row.hard_level)
+                        verified_score_format.append(chart_level) # chart Level                                       
+                        verified_score_format.append(line[7]) # cool
+                        verified_score_format.append(line[8]) # good
+                        verified_score_format.append(line[9]) # bad
+                        verified_score_format.append(line[10]) # miss
+                        verified_score_format.append(line[11]) # maxcombo
+                        verified_score_format.append(line[12]) # maxjam
+                        verified_score_format.append(line[13]) # total_score
+
+                        verified_score_format.append(line[1]) # date_played
+                        verified_score_format.append(date_verified) # date_verified
 
                         cursor.execute("""INSERT INTO dbo.userscores (usernick, id, chart_id,
                             channel, chart_name, chart_artist, chart_difficulty, chart_level,
@@ -107,85 +100,72 @@ def read_scores():
                             date_verified)
                             VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)
                             """,
-                            usernick, 
-                            id, 
-                            chart_id, 
-                            channel_played,
-                            chart_name,
-                            chart_artist,
-                            chart_difficulty, 
-                            chart_level, 
-                            cool, 
-                            good, 
-                            bad, 
-                            miss, 
-                            maxcombo, 
-                            maxjam, 
-                            total_scores, 
-                            date_played, 
-                            date_verified)
+                            verified_score_format)
                         cursor.commit()
                         # Get Score_ID by fetching which score is added
                         # inefficienct, will update
                         f = cursor.execute("""SELECT @@IDENTITY""")
                         for row in f:
-                            score_id = row[0]                    
-                        #print ( str(score_id) + ' ' + str(line))
+                            verified_score_format.insert(0, row[0])                     
 
                         # High score Checking
-                        if IsNewScore(chart_id, id, chart_difficulty) == False:
-                            if IsHighScore(chart_id, id, chart_difficulty, total_scores) == True:
+                        if IsNewScore(verified_score_format[3], verified_score_format[2],  verified_score_format[7]) == False:
+                            if IsHighScore(verified_score_format[3],  verified_score_format[2], verified_score_format[7],  verified_score_format[15]) == True:
                                 cursor.execute("""UPDATE dbo.user_highscores SET 
                                 score_id=?, cool=?, good=?,bad=?, miss=?, maxcombo=?,
                                 maxjam=?, total_score=?, date_played=?
                                 WHERE 
                                 id=? AND chart_id=? AND chart_difficulty=?""",
-                                score_id,
-                                cool,
-                                good,
-                                bad,
-                                miss,
-                                maxcombo,
-                                maxjam,
-                                total_scores,
-                                date_played,
+                                verified_score_format[0],  # score_id=
+                                verified_score_format[9],  # cool
+                                verified_score_format[10], # good
+                                verified_score_format[11], # bad
+                                verified_score_format[12], # miss
+                                verified_score_format[13], # maxcombo
+                                verified_score_format[14], # maxjam
+                                verified_score_format[15], # total_score
+                                verified_score_format[16], # date_played
                                 
-                                id,
-                                chart_id,
-                                chart_difficulty)
+                                verified_score_format[2],  # id
+                                verified_score_format[3],  # chart_id
+                                verified_score_format[7])  # chart_diff
                                 cursor.commit()
-                                print('[NEW HIGH SCORE!][%s][%s] %s - %s : cool: %s good: %s bad: %s miss: %s [Max Combo:%s] [Total Score: %s]' 
-                                %(usernick , chart_difficulty, chart_name,  chart_artist, str(cool), str(good), str(bad), str(miss), str(maxcombo), str(total_scores)))
+                                print('[HIGH SCORE][%s][%s] %s - %s : cool: %s good: %s bad: %s miss: %s [Max Combo:%s] [Total Score: %s]' 
+                                % (verified_score_format[1] , verified_score_format[7], verified_score_format[5],  verified_score_format[6], 
+                                verified_score_format[9], verified_score_format[10], verified_score_format[11], verified_score_format[12], 
+                                verified_score_format[13], verified_score_format[15]))
                             else: 
-                                print("Not a High score")
+                                print('[Verified][%s][%s] %s - %s : cool: %s good: %s bad: %s miss: %s [Max Combo:%s] [Total Score: %s]' 
+                                % (verified_score_format[1] , verified_score_format[7], verified_score_format[5],  verified_score_format[6], 
+                                verified_score_format[9], verified_score_format[10], verified_score_format[11], verified_score_format[12], 
+                                verified_score_format[13], verified_score_format[15]))
                         else:
-                            print("New Score!")
                             cursor.execute("""INSERT INTO dbo.user_highscores VALUES
                             (?,?,?,?,?,?,?,?,?,?,?,?,?)""",
-                            chart_id,
-                            chart_difficulty,
-                            score_id,
-                            id,
-                            usernick,
-                            cool,
-                            good,
-                            bad,
-                            miss,
-                            maxcombo,
-                            maxjam,
-                            total_scores,
-                            date_played)
+                            verified_score_format[3], # chart_id
+                            verified_score_format[7], # chart_diff
+                            verified_score_format[0], # score_id
+                            verified_score_format[2], # id
+                            verified_score_format[1], # usernick
+                            verified_score_format[9], # cool
+                            verified_score_format[10], # good
+                            verified_score_format[11], # bad
+                            verified_score_format[12], # miss
+                            verified_score_format[13], # max combo
+                            verified_score_format[14], # max jam
+                            verified_score_format[15], # total score
+                            verified_score_format[16])  # date_played
                             cursor.commit()
-                            print('[New Score][%s][%s] %s - %s : cool: %s good: %s bad: %s miss: %s [Max Combo:%s] [Total Score: %s]' 
-                            %(usernick , chart_difficulty, chart_name,  chart_artist, str(cool), str(good), str(bad), str(miss), str(maxcombo), str(total_scores)))
-
+                            print('[New Record][%s][%s] %s - %s : cool: %s good: %s bad: %s miss: %s [Max Combo:%s] [Total Score: %s]' 
+                            % (verified_score_format[1] , verified_score_format[7], verified_score_format[5],  verified_score_format[6], 
+                            verified_score_format[9], verified_score_format[10], verified_score_format[11], verified_score_format[12], 
+                            verified_score_format[13], verified_score_format[15]))
                     else:
                         break
                 i = i + 1
                 read_scores.close()
             x = x + 1           
-    else: 
-        print("No new scores...")
+
 
 def IsNewScore(chartid, userid, chart_diff,):
     cursor = conncreate
