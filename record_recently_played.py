@@ -53,7 +53,7 @@ def read_scores():
 
                     # This is where Verification begins
                     # if scores within the timeframe
-                    refresh_timer = os.getenv('timer_scorereading')
+                    refresh_timer = int(os.getenv('timer_scorereading'))
                     if abs(datetime.now() - time_played) < timedelta(seconds=refresh_timer):
                         verified_score_format.clear() 
                         date_verified = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
@@ -94,8 +94,8 @@ def read_scores():
                         verified_score_format.append(line[1]) # date_played
                         verified_score_format.append(date_verified) # date_verified
 
-                        cursor.execute("""INSERT INTO dbo.userscores (usernick, id, chart_id,
-                            channel, chart_name, chart_artist, chart_difficulty, chart_level,
+                        cursor.execute("""INSERT INTO dbo.userscores (usernick, id, channel,
+                            chart_id, chart_name, chart_artist, chart_difficulty, chart_level,
                             cool, good, bad, miss, maxcombo, maxjam, total_score, date_played,
                             date_verified)
                             VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)

@@ -385,6 +385,14 @@ async def accountdetails(ctx):
 #-----------------------------------------------
 #               Admin Commands
 #-----------------------------------------------
+@bot.command(name='relog')
+@commands.has_role(os.getenv('adminrole'))
+async def relog(ctx):
+    bot.reload_extension('cogs.userscore')
+    print("reloaded hehe")
+    await ctx.send("reloaded")
+
+
 
 @bot.command(name='helpadmin')
 @commands.has_role(os.getenv('adminrole'))
@@ -603,4 +611,6 @@ async def accountdetails_error(ctx, error):
     if isinstance(error, (commands.MissingRole, commands.MissingAnyRole)):
         print("[%s][%s#%s] is trying to sync names." % (now,ctx.message.author.name,ctx.message.author.discriminator))
 
+
+bot.load_extension("cogs.userscore")
 bot.run(os.getenv('TOKEN'))
