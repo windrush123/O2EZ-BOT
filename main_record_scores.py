@@ -10,7 +10,7 @@ from dotenv import load_dotenv
 from datetime import datetime, timedelta
 
 from discord.ext import commands
-import record_recently_played
+import cogs.record_recently_played as record_recently_played
 #import send_recentlyplayed
 
 bot = commands.Bot(command_prefix='!')
