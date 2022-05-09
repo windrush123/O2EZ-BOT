@@ -62,7 +62,7 @@ class userscore(commands.Cog):
         bgfileformat = 'o2ma'+str(song[0])+'.jpg'
         current_bg_path = os.path.join(songbg_path, bgfileformat)
         #print(str(current_bg_path))
-        
+       
         
         embed=discord.Embed(title="[Lv. %s] %s" % (chart_level, chart_title) , 
         description="%s\nChart by: %s" % (chart_artist,charter), 
@@ -82,7 +82,6 @@ class userscore(commands.Cog):
         embed.add_field(name=u"\u200B", value="Date Played: <t:%d:f>" % (time.time()), inline=False)
         #embed.set_footer(text=f"Date Played: <t:%d:f>" (time.time()))
         await channel.send("Recently Played by: %s" % (usernick),file=file, embed=embed)
-
     
     async def before_send_score(self):
         print('userscore waiting...')
