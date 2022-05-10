@@ -21,9 +21,13 @@ raw_score_line = []
 
 class record_score(commands.Cog):
  
-    def __init__(self, bot): self.bot = bot
-        
+    def __init__(self, bot): 
+        self.bot = bot
+    #    self.read_scores.start()
+
+    #@tasks.loop(seconds=5)    
     async def read_scores(self):
+        print('reading...')
         raw_score_line.clear()
         scores_files_dir = glob.glob(os.path.join(main_path, '**'))
         latest_folder = scores_files_dir[-2:]
@@ -36,8 +40,8 @@ class record_score(commands.Cog):
                 for i in range(0, i, 1): # check each files
                     GetBaseName = os.path.basename(today_score_files_dir[i])
                     verifying_filename = os.path.splitext(GetBaseName)[0]    
-                    read_scores=open(today_score_files_dir[i], 'r')
-                    score_lines = read_scores.readlines()
+                    file_read_scores=open(today_score_files_dir[i], 'r')
+                    score_lines = file_read_scores.readlines()
                     line_count = 0
                     for line in reversed(score_lines):
                         line_count += 1                        
@@ -49,11 +53,11 @@ class record_score(commands.Cog):
                         # if scores within the timeframe
                         refresh_timer = int(os.getenv('timer_scorereading'))
                         if abs(datetime.now() - time_played) < timedelta(seconds=refresh_timer):
-                            await record_score.score_to_db(verifying_filename, line)                           
+                            await record_score.score_to_db(self, verifying_filename, line)                           
                         else:
                             break
                     i = i + 1
-                    read_scores.close()
+                    file_read_scores.close()
                 x = x + 1   
 
     async def score_to_db(self, filename, score_line):
