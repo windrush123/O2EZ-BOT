@@ -18,9 +18,11 @@ class highscore(commands.Cog):
         cursor = conncreate
         cursor.execute("""UPDATE dbo.user_highscores SET 
         score_id=?, cool=?, good=?,bad=?, miss=?, maxcombo=?,
-        maxjam=?, total_score=?, date_played=?
+        maxjam=?, total_score=?, score_v2=?,
+        accuracy=?, song_clear=?, date_played=?
         WHERE 
         id=? AND chart_id=? AND chart_difficulty=?""",
+        
         score[0],  # score_id
         score[9],  # cool
         score[10], # good
@@ -29,7 +31,10 @@ class highscore(commands.Cog):
         score[13], # maxcombo
         score[14], # maxjam
         score[15], # total_score
-        score[16], # date_played
+        score[16], # score v2
+        score[17], # accuracy
+        score[18], # song clear
+        score[19], # date_played
 
         score[2],  # id
         score[3],  # chart_id

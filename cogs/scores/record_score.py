@@ -2,6 +2,8 @@ import os
 import pyodbc
 import glob
 import re
+import math
+import asyncio
 from pathlib import Path
 from dotenv import load_dotenv
 from datetime import datetime, timedelta
@@ -10,6 +12,8 @@ from datetime import datetime, timedelta
 import discord
 from discord.ext import commands
 from discord.ext import tasks
+
+
 
 load_dotenv()
 main_path = os.getenv('playerscoresfilepath')
@@ -23,11 +27,8 @@ class record_score(commands.Cog):
  
     def __init__(self, bot): 
         self.bot = bot
-    #    self.read_scores.start()
 
-    #@tasks.loop(seconds=5)    
     async def read_scores(self):
-        print('reading...')
         raw_score_line.clear()
         scores_files_dir = glob.glob(os.path.join(main_path, '**'))
         latest_folder = scores_files_dir[-2:]
@@ -53,7 +54,7 @@ class record_score(commands.Cog):
                         # if scores within the timeframe
                         refresh_timer = int(os.getenv('timer_scorereading'))
                         if abs(datetime.now() - time_played) < timedelta(seconds=refresh_timer):
-                            await record_score.score_to_db(self, verifying_filename, line)                           
+                            await record_score.score_to_db(self, verifying_filename, line)                         
                         else:
                             break
                     i = i + 1
@@ -72,23 +73,33 @@ class record_score(commands.Cog):
         else:
             channel_played = 404 
             print("ERROR: CANNOT FIND CHANNEL PORT") 
-        verified_score_format.append(channel_played) # channel                          
+        verified_score_format.append(channel_played) # channel
+        chartid = 0                           
         cursor = conncreate
         songlist = cursor.execute("SELECT chart_id,chart_name,chart_artist FROM dbo.songlist WHERE ojn_id=? ", score_line[4])       
         for row in songlist:
+            chartid = (row.chart_id)
             verified_score_format.append(row.chart_id) # chart_id
             verified_score_format.append(row.chart_name) # chart_name
             verified_score_format.append(row.chart_artist) # chart_artist
         verified_score_format.append(score_line[5]) # chart_diff
 
         # Find Chart Level
-        find_chart_level = cursor.execute("SELECT easy_level,normal_level,hard_level FROM dbo.songlist where ojn_id=?", score_line[4])
+        find_chart_level = cursor.execute("SELECT * FROM dbo.songlist where ojn_id=?", score_line[4])
         chart_level = 0
+        chart_notecount = 0
         for row in find_chart_level:
             # Chart_level
-            if score_line[5] == 0:  chart_level = (row.easy_level)
-            elif score_line[5] == 1: chart_level = (row.normal_level)   
-            else: chart_level = (row.hard_level)
+            if score_line[5] == 0:  
+                chart_level = (row.easy_level)
+                chart_notecount = (row.easy_notecount)
+            elif score_line[5] == 1: 
+                chart_level = (row.normal_level)
+                chart_notecount = (row.normal_notecount)   
+            else: 
+                chart_level = (row.hard_level)
+                chart_notecount = (row.hard_notecount)
+        
         verified_score_format.append(chart_level) # chart Level                                       
         verified_score_format.append(score_line[7]) # cool
         verified_score_format.append(score_line[8]) # good
@@ -98,14 +109,25 @@ class record_score(commands.Cog):
         verified_score_format.append(score_line[12]) # maxjam
         verified_score_format.append(score_line[13]) # total_score
 
+        scoredetails = self.bot.get_cog('scoredetails')
+         
+        score_v2 = scorev2(int(score_line[7]),int(score_line[8]),int(score_line[9]),int(score_line[10]), int(chart_notecount))
+        verified_score_format.append(score_v2) # score v2
+
+        verified_score_format.append(00.00) # Accuracy (Not yet done)
+        hitcount = score_line[7] + score_line[8] + score_line[9] + score_line[10]
+        IsClear = IsPassed(chartid, score_line[5], hitcount)
+        verified_score_format.append(IsClear) # Song clear
+
         verified_score_format.append(score_line[1]) # date_played
         verified_score_format.append(date_verified) # date_verified
 
         cursor.execute("""INSERT INTO dbo.userscores (usernick, id, channel,
             chart_id, chart_name, chart_artist, chart_difficulty, chart_level,
-            cool, good, bad, miss, maxcombo, maxjam, total_score, date_played,
-            date_verified)
-            VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)
+            cool, good, bad, miss, maxcombo, maxjam, total_score,score_v2,accuracy,
+            song_clear,date_played,date_verified)
+            
+            VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)
             """,
             verified_score_format)
         cursor.commit()
@@ -117,8 +139,8 @@ class record_score(commands.Cog):
             verified_score_format.insert(0, row[0])
 
         # High score Checking
-        if IsNewScore(verified_score_format[3], verified_score_format[2],  verified_score_format[7]) == False:
-            if IsHighScore(verified_score_format[3],  verified_score_format[2], verified_score_format[7],  verified_score_format[15]) == True:
+        if IsNewScore(verified_score_format[4], verified_score_format[2],  verified_score_format[7]) == False:
+            if IsHighScore(verified_score_format[4],  verified_score_format[2], verified_score_format[7],  verified_score_format[15]) == True:
                 highscore = self.bot.get_cog('highscore')
                 if highscore is not None:
                     highscore.import_highscore(verified_score_format)
@@ -141,6 +163,34 @@ class record_score(commands.Cog):
                 if userscore is not None:
                     await userscore.send_score(verified_score_format[0])    
 
+
+def scorev2(cool, good, bad, miss, notecount):
+        return 1000000*((cool+(0.5*good))-(bad/notecount)*(cool+good+bad+miss))/notecount
+
+def accuracy(cool, good, bad, miss):
+    pass
+
+def IsPassed(chart_id, difficulty, hitcount):
+    notecount = 0
+    load_dotenv()
+    cursor = pyodbc.connect('driver={%s};server=%s;database=%s;uid=%s;pwd=%s' % 
+    ( os.getenv('DRIVER'), os.getenv('SERVER'), os.getenv('DATABASE'), os.getenv('UID'), os.getenv('PASS') ) )
+    x = cursor.execute("SELECT * FROM dbo.songlist WHERE chart_id=?", chart_id)       
+    if difficulty == 0: # Easy Diff
+        for row in x:
+            notecount = (row.easy_notecount)
+    elif difficulty == 1: # Normal Diff
+        for row in x:
+            notecount = (row.normal_notecount)
+    else:
+        for row in x:   # hard diff
+            notecount = (row.hard_notecount)
+
+    if notecount == hitcount: 
+        return True          
+    else: 
+        return False
+        
 def IsNewScore(chartid, userid, chart_diff,):
     cursor = conncreate
     count_score = 0

@@ -606,5 +606,8 @@ async def accountdetails_error(ctx, error):
 bot.load_extension('cogs.scores.main')
 bot.load_extension('cogs.scores.record_score')
 bot.load_extension('cogs.scores.userscore')
+bot.load_extension('cogs.scores.newscore')
+bot.load_extension('cogs.scores.highscore')
+
 
 bot.run(os.getenv('TOKEN'))

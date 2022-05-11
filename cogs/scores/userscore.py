@@ -1,5 +1,6 @@
 from turtle import color
 from dotenv import load_dotenv
+from pathlib import Path
 import pyodbc
 import os
 import discord
@@ -42,13 +43,16 @@ class userscore(commands.Cog):
              miss =str(row[12])
              maxcombo=str(row[13])
              totalscore =str(row[15])
+             scorev2 = str(row[16])
+             accuracy = str(row[17])
+             passed = row[18]
 
         find_chartdetails = cursor.execute("SELECT * FROM dbo.songlist WHERE chart_id=?", scores[4])
         for row in find_chartdetails:    
             song = row
             chart_title = row[2]
-            chart_artist = row[3]
-            charter = row[5]
+            chart_artist = row[12]
+            charter = row[11]
         if chart_diff == 0:
             diff_name = 'Easy Difficulty'
             diff_color = 0x00FF00 # Green
@@ -61,6 +65,9 @@ class userscore(commands.Cog):
  
         bgfileformat = 'o2ma'+str(song[0])+'.jpg'
         current_bg_path = os.path.join(songbg_path, bgfileformat)
+        if os.path.exists(current_bg_path) == False:
+            current_bg_path = os.path.join(songbg_path, "_blank.jpg")
+
         #print(str(current_bg_path))
        
         
@@ -78,7 +85,9 @@ class userscore(commands.Cog):
         **Miss:** %s""" % (bad, miss), inline=True)
         embed.add_field(name="Max Combo", value="%s" % (maxcombo), inline=False)
         #embed.add_field(name="Max Jam", value="500", inline=True)
-        embed.add_field(name="Total Score", value="%s" % (totalscore), inline=False)
+        embed.add_field(name="Total Score", value="%s" % (totalscore), inline=True)
+        embed.add_field(name="ScoreV2", value="%s" % (scorev2), inline=True)
+        embed.add_field(name="Accuracy", value="00.00", inline=True)
         embed.add_field(name=u"\u200B", value="Date Played: <t:%d:f>" % (time.time()), inline=False)
         #embed.set_footer(text=f"Date Played: <t:%d:f>" (time.time()))
         await channel.send("Recently Played by: %s" % (usernick),file=file, embed=embed)
