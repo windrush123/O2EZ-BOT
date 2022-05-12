@@ -19,7 +19,7 @@ class newscore(commands.Cog):
         cursor = conncreate
         cursor.execute("""INSERT INTO dbo.user_highscores VALUES
         (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)""",
-        score[3], # chart_id
+        score[4], # chart_id
         score[7], # chart_diff
         score[0], # score_id
         score[2], # id

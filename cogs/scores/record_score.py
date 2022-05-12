@@ -1,4 +1,5 @@
 import os
+from pickle import TRUE
 import pyodbc
 import glob
 import re
@@ -33,7 +34,6 @@ class record_score(commands.Cog):
         scores_files_dir = glob.glob(os.path.join(main_path, '**'))
         latest_folder = scores_files_dir[-2:]
         x = len(latest_folder)
-        #print('Total Folder Count: '+ str(x))
         if x > 0: 
             for x in range(0, x, 1): # check each folder
                 today_score_files_dir = glob.glob(os.path.join(latest_folder[x],'*.txt')) #read exisiting txt files           
@@ -41,24 +41,25 @@ class record_score(commands.Cog):
                 for i in range(0, i, 1): # check each files
                     GetBaseName = os.path.basename(today_score_files_dir[i])
                     verifying_filename = os.path.splitext(GetBaseName)[0]    
-                    file_read_scores=open(today_score_files_dir[i], 'r')
-                    score_lines = file_read_scores.readlines()
-                    line_count = 0
-                    for line in reversed(score_lines):
-                        line_count += 1                        
-                        # Convert txtlines into arrays
-                        re.split(r't\+', line)
-                        line = line.split("\t")
-                        time_played = datetime.strptime(line[1], '%Y-%m-%d %H:%M:%S')
-                        # This is where Verification begins
-                        # if scores within the timeframe
-                        refresh_timer = int(os.getenv('timer_scorereading'))
-                        if abs(datetime.now() - time_played) < timedelta(seconds=refresh_timer):
-                            await record_score.score_to_db(self, verifying_filename, line)                         
-                        else:
-                            break
-                    i = i + 1
-                    file_read_scores.close()
+                    try:
+                        with open(today_score_files_dir[i], 'r') as file_read_scores:
+                            score_lines = file_read_scores.readlines()
+                            line_count = 0
+                            for line in reversed(score_lines):
+                                line_count += 1                        
+                                # Convert txtlines into arrays
+                                re.split(r't\+', line)
+                                line = line.split("\t")
+                                time_played = datetime.strptime(line[1], '%Y-%m-%d %H:%M:%S')
+                                # This is where Verification begins
+                                # if scores within the timeframe
+                                refresh_timer = int(os.getenv('timer_scorereading'))
+                                if abs(datetime.now() - time_played) <= timedelta(seconds=refresh_timer):
+                                    await record_score.score_to_db(self, verifying_filename, line)                         
+                            i = i + 1
+                            file_read_scores.close()
+                    except IOError:
+                        print("Error while Reading the file...")
                 x = x + 1   
 
     async def score_to_db(self, filename, score_line):
@@ -100,22 +101,20 @@ class record_score(commands.Cog):
                 chart_level = (row.hard_level)
                 chart_notecount = (row.hard_notecount)
         
-        verified_score_format.append(chart_level) # chart Level                                       
-        verified_score_format.append(score_line[7]) # cool
-        verified_score_format.append(score_line[8]) # good
-        verified_score_format.append(score_line[9]) # bad
-        verified_score_format.append(score_line[10]) # miss
-        verified_score_format.append(score_line[11]) # maxcombo
-        verified_score_format.append(score_line[12]) # maxjam
-        verified_score_format.append(score_line[13]) # total_score
-
-        scoredetails = self.bot.get_cog('scoredetails')
+        verified_score_format.append(int(chart_level)) # chart Level                                       
+        verified_score_format.append(int(score_line[7])) # cool
+        verified_score_format.append(int(score_line[8])) # good
+        verified_score_format.append(int(score_line[9])) # bad
+        verified_score_format.append(int(score_line[10])) # miss
+        verified_score_format.append(int(score_line[11])) # maxcombo
+        verified_score_format.append(int(score_line[12])) # maxjam
+        verified_score_format.append(int(score_line[13])) # total_score
          
         score_v2 = scorev2(int(score_line[7]),int(score_line[8]),int(score_line[9]),int(score_line[10]), int(chart_notecount))
-        verified_score_format.append(score_v2) # score v2
+        verified_score_format.append(int(score_v2)) # score v2
 
-        verified_score_format.append(00.00) # Accuracy (Not yet done)
-        hitcount = score_line[7] + score_line[8] + score_line[9] + score_line[10]
+        verified_score_format.append(float(00.00)) # Accuracy (Not yet done)
+        hitcount = int(score_line[7]) + int(score_line[8]) + int(score_line[9]) + int(score_line[10])
         IsClear = IsPassed(chartid, score_line[5], hitcount)
         verified_score_format.append(IsClear) # Song clear
 
@@ -138,9 +137,13 @@ class record_score(commands.Cog):
         for row in f:
             verified_score_format.insert(0, row[0])
 
-        # High score Checking
+        highscore = self.bot.get_cog('highscore')
+        userscore = self.bot.get_cog('userscore')
+        newscore = self.bot.get_cog('newscore')
+
+                # High score Checking
         if IsNewScore(verified_score_format[4], verified_score_format[2],  verified_score_format[7]) == False:
-            if IsHighScore(verified_score_format[4],  verified_score_format[2], verified_score_format[7],  verified_score_format[15]) == True:
+            if IsHighScore(verified_score_format[4],  verified_score_format[2], verified_score_format[7],  score_v2) == True:
                 highscore = self.bot.get_cog('highscore')
                 if highscore is not None:
                     highscore.import_highscore(verified_score_format)
@@ -161,18 +164,20 @@ class record_score(commands.Cog):
                 newscore.import_newscore(verified_score_format)
                 userscore = self.bot.get_cog('userscore')
                 if userscore is not None:
-                    await userscore.send_score(verified_score_format[0])    
+                    await userscore.send_score(verified_score_format[0])   
+                                               
+                
 
 
 def scorev2(cool, good, bad, miss, notecount):
-        return 1000000*((cool+(0.5*good))-(bad/notecount)*(cool+good+bad+miss))/notecount
+        # Formula by Schoolgirl
+    return 1000000*((cool+(0.5*good))-(bad/notecount)*(cool+good+bad+miss))/notecount
 
 def accuracy(cool, good, bad, miss):
     pass
 
 def IsPassed(chart_id, difficulty, hitcount):
     notecount = 0
-    load_dotenv()
     cursor = pyodbc.connect('driver={%s};server=%s;database=%s;uid=%s;pwd=%s' % 
     ( os.getenv('DRIVER'), os.getenv('SERVER'), os.getenv('DATABASE'), os.getenv('UID'), os.getenv('PASS') ) )
     x = cursor.execute("SELECT * FROM dbo.songlist WHERE chart_id=?", chart_id)       
@@ -185,30 +190,30 @@ def IsPassed(chart_id, difficulty, hitcount):
     else:
         for row in x:   # hard diff
             notecount = (row.hard_notecount)
-
-    if notecount == hitcount: 
+            
+    if notecount <= int(hitcount): 
         return True          
     else: 
         return False
         
-def IsNewScore(chartid, userid, chart_diff,):
+def IsNewScore(chartid, userid, chart_diff):
     cursor = conncreate
     count_score = 0
     find_score = cursor.execute("""SELECT * FROM dbo.user_highscores WHERE 
     chart_id=? AND id=? AND chart_difficulty=?""" , chartid, userid, chart_diff)
     for row in find_score:
         count_score += 1
-    if count_score == 0: return True
-    else: return False
+    if count_score > 0: return False
+    else: return True
 
-def IsHighScore(chartid, userid, chart_diff, total_score):
+def IsHighScore(chartid, userid, chart_diff, scorev2):
     cursor = conncreate
     find_highscore = cursor.execute("""SELECT * FROM dbo.user_highscores WHERE 
     chart_id=? AND id=? AND chart_difficulty=?""" , chartid, userid, chart_diff)
-    totalscore_highscore = 0
+    scorev2_highscore = 0
     for row in find_highscore:
-        totalscore_highscore = (row.total_score)
-    if int(total_score) > totalscore_highscore:
+        scorev2_highscore = (row.score_v2)
+    if int(scorev2) > scorev2_highscore:
         return True
     else: return False
 

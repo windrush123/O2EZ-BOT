@@ -6,7 +6,7 @@ from discord.ext import commands
 
 load_dotenv()
 
-conncreate = pyodbc.connect('driver={%s};server=%s;datalinebase=%s;uid=%s;pwd=%s' % 
+conncreate = pyodbc.connect('driver={%s};server=%s;database=%s;uid=%s;pwd=%s' % 
 ( os.getenv('DRIVER'), os.getenv('SERVER'), os.getenv('DATABASE'), os.getenv('UID'), os.getenv('PASS') ) )
 
 class highscore(commands.Cog):
@@ -17,7 +17,7 @@ class highscore(commands.Cog):
     def import_highscore(self, score):
         cursor = conncreate
         cursor.execute("""UPDATE dbo.user_highscores SET 
-        score_id=?, cool=?, good=?,bad=?, miss=?, maxcombo=?,
+        score_id=?, cool=?, good=?, bad=?, miss=?, maxcombo=?,
         maxjam=?, total_score=?, score_v2=?,
         accuracy=?, song_clear=?, date_played=?
         WHERE 
@@ -37,8 +37,9 @@ class highscore(commands.Cog):
         score[19], # date_played
 
         score[2],  # id
-        score[3],  # chart_id
+        score[4],  # chart_id
         score[7])  # chart_diff
+
         cursor.commit()
         print('[HIGH SCORE][%s][%s] %s - %s : cool: %s good: %s bad: %s miss: %s [Max Combo:%s] [Total Score: %s]' 
         % (score[1] ,score[7],score[5], score[6], 

@@ -70,10 +70,14 @@ class userscore(commands.Cog):
 
         #print(str(current_bg_path))
        
-        
-        embed=discord.Embed(title="[Lv. %s] %s" % (chart_level, chart_title) , 
-        description="%s\nChart by: %s" % (chart_artist,charter), 
-        color=diff_color) 
+        if passed == False:
+            embed=discord.Embed(title="[F][Lv. %s] %s" % (chart_level, chart_title) , 
+            description="%s\nChart by: %s" % (chart_artist,charter), 
+            color=diff_color) 
+        else: 
+            embed=discord.Embed(title="[Lv. %s] %s" % (chart_level, chart_title) , 
+            description="%s\nChart by: %s" % (chart_artist,charter), 
+            color=diff_color) 
         #embed.set_author(name="Recently Played by: %s" % (usernick))
         file = discord.File(current_bg_path, filename=bgfileformat)
         embed.set_thumbnail(url="attachment://" + bgfileformat)
@@ -85,7 +89,7 @@ class userscore(commands.Cog):
         **Miss:** %s""" % (bad, miss), inline=True)
         embed.add_field(name="Max Combo", value="%s" % (maxcombo), inline=False)
         #embed.add_field(name="Max Jam", value="500", inline=True)
-        embed.add_field(name="Total Score", value="%s" % (totalscore), inline=True)
+        #embed.add_field(name="Total Score", value="%s" % (totalscore), inline=True)
         embed.add_field(name="ScoreV2", value="%s" % (scorev2), inline=True)
         embed.add_field(name="Accuracy", value="00.00", inline=True)
         embed.add_field(name=u"\u200B", value="Date Played: <t:%d:f>" % (time.time()), inline=False)
