@@ -7,6 +7,7 @@ import discord
 import time
 from discord.ext import commands
 from discord.ext import tasks
+import asyncio
 
 load_dotenv()
 conncreate = pyodbc.connect('driver={%s};server=%s;database=%s;uid=%s;pwd=%s' % 
@@ -96,9 +97,6 @@ class userscore(commands.Cog):
         #embed.set_footer(text=f"Date Played: <t:%d:f>" (time.time()))
         await channel.send("Recently Played by: %s" % (usernick),file=file, embed=embed)
     
-    async def before_send_score(self):
-        print('userscore waiting...')
-        await self.bot.wait_until_ready()
 
 def setup(bot):
     bot.add_cog(userscore(bot))

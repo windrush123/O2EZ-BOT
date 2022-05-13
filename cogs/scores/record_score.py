@@ -54,13 +54,18 @@ class record_score(commands.Cog):
                                 # This is where Verification begins
                                 # if scores within the timeframe
                                 refresh_timer = int(os.getenv('timer_scorereading'))
+                                readed_score_line = line
                                 if abs(datetime.now() - time_played) <= timedelta(seconds=refresh_timer):
-                                    await record_score.score_to_db(self, verifying_filename, line)                         
+                                    await record_score.score_to_db(self, verifying_filename, readed_score_line)
                             i = i + 1
-                            file_read_scores.close()
                     except IOError:
                         print("Error while Reading the file...")
-                x = x + 1   
+                x = x + 1 
+                  
+    # To be continued
+    async def get_scores(self, scoreline):
+        await asyncio.sleep(2)
+
 
     async def score_to_db(self, filename, score_line):
         verified_score_format = [] 
@@ -144,25 +149,20 @@ class record_score(commands.Cog):
                 # High score Checking
         if IsNewScore(verified_score_format[4], verified_score_format[2],  verified_score_format[7]) == False:
             if IsHighScore(verified_score_format[4],  verified_score_format[2], verified_score_format[7],  score_v2) == True:
-                highscore = self.bot.get_cog('highscore')
                 if highscore is not None:
                     highscore.import_highscore(verified_score_format)
-                    userscore = self.bot.get_cog('userscore')
                     if userscore is not None:
                         await userscore.send_score(verified_score_format[0])  
             else: 
                 print('[Verified][%s][%s] %s - %s : cool: %s good: %s bad: %s miss: %s [Max Combo:%s] [Total Score: %s]' 
                 % (verified_score_format[1] , verified_score_format[7], verified_score_format[5],  verified_score_format[6], 
                 verified_score_format[9], verified_score_format[10], verified_score_format[11], verified_score_format[12], 
-                verified_score_format[13], verified_score_format[15]))
-                userscore = self.bot.get_cog('userscore')
+                verified_score_format[13], verified_score_format[15]))            
                 if userscore is not None:
                     await userscore.send_score(verified_score_format[0])                                     
-        else:
-            newscore = self.bot.get_cog('newscore')
+        else:        
             if newscore is not None:
                 newscore.import_newscore(verified_score_format)
-                userscore = self.bot.get_cog('userscore')
                 if userscore is not None:
                     await userscore.send_score(verified_score_format[0])   
                                                
