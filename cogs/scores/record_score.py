@@ -3,8 +3,8 @@ from pickle import TRUE
 import pyodbc
 import glob
 import re
-import math
 import asyncio
+import time
 from pathlib import Path
 from dotenv import load_dotenv
 from datetime import datetime, timedelta
@@ -13,8 +13,6 @@ from datetime import datetime, timedelta
 import discord
 from discord.ext import commands
 from discord.ext import tasks
-
-
 
 load_dotenv()
 main_path = os.getenv('playerscoresfilepath')
@@ -28,8 +26,26 @@ class record_score(commands.Cog):
  
     def __init__(self, bot): 
         self.bot = bot
+        self.record.start()
 
-    async def read_scores(self):
+    refresh_timer = int(os.getenv('timer_scorereading'))
+    @tasks.loop(seconds=refresh_timer)  
+    async def record(self):
+        print("reading new scores...")
+        record_score.read_scores(self)
+
+    @record.before_loop
+    async def before_record(self):
+        print('Score Recording Online...!')
+        await self.bot.wait_until_ready()
+
+    @record.after_loop
+    async def on_record_cancel(self):
+        print('[Score Recording] Finishing loop before closing...')
+        self.record.stop()      
+        print('[Score Recording] Closed !')
+
+    def read_scores(self):
         raw_score_line.clear()
         scores_files_dir = glob.glob(os.path.join(main_path, '**'))
         latest_folder = scores_files_dir[-2:]
@@ -56,18 +72,13 @@ class record_score(commands.Cog):
                                 refresh_timer = int(os.getenv('timer_scorereading'))
                                 readed_score_line = line
                                 if abs(datetime.now() - time_played) <= timedelta(seconds=refresh_timer):
-                                    await record_score.score_to_db(self, verifying_filename, readed_score_line)
+                                    record_score.score_to_db(self, verifying_filename, readed_score_line)
                             i = i + 1
                     except IOError:
                         print("Error while Reading the file...")
                 x = x + 1 
-                  
-    # To be continued
-    async def get_scores(self, scoreline):
-        await asyncio.sleep(2)
-
-
-    async def score_to_db(self, filename, score_line):
+                    
+    def score_to_db(self, filename, score_line):
         verified_score_format = [] 
         verified_score_format.clear()       
         date_verified = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
@@ -114,13 +125,13 @@ class record_score(commands.Cog):
         verified_score_format.append(int(score_line[11])) # maxcombo
         verified_score_format.append(int(score_line[12])) # maxjam
         verified_score_format.append(int(score_line[13])) # total_score
-         
-        score_v2 = scorev2(int(score_line[7]),int(score_line[8]),int(score_line[9]),int(score_line[10]), int(chart_notecount))
+            
+        score_v2 = record_score.scorev2(self, int(score_line[7]),int(score_line[8]),int(score_line[9]),int(score_line[10]), int(chart_notecount))
         verified_score_format.append(int(score_v2)) # score v2
 
         verified_score_format.append(float(00.00)) # Accuracy (Not yet done)
         hitcount = int(score_line[7]) + int(score_line[8]) + int(score_line[9]) + int(score_line[10])
-        IsClear = IsPassed(chartid, score_line[5], hitcount)
+        IsClear = record_score.IsPassed(self, chartid, score_line[5], hitcount)
         verified_score_format.append(IsClear) # Song clear
 
         verified_score_format.append(score_line[1]) # date_played
@@ -135,88 +146,206 @@ class record_score(commands.Cog):
             """,
             verified_score_format)
         cursor.commit()
+        print('[Verified][%s][%s] %s - %s : cool: %s good: %s bad: %s miss: %s [Max Combo:%s] [Total Score: %s]' 
+        % (verified_score_format[1] , verified_score_format[7], verified_score_format[5],  verified_score_format[6], 
+        verified_score_format[9], verified_score_format[10], verified_score_format[11], verified_score_format[12], 
+        verified_score_format[13], verified_score_format[15]))  
+
 
         # Get Score_ID by fetching which score is added
         # inefficienct, will update
         f = cursor.execute("""SELECT @@IDENTITY""")
         for row in f:
             verified_score_format.insert(0, row[0])
+        record_score.highscore_to_db(self, verified_score_format)
 
-        highscore = self.bot.get_cog('highscore')
-        userscore = self.bot.get_cog('userscore')
-        newscore = self.bot.get_cog('newscore')
+        # https://stackoverflow.com/a/70066649
+        try:
+            loop = asyncio.get_running_loop()
+        except RuntimeError:  # 'RuntimeError: There is no current event loop...'
+            loop = None
 
-                # High score Checking
-        if IsNewScore(verified_score_format[4], verified_score_format[2],  verified_score_format[7]) == False:
-            if IsHighScore(verified_score_format[4],  verified_score_format[2], verified_score_format[7],  score_v2) == True:
-                if highscore is not None:
-                    highscore.import_highscore(verified_score_format)
-                    if userscore is not None:
-                        await userscore.send_score(verified_score_format[0])  
-            else: 
-                print('[Verified][%s][%s] %s - %s : cool: %s good: %s bad: %s miss: %s [Max Combo:%s] [Total Score: %s]' 
-                % (verified_score_format[1] , verified_score_format[7], verified_score_format[5],  verified_score_format[6], 
-                verified_score_format[9], verified_score_format[10], verified_score_format[11], verified_score_format[12], 
-                verified_score_format[13], verified_score_format[15]))            
-                if userscore is not None:
-                    await userscore.send_score(verified_score_format[0])                                     
-        else:        
-            if newscore is not None:
-                newscore.import_newscore(verified_score_format)
-                if userscore is not None:
-                    await userscore.send_score(verified_score_format[0])   
-                                               
-                
-
-
-def scorev2(cool, good, bad, miss, notecount):
-        # Formula by Schoolgirl
-    return 1000000*((cool+(0.5*good))-(bad/notecount)*(cool+good+bad+miss))/notecount
-
-def accuracy(cool, good, bad, miss):
-    pass
-
-def IsPassed(chart_id, difficulty, hitcount):
-    notecount = 0
-    cursor = pyodbc.connect('driver={%s};server=%s;database=%s;uid=%s;pwd=%s' % 
-    ( os.getenv('DRIVER'), os.getenv('SERVER'), os.getenv('DATABASE'), os.getenv('UID'), os.getenv('PASS') ) )
-    x = cursor.execute("SELECT * FROM dbo.songlist WHERE chart_id=?", chart_id)       
-    if difficulty == 0: # Easy Diff
-        for row in x:
-            notecount = (row.easy_notecount)
-    elif difficulty == 1: # Normal Diff
-        for row in x:
-            notecount = (row.normal_notecount)
-    else:
-        for row in x:   # hard diff
-            notecount = (row.hard_notecount)
+        if loop and loop.is_running():
             
-    if notecount <= int(hitcount): 
-        return True          
-    else: 
-        return False
+            # print('Async event loop already running. Adding coroutine to the event loop.')
+            tsk = loop.create_task(record_score.send_score(self, verified_score_format[0]))
+            # ^-- https://docs.python.org/3/library/asyncio-task.html#task-object
+            # Optionally, a callback function can be executed when the coroutine completes
+            # tsk.add_done_callback(
+            #    lambda t: print(f'Task done with result = {t.result()}'))
+        else:
+            print('Starting new event loop')
+            asyncio.run(record_score.send_score(self, verified_score_format[0]))                                        
+            
+    def highscore_to_db(self, score):
+        cursor = conncreate
+        find_score = cursor.execute("""SELECT * FROM dbo.user_highscores WHERE 
+        chart_id=? AND id=? AND chart_difficulty=?""" , score[4], score[2], score[7])
+        count_score = 0
+        for row in find_score:
+            count_score += 1
+            old_highscore = (row.score_v2)
+        if count_score == 0:
+            cursor.execute("""INSERT INTO dbo.user_highscores VALUES
+            (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)""",
+            score[4], # chart_id
+            score[7], # chart_diff
+            score[0], # score_id
+            score[2], # id
+            score[1], # usernick
+            score[9], # cool
+            score[10], # good
+            score[11], # bad
+            score[12], # miss
+            score[13], # max combo
+            score[14], # max jam
+            score[15], # total score
+            score[16], #  score v2
+            score[17], #  accuracy
+            score[18], # song clear
+            score[19])  # date_played
+            cursor.commit()
+            print('[New Record][%s][%s] %s - %s : cool: %s good: %s bad: %s miss: %s [Max Combo:%s] [Score: %s]' 
+            % (score[1] ,score[7],score[5], score[6], 
+            score[9],score[10],score[11],score[12], 
+            score[13],score[16]))
+        else:
+            if int(score[17]) > old_highscore:
+                cursor.execute("""UPDATE dbo.user_highscores SET 
+                score_id=?, cool=?, good=?, bad=?, miss=?, maxcombo=?,
+                maxjam=?, total_score=?, score_v2=?,
+                accuracy=?, song_clear=?, date_played=?
+                WHERE 
+                id=? AND chart_id=? AND chart_difficulty=?""",    
+                score[0],  # score_id
+                score[9],  # cool
+                score[10], # good
+                score[11], # bad
+                score[12], # miss
+                score[13], # maxcombo
+                score[14], # maxjam
+                score[15], # total_score
+                score[16], # score v2
+                score[17], # accuracy
+                score[18], # song clear
+                score[19], # date_played
+
+                score[2],  # id
+                score[4],  # chart_id
+                score[7])  # chart_diff
+
+                cursor.commit()
+                print('[HIGH SCORE][%s][%s] %s - %s : cool: %s good: %s bad: %s miss: %s [Max Combo:%s] [Score: %s]' 
+                % (score[1] ,score[7],score[5], score[6], 
+                score[9],score[10],score[11],score[12], 
+                score[13],score[16]))
+
+    def scorev2(self, cool, good, bad, miss, notecount):
+            # Formula by Schoolgirl
+        return 1000000*((cool+(0.5*good))-(bad/notecount)*(cool+good+bad+miss))/notecount
+
+    def accuracy(self, cool, good, bad, miss):
+        pass
+
+    def IsPassed(self, chart_id, difficulty, hitcount):
+        notecount = 0
+        cursor = conncreate
+        x = cursor.execute("SELECT * FROM dbo.songlist WHERE chart_id=?", chart_id)       
+        if difficulty == 0: # Easy Diff
+            for row in x:
+                notecount = (row.easy_notecount)
+        elif difficulty == 1: # Normal Diff
+            for row in x:
+                notecount = (row.normal_notecount)
+        else:
+            for row in x:   # hard diff
+                notecount = (row.hard_notecount)
+            
+        if notecount <= int(hitcount): 
+            return True          
+        else: 
+            return False
+
+    async def send_score(self, scoreid):
+        await asyncio.sleep(10)
+        songbg_path = "C:\\Users\\carlo\\source\\repos\\Record Management\\O2EZ-BOT\\assets\\songbg\\"
+        channel = self.bot.get_channel(970336728466477086)
+
+        scores = []
+        diff_name = ''
+        diff_color = 0
+        cursor = conncreate
         
-def IsNewScore(chartid, userid, chart_diff):
-    cursor = conncreate
-    count_score = 0
-    find_score = cursor.execute("""SELECT * FROM dbo.user_highscores WHERE 
-    chart_id=? AND id=? AND chart_difficulty=?""" , chartid, userid, chart_diff)
-    for row in find_score:
-        count_score += 1
-    if count_score > 0: return False
-    else: return True
+        #find_verfiedscores = cursor.execute("SELECT * FROM dbo.userscores WHERE date_verified BETWEEN DATEADD(day, -5, current_timestamp) AND current_timestamp")
+        #for row in find_verfiedscores:
+        #    print(row)
+        
+        #find_score = cursor.execute("SELECT * FROM dbo.userscores WHERE score_id=(SELECT max(score_id) FROM dbo.userscores)")
+        find_score = cursor.execute("SELECT * FROM dbo.userscores WHERE score_id=?", scoreid)
 
-def IsHighScore(chartid, userid, chart_diff, scorev2):
-    cursor = conncreate
-    find_highscore = cursor.execute("""SELECT * FROM dbo.user_highscores WHERE 
-    chart_id=? AND id=? AND chart_difficulty=?""" , chartid, userid, chart_diff)
-    scorev2_highscore = 0
-    for row in find_highscore:
-        scorev2_highscore = (row.score_v2)
-    if int(scorev2) > scorev2_highscore:
-        return True
-    else: return False
+        for row in find_score:
+                scores = row
+                usernick = row[1]
+                chart_diff = row[7]
+                chart_level = str(row[8])
+                cool = str(row[9])
+                good= str(row[10])
+                bad=str(row[11])
+                miss =str(row[12])
+                maxcombo=str(row[13])
+                totalscore =str(row[15])
+                scorev2 = str(row[16])
+                accuracy = str(row[17])
+                passed = row[18]
 
+        find_chartdetails = cursor.execute("SELECT * FROM dbo.songlist WHERE chart_id=?", scores[4])
+        for row in find_chartdetails:    
+            song = row
+            chart_title = row[2]
+            chart_artist = row[12]
+            charter = row[11]
+        if chart_diff == 0:
+            diff_name = 'Easy Difficulty'
+            diff_color = 0x00FF00 # Green
+        elif chart_diff == 1:
+            diff_name = 'Normal Difficulty'
+            diff_color = 0xFFFF00 # Yellow
+        else:
+            diff_name = 'Hard Difficulty'
+            diff_color = 0xFF0000 # Red
+
+        bgfileformat = 'o2ma'+str(song[0])+'.jpg'
+        current_bg_path = os.path.join(songbg_path, bgfileformat)
+        if os.path.exists(current_bg_path) == False:
+            current_bg_path = os.path.join(songbg_path, "_blank.jpg")
+
+        #print(str(current_bg_path))
+        
+        if passed == False:
+            embed=discord.Embed(title="[F][Lv. %s] %s" % (chart_level, chart_title) , 
+            description="%s\nChart by: %s" % (chart_artist,charter), 
+            color=diff_color) 
+        else: 
+            embed=discord.Embed(title="[Lv. %s] %s" % (chart_level, chart_title) , 
+            description="%s\nChart by: %s" % (chart_artist,charter), 
+            color=diff_color) 
+        #embed.set_author(name="Recently Played by: %s" % (usernick))
+        file = discord.File(current_bg_path, filename=bgfileformat)
+        embed.set_thumbnail(url="attachment://" + bgfileformat)
+        embed.add_field(name=diff_name, value="""
+        **Cool:** %s
+        **Good:** %s"""% (cool, good), inline=True)
+        embed.add_field(name=u"\u200B", value="""
+        **Bad:** %s
+        **Miss:** %s""" % (bad, miss), inline=True)
+        embed.add_field(name="Max Combo", value="%s" % (maxcombo), inline=False)
+        #embed.add_field(name="Max Jam", value="500", inline=True)
+        #embed.add_field(name="Total Score", value="%s" % (totalscore), inline=True)
+        embed.add_field(name="ScoreV2", value="%s" % (scorev2), inline=True)
+        embed.add_field(name="Accuracy", value="00.00", inline=True)
+        embed.add_field(name=u"\u200B", value="Date Played: <t:%d:f>" % (time.time()), inline=False)
+        #embed.set_footer(text=f"Date Played: <t:%d:f>" (time.time()))
+        await channel.send("Recently Played by: %s" % (usernick),file=file, embed=embed)
 
 def setup(bot):
     bot.add_cog(record_score(bot))

@@ -603,11 +603,6 @@ async def accountdetails_error(ctx, error):
         print("[%s][%s#%s] is trying to sync names." % (now,ctx.message.author.name,ctx.message.author.discriminator))
 
 
-bot.load_extension('cogs.scores.main')
 bot.load_extension('cogs.scores.record_score')
-bot.load_extension('cogs.scores.userscore')
-bot.load_extension('cogs.scores.newscore')
-bot.load_extension('cogs.scores.highscore')
-
 
 bot.run(os.getenv('TOKEN'))
