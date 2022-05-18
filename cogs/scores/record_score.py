@@ -36,14 +36,19 @@ class record_score(commands.Cog):
 
     @record.before_loop
     async def before_record(self):
-        print('Score Recording Online...!')
+        print('[Score Recording] Timer Started')
         await self.bot.wait_until_ready()
 
     @record.after_loop
     async def on_record_cancel(self):
-        print('[Score Recording] Finishing loop before closing...')
-        self.record.stop()      
-        print('[Score Recording] Closed !')
+        if self.record.is_being_cancelled():
+            print('[Score Recording] Finishing loop before closing...')
+            self.record.stop()      
+            print('[Score Recording] Closed !')
+
+    async def teardown(self, bot):
+        record_score.on_record_cancel(self)
+        print('[Score Recording] Unloaded !')
 
     def read_scores(self):
         raw_score_line.clear()
@@ -146,19 +151,17 @@ class record_score(commands.Cog):
             """,
             verified_score_format)
         cursor.commit()
-        print('[Verified][%s][%s] %s - %s : cool: %s good: %s bad: %s miss: %s [Max Combo:%s] [Total Score: %s]' 
-        % (verified_score_format[1] , verified_score_format[7], verified_score_format[5],  verified_score_format[6], 
-        verified_score_format[9], verified_score_format[10], verified_score_format[11], verified_score_format[12], 
-        verified_score_format[13], verified_score_format[15]))  
 
 
-        # Get Score_ID by fetching which score is added
+
+        # Get Score_ID by fetching the latest inserted score
         # inefficienct, will update
         f = cursor.execute("""SELECT @@IDENTITY""")
         for row in f:
             verified_score_format.insert(0, row[0])
         record_score.highscore_to_db(self, verified_score_format)
 
+        # Checking if there is a Async event already running. 
         # https://stackoverflow.com/a/70066649
         try:
             loop = asyncio.get_running_loop()
@@ -239,6 +242,11 @@ class record_score(commands.Cog):
                 % (score[1] ,score[7],score[5], score[6], 
                 score[9],score[10],score[11],score[12], 
                 score[13],score[16]))
+            else:
+                print('[Verified][%s][%s] %s - %s : cool: %s good: %s bad: %s miss: %s [Max Combo:%s] [Total Score: %s]' 
+                % (score[1] ,score[7],score[5], score[6], 
+                score[9],score[10],score[11],score[12], 
+                score[13],score[16]))  
 
     def scorev2(self, cool, good, bad, miss, notecount):
             # Formula by Schoolgirl
@@ -266,6 +274,7 @@ class record_score(commands.Cog):
         else: 
             return False
 
+    # Discord Embed
     async def send_score(self, scoreid):
         await asyncio.sleep(10)
         songbg_path = "C:\\Users\\carlo\\source\\repos\\Record Management\\O2EZ-BOT\\assets\\songbg\\"
@@ -346,6 +355,7 @@ class record_score(commands.Cog):
         embed.add_field(name=u"\u200B", value="Date Played: <t:%d:f>" % (time.time()), inline=False)
         #embed.set_footer(text=f"Date Played: <t:%d:f>" (time.time()))
         await channel.send("Recently Played by: %s" % (usernick),file=file, embed=embed)
+
 
 def setup(bot):
     bot.add_cog(record_score(bot))

@@ -1,3 +1,5 @@
+from asyncio import start_server
+import asyncio
 from asyncio.windows_events import NULL
 from email import message
 import os
@@ -10,6 +12,8 @@ import subprocess
 
 from dotenv import load_dotenv
 from discord.ext import commands
+
+from cogs.scores.record_score import record_score
 
 load_dotenv()
 
@@ -508,19 +512,47 @@ async def relinkinvite(ctx, invlink, discorduid):
         await ctx.send("Successfully relinked discord invite `%s` to user <@%s>" % (invitelink, discorduid))
     else: await ctx.send("Invite Code not found!")
 
+@bot.command(name='reloadscores')
+async def reloadscore(ctx):
+    bot.reload_extension('cogs.scores.record_score')
+    await ctx.send("successfully reloaded `record scores` ")
+    print("successfully reloaded `record scores` ")  
+    
+
 @bot.command(name='startserver')
 @commands.has_role(os.getenv('adminrole'))
-async def startserver(ctx):   
-    os.system("start " + '"" ' + '"' + os.getenv('SERVER_PATH') + "\Start Server.bat" + '"')
+async def startserver(ctx):  
+    path = r"%s" % os.getenv('SERVER_PATH')
+    open_path = os.path.join(path, "Start_Server.bat")
+    p = subprocess.Popen(str(open_path), cwd=path)
+    stdout, stderr = p.communicate()
+    #os.system("start " + '"" ' + '"' + os.getenv('SERVER_PATH') + "\Start Server.bat" + '"')
     print('[%s][%s] has started the Server' % (now,ctx.message.author))
-    await ctx.send('[%s] has started the Server' % (ctx.message.author))
+    await ctx.send('`O2JAM Server` Online!')
+    print('O2JAM Server Online!')
+    await asyncio.sleep(1)
+    record_score_status = await ctx.send('Running `Record Scores`...')
+    await asyncio.sleep(5)
+    bot.load_extension('cogs.scores.record_score')
+    print("[Score Recording] Starting timer...")
+    await record_score_status.edit(content="`Record Scores Online!`")
 
 @bot.command(name='stopserver')
 @commands.has_role(os.getenv('adminrole'))
 async def stopserver(ctx):
-    os.system("start " + '"" ' + '"' + os.getenv('SERVER_PATH') + "\Stop Server.bat" + '"')
+    path = r"%s" % os.getenv('SERVER_PATH')
+    close_path = os.path.join(path, "Stop_Server.bat")
+    p = subprocess.Popen(str(close_path), cwd=path)
+    stdout, stderr = p.communicate()
+    try: 
+        bot.unload_extension('cogs.scores.record_score')
+        print("Unloaded Record Score Extension")
+    except:
+        print("Record Stop Not Online")
+    #os.system("start " + '"" ' + '"' + os.getenv('SERVER_PATH') + "\Stop Server.bat" + '"')
     print('[%s][%s] has stopped the server' % (now,ctx.message.author))
     await ctx.send('[%s] has stopped the server' % (ctx.message.author))
+    
 
 
 #-----------------------------------------------
@@ -603,6 +635,6 @@ async def accountdetails_error(ctx, error):
         print("[%s][%s#%s] is trying to sync names." % (now,ctx.message.author.name,ctx.message.author.discriminator))
 
 
-bot.load_extension('cogs.scores.record_score')
+#bot.load_extension('cogs.scores.record_score')
 
 bot.run(os.getenv('TOKEN'))

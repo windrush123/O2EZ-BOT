@@ -1,6 +1,5 @@
 import os
 import re
-from mysqlx import IntegrityError
 import pyodbc
 
 from pathlib import Path
