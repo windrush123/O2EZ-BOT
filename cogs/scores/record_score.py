@@ -28,8 +28,11 @@ class record_score(commands.Cog):
         self.bot = bot
         self.record.start()
 
+    def cog_unload(self):
+        self.record.cancel()
+
     refresh_timer = int(os.getenv('timer_scorereading'))
-    @tasks.loop(seconds=refresh_timer)  
+    @tasks.loop(minutes=refresh_timer)  
     async def record(self):
         print("reading new scores...")
         record_score.read_scores(self)
@@ -45,10 +48,7 @@ class record_score(commands.Cog):
             print('[Score Recording] Finishing loop before closing...')
             self.record.stop()      
             print('[Score Recording] Closed !')
-
-    async def teardown(self, bot):
-        record_score.on_record_cancel(self)
-        print('[Score Recording] Unloaded !')
+   
 
     def read_scores(self):
         raw_score_line.clear()
@@ -277,7 +277,7 @@ class record_score(commands.Cog):
     # Discord Embed
     async def send_score(self, scoreid):
         await asyncio.sleep(10)
-        songbg_path = "C:\\Users\\carlo\\source\\repos\\Record Management\\O2EZ-BOT\\assets\\songbg\\"
+        songbg_path = os.getenv('songbgfilepath')
         channel = self.bot.get_channel(970336728466477086)
 
         scores = []
@@ -343,10 +343,10 @@ class record_score(commands.Cog):
         embed.set_thumbnail(url="attachment://" + bgfileformat)
         embed.add_field(name=diff_name, value="""
         **Cool:** %s
-        **Good:** %s"""% (cool, good), inline=True)
+        **Bad:** %s"""% (cool, bad), inline=True)
         embed.add_field(name=u"\u200B", value="""
-        **Bad:** %s
-        **Miss:** %s""" % (bad, miss), inline=True)
+        **Good:** %s
+        **Miss:** %s""" % (good, miss), inline=True)
         embed.add_field(name="Max Combo", value="%s" % (maxcombo), inline=False)
         #embed.add_field(name="Max Jam", value="500", inline=True)
         #embed.add_field(name="Total Score", value="%s" % (totalscore), inline=True)
@@ -355,7 +355,6 @@ class record_score(commands.Cog):
         embed.add_field(name=u"\u200B", value="Date Played: <t:%d:f>" % (time.time()), inline=False)
         #embed.set_footer(text=f"Date Played: <t:%d:f>" (time.time()))
         await channel.send("Recently Played by: %s" % (usernick),file=file, embed=embed)
-
 
 def setup(bot):
     bot.add_cog(record_score(bot))

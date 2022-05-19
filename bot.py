@@ -512,12 +512,35 @@ async def relinkinvite(ctx, invlink, discorduid):
         await ctx.send("Successfully relinked discord invite `%s` to user <@%s>" % (invitelink, discorduid))
     else: await ctx.send("Invite Code not found!")
 
+@commands.has_role(os.getenv('adminrole'))
 @bot.command(name='reloadscores')
 async def reloadscore(ctx):
+    sleep_timer = os.getenv('timer_scorereading')
+    sleep_timer_to_seconds = int(sleep_timer) * 60
+    print("Trying to reload the record_scores")
+    message = await ctx.send("To prevent duplication on scores, Reloading `record_scores` cog will start in 1 minute.")
+    await asyncio.sleep(sleep_timer_to_seconds)
     bot.reload_extension('cogs.scores.record_score')
-    await ctx.send("successfully reloaded `record scores` ")
-    print("successfully reloaded `record scores` ")  
-    
+    await message.edit(content="`record_scores` Cog successfully reloaded!")
+    print("Successfully reloaded record scores")   
+
+@bot.command(name='unload_record')
+@commands.has_role(os.getenv('adminrole'))
+async def unload_record(ctx):
+    bot.unload_extension('cogs.scores.record_score')
+    await ctx.send(content="`record_scores` Cog successfully unloaded!")
+    print("Successfully unloaded record scores")
+
+@bot.command(name='load_record')
+@commands.has_role(os.getenv('adminrole'))
+async def unload_record(ctx):
+    sleep_timer = os.getenv('timer_scorereading')
+    sleep_timer_to_seconds = int(sleep_timer) * 60
+    message = await ctx.send("To prevent duplication on scores, loading `record_scores` cog will start in 1 minute.")
+    await asyncio.sleep(sleep_timer_to_seconds)
+    bot.load_extension('cogs.scores.record_score')
+    await message.edit(content="`record_scores` Cog successfully loaded!")
+    print("Successfully loaded record scores")      
 
 @bot.command(name='startserver')
 @commands.has_role(os.getenv('adminrole'))

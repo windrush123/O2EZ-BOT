@@ -11,6 +11,9 @@ conncreate = pyodbc.connect('driver={%s};server=%s;database=%s;uid=%s;pwd=%s' %
 ( os.getenv('DRIVER'), os.getenv('SERVER'), os.getenv('DATABASE'), os.getenv('UID'), os.getenv('PASS') ) )
 
 def main():
+    songlist_main()
+
+def songlist_main():
     main_path = os.path.dirname(os.path.abspath(__file__))
     txt_dir = os.path.join(main_path + '\songlist.txt')
     read_list=open(txt_dir, 'r', encoding='utf-8')
@@ -19,6 +22,11 @@ def main():
     #cursor.execute("DBCC CHECKIDENT ('dbo.songlist', reseed, 0)")
     #cursor.commit()
     line_count = 0 # To ignore the header of the text file (ID, OJN_ID, CHART_NAME, etc...) text.
+    import_success = False
+
+    print("Cleaning the Songlist table before proceeding...")
+    cursor.execute("DELETE FROM dbo.songlist")
+    cursor.commit()
     
     for line in song_lines:
         line_count += 1
@@ -49,16 +57,16 @@ def main():
             line[7],line[8],line[9],line[10],
             line[11])            
             cursor.commit()
+            print('ADDED TO DATABASE: [%s] %s - %s [%s]' % (str(line[0]),str(line[1]),str(line[11]),str(line[10])))
         except:   
             print("[ERROR] Please make sure the data is correct. [Line: %d]  " % (line_count))
             cursor.execute("DELETE FROM dbo.songlist")
             cursor.commit()
-            print("...Deleting all data")
-            line_count = 0 
-            break
-        else:
-            print('ADDED TO DATABASE: [%s] %s - %s [%s]' % (str(line[0]),str(line[1]),str(line[11]),str(line[10])))
+            print("[SONGLIST] Deleting all data")
+            line_count = 0
+            import_success = False
+            raise TypeError("[ERROR] Please make sure the Songlist data is correct. [Line: %d][Textfile]")        
     else:
-        print("Added %d Songs" % (line_count))        
-
-main()
+        print("Added %d Songs" % (line_count))
+        import_success = True
+    return import_success       
