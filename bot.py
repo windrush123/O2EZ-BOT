@@ -571,7 +571,7 @@ async def stopserver(ctx):
         bot.unload_extension('cogs.scores.record_score')
         print("Unloaded Record Score Extension")
     except:
-        print("Record Stop Not Online")
+        print("record_scores not online")
     #os.system("start " + '"" ' + '"' + os.getenv('SERVER_PATH') + "\Stop Server.bat" + '"')
     print('[%s][%s] has stopped the server' % (now,ctx.message.author))
     await ctx.send('[%s] has stopped the server' % (ctx.message.author))

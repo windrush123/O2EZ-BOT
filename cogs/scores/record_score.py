@@ -1,5 +1,4 @@
 import os
-from pickle import TRUE
 import pyodbc
 import glob
 import re
@@ -34,7 +33,7 @@ class record_score(commands.Cog):
     refresh_timer = int(os.getenv('timer_scorereading'))
     @tasks.loop(minutes=refresh_timer)  
     async def record(self):
-        print("reading new scores...")
+        # print("reading new scores...")
         record_score.read_scores(self)
 
     @record.before_loop
@@ -76,7 +75,7 @@ class record_score(commands.Cog):
                                 # if scores within the timeframe
                                 refresh_timer = int(os.getenv('timer_scorereading'))
                                 readed_score_line = line
-                                if abs(datetime.now() - time_played) <= timedelta(seconds=refresh_timer):
+                                if abs(datetime.now() - time_played) <= timedelta(minutes=refresh_timer):
                                     record_score.score_to_db(self, verifying_filename, readed_score_line)
                             i = i + 1
                     except IOError:
@@ -278,7 +277,8 @@ class record_score(commands.Cog):
     async def send_score(self, scoreid):
         await asyncio.sleep(10)
         songbg_path = os.getenv('songbgfilepath')
-        channel = self.bot.get_channel(970336728466477086)
+
+        channel = self.bot.get_channel(int(os.getenv('recentlyplayedmsg')))
 
         scores = []
         diff_name = ''
