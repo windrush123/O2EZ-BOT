@@ -545,6 +545,8 @@ async def unload_record(ctx):
 @bot.command(name='startserver')
 @commands.has_role(os.getenv('adminrole'))
 async def startserver(ctx):  
+    sleep_timer = os.getenv('timer_scorereading')
+    sleep_timer_to_seconds = int(sleep_timer) * 60
     path = r"%s" % os.getenv('SERVER_PATH')
     open_path = os.path.join(path, "Start_Server.bat")
     p = subprocess.Popen(str(open_path), cwd=path)
@@ -553,12 +555,13 @@ async def startserver(ctx):
     print('[%s][%s] has started the Server' % (now,ctx.message.author))
     await ctx.send('`O2JAM Server` Online!')
     print('O2JAM Server Online!')
-    await asyncio.sleep(1)
-    record_score_status = await ctx.send('Running `Record Scores`...')
     await asyncio.sleep(5)
+    print('Running Record Scores Module...')
+    record_score_status = await ctx.send('Running `Record Scores` Module... Estimated Time `%s Minute`' % (sleep_timer))   
+    await asyncio.sleep(sleep_timer_to_seconds)
     bot.load_extension('cogs.scores.record_score')
     print("[Score Recording] Starting timer...")
-    await record_score_status.edit(content="`Record Scores Online!`")
+    await record_score_status.edit(content="`Record Scores Module` Online!")
 
 @bot.command(name='stopserver')
 @commands.has_role(os.getenv('adminrole'))
@@ -567,14 +570,17 @@ async def stopserver(ctx):
     close_path = os.path.join(path, "Stop_Server.bat")
     p = subprocess.Popen(str(close_path), cwd=path)
     stdout, stderr = p.communicate()
+    
     try: 
         bot.unload_extension('cogs.scores.record_score')
-        print("Unloaded Record Score Extension")
+        await ctx.send(content="`record_scores` Cog successfully unloaded!")
+        await asyncio.sleep(10)
+        print("Successfully unloaded record scores")
     except:
         print("record_scores not online")
     #os.system("start " + '"" ' + '"' + os.getenv('SERVER_PATH') + "\Stop Server.bat" + '"')
     print('[%s][%s] has stopped the server' % (now,ctx.message.author))
-    await ctx.send('[%s] has stopped the server' % (ctx.message.author))
+    await ctx.send('`O2JAM Server Closed!' % (ctx.message.author))
     
 
 
