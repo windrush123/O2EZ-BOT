@@ -133,7 +133,8 @@ class record_score(commands.Cog):
         score_v2 = record_score.scorev2(self, int(score_line[7]),int(score_line[8]),int(score_line[9]),int(score_line[10]), int(chart_notecount))
         verified_score_format.append(int(score_v2)) # score v2
 
-        verified_score_format.append(float(00.00)) # Accuracy (Not yet done)
+        accuracy = record_score.accuracy(self, int(score_line[7]),int(score_line[8]),int(score_line[9]),int(score_line[10]))
+        verified_score_format.append(float(accuracy)) # Accuracy
         hitcount = int(score_line[7]) + int(score_line[8]) + int(score_line[9]) + int(score_line[10])
         IsClear = record_score.IsPassed(self, chartid, score_line[5], hitcount)
         verified_score_format.append(IsClear) # Song clear
@@ -252,7 +253,9 @@ class record_score(commands.Cog):
         return 1000000*((cool+(0.5*good))-(bad/notecount)*(cool+good+bad+miss))/notecount
 
     def accuracy(self, cool, good, bad, miss):
-        pass
+            # Formula by Schoolgirl
+        hitcount = int(cool) + int(good) + int(bad) + int(miss)
+        return (cool + (0.75*good) + (0.25*bad))/hitcount * 100
 
     def IsPassed(self, chart_id, difficulty, hitcount):
         notecount = 0
