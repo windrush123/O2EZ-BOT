@@ -4,6 +4,7 @@ import glob
 import re
 import asyncio
 import time
+import math
 from pathlib import Path
 from dotenv import load_dotenv
 from datetime import datetime, timedelta
@@ -130,11 +131,12 @@ class record_score(commands.Cog):
         verified_score_format.append(int(score_line[12])) # maxjam
         verified_score_format.append(int(score_line[13])) # total_score
             
-        score_v2 = record_score.scorev2(self, int(score_line[7]),int(score_line[8]),int(score_line[9]),int(score_line[10]), int(chart_notecount))
+        score_v2 = record_score.scorev2(self, score_line[7],score_line[8],score_line[9],score_line[10], chart_notecount)
         verified_score_format.append(int(score_v2)) # score v2
 
-        accuracy = record_score.accuracy(self, int(score_line[7]),int(score_line[8]),int(score_line[9]),int(score_line[10]))
+        accuracy = record_score.hitcount_to_accuracy(self, score_line[7],score_line[8],score_line[9],score_line[10])
         verified_score_format.append(float(accuracy)) # Accuracy
+
         hitcount = int(score_line[7]) + int(score_line[8]) + int(score_line[9]) + int(score_line[10])
         IsClear = record_score.IsPassed(self, chartid, score_line[5], hitcount)
         verified_score_format.append(IsClear) # Song clear
@@ -151,8 +153,6 @@ class record_score(commands.Cog):
             """,
             verified_score_format)
         cursor.commit()
-
-
 
         # Get Score_ID by fetching the latest inserted score
         # inefficienct, will update
@@ -250,12 +250,17 @@ class record_score(commands.Cog):
 
     def scorev2(self, cool, good, bad, miss, notecount):
             # Formula by Schoolgirl
-        return 1000000*((cool+(0.5*good))-(bad/notecount)*(cool+good+bad+miss))/notecount
+        return 1000000*((cool+(0.35*good))-(bad/notecount)*(cool+good+bad+miss))/notecount
 
-    def accuracy(self, cool, good, bad, miss):
+    def notecount_to_accuracy(self, cool, good, bad, miss, notecount):
             # Formula by Schoolgirl
+        # hitcount = int(cool) + int(good) + int(bad) + int(miss)
+        return (cool + (0.75*good) + (0.25*bad))/notecount * 100
+
+    def hitcount_to_accuracy(self, cool, good, bad, miss):
         hitcount = int(cool) + int(good) + int(bad) + int(miss)
         return (cool + (0.75*good) + (0.25*bad))/hitcount * 100
+
 
     def IsPassed(self, chart_id, difficulty, hitcount):
         notecount = 0
@@ -307,7 +312,7 @@ class record_score(commands.Cog):
                 maxcombo=str(row[13])
                 totalscore =str(row[15])
                 scorev2 = str(row[16])
-                accuracy = str(row[17])
+                accuracy = str(round(row[17],2))
                 passed = row[18]
 
         find_chartdetails = cursor.execute("SELECT * FROM dbo.songlist WHERE chart_id=?", scores[4])
@@ -354,7 +359,7 @@ class record_score(commands.Cog):
         #embed.add_field(name="Max Jam", value="500", inline=True)
         #embed.add_field(name="Total Score", value="%s" % (totalscore), inline=True)
         embed.add_field(name="ScoreV2", value="%s" % (scorev2), inline=True)
-        embed.add_field(name="Accuracy", value="00.00", inline=True)
+        embed.add_field(name="Accuracy", value=accuracy + "%", inline=True)
         embed.add_field(name=u"\u200B", value="Date Played: <t:%d:f>" % (time.time()), inline=False)
         #embed.set_footer(text=f"Date Played: <t:%d:f>" (time.time()))
         await channel.send("Recently Played by: %s" % (usernick),file=file, embed=embed)

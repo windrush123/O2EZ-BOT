@@ -1,871 +1,871 @@
-1	Orange	50	5068	50	5068	50	5068	140	04:36	t0mlee3 vs. tomlee3	Rie Kugimiya, Eri Kitamura & Yu	
-2	phantasia ballad	68	5935	68	5935	68	5935	168	04:42	Eleventh	fripSide NAO - Demetori	
-3	D.O.A	53	4022	53	4022	53	4022	180	03:27	th	Hatsune Miku	
-4	Ice Angel	38	6009	38	6009	38	6009	168	05:59	pporse	Yooh	
-5	Kuusou Sekai to Omocha no Shinzo	91	7100	91	7100	91	7100	190	03:38	Cuppp	mafumafu	
-6	Hana no Iro	62	4211	62	4211	62	4211	180	04:00	Genesis	nano.RIPE	
-7	Kawaki Wo Ameku	69	7043	69	7043	69	7043	129	04:10	Flexo123	Minami	
-8	Black Hole -I-	67	4524	67	4524	67	4524	175	03:15	ÏÇ∂‰ª∑ÌõôÔø°    	m1dy	
-9	Black Hole -V-	65	3258	65	3258	85	5152	203	02:41	ÏÇ∂‰ª∑ÌõôÔø°    	M1DY	
-10	Still Into You	80	7067	80	7067	80	7067	136	03:32	Edifier (isroxck)	Paramore	
-11	Shinsaku no Shiawase wa Kochira!	70	9027	70	9027	70	9027	175	04:20	LostCool	Chino(CV.Minase Inori)	
-12	Meltdown [Ryu Remix]	37	3090	44	3458	54	4045	177	03:57	CRS	Hatsune Miku	
-13	Dear my Friend	50	5000	60	5000	70	5000	155	03:23	ExiT	BPM(129/141.9/154.8)	
-14	Future gazer	76	6263	76	6263	76	6263	151.8	03:43	Thanks for the song of genesis 	fripSide	
-15	Childish War	85	6764	85	6764	85	6764	175	03:36	Kanasando & Hyeri	Îì±Ïú†&Ïú†Ïö∞    	
-16	[SHD]Electric Romeo	59	4275	59	3774	59	4275	141	02:24	Genesis	Globus-europa	
-17	Po Pi Po (Ryu Remix)	63	5008	63	5008	63	5008	168	03:13	Tasarr_ & ÏùåÎÖÑ  	Hatsune Miku	
-18	choux a la creme	75	3172	46	2441	75	3172	192	02:08	Ïπ¥ÎÇòÏÇ∞ÎèÑ    	kamome sano	
-19	Problem(Nightcore Ver.)	66	2740	66	2740	66	2740	123	02:44	Kanasando	Ariana Grande	
-20	Cirno's Perfect Math Class	70	5774	70	5774	70	5774	175	04:38	Brian.Han	ARM & miko	
-21	Night of Knights	70	4857	70	4847	70	4847	189	02:55	Nong	COOL&Create	
-22	ANTI THE HOLIC (Easy Ver.)	62	5548	62	5548	62	5548	170	04:14	Eleventh	Megurine Luka & Kagamine Rin	
-23	STEP(TV Size)	71	2317	71	2317	71	2317	146	01:34	Kanasando	ClariS	
-24	OVERDRIVERS	66	3321	66	3321	66	3321	177	01:56	Hyeri & ExiT	P*Light (Feat. mow*2)	
-25	Shinryaku no susume	88	6416	88	6416	88	6416	185	03:14	Genesis	ULTRA PRISM	
-26	Striptease	64	2972	64	2972	64	2972	130	01:56	Kanasando	Rise Kujikawa	
-27	Kochira, Koufuku Anshin Iinkai desu	63	5584	63	5584	63	5584	128	04:44	Kanasando	Augusta	
-28	I'll Be There For You	65	5760	65	5760	65	5760	170	04:07	WhiteAndBlack & Exit	ICHIKO ( „Çº„É≠„ÅÆ‰Ωø„ÅÑÈ≠î F OP)     	
-29	Hoshi ga Furanai Machi	40	7457	40	7457	40	7457	165	05:51	pporse	Chroma	
-30	Todoroke, Koi no Beanball!!	74	3310	74	3310	74	3310	180	01:52	MonAmie	Prim, Aka Bat, Ao Bat	
-31	Saikyou Pare Parade	69	6922	69	6922	69	6922	175	04:21	Eleventh	Haruhi, Minori, Yuko	
-32	Bagsakan	59	6508	59	6508	59	6508	135	03:14	Schoolgirl	Parokya ni Edgar et al.	
-33	Be Starters!	78	5737	78	5737	78	5737	168	03:52	Sub / WhiteAndBlack	Eri Kitamura	
-34	Light Lag	74	4141	74	4141	74	4141	180	03:28	LCH	DECO*27	
-35	Chronoxia	76	3734	76	3734	76	3734	180	01:54	TD.FL*PR	DJ Totoriott	
-36	Midnight Circus	73	6257	73	6257	73	6257	149	03:09	HANU	Sunny Hill	
-37	Twisted Tree	83	5000	83	5000	83	5000	160	02:01	Rocher	Unknown Artist	
-38	Renai Circulation -Irony MIX-	36	3626	36	3626	36	3626	134	04:19	Tasarr_	ÂçÉÁü≥Êí´Â≠ê    	
-39	Marshmallow Justice	86	6945	86	6945	86	6945	176	04:10	Í≤åÏù¥Îç∞Ïì∞    	Eri Kitamura	
-40	Black Hole -VIII-	87	4204	87	4204	87	4204	170	02:15	ÏùåÎÖÑ  	P*Light	
-41	We Survive	62	6847	62	6847	62	6847	140	04:32	Eleventh	KOTOKO	
-42	Tear Rain	40	3642	40	3642	40	3642	128	04:07	KNH**	Amateras Records	
-43	Spaghetti Song	45	2970	45	2970	45	2970	132	01:52	Schoolgirl	Sexbomb Girls	
-44	Asa Made Halloween	53	4725	53	4725	53	4725	138	03:20	DJ / ÌïòÌòÑ  	Sound Horizon	
-45	Fantastic Future	89	7500	82	7507	89	7500	172	04:13	ExiT	Yukari Tamamura	
-46	empath144	67	2828	67	2828	67	2828	190	01:56	LCH	Yuuyu-P & Hatsune Miku	
-47	Kakuzetsu Thanatos	87	6892	87	6892	87	6892	200	03:37	WhiteAndBlack	Rohi	
-48	Deep in Abyss	71	6531	71	6531	71	6531	135	03:39	LostCool	Miyu Tomita & Mariya Ise	
-49	Nou Shou Sakuretsu Girl	62	4704	62	4704	62	4704	155	03:12	rocher	rerulili	
-50	Mugenkai Kasetsu Ticket	77	5968	77	5968	77	5968	168	05:01	LCH & Hyeri & ExiT	Meramipop	
-51	GypsyTronic 1.1x	80	6622	80	6622	80	6622	138	03:22	Sigak (fixed by ExiT)	M2U (1.1x by tomlee)	
-52	Dragon rider	81	2908	77	3138	89	3525	160	01:44	ÏÑÄÎèÑÏö∞Íµ∞    	???	
-53	Otome-domo yo	74	6230	74	6230	74	6230	172	04:13	LostCool	CHiCO with HoneyWorks	
-54	Black Hole -II-	53	2754	53	2754	53	2754	180	02:21	Y..J	NOCE	
-55	Flash Back	75	5440	75	5440	75	5440	185	03:27	TH	Akiakane	
-56	Faint	54	3786	54	3786	54	3786	135	02:44	Genesis	Linkin Park	
-57	Hi High	77	6901	77	6901	77	6901	194	03:21	Flexo123	LOONA	
-58	[VSHD]AAA	66	5496	66	5496	66	5496	160	03:19	ElecNote	DM Ashura	
-59	Late in autumn	68	4197	68	4197	68	4197	149.5	03:34	Genesis	fripside	
-60	[SHD] Bride in Dream	44	3269	44	3269	44	3269	116	02:32	Niro-	BeautifulDay	
-61	Melt (Nagi ver.)	72	4324	72	4324	72	4324	170	03:01	Genesis	Supercell	
-62	PAPAYAPA BASS	32	2685	32	2685	32	2685	147	02:03	MapleSyrup-	Camellia feat. Nanahira	
-63	Coloring	16	2142	25	2500	48	3584	117.01	03:49	ExiT & Rustin	Â†ÄÊ±üÁî±Ë°£ (Horie Yui)    	
-64	Hype feat. Such (lapix Remix)	72	7330	72	7330	72	7330	175	04:38	Reba	PSYQUI	
-65	STELLAR WIND	78	3124	78	3124	78	3124	160	01:55	GG	L.E.D.	
-66	World's end Dancehall (Easy Ver)	41	7446	41	7446	41	7446	171	03:28	Rustin	ÌïòÏ∏†ÎÑ§ ÎØ∏Ïø†,Î©îÍµ¨Î¶¨ÎÑ§ Î£®Ïπ¥       	
-67	World's end Dancehall	77	8358	77	8358	77	8358	171	03:33	Rustin	Iciko	
-68	The Everlasting Guilty Crown	72	5188	72	5188	72	5188	180	03:30	Kim_GodSSI	EGOIST/Supercell	
-69	Fukkireta	76	4105	40	2060	76	4105	150	01:34	TH	Î°† 	
-70	Haru no Hi	77	5250	77	5250	77	5250	180	03:46	WhiteAndBlack	„ÅØ„Çã„Åæ„Åß „Åè„Çã„Çã op       	
-71	Powerless	48	4318	48	4318	48	4318	188	03:52	Rocher	NANO	
-72	Memory Of Snow	78	6073	78	6073	78	6073	150	04:12	Genesis	fripSide	
-73	Flowers in Full Bloom	33	1596	48	1947	68	2676	160	01:54	TH	T–Å–ØRA  	
-74	Eternal Nocturne	82	7602	82	7602	82	7602	166	05:02	Karasis	dBu	
-75	Yasashisa no Riyuu	76	3737	76	3737	76	3737	177	03:00	lms1065 :: Sub	Hyouka 01 OP	
-76	Dreamin' attraction!!(Extended)	80	5443	80	5443	80	5443	205	04:32	qodtjr	hino isuika	
-77	More One Night	76	5686	76	5686	76	5686	170	02:56	Minseok & Destiny19	Hige Driver	
-78	Koi wa Chaos Shimobe Nari (Easy)	60	3940	60	3940	60	3940	158	02:33	MonAmie	Í∏∞Ïñ¥ÏôÄÎùº ÎÉêÎ£®ÏΩîÏñë 2OP        	
-79	Snow Storm -euphoria-	83	3680	83	3680	83	3680	180	02:02	MonAmie	Yooh	
-80	Date a Live	98	7084	67	5338	98	7084	178	04:32	yakumo	sweet ARMS	
-81	Evidence	70	6418	70	6418	70	6418	160	04:45	ÏùåÎÖÑ  	DaisyxDaisy	
-82	No pain No game	68	5322	68	5322	68	5322	190	03:20	rocher	nano	
-83	#FairyJoke	66	2777	66	2777	66	2777	160	02:04	Ïπ¥ÎÇòÏÇ∞ÎèÑ    	uno(IOSYS)	
-84	Miracle‚àûHinacle 	64	3300	64	3300	64	3300	160	02:20	ÌòúÎ¶¨ & ExiT  	IOSYS "ÎèôÎ∞©Ïú†Ïã¨Ï∂î OST"     	
-85	Niji No Kakera	51	1833	51	1833	51	1833	132	01:32	SubTitle_	ÊòÜÂ§èÁæé "‰∏ÄÈÄ±Èñì„Éï„É¨„É≥„Ç∫ OP"      	
-86	Tsubomi	77	8017	77	8017	77	8017	184	05:03	mniii	Tatsumi Megumi feat. Sano Hiroak	
-87	Vitalization	76	4002	76	4002	76	4002	190	02:42	MonAmie	Nana Mizuki	
-88	CLICK	66	6375	66	6375	66	6375	135	04:28	ExiT	ClariS	
-89	I Am	65	4925	65	4925	65	4925	150	04:06	Genesis	Hitomi	
-90	The Great Escape	78	5648	78	5648	78	5648	150	03:21	Genesis	Boys Like Girls	
-91	[LN]Allegro Con Fuoco	44	4991	71	7199	82	9935	150	04:46	Âç†ÏèôÏòôÂç†ÏèôÏòô      	Unknown Artist	
-92	ANOMALY	82	6263	82	6263	82	6263	210	04:22	qodtjr	Camellia	
-93	High Range Test	68	3348	68	3348	68	3348	180	01:31	ÌòúÎ¶¨  	Â∞ëÂ•≥  	
-94	Virtue and Vice	74	5707	74	5707	74	5707	145	03:28	ÌòúÎ¶¨  	Fear And Loathing in Las Vegas	
-95	RELOADED	92	10200	92	10200	92	10200	173	05:00	ruka	EGOIST	
-96	MEMORIA	59	3886	59	3886	59	3886	141	03:11	MonAmie	Aoi Eir	
-97	Rainbow Cemetery	34	3071	64	5786	64	5786	126.3	02:38	HIGH	Michiru Yamane	
-98	Dreamin'	80	3782	80	3782	80	3782	156	01:50	KEHC	Feat. Ryu‚òÜ 	
-99	This Night	82	3167	40	2326	82	3167	160	01:58	Vol.2	Jubeat	
-100	See visionS	74	8000	47	5175	74	8000	164	05:21	LCH	Kawada Mami	
-101	Einherjar	85	8465	85	8465	85	8465	160	03:49	KEHC	ETIA.	
-102	Sakura Stream	58	4834	58	4834	58	4834	173	03:50	WhiteAndBlack	Sound Online	
-103	YES or YES	70	6566	70	6566	70	6566	138	04:00	Destiny19	TWICE	
-104	Sky High	77	3333	34	2222	77	3333	150	02:09	SubTitle_	Cuvelia	
-105	Sparkling Daydream	80	7307	80	7307	80	7307	175	04:07	WhiteAndBlack / lms1065	ZAQ	
-106	Parousia	80	5517	80	5517	80	5517	158	03:29	HoNoR	Xi	
-107	Crisp	62	3162	74	3513	85	4632	175	02:02	HoNoR	Yak_won	
-108	Only My Railgun	72	4578	72	4534	72	4534	143	03:09	Th	Ïñ¥Í≥ºÏ¥à   	
-109	Ladymade corestar	53	3817	53	3817	53	3817	175	02:10	1 1 t h	Unit.Œ≤ easy 	
-110	Tetelestai	69	3375	40	2538	69	3375	160	02:13	rocher	sibyle	
-111	NO THANK YOU	89	10963	89	10963	89	10963	178	04:45	rocher	ÎÜìÔ•ñÁÅåÏú±    	
-112	[SHD]Pure in Asia	79	5643	79	5643	79	5643	160	03:22	Genesis	ZUN	
-113	Synchrogazer	64	4201	64	4201	64	4201	159	03:14	Mizuku nana	Êà∞Âß¨Áµ∂Âî±„Ç∑„É≥„Éï„Ç©„ÇÆ„Ç¢          	
-114	[SHD] Go Hell	56	3893	56	3893	56	3893	145	02:18	Niro-	Red Pulse	
-115	A c i - L [Four Dimensions]	30	2325	40	2545	76	4418	162	02:25	-45	zelly	
-116	Reincarnation	87	6505	87	6505	87	6505	145	04:12	jj	ZUN	
-117	Miraizu (sana ver.)	73	4747	73	4747	73	4747	178	03:25	Destiny19	HoneyWorks	
-118	TOKOHANA	68	6039	68	6039	68	6039	169	04:21	KNH**	YANAGINAGI	
-119	[LN] Gale Street	86	8392	86	8392	86	8392	157	03:12	KNH**	Ïú†Ï†ïÏÑù / ÏæåÍ±∏Í∑ºÏú°Îß®2ÏÑ∏ OP       	
-120	Love Drunk	84	6666	84	6666	84	6666	150	03:44	Genesis	Boys Like Girls	
-121	CHOIR JAIL	87	4484	87	4484	87	4484	181	02:46	LCH & DJ	Ìô©ÌòºÏÜåÎÖÄXÏïîÎÑ§ÏßÄÏïÑ OP        	
-122	New World	92	7042	92	7042	92	7042	195	04:08	SoF & Cuppp	Meika	
-123	Stella Breeze	64	6785	64	6785	64	6785	148	04:00	LostCool	Haruna Luna	
-124	Happy Girl	73	6323	73	6288	73	6323	145	03:58	Ryu x3	ÏïÑÎπ†Îßê Ï¢Ä Îì§Ïñ¥Îùº OP       	
-125	[LN]Lounge Cafe	78	7642	49	6500	78	7642	140	03:29	Umneoyn	Unknown Artist	
-126	Otenba renjyou	47	2046	47	2046	47	2046	168	02:10	eleventh	Êù±ÊñπÂπªÂ•èÁ•ÄÂÖ∏2"Canon"      	
-127	Take Me Out	67	4170	67	4170	67	4170	186	02:36	WhiteAndBlack	Las Vegas	
-128	Knowing	68	6210	68	6210	68	6210	140	04:18	LCH	Ore no kanojo no uraomote OP	
-129	KAMAITACHI	77	3962	84	4107	84	4107	165	02:09	Genesis & LFHL	beatmaniaIIDX14 GOLD	
-130	fantastic dreamer	88	9850	88	9850	88	9850	185	04:02	Niima	Machico	
-131	Robotic Girl	38	4912	38	4912	38	4912	160	03:41	Flexo123	Yunomi feat. Nicamoq	
-132	DAYS OF DASH	84	7820	68	6224	86	7777	160	04:11	ExiT & Lolicon2 & Snowkel	Konomi Suzuki	
-133	Tonari Au	35	5148	35	5148	35	5148	140	04:30	Niro-	THE ORAL CIGARETTES	
-134	Realism	16	2101	28	3951	40	5150	161	04:05	MR.CHONG	Elisa	
-135	Goldrop [ Neverland ] x1.2	80	5322	80	5322	80	5322	175	03:17	Destiny19 (sped up by tut234)	MAIKA	
-136	[E]	44	2873	44	2873	44	2873	152	02:01	Tasarr_	dj MAX STEROID	
-137	Mione no Sekai	63	5500	63	5500	63	5500	132	04:58	sound horizon	zelly	
-138	Colorful	68	6000	68	6000	68	6000	178	04:29	0Exit2 [Re;]	ClariS	
-139	Dreaming Leaf	80	7607	80	7607	80	7607	170	03:43	Ï¢ÖÏàò ÏïàÌã∞Ïπ¥Ìéò ÌöåÏõê        	„É¶„É™„Ç´/Ëä±„Åü„Çì      	
-140	Hatsukoi no Ehon	72	3834	72	3834	72	3834	190	03:22	D	L.O.V.E.‚ô° 	
-141	BLUE CLAPPER	44	5459	44	5459	44	5459	145	04:09	MapleSyrup-	hololive IDOL PROJECT	
-142	Courage	52	4444	52	4444	52	4444	196	04:10	WhiteAndBIG	Haruka Tomatsu [GGO OP2]	
-143	Love's Scenario	78	6746	78	6746	78	6746	180	04:20	LCH	Magic Kaito 1412 OP2	
-144	Join Forces	74	6288	74	6288	74	6288	140	04:02	LCH	fripside	
-145	Mottai Night Land	61	6523	61	6523	61	6523	160	03:54	Cuppp	Kyarypamyupamyu	
-146	EX. Utakata, Ai no Mahoroba	74	3486	62	2260	74	3486	155	02:51	TH	senya	
-147	Loop the Loop	56	4719	56	4719	56	4719	153	02:58	MonAmie	KOTOKO	
-148	FRANTIC ARCADE	51	2820	51	2820	51	2820	180	02:28	rocher	PrimeMIX	
-149	Maware! Setsugetsuka! (TEKINA REMIX)	84	9096	84	9096	84	9096	180	05:02	Rocher & BIG & W.B	Ê≠åÁµÑÈõ™ÊúàËä± (TEKINA)     	
-150	Joker [Full Density]	95	5503	48	3255	95	5503	184	02:10	1 1 t h	D.J.Nero	
-151	Promise of Summer	79	5935	66	4879	79	5935	185	03:57	LCH	"DOG DAYS'" ED Theme	
-152	[SHD]AAA	23	2092	31	2914	50	3694	160	03:17	MessaTsu.O2se	DM Ashura	
-153	Choose Me Darling (Easy Ver)	57	3827	57	3827	57	3827	150	02:48	D	StylipS	
-154	Follow Tomorrow (for future mix rearrange ver.)	60	4380	60	4380	60	4380	140	03:06	0Exit2 [Re;]	HHH√óMM√óST  	
-155	Sociometry 	28	3685	28	3685	56	4873	142	04:49	Yumel The Lightkeeper.o2SE	Kotoko 	
-156	Hikaru Nara	76	8263	76	8263	76	8263	160	04:11	Wewoj	Goose House	
-157	Maware! Setsugetsuka!	63	5160	60	4841	63	5160	160	03:54	ÌïòÌòÑÎã¨&Rustin   	Í∏∞ÍµêÏÜåÎÖÄÎäî ÏÉÅÏ≤òÎ∞õÏßÄ ÏïäÏïÑ!       	
-158	[SHD] Christmas Memories	55	2275	55	2275	55	2275	170	01:46	MapleSyrup-	BeautifulDay	
-159	[SHD] Death Moon	46	4166	46	4166	46	4166	160	02:38	MapleSyrup-	SHK	
-160	Golden Time	54	5270	54	5270	54	5270	141	03:44	ÌïòÌòÑÎã¨   	Í≥®Îì†ÌÉÄÏûÑ    	
-161	Wan Wan Wan Wan N_1!!	49	5652	49	5652	49	5652	145	03:57	ÌïòÌòÑÎã¨   	Í∞úÏôÄ Í∞ÄÏúÑÎäî Ïì∞Í∏∞ÎÇòÎ¶Ñ         	
-162	Viva Happy	54	3994	54	3994	54	3994	148	03:33	Hahyeon::ÌïòÌòÑÎã¨   	Î≠êÏöî  	
-163	[SHD] Cross Time !!	48	3609	48	3609	48	3609	160	02:30	Niro-	Brandy	
-164	Cool Edition	20	2833	20	2833	64	5603	147	03:46	Yumel The Lightkeeper	Kuwatani Natsuko	
-165	Wicked Fate	62	3652	62	3652	62	3652	140	01:53	Fiea	M2U	
-166	Friend Shitai	75	5980	75	5980	75	5980	148	03:34	Í≤åÏù¥Îç∞Ïì∞    	"ÌïôÍµêÏÉùÌôú" OP Theme    	
-167	Hoshizora no Ima	79	6110	79	6110	79	6110	185	03:57	MonAmie	Âç†ÏèôÏòô   	
-168	Dango Daikazoku (Asterisk Remix)	71	6040	71	6040	71	6040	175	03:53	LCH	Clannad ED Remix ver.	
-169	Vocaloid Remix song	68	4619	68	4619	68	4619	190	02:43	MONAMIE	Ê≠å„ÅÑÊâã   	
-170	Save Your Smile	68	7704	68	7704	68	7704	140	04:15	Í∑úÎÖ∏(HYERI)  	S.I.D-Sound 	
-171	Candy Magic	66	3522	66	3522	66	3522	160	03:33	Alices	MIMI	
-172	[LN] Stargazer	67	3997	67	3997	67	3997	174	02:27	windrush123	Lime	
-173	Parousia -End version-	80	4641	80	4641	80	4641	177.77	02:52	Eleventh	Xi	
-174	[SHD] Milk Chocolate	54	4476	54	4476	54	4476	124	02:47	Niro-	BeautifulDay	
-175	[LN]Pure in Asia	72	7538	72	7538	72	7538	160	03:21	DJZMO	dBu	
-176	Be My Friend	52	3760	52	3839	52	3760	145	03:45	ÏóêÏóëÎî∞ ÌíÄÎ≤ÑÏ†ÑÏù¥Îã§        	Èö£‰∫∫ÈÉ®   	
-177	Crow Solace	90	4028	66	2852	90	4028	188	02:23	1 1 t h	m108	
-178	ANTI THE HOLIC	92	8168	92	8168	92	8168	170	04:14	Eleventh	RIN & RUKA	
-179	[SHD] %10	66	3544	66	3544	66	3544	130	02:02	Niro-	Pory	
-180	Dead End	79	7054	76	6872	79	7054	183	03:58	Masquerade7 - Âç†ÏèôÏòôÂç†ÏèôÏòôÂç†?   	È£õËò≠  	
-181	Asterism	77	3257	77	3257	77	3257	175	01:37	Discharge	ZUKI	
-182	sink to the deep sea world	82	7918	82	7918	82	7918	185	03:59	sankansuki	Chroma	
-183	Aqua Trytone	78	9482	78	9482	78	9482	183	05:40	HIGH	Halozy	
-184	Super Driver	86	7147	86	7146	86	7146	200	04:15	Nong	Aya hirano	
-185	Sleeping Terror	22	2791	22	2791	43	4377	154	04:21	Mr.Azaness007	dBu Music	
-186	Blue Bird	78	4611	78	4611	78	4611	152	02:33	Genesis	ÎÇòÎ£®ÌÜ† ÏßàÌíçÏ†Ñ 3Í∏∞ OP       	
-187	Mysterious Mountain	87	10164	87	10164	87	10164	185	05:17	Î∂ïÎ∂ïÏù¥ÏôÄÏÑπÏãúÎ∏êÏ¶à        	Demetori	
-188	Cinderella Romance (Full Version)	35	4857	35	4857	67	6946	174	05:14	Mr.Azaness007	Tatsh Feat. Hatsune Miku	
-189	XROSS INFECTION	80	4210	80	4210	80	4210	194	01:57	MonAmie	BlackY vs Yooh	
-190	Pastel Rain	72	6200	72	6200	72	6200	135	03:16	quicalid4	Sangatsu no Phantasia	
-191	Rebellion Anthem	13	1651	31	3817	60	6201	170	05:11	Mr.Azaness007	Yousei Teikoku	
-192	Infinite Orbit	7	645	16	1654	29	3408	144	04:43	Mr.Azaness007	FripSide	
-193	squartatrice	55	2549	65	2879	89	4317	180	02:14	1 1 t h	Miki Sayaka	
-194	One Room Sugar Life	70	4717	70	4717	70	4717	180	02:40	Flexo123	Minato Aqua	
-195	Ever Blue	14	2030	28	3866	56	5796	140	04:51	Mr.Azaness007	Hanon Hosho	
-196	Please, Give Me A Lover	62	4129	62	4129	62	4129	146	02:28	Nakano Yuko	Kkochpin	
-197	EOS	74	3855	74	3855	74	3855	175	02:32	ÏóêÏóëÎî∞!   	ginkiha	
-198	Discommunication Alien	39	4229	39	4229	39	4229	170	03:28	MapleSyrup-	Usada Pekora	
-199	AIR GOD - Full ver.	62	6354	62	6354	62	6354	180	04:26	Cirno.C (BMS Copy)	SHIKI	
-200	future my railgun	35	3619	64	5547	80	6296	152	03:40	ÏùåÎÖÑ&skin  	Fripside	
-201	Black Hole -IX-	55	6564	70	7368	85	8063	160	03:43	ÏùåÎÖÑ  	M1dy	
-202	Date a Live	33	3316	33	3316	54	4611	178	04:36	EvangelicZealous	Sweet ARMS	
-203	[LN]Heart	58	2719	58	2719	58	2719	135	01:44	 Todestrieb	Moe Shop	
-204	Pure in Asia	58	6310	58	6310	58	6310	160	03:21	ÏÑÄÎèÑÏö∞Íµ∞    	„Öã 	
-205	Zenbu Kimi ga Ita kara Shittanda	81	8640	81	8640	81	8640	185	04:16	ruka	Suzuki Konomi	
-206	World's End Dancehall	97	7254	97	7254	97	7254	171	03:33	th	‚òÜ Â∑°Èü≥„É´„Ç´&ÂàùÈü≥„Éü„ÇØ         	
-207	Futari no Honey Boy	27	2879	27	2879	39	4059	151	03:44	Mr.Azaness007	Ayana Taketatsu & Yuiko Tatsumi	
-208	The Chaostic World-Full version	65	9567	65	9567	73	10090	138	05:04	Vivace&ÏùåÎÖÑ  	Fripside	
-209	Paranoia -UG-	87	7290	87	7290	87	7290	150	03:49	Terion,Stella	soso	
-210	Smiling	73	4478	73	4478	73	4478	172	02:30	Lime	Unknown Artist	
-211	Glow in The Darkness	21	2212	41	3638	51	5909	145	05:04	Mr.Azaness007	FripSide	
-212	Overfly	9	1499	19	2738	33	3383	134	04:30	Exit	Êò•Â•à „Çã„Å™ („ÅØ„Çã„Å™ „Çã„Å™)         	
-213	[LN]Shukusai no Elementalia	70	5293	70	5293	70	5293	150	02:36	Rora-	Ni-Sokkususu	
-214	Disorder	76	3826	76	3826	76	3826	193	02:14	Remuring	HyuN feat. YURI	
-215	Isshin Furan (feat ill.bell nqrse)	73	6581	73	6581	73	6581	142	03:18	Enie	Reol	
-216	The Storm	16	1473	26	2108	41	2971	160	02:51	Î∂öÓÄäÏµúÏûá    	Yanni	
-217	Little Busters! -Ecstacy Ver.-	69	6675	69	6675	69	6675	151	04:47	Genesis	Rita	
-218	MILLION KNIFE	88	6036	88	6036	88	6036	165	03:03	LAST EPISODE V	COOL&CREATE	
-219	Kyouki Ranbu	77	3708	77	3708	77	3708	230	02:26	Niro-	LeaF	
-220	[SHD] Lonely Song	68	3305	68	3305	68	3305	130	01:51	MapleSyrup-	BeautifulDay	
-221	Fortuna on The Sixteenth Night	13	1679	24	2903	35	4072	146	04:36	Mr.Azaness007	FripSide	
-222	Kikai Shoujo Gensou	86	5284	86	5284	86	5284	143	03:01	NewsTimeK	Â¶ñÁ≤æÂ∏ùÂúã    	
-223	Neurotoxin	91	2709	91	2709	91	2709	180	02:13	BMS	ÂâäÈô§   	
-224	I'm so Happy	73	2257	73	2257	73	2257	181	01:38	JUBEAT HARD COLLECTION	Ryu‚òÜ 	
-225	%%	73	3990	73	3990	73	3990	145	02:24	discharge	apink	
-226	Towa no Kizuna x1.1	87	6355	53	4233	87	6355	158	03:16	Ïï§Î∏î,Ïò§Ìà¨Í∑ÄÏ∞ÆÏùå       	Daisy x Daisy	
-227	Kaguyahime	87	9260	87	9260	87	9260	154	04:22	Schoolgirl	Hatsuki Yura	
-228	Marisa Stole The Precious Mahjong Things	86	8617	86	8617	86	8617	170	03:32	Schoolgirl	IOSYS	
-229	Sword of Virgin	87	9310	87	9310	87	9310	149	04:29	Í∑ÄÏ∞ÆÏùå+W&B   	fripside	
-230	Grimm (Kobaryo's FTN-Remix)	84	6341	84	6341	84	6341	200	03:42	Destiny19	RoughSketch feat.Aikapin	
-231	Calamell Dansen	82	4321	82	4321	82	4321	180	02:40	Nong	x1.2x1.05	
-232	Dead End	83	4475	83	4475	83	4475	183	02:27	TH	È£õËò≠  	
-233	Crystallized	83	6920	83	6920	83	6920	174	03:39	Destiny19	Camellia	
-234	Far east nightbird	87	3333	18	1199	87	3333	180	01:57	JUBEAT HARD COLLECTION	Áå´ÂèâMaster  	
-235	AREA 51	22	1330	35	1945	79	3139	187	01:45	ÏùåÎÖÑ  	96	
-236	Fantasia	76	3579	32	1328	76	3579	165	01:47	Vol.8	Jubeat	
-237	Snow Storm	5	388	21	1245	35	2192	145	02:15	Eyeson	DJ TAKA	
-238	Spring of Dreams	79	8195	79	8195	79	8195	153	04:42	KNH**	3L	
-239	Imaginary Forest	77	7207	77	7207	77	7207	180	04:10	WhiteAndBlack	„Åò„Çì(Ëá™ÁÑ∂„ÅÆÊïµP)      	
-240	True Blue	77	3472	77	3472	77	3472	164	02:01	TH	Unknown Artist	
-241	O p h e l i a	88	3577	88	3577	88	3577	178	02:14	@	KBP - 2011	
-242	subconsciousness	66	3221	61	2803	66	3221	136	02:28	KEHC	Âç†ÏéàÎßêÂç†ÏèôÏòô ??      	
-243	Halcyon -Long Version-	80	6654	55	6654	80	6654	191	05:07	ELEVENTH	xi (191.00 / 152.80)	
-244	ZZ	76	3535	76	3535	76	3535	154	01:52	lms1065 :: Sub	D.J.Amuro	
-245	Pray's Color	76	9353	76	9353	76	9353	160	05:13	WhiteAndBlack	ÎßàÏãúÎ°úÏÑ¨Î®∏ OP     	
-246	Blue Idea	84	4678	55	2967	84	4678	189	02:48	WhiteAndBlack	u-f sequencer	
-247	Finding shiners	76	5145	73	4345	85	4453	151	03:32	ÏÑÄÎèÑÏö∞Íµ∞    	[dBu Music]	
-248	Lexus cyanixs	82	4602	82	4602	82	4602	180	02:26	@	ÂâäÈô§ (2009)  	
-249	[SHD]The Festival of Ghost 2	58	3714	58	3714	58	3714	136	02:08	Niro-	Brandy	
-250	Little Braver	81	5320	81	5320	81	5320	128	03:16	TH	Girls Dead Monster	
-251	Black Hole-IV-	81	3349	81	3349	81	3349	180	02:05	ÏÇ∂‰ª∑ÌõôÔø°    	M1DY	
-252	ForgoTTen World	78	6140	78	6140	78	6140	160	03:38	TH	SOUND HOLIC	
-253	Level 5 JudgeLight	68	8201	63	8201	79	8307	146	04:10	HoNoR & Tasarr	BPM 146/139/146	
-254	Akasha	73	5365	73	5365	73	5365	185	04:21	Trapper	xi	
-255	Niji No Ressha	7	655	28	2540	68	4642	168	03:17	romnick100	NO NAME	
-256	Shoujo Vampire	81	7421	81	7421	81	7421	153	03:35	Schoolgirl	Oningyou ni Naritai (Yuuki Noel)	
-257	HOLOGRAM CIRCUS	72	2757	72	2757	72	2757	136	01:36	Schoolgirl	Omaru Polka	
-258	The Riddle Story	83	3525	83	3525	83	3525	175	02:24	HoNoR	Cranky	
-259	Skyclad Observer	77	7237	77	7237	77	7237	167	04:36	Mirror	„ÅÑ„Å®„ÅÜ„Åã„Å™„Åì      	
-260	Shinkai Shoujo	47	4543	47	4543	47	4543	137	03:36	Tasarr_	Miku (Vocal by Nobunaga)	
-261	Human Modification Part II	88	2181	88	3617	88	5133	166	02:01	Ï£ºÏò•Í∞ôÎã§    	Ïî®ÌåîÏùºÏñ¥ÎÇò Ïù¥Í±¥ÏßÑÏßúÎùºÍ≥†         	
-262	Connect	65	5527	65	4571	75	5527	175	04:27	Genesis	ClariS	
-263	[SHD] Bach Alive	44	2941	44	2941	44	2941	130	01:40	Niro-	BeautifulDay	
-264	[LN]Evans	83	3847	50	2278	83	3847	185	01:47	WhiteAndBlack	DJ Yoshitaka	
-265	Deaf to all but the Song Flower 	65	4310	65	4310	65	4310	165	03:16	Genesis	sound sepher (Jun.A)	
-266	Absolute Soul	87	3899	87	3899	87	3899	188	01:31	KEHC	Ïï±ÏÜîÎ£®Ìä∏ ÎìÄÏò§ OP      	
-267	Philosophyz	88	7189	88	7189	88	7189	160	04:50	Genesis	Mizutani Runa (NanosizeMir)	
-268	Windy Fairy	82	3778	82	3778	82	3778	180	01:58	3Î•ò 	DJ TOTTO	
-269	BAAM	58	6237	58	6237	58	6237	127	03:30	Schoolgirl	MOMOLAND	
-270	Fatally	50	4737	50	4737	50	4737	140	04:05	Î∏êÏ¶à,ÏßÄÏõÖÏù¥     	Duel savior	
-271	triple baka(Full version)	82	7140	82	7140	82	7140	180	03:54	ÏùåÎÖÑ  	Hatsune Miku,Kasane teto,Akita 	
-272	Lunar Dial 	10	996	30	2281	38	4201	138	02:52	Tasarr_	ZUN	
-273	Reason for Transcending	77	3637	77	3637	77	3637	178	01:54	Rocher	Unknown Artist	
-274	Girl Front	65	4642	65	4642	65	4642	140	03:15	Sanni	ODD EYE CIRCLE	
-275	Railgun Girl Days	61	4542	61	4542	61	4542	144	03:28	Genesis	Rina Sato	
-276	BACK FOR MORE	59	3100	59	3100	59	3100	130	01:56	CheolJu	Ïò•Í≤ΩÏù¥Î≤†Ïù¥Î≤†      	
-277	Electric Butterfly	83	4974	83	4974	83	4974	185	02:17	Rocher	e	
-278	Light My Fire	83	5469	83	5469	83	5469	186	03:48	lms1065 :: Sub	KOTOKO	
-279	SILHOUETTE (Naruto OP16)	59	1956	59	1956	59	1956	183	01:31	CheolJu	KANA BOON	
-280	Black or white	65	3395	65	3395	65	3395	185	02:00	Rocher	blackyooh siromaru	
-281	ZERO!!	79	6035	79	6035	79	6035	182	03:58	Rocher	0	
-282	Kagefumi	87	6724	87	6724	87	6724	174	03:55	DJ	nano.RIPE	
-283	Colorful Cookie	21	1295	79	3186	79	3186	180	01:57	LCH	Lucky Vacuum	
-284	Divine Intervention	73	5148	73	5148	73	5148	177	03:31	LCH	ÏúÑÏπò ÌÅ¨ÎûòÌîÑÌä∏ ÏõåÌÅ¨Ïä§ OP         	
-285	Fragment of Tears	50	2349	80	3481	80	3481	175	02:06	ÌÅ¨ÌÅ¨ÌÅ≠...   	SYNC.ART'S	
-286	Avalon no Oka	72	3489	72	3489	72	3489	158	01:53	Niro-	Nekomata Master	
-287	Magicaride	72	6666	72	6666	72	6666	173	04:24	WhiteAndBlack	fripside	
-288	Grand Blue	25	2336	34	3955	41	6022	120	04:24	nightshroud	fripSide	
-289	Sirius	73	7195	73	7195	73	7195	176	04:23	ÌôîÏï§Î∏î&Î°úÎ¶¨ÏΩò      	ÌÇ¨ÎùºÌÇ¨ OP   	
-290	TSAR BOMBA	78	4218	78	4218	78	4218	190	02:01	LCH	L.E.D	
-291	We Are Electric	44	4263	44	4263	44	4263	130	03:51	nightshroud	Flying Steps	
-292	Luminous Sword	15	686	32	1626	54	3246	150	02:29	nightshroud	Kajiura Yuki	
-293	Fight!	12	536	34	1561	88	3826	177	02:03	nightshroud	Kajiura Yuki	
-294	Decade	20	2931	40	5641	74	8906	154	06:31	nightshroud	fripSide	
-295	Scarlet Faith	71	5307	71	5307	71	5307	151	03:17	LCH	Nakamura Meiko	
-296	Late in Autumn	26	3796	36	5216	83	7321	143	05:39	nightshroud	fripSide	
-297	Reunion	74	3469	74	3469	74	3469	184	02:03	lms1065 :: Sub	Tatsh	
-298	Kawaru Mirai	75	5566	75	5566	75	5566	167	04:06	lms1065	ChouCho	
-299	LUVORATORRRRRY! 	65	4575	65	4575	65	4575	128	03:24	LCH	reol	
-300	Decade -Another-	41	5959	41	5959	41	5959	140	07:10	nightshroud	fripSide	
-301	flower of bravery	76	6235	76	6235	76	6235	152	03:58	Royal777	FripSide	
-302	Black Bullet(TV size)	20	1076	65	2105	65	2105	155	01:32	LCH	fripSide	
-303	Seraphim	68	3365	68	3365	68	3365	186	01:59	MONAMIE	Yooh	
-304	Kasanaru Kage	69	6616	69	6616	69	6616	149	04:48	Genesis	Hearts Grow	
-305	Future Gazer -Another-	28	2941	28	2941	40	4321	152	03:37	nightshroud	fripSide	
-306	I wanna be a girl	54	6506	50	5280	54	6506	140	03:54	LostCool	Mafumafu	
-307	Alice in Rosso	12	881	34	3011	46	4882	140	04:07	nightshroud ft. Mr.Azaness007	fripSide	
-308	ELPIS	67	3335	67	3335	67	3335	175	02:11	rocher&whiteandBlack	dj TAKA	
-309	Sister's Noise	22	2939	38	4621	73	7196	144	04:23	nightshroud	fripSide	
-310	Daily-Daily Dream	24	2165	38	4900	73	7000	170	05:10	nightshroud	KOTOKO	
-311	Follow Tomorrow	51	2397	51	2397	51	2397	140	02:02	TH	HHHxMMxST	
-312	Eternal Reality	28	1371	48	5101	48	5101	145	03:47	nightshroud	fripSide	
-313	Sacrament of Wilderness	46	4566	46	4566	75	6361	145	04:10	nightshroud	Nightwish	
-314	Fortissimo -From Insanity Affection-	22	2252	35	4504	52	6316	150	04:48	nightshroud	fripSide	
-315	Memory of Snow	19	2271	35	3866	85	6326	175	03:34	nightshroud	fripSide BPM[125/150/175]	
-316	Black Bullet	84	7734	84	7734	84	7734	155	04:29	Ïπ¥ÎÇòÏÇ∞ÎèÑ&ÌòúÎ¶¨      	Fripside	
-317	IGNITE	86	3357	86	3357	86	3357	171	01:31	KEHC	ÏïÑÏò§Ïù¥ ÏóêÏù¥Î£®      	
-318	Chikyuu Saigo no Kokuhaku o	86	5989	70	4379	86	5989	190	03:22	WhiteAndBlack	kemu	
-319	Utakata, Ai no Mahoroba	6	654	24	1861	38	3341	155	03:54	nightshroud	Iceon ft. Senya	
-320	Akatsuki Zukuyo	69	6179	69	6179	69	6179	180	04:35	Destiny19	HoneyWorks	
-321	Paranoia	77	7337	77	7337	77	7337	150	03:49	Terion,Stella	KanoÔºàÈπø‰πÉÔºâ    	
-322	Tsuki ni Murakumo Hana ni Kaze	22	1883	32	3097	40	4014	160	04:15	Lenye	Senya	
-323	498 Tokio	78	5926	78	5926	78	5926	195	03:47	LCH	Hige Driver	
-324	This game	84	7667	84	7667	84	7667	161.7	04:15	SubTitle_ // ÌòúÎ¶¨  	No Game No Life 01 OP	
-325	ALRIGHT*	78	6729	78	6729	78	6729	184	04:07	Kanasando	Hagiwara Yukiho	
-326	AiAe	11	686	24	2506	37	4017	180	03:58	Lenye	Yuyoyuppe	
-327	Borealis	86	3693	86	3693	86	3693	196	01:51	Rocher	ginkiha	
-328	COMA	73	4547	73	4547	73	4547	180	03:44	LCH	ensou feat.GUMI	
-329	Halcyon -Miracle-	84	6103	55	3790	84	6103	191	02:40	Trapper	xi	
-330	Natsu Matsuri	73	6173	73	6173	73	6173	141	04:01	Kanasando	Takatsuki Yayoi	
-331	Creamy Sky	98	4256	98	4256	98	4256	190	01:53	nightshroud	BTB	
-332	True Administrator	82	6843	82	6843	82	6843	163.01	03:30	Trapper	ZUN	
-333	Calc.	74	6697	74	6697	74	6697	173	03:55	LCH	Jimmy-Thumb P	
-334	[LN]Snow Storm	67	4207	67	4207	67	4207	145	02:19	ÔºÇÏØ∞Ô¶îÎß≥Ïπ®„Äì      	DJ TAKA	
-335	Gigantic O.T.N. GIGA H	79	5636	79	5636	79	5636	180	03:38	ÌïòÌòÑÎã¨::Hahyeon   	ÎÆ§ÏÖÄÎïÖÎã§Ïù¥Ïä§ÌÇ§       	
-336	Palette	94	8490	94	8490	94	8490	180	03:46	rocher	hanatan	
-337	[SL]Air-GOD	62	6733	62	6733	62	6733	180	02:26	ÏùåÎÖÑ  	shiki	
-338	Nippon Egao Hyakkei	80	6443	80	6443	80	6443	160.01	03:55	Ïπ¥ÎÇòÏÇ∞ÎèÑ    	Ê°ÉÈªë‰∫≠‰∏ÄÈñÄ      	
-339	Sora	71	6167	71	6167	71	6167	168.04	04:05	Ïπ¥ÎÇòÏÇ∞ÎèÑ    	Ïò§ÌÜ†ÎÇòÏãú ÏΩîÌÜ†Î¶¨       	
-340	Artificial Rose	75	3449	75	3449	75	3449	175	02:38	Discharge&LCH	Ïù∏Í≥µÏû•ÎØ∏    	
-341	Colorful Skies	70	2772	70	2772	70	2772	146	01:57	lms1065 :: Sub	3R2 (Cytus)	
-342	Cage Breaker	69	5721	69	5721	69	5721	180	03:42	ÏùåÎÖÑ  	SID sound(Elika)	
-343	Vajra	84	4345	84	4345	84	4345	173	02:02	Ï¢ÖÏàòÏùòÍ∑πÏÑ±ÏïàÌã∞Ìå¨        	DJ TOTTO VS ÂÖéÂÖé  	
-344	Pa-Pi-Pu-Yeah!	77	3057	77	3057	77	3057	160.02	01:48	Ïπ¥ÎÇòÏÇ∞ÎèÑ    	ÌûàÍ≤åÎìúÎùºÏù¥Î≤Ñ      	
-345	Nine Point Eight	70	3200	46	1921	70	3200	164	02:28	ÎÖ∏Ìä∏Ï∞çÎäîÏÇ¨Îûå      	Mili	
-346	Miiro	84	5605	84	5605	84	5605	195	03:00	SubTitle_	AKINO from bless4 	
-347	Our Ship	63	5607	63	5607	63	5607	144	04:04	LyChee	Maika	
-348	Oboro	78	5496	78	5496	78	5496	149	03:15	Erox	HHH & MM & ST	
-349	Blossoming Flowers	43	4180	43	4180	43	4180	138	03:42	Ken Yu	Senya	
-350	Preserved Valkyria	71	3410	71	3410	71	3410	146.67	02:05	CheolJu	„Å∫„ÅÆ„Çå„Çä    	
-351	Crisp	62	2758	62	2758	73	2901	175	02:07	Ken Yu	Yak Won	
-352	Kuusou Mesorogiwi	26	2714	26	2714	43	4339	230	03:57	Ken Yu	Yousei Teikoku	
-353	[SHD]%E - XT [O2 HDMIX]	19	1375	25	1735	40	3337	130	02:01	FF Ken Yu	Pory	
-354	AiAe	92	8647	92	8647	92	8647	180	03:58	KEHC	yuyoyupe	
-355	Tough & Alone	72	4001	72	4001	72	4001	150	02:56	LÂç†ÏèôÏòôGÂç†Ïèô     	MYTH & ROID	
-356	TRIGGER HAPPY	65	2681	65	2681	65	2681	185	01:54	LCH	P*Light	
-357	Fairytale	86	8491	86	8491	86	8491	194	05:01	‚ô• 	buzzG(feat.„Éè„Ç∞)  	
-358	ET - Cooled Edition !!	79	7373	79	7373	79	7373	157	03:29	Ken Yu	Natsuko Kuwatani	
-359	Kotoba Tsunagi	17	1725	34	3483	56	4706	176	04:18	Ken Yu	Hanatan	
-360	Knew Day	74	7140	74	7140	74	7140	150	03:52	Niima	(K)NoW_NAME	
-361	Rakuen Project (TV Size)	64	3039	64	3039	64	3039	135	01:36	Royal777	Ray	
-362	Reunion - Clear Version	22	1383	22	1383	59	4381	183	02:03	Mr.Azaness007 and Ken Yu	Tatsh	
-363	school O.T.N. GIGA H	71	5636	71	5636	71	5636	180	03:38	ÌïòÌòÑÎã¨::Hahyeon   	ÎÆ§ÏÖÄÎïÖÎã§Ïù¥Ïä§ÌÇ§       	
-364	Last Fortune	49	5895	49	5895	49	5895	148	04:32	Ken Yu	?Î∫õÍ∫Å?ÍªÅÍπ§?ÎìêÍ∂é??      	
-365	Joker - Another	45	3294	45	3344	84	5020	184	02:10	Eleventh and Ken Yu	DJ Nero	
-366	Crow Song	57	4950	57	4950	76	5270	174	03:22	Ken Yu	Girls Dead Monster	
-367	NX - Crossing Field	43	4775	56	5988	71	6633	184	04:01	Ken Yu	LiSA	
-368	Snowscapes	72	2901	72	2901	72	2901	179	01:41	rocher	ginkiha	
-369	Dear You	84	5144	84	5144	84	5144	174	01:58	KEHC	DJ Genericname	
-370	KOKORO-Game box	68	6600	68	6600	68	6600	185	04:00	ÏùåÎÖÑ  	Hatsune Miku	
-371	Take Off	35	3433	35	3433	35	3433	132	03:22	Ken Yu	2PM	
-372	Gate Openerz!	40	4357	40	4357	40	4357	199	04:23	Ken Yu and Thor	DJ Sharpnel	
-373	Knew Day -Another-	62	6128	62	6128	62	6128	150	03:52	Niima	(K)NoW_NAME	
-374	Yume (HGS Edition)	90	5851	90	5851	90	5851	190	03:15	Ken Yu	Devilish-P feat Gumi	
-375	Holography (HGS Edition)	85	7345	85	7345	85	7345	200	04:15	Ken Yu	Devilish-P feat Gumi	
-376	Hidamari Days	36	5932	36	5932	36	5932	134	04:36	Zenonia	SisterS	
-377	Cycle Hit	77	6279	77	6279	77	6279	175	03:38	Destiny19	KASAI HARCORES	
-378	Burst the Gravity	73	7423	73	7423	73	7423	148	04:27	Í∑úÎÖ∏(ÌòúÎ¶¨)    	ALTIMA "Accel World OP2"	
-379	HAELE III ~Angel Worlds~	75	3539	75	3539	75	3539	185	02:10	KIWI & misSky	Yu_Asahina ft. Ritsuka	
-380	Doro no Bunzai de Watashi dake no Taisetsu o Ubaouda nante	83	7200	83	7200	83	7200	225	03:10	MapleSyrup-	TUYU	
-381	Itte.	76	6388	76	6388	76	6388	180	04:00	MapleSyrup-	Yorushika	
-382	Kan Saete Kuyashiiwa	75	7300	75	7300	75	7300	150	03:54	Luka	Zutto Mayonaka de Ii no ni.	
-383	Masquerade	64	3839	64	3839	64	3839	128	02:24	Royal777	M2U	
-384	Crystal World	81	4085	81	4085	81	4085	180	01:58	LCH	wa. remixed celas	
-385	STYX HELIX	73	5424	73	5424	73	5424	122.98	03:26	LunaticAnt	MYTH & ROID	
-386	Koi wa Chaos no Shimobe Nari	35	3376	57	6041	97	8724	158	03:57	corenik, snowkel, nightshroud	Tanaka Kero (MONACA)	
-387	Red -reduction division-	67	8178	67	8178	67	8178	135	04:37	Royal777	Unknown Artist	
-388	A Geisha's Dream (Extended Ver.)	50	3873	50	3873	50	3873	139.98	03:26	corenik	Naoki feat. SMiLE.dk	
-389	Can't Beat Airman	80	7755	80	7755	80	7755	175	04:26	WhiteAndBlack & ExiT	hanatan	
-390	Chain	79	6294	65	5663	79	6294	184.04	03:36	corenik	Back-On	
-391	Storm Flurry	15	751	45	1671	70	3782	145	02:19	corenik and nightshroud	potatomania	
-392	Koisuru*Uchuu Sensou!!	9	1079	54	3156	54	3156	200	02:07	corenik & nightshroud	PRIM	
-393	Koi no Uta	66	4571	37	3304	66	4571	168	03:27	corenik	Suzaki Aya	
-394	Colorful	64	4789	64	4789	86	6422	178	04:09	PrinceO2jam	ClariS	
-395	[SHD]Magic‚àûWorld 	78	4546	78	4546	78	4546	171	02:55	TH	Lyrics:Maon Kurosaki Music&Arra	
-396	Yasashisa no Riyuu	72	5564	83	4675	91	6262	177	04:16	Prikon & DJ & ExiT	Hyouka OST (ChouCho)	
-397	Who done it!	83	5048	72	4115	83	5048	154.9	02:34	ÏùºÎ†àÎ∏êÏ¶à    	ZUN	
-398	Nyan Cat	72	4592	72	4592	72	4592	142	01:55	Norjen	Unknown Artist	
-399	Cute Replain Great War	63	3169	63	3169	63	3169	180	02:12	WhiteAndBlack	Sound Sepher (Jun.A) 	
-400	New gravity	54	2615	54	2615	54	2615	154	01:44	1 1 t h	starving trancer	
-401	Love Kami	69	5871	69	5871	69	5871	174	03:54	Genesis	Rita	
-402	Niji wo Ametara	71	6873	71	6873	71	6873	123	04:24	Kanasando	fhana	
-403	Credens Justitiam 1.15x	70	5423	70	5423	70	5423	156	03:11	KenZ	Yuki Kajiura	
-404	Ima Suki Ni Naru	74	4425	74	4425	74	4425	170	02:59	Alices	Nobunaga	
-405	NEUROTOXIN	90	4637	90	4637	90	4637	180	02:36	Blanctorche	ÂâäÈô§  	
-406	Symphogear	82	8045	82	8045	82	8045	160	03:40	Fly	Takagaki Ayahi	
-407	Alteration	50	2120	75	4444	75	4444	160	02:45	Ê≠ªÊ≠ªÎØ∏Ïñë ÎÇòÎûëÍªò?       	ZAQ	
-408	Azu No Yozora Shoukaihan	87	6006	87	6006	87	6006	185	02:58	Kanasando	Tokonokoa	
-409	Muteki no Soldier	77	7606	77	7606	77	7606	210	05:03	Cuppp	Maeda Jun x Yanagi Nagi	
-410	Tsubomi	69	2143	84	2797	84	2797	184	01:44	LCH	Tatsumi Megumi (feat.Sano Hiroa	
-411	FINAL DREAMING	48	3053	48	3053	48	3053	150	02:35	Genesis	Creent, TY Brave	
-412	Rolling Girl	68	4728	68	4728	68	4728	195	03:14	Genesis,Eleventh	Aki Akane	
-413	Love-coloured Master Spark	82	7117	82	7117	82	7117	183.7	03:26	Genesis	ZUN	
-414	Voyage1969	60	4304	38	3159	60	4304	167	02:56	Genesis	ZUN	
-415	What The Hell	61	4587	61	4587	61	4587	150	03:43	Genesis	Avril Lavigne(2011)	
-416	Tok Tok (Feat. SOYA)	52	5590	52	5590	52	5590	130	03:52	Genesis	ÎßàÏù¥Ìã∞ ÎßàÏö∞Ïä§ (Mighty Mouth)    	
-417	Reminiscing	34	2343	34	2343	34	2343	175	02:14	Reba	Shoujo	
-418	Reunion	92	5080	92	5080	92	5080	184	01:58	HIGH	Tatsh	
-419	Omega Rhythm	94	6506	94	6506	94	6506	173	03:00	Nope	Request REA	
-420	Hitomi no tsubasa	32	2500	45	3750	58	5000	144	03:33	Exit	access	
-421	Nagisa's Little Devil -Lovely Radio-	21	1284	43	2148	63	3591	190.04	01:51	ExiT	Jubeat Saucer	
-422	[SHD]Nagisa's Little Devil -Lovely Radio-	48	2481	72	3788	83	4266	190.04	01:51	ExiT	[ÏÜåÏïÖÎßà] Jubeat Saucer   	
-423	Be Starters!	88	6265	88	6261	88	6261	168.04	03:54	ÏÑ∏ÎìúÍ∏∞   	Mayo Chiki! OP	
-424	[LN]Voyage1969	81	7408	81	7408	81	7408	167	02:53	Genesis (LN Edit by hh27v5)	ZUN	
-425	One Day	62	6226	62	6226	62	6226	178	04:20	ExiT	The ROOTLESS [ÏõêÌîºÏä§OP]   	
-426	Fool On The Fool	72	7170	72	7170	72	7170	155.4	04:15	Genesis / Eleventh	ÈªëÁôΩ‰∫åÈáçÊØÜÊâì      	
-427	Fortissimo -The Ultimate Crisis-	20	2934	36	5261	51	5705	145.5	04:55	Genesis	fripSide	
-428	Chronos no Mori (Easy Ver)	67	6270	67	6882	67	6882	180	03:13	Genesis	Suzuki Saeko with TOMISIRO	
-429	Go to McDonald!!	49	1599	49	1599	49	1599	131	02:27	Bephilops & Sequencer	McGiygas	
-430	Say A Vengeance	77	4320	60	3289	77	4320	185	02:20	ExiT & WhiteAndBlack	Etia	
-431	Mellow Melody	83	6000	83	6000	83	6000	105	03:53	StelLaÏúÑÎÑà(Windy)  	Sola Ending-Full ver	
-432	Destin Histoire	69	6447	56	5405	69	6447	166	04:20	Genesis	yoshiki*lisa	
-433	Quad Queens	72	3860	72	3860	72	3860	157	02:03	MonAmie	DJ.Nero	
-434	Trip - innocent of D -	86	9292	74	7285	86	9292	164	04:17	ExiT & AyamTelur	Larval Stage Planning	
-435	Strength of a Thousand Men	96	4916	96	4916	96	4916	174	02:12	PrinceO2jam	Two Steps From Hell	
-436	Dancing in the velvet moon	40	4799	40	4799	73	6075	140	04:30	DJZMO	Nana Mizuki	
-437	Sense	75	6050	75	6050	75	6050	168	04:11	HIGH	Kawada Mami	
-438	Emerald Sword	1	4	35	4500	43	4939	180	05:34	host112	Rhapsody	
-439	Starlog	75	7630	55	5022	75	7630	168	05:01	WhiteAndBlack	ChouCho	
-440	Six Trillion Years And Overnight Story (Kano)	24	2577	80	4476	85	5469	186	03:38	TH	kemu feat. Kano	
-441	Burst The Gravity	36	4552	46	6596	76	9884	148	04:25	Ïò§Ìà¨Í∑ÄÏ∞ÆÏùå     	Altima	
-442	[SHD]irony	58	2904	58	2904	58	2904	134	03:06	Genesis	Claris	
-443	Carry Me Away (Extended Mix)	72	7725	72	7725	72	7725	175	03:58	Destiny19	lapix	
-444	Let Me Hear	21	1051	32	1409	40	3725	184	03:46	MR.CHONG and Tree	Fear, and Loathing in Las Vegas	
-445	Sanctity	75	2999	75	2999	75	2999	143	02:18	TH	Rabpit(2012)	
-446	Other Side	70	4836	70	4836	70	4836	168	03:35	moni & Cuppp	FELT	
-447	Akasha	90	7591	25	2500	90	7591	185	04:23	WhiteAndBlack	Xi	
-448	REANIMATE	78	4028	78	4028	78	4028	174	02:31	Destiny19	Warak	
-449	Goldrop [ Neverland ]	69	5322	69	5322	69	5322	146	03:56	Destiny19	MAIKA	
-450	Two Faced Lovers	25	2845	25	2845	67	4284	159	03:09	Krustycrab & Ishimaru94	Hatsune Miku	
-451	Complex Image	71	5673	71	5673	79	6480	158	02:54	Genesis	Î≤ΩÎÅÖÏ∏§ÌèΩË£ÇÁèÇ      	
-452	Yellow head joe	84	2975	23	1534	84	2975	187	01:36	TH	S-C-U	
-453	[LN]True Blue	37	1090	40	1932	85	5634	164	02:10	Rustin	dj TAKA feat.AiMEE	
-454	RAKUEN Project	78	8100	78	8100	78	8100	162	04:04	Sub // WhiteAndBlack	To LOVE„Çã Trouble ~Darkness~ 	
-455	Dance of puNDarika 1.2x	74	6560	74	6560	74	6560	162	03:51	Genesis eleventh	Demetori // 1.2x	
-456	SHOOT!	80	8176	80	8176	80	8176	141	04:43	HIGH&Xyrlsz	RO-KYU-BU! 	
-457	Mr.Brightside	84	7860	84	7860	84	7860	148	03:44	Genesis	The Killers	
-458	Tiny Little Adiantum	67	7554	67	7554	67	7554	186	05:02	LostCool	Shibayan Records (3L)	
-459	Real Force	70	5579	70	5579	70	5579	168	03:43	ÏùåÎÖÑ&Î∞îÎûåÏù¥     	ELISA	
-460	Alice in Misanthrope	72	4326	72	4326	72	4326	172	02:25	Destiny19	LeaF	
-461	Heaven Is A Place On Earth	50	4120	60	5770	78	6866	166	04:15	nightshroud	fripSide	
-462	Kotonoha Clinic	70	5918	70	5918	70	5918	151	03:22	sana	Unknown Artist	
-463	Lucid	13	1012	32	1584	50	2281	175	01:55	CRS	DJ-EZ2DJ	
-464	Oceanus	98	7930	98	7930	98	7930	196	04:11	KIWI	CosMo@Êö¥Ëµ∞P  	
-465	Q&A Recital!	81	8100	81	8100	81	8100	182.04	04:50	lms1065 & ExiT	Haruka Tomatsu	
-466	Balance Doll	65	5670	65	5670	65	5670	145	04:21	Genesis	Prague	
-467	Wagamama Mirror Heart	87	9192	87	9192	87	9192	181	04:28	jakads	È∏ö„é™Ï∞áÂ£§‚ë∂Ï¨Ç      	
-468	Amphisbaena	75	4426	75	4426	75	4426	185	03:23	nightshroud	Mitsuyoshi Takenobu no Ani	
-469	Koi Yomi Zakura	71	3333	71	3333	71	3333	168	02:15	LCH	loos	
-470	Only My Railgun	14	1087	24	2178	44	5648	143	04:15	D12rwin	fripSide	
-471	Mirai Nostalgia	66	5678	66	5678	66	5678	164	04:41	Ïï§Î∏î & ExiT  	Ê©ãÊú¨„Åø„ÇÜ„Åç(ÎØ∏ÎûòÎÖ∏Ïä§ÌÖîÏßÄÏïÑ OP)   	
-472	Archangel	78	4941	63	3525	78	4941	160	02:34	Sibokab_182	Two Steps From Hell	
-473	Outskirts of the Battle	79	13438	79	13438	79	13438	156.12	04:59	Trapper	Âç†Ïèô  	
-474	Mynarco	78	3355	78	3355	78	3355	181	01:47	LCH	positive MAD-crew	
-475	Choose me Darling	77	7922	77	7922	77	7922	150	03:56	Un.Reimu	Stylips	
-476	Innumerable Eyes	95	9451	95	9451	95	9451	190	04:24	Ex2jam Áúû-Boss 3 	Demetori	
-477	Mmmmmmm	90	7300	90	7300	90	7300	192	02:46	Un.Reimu	DJ Sharpnel	
-478	Penguin	95	3815	95	3815	95	3815	170	01:36	Cuppp	Randy Mortimer	
-479	Ordinary World	78	5356	78	5356	78	5356	174	03:37	Cuppp	Meiko Nakamura	
-480	PONPONPON	70	3767	70	3767	70	3767	170	02:40	Cuppp	Twintale	
-481	Black Hole -III-	83	5489	83	5489	83	5489	165	03:20	ÏÇ∂‰ª∑ÌõôÔø°    	m1dy	
-482	sugar sweet nightmare	80	6930	80	6930	80	6930	166	04:44	Genesis	ÁæΩÂ∑ùÁøº (CV.Â†ÄÊ±üÁî±Ë°£)       	
-483	HIGHSCHOOL OF THE DEAD	68	4149	68	4149	68	4149	190	03:21	Genesis	Kishida Kyoudan & THE Akeboshi 	
-484	Otenba Renjyo	77	3048	77	3048	77	3048	168	02:06	Tangjinxi	Touhou "Canon"	
-485	Return to Universe	76	3866	76	3866	76	3866	170	02:01	KNH**	Memme	
-486	unfinished	69	4774	69	4774	69	4774	146	03:18	TH	KOTOKO	
-487	[LN]fffff [O2 Version]	8	754	17	1413	62	3468	138	01:40	Îï°Î®ÅÊ≤ΩÁ∂∫    	Five Hammer	
-488	DISCOTHEQUE	70	4859	70	4859	70	4859	143	04:01	Genesis	Rosario + Vampire Capu2	
-489	Refrain of the Lovely Great War	81	8020	81	8020	81	8020	146	04:00	Shadowkun	21	
-490	Half Step	73	6595	73	6595	73	6595	170	04:11	Sibokab_182	Livetune ft. Hatsune Miku	
-491	ANTI+THE-EuphoriaHOLiC	85	7923	85	7923	85	7923	180	04:14	Í¥¨Êµ¨P  	1 1 t h	
-492	EX.Aqua Trytone	99	9935	99	9935	99	9935	183	04:18	Genesis	Halozy („Åô„Åø„Åò„ÇÖ„Çì / Vo.„Åª„Åü„Çã) 	
-493	Border of Life	90	8427	90	8427	90	8427	156	04:20	Nong	dBu	
-494	Wind God Girl	80	4624	80	4624	80	4624	154.02	02:58	ZUN	jj	
-495	Border of Life ~Phantasm~	96	8469	96	8469	96	8469	160	04:22	ZUN	Âç†ÏèôÏòôÂç†ÏèôÏòôÂç†Ïèô?        	
-496	Schrodinger's Cat	23	1204	33	2098	48	2630	187	01:50	Glenn Joseph	Cait Sith	
-497	Euphoric field	52	3780	52	3780	52	3780	150	03:54	Genesis	ELISA	
-498	Chronos no Mori -battle mix-	85	7180	85	7546	85	7546	180	03:13	Genesis	Suzuki Saeko with TOMISIRO	
-499	volcanic	84	6762	57	3403	84	6762	191	02:15	DETRO	jz	
-500	Straight Jet	65	5718	65	5718	65	5718	154	04:32	Mirror&Genesis	Kuribayashi Minami	
-501	Moon -Last Destiny-	77	7816	77	7816	77	7816	156	04:32	Iris & Yumel Eleventh.	Dj Taka Featuring Erika Mochizu	
-502	INNOCENCE -=Full=-	83	8521	83	8521	83	8521	183	04:40	ExiT & WhiteAndBlacK	Ëóç‰∫ï„Ç®„Ç§„É´     	
-503	LUCID ~Another~	36	1800	52	2600	76	3800	175	02:00	ExiT	yak_won (EZ2ON)	
-504	Kanzen Kankaku Dreamer	97	8511	97	8511	97	8511	190	04:12	rocher	Unknown Artist	
-505	Mario Paint	71	4537	71	4537	71	4537	155	02:17	Akayro	ueotan	
-506	Toragara no Bishamonten	76	6235	76	6235	76	6235	149	03:30	Akayro	ZUN	
-507	Darlin' Dance	75	6537	75	6537	75	6537	153	03:23	Remuring x Flexo123 x ruka	Tsukino	
-508	Odo ru mizushibuki	78	4896	78	4896	78	4896	138	01:54	Akayro	ZUN	
-509	Kotoba Tsunagi	91	4860	91	4860	91	4860	176	02:18	MapleSyrup-	Hanatan	
-510	Lancelot ~ Flame of the Rebellion~	79	4824	79	4824	79	4824	206	02:04	Niro-	Penoreri	
-511	Ame to Petra	86	6700	86	6700	86	6700	195	03:11	quicalid4	Daidai Alice	
-512	Hajimete no Koi ga Owaru Toki	86	9604	86	9604	86	9604	180	04:51	quicalid4	Choucho	
-513	Recollection Endroll	83	8000	83	8000	83	8000	151	03:24	quicalid4	WaMi	
-514	Univer Page	84	8000	84	8000	84	8000	187	03:49	quicalid4	Mimori Suzuko	
-515	Septette for the Dead Princess	72	3755	72	3755	72	3755	145	02:16	Akayro	ZUN	
-516	Yoru ni Kakeru	74	7950	74	7950	74	7950	130	04:19	ruka	YOASOBI	
-517	Karma	70	7228	70	7228	70	7228	132	04:28	Remuring	Dareharu	
-518	Flowering	72	5477	72	5477	72	5477	148	03:44	Remuring	Dareharu	
-519	This Future (we didn't expect)	94	8758	94	8758	94	8758	180	04:14	Nakano Yuko	Camellia	
-520	dreamin' -happycore version	75	2600	75	2600	75	2600	190	01:44	Akaibito	AOiRO_Manbow with kagerow	
-521	Plumage	69	3367	69	3367	69	3367	190	02:23	qodtjr	brz1128	
-522	Lonely departure	37	2926	37	2926	37	2926	175	02:45	Wonki	Chroma	
-523	Vend	84	4154	84	4154	84	4154	128	03:02	spoonguy	Feryquitous	
-524	Hello Happiness	54	2670	54	2670	54	2670	182	01:45	araragigun	P*Light feat. mow*2	
-525	8bit Voyager	57	3451	57	3451	57	3451	182	02:15	qodtjr	Lime / Kankitsu	
-526	Tono Yokai Zensen	76	7900	76	7900	76	7900	180	03:36	Chenut BS	beatMARIO	
-527	Mad Moon Sonata	6	464	13	1112	23	1551	160	02:15	nao.paradigm	nao.paradigm	
-528	Gargoyle	9	782	15	1108	23	1539	150	02:35	_Spam	Sanxion7	
-529	PLASTIC GIRLS	6	477	13	879	24	1371	130	02:11	LucidKarn	wigen	
-530	Stunt Flying (O3 Remix)	6	470	12	868	24	1607	142	02:38	Ino	Sanxion7	
-531	Mermaid Girl -Eurobeat Remix-	5	422	20	1125	27	2034	150	02:11	Mr.Azaness007	Cream Puff & DJ Command	
-532	Winter In Wizard -Another-	4	464	15	1129	28	2253	148.4	03:07	Mr.Azaness007	Trans Siberian Orchestra	
-533	Motteke Sailor Fuku (REDALiCE Remix)	6	535	17	1616	32	2996	171	04:29	Mr.Azaness007	REDALiCE Feat. Lucky Star	
-534	[SHD]Eleventh Hour	7	461	10	637	32	1421	122	01:42	GMS	Hiro	
-535	Hana wa Odori Reya Iroha ni Ho	12	1112	22	2262	32	3720	160	04:05	Lenye	Team Hanayamata	
-536	Dareka Ga Nageta Ball	14	1001	31	4386	33	4201	132	04:59	[4A] Romnick100, ILSPQ & Tree	AKB48	
-537	Little Star	7	555	17	999	33	1789	183	01:59	Ken Yu	REDALiCE	
-538	Straight Jet	6	803	27	2647	33	3586	154	03:53	Romnick100 and Ken Yu	Minami Kuribayashi	
-539	Sweet Devil (Original)	35	3333	35	3333	35	3333	132	03:57	Ken Yu	Miku Hatsune	
-540	Meimetsu (inst)	4	344	12	948	36	1514	120	01:44	Pulse	Zakooon	
-541	Distorted Pain	7	451	14	841	37	5226	160	05:42	nightshroud & Lenye	Denkare	
-542	Fake or Fate	5	778	17	1748	37	3573	146	04:20	FF Ken Yu	Luka Migurine	
-543	Cyber Sparks	14	1181	21	2214	37	3500	192	04:03	Ken Yu	Tatsh	
-544	Blue Mind	9	1088	20	2488	38	3533	144	04:41	Ken Yu	Yui Sakakibara	
-545	Satori 3rd EyEs	9	716	28	1551	39	2586	191	02:33	nightshroud	Kucchi	
-546	Real Force - Another	21	2314	21	2314	39	3932	168	04:11	Mr.Azaness007 and Ken Yu	Elisa	
-547	Chase the World	22	1857	22	1857	40	4096	170	03:45	Ken Yu	May'n	
-548	Hishoku no Sora	6	813	20	1900	41	4493	169	04:16	Ken Yu	Mami Kawada	
-549	Midnight Lightning Bolt	5	633	23	1744	41	3502	155	03:10	Ken Yu	IOSYS	
-550	Jetstream!	5	776	24	2954	42	5371	170	04:30	romnick100	Dimrain47	
-551	Last Inferno	8	830	24	2466	45	4024	168	04:25	Mr.Azaness007	Ceui	
-552	Light My Fire	47	2975	47	2975	47	2975	186	02:35	Ken Yu	Kotoko	
-553	Crazy Hot	47	6103	47	6103	47	6103	162	05:19	PrinceO2jam	Touhou	
-554	Kachoufusetsu	10	1305	30	3505	54	6084	199	04:19	Ken Yu	Byakko	
-555	GIVE ME FIVE!	16	2743	39	5183	55	7300	190	05:01	romnick100	AKB48	
-556	MilchstraŒ≤e 	57	2457	57	2457	57	2457	189	02:01	Alices	Buluka & Nilo	
-557	Scarlet	57	1790	57	1790	57	1790	175	01:37	KNH**	Sakakibara Yui	
-558	FUNKY SUMMER BEACH	57	2697	57	2697	57	2697	175	01:46	misSky	P*Light	
-559	Special Summer Campaign	74	2487	74	2487	74	2487	168	01:44	Ïó¨Î¶ÑÏóî! Ìï´ÏÑπÏä§      	Lucky Vacuum	
-560	ANGEL DUST	74	4316	74	4316	74	4316	170	02:30	Snowkel	Lv.4	
-561	Quo Vadis	76	4617	76	4617	76	4617	160	02:26	Discharge	M2U	
-562	Kimi no Shiranai Monogatari	78	8347	78	8347	78	8347	165	05:38	Ryu x3	supercell	
-563	Super Lovely	30	1989	50	2990	78	3794	170	02:02	HolyO2	EarBreaker	
-564	Marchen Debut!	78	7445	78	7445	78	7445	170	04:31	Ïπ¥ÎÇòÏÇ∞ÎèÑ    	ÏïÑÎ≤† ÎÇòÎÇò    	
-565	Snow Prism	78	3333	78	3333	78	3333	196	01:52	LCH	Qripsy Joybox	
-566	Signal Graph	80	7338	80	7338	80	7338	167	04:41	Ryu X3	ÏÇ¨ÎûëÍ≥º ÏÑ†Í±∞ÏôÄ Ï¥àÏΩúÎ¶ø OP         	
-567	Macuilxochitl	66	2912	70	3251	79	3539	148	01:47	tomo	ze	
-568	Hoshi ga Matataku Konna Yoru ni	81	4978	81	4978	81	4978	182	03:49	SubTitle_	supercell	
-569	Hanarai	98	8237	98	8237	98	8237	180	04:07	HANU&LCH	style-3!	
-570	Byoumei Koi Wazurai	83	3634	83	3634	83	3634	160	02:57	Alices	HoneyWorks	
-571	Video Game Girl (ft. viewtifulda	83	6746	83	6746	83	6746	145	03:20	Destiny19	Vau Boy	
-572	Owari no Sekai Kara	84	8327	67	6265	84	8327	148	05:23	NOTERS GOT CRAZY‚ô• 	yanaginagii x Maeda Jun	
-573	CurTain Call MeMories	84	3729	84	3729	84	3729	173	01:50	ÌïúÏö∞  	DJ ToTTo & Qrispy Joybox	
-574	Vanitas	84	7007	84	7007	84	7007	200	04:22	Semin & W.B	Xi	
-575	Rebellion	84	6364	84	6364	84	6364	160	04:02	Ïπ¥ÎÇòÏÇ∞ÎèÑ    	Í∞ÄÎÇòÌïò ÌûàÎπÑÌÇ§      	
-576	Black Bullet	85	7734	85	7734	85	7734	155	04:29	Ïπ¥ÎÇòÏÇ∞ÎèÑ&ÌòúÎ¶¨      	Fripside	
-577	Precious ‚òÜ Star 	87	3440	87	3440	87	3440	178	01:53	‚òÖ 	toto	
-578	Toki (Sound piercer's Timesucker)	87	3985	87	3985	87	3985	184	02:27	Rocher	puru twk. sound piercer	
-579	Megalomania	86	7777	86	7777	86	7777	186.9	03:54	Genesis	Demetori	
-580	Mmmmmmm	85	6165	85	6165	85	6165	193	02:36	Destiny19	DJ Sharpnel	
-581	TIEFSEE	89	5433	89	5433	89	5433	165	02:19	Ïπ¥ÎÇòÏÇ∞ÎèÑ    	SOUND HOLIC Vs. dj TAKA feat. Y	
-582	Life Garden (Extended Mix)	89	10152	89	10152	89	10152	149	04:58	Destiny & Nana-'s Collaboration	Yooh	
-583	18.‰∫åËâ≤ËìÆËä±Ëù∂ ÔΩû Ancients ients)      	89	7177	62	5572	89	7177	160	03:21	ELEVENTH	ZUN	
-584	Raison d' Etre	90	7281	75	3894	90	7281	175	02:12	HoNoR	Zektbach(Beatmania)	
-585	pure ruby 	90	3240	90	3240	90	3240	178	02:12	ÏùºÎ†àÎ∏êÏ¶à    	SHIKI	
-586	Jidai Shoujo to Haikara Oyaji	96	10000	96	10000	96	10000	178	03:26	Ex2jam Áúû-Boss 1 	DBU Music	
-587	Dragon and Girl and Decoherence	91	3848	91	3848	91	3848	165	02:06	Discharge & KEHC	Èæç„Å®Â∞ëÂ•≥„Å®„Éá„Ç≥„Éí„É¨„Ö°„É≥„Çπ        	
-588	Last final	92	4730	40	2402	92	4730	200	01:39	ÏùºÎ†àÎ∏êÏ¶à    	ÌóàÏÑ∏Í≥°   	
-589	Necro Mangonia (No Ex2Jam)	92	11290	92	11290	92	11290	197.98	05:07	Crazy L-NGT	???	
-590	Athletic meet of sound toy	92	4855	92	4855	92	4855	190	01:53	TH	Mr.T	
-591	Festa Illumination	93	6666	93	6666	93	6666	170	03:16	Ïπ¥ÎÇòÏÇ∞ÎèÑ    	Matsuri Tokagawa	
-592	IGNITE [EASY PATCH]	93	7975	93	7975	93	7975	171	04:05	Í≤åÏù¥Îç∞Ïì∞    	Eir Aoi	
-593	Awakening Wolf's Instinct	94	5886	73	4542	94	5886	182	02:38	Eleventh	[ th10PH _ Boss ]	
-594	Preserved Valkyria	95	4183	95	4183	95	4183	146.67	02:05	LCH	„Å∫„ÅÆ„Çå„Çä    	
-595	Sigmund	95	4621	95	4621	95	4621	200	02:01	gram	Unknown Artist	
-596	God Knows -Eurobeat Remix-	36	3963	36	3963	58	6316	159	04:52	Apenix ft Ishimaru	Aya Hirano	
-597	Agony	57	3345	57	3345	57	3345	132	02:39	tangjinxi	KOTOKO	
-598	Ukigumo	65	3284	65	3284	65	3284	178	02:18	LCH	Hige Driver	
-599	Just Hold on (To All Fighters)	59	5778	59	5778	59	5778	170	04:27	Blocko	void	
-600	Synesthesia	86	7193	86	7193	86	7193	190	03:53	ruka	a_hisa	
-601	PEACE BREAKER	82	8428	82	8428	82	8428	160	04:51	Evening	xi	
-602	[LN]Saigetsu	65	5282	65	5282	65	5282	130	01:41	Genesis	ZUN	
-603	[LN]Seeker	40	1850	38	2045	38	2045	150	02:16	ÔºÇÏØ∞Ô¶îÎß≥Ïπ®„Äì      	ÔºÇÏØ∞Ô¶îÎß≥Ïπ®„Äì      	
-604	[LN]Canon O2 Version	39	2022	39	2022	39	2022	162	01:55	ÏÇ∂‰ª∑ÌõôÔø°    	Dr.Flowershirts	
-605	[LN]Xp„ÄÅWindows_ 	50	1788	50	1916	50	1788	110	01:27	ÔºÇÏØ∞Ô¶îÎß≥Ïπ®„Äì      	Devil	
-606	Only my railgun	47	2198	47	2198	47	2198	143	01:39	Genesis	fripSide	
-607	[LN]Go Beat Crazy	57	4864	57	4864	57	4864	155	03:15	WinTer	Â∫´Âå°‰øöDÎ∂ÅÏÑû     	
-608	[LN]Explosive 5	55	5305	55	5305	55	5305	144	03:27	WinTer	WinTer	
-609	[LN]Explosive 4	55	4054	55	4054	55	4054	110	03:33	WinTer	WinTer	
-610	[LN]Explosive 3	55	4546	55	4546	55	4546	131.96	03:21	WinTer	WinTer	
-611	[LN]Explosive 2	55	5118	55	5118	55	5118	146	03:14	WinTer	WinTer	
-612	[LN]Explosive 1	52	4118	52	4118	52	4118	114.87	03:12	WinTer	WinTer	
-613	[LN]Rage your dream	53	6546	53	6546	53	6546	119.96	04:35	WinTer	WinTer	
-614	[LN]Jack	53	3004	53	3004	53	3004	116	01:43	WinTer	WinTer	
-615	[LN]Temptation	54	4482	54	4482	54	4482	127	03:50	WinTer	WinTer	
-616	[LN]ÎºôÊã≥Ïì±Ïçπ    	52	3049	52	3049	52	3049	144	02:23	WinTer	WinTer	
-617	[LN]Âä§ÓÅô  	9	407	16	765	51	2012	151	01:56	ÔºÇÏØ∞Ô¶îÎß≥Ïπ®„Äì      	DM Ashura	
-618	[LN]Îã∏Áû≥  	53	2794	53	2794	53	2794	130	01:41	ÏÇ∂‰ª∑ÌõôÔø°    	Í≤ÉÎ∂ê  	
-619	[LN]Kimi Ga Suki Da To Sakebitai	4	345	13	856	30	1980	142	02:37	Îã∑ÎÇÄ  	BAAD	
-620	[LN]ÏÅëÏ∑ª  	25	1209	39	1590	63	2802	140	02:19	ÔºÇÏØ∞Ô¶îÎß≥Ïπ®„Äì       	ÔºÇÏØ∞Ô¶îÎß≥Ïπ®„Äì       	
-621	[LN]Â¢©Ïö∫Special  	49	2585	49	2585	59	2777	170	01:59	ÔºÇÏØ∞Ô¶îÎß≥Ïπ®„Äì      	ÔºÇÏØ∞Ô¶îÎß≥Ïπ®„Äì      	
-622	[LN]Go Berzerk	40	4633	40	4633	75	4254	172	01:58	ÔºÇÏØ∞Ô¶îÎß≥Ïπ®„Äì      	ÔºÇÏØ∞Ô¶îÎß≥Ïπ®„Äì      	
-623	[LN]A.D.K.S.	50	1964	50	1964	50	1964	138	01:47	ÔºÇÏØ∞Ô¶îÎß≥Ïπ®„Äì      	ÔºÇÏØ∞Ô¶îÎß≥Ïπ®„Äì      	
-624	[LN]ËΩüÊéòÈØ®Êø´    	50	1686	50	1686	50	1686	139.43	02:04	ÔºÇÏØ∞Ô¶îÎß≥Ïπ®„Äì      	ÔºÇÏØ∞Ô¶îÎß≥Ïπ®„Äì      	
-625	[LN]Japanese Transformation	126	9248	126	9248	126	9248	260	03:44	LN by LunaticAnt	DJ.Kurara	
-626	[LN]Ï∂©‰øÇÎè®Ô•ÅÊ∏õ     	59	3331	59	3331	59	3331	160	01:49	ÏÇ∂‰ª∑ÌõôÔø°     	Mephisto	
-627	[LN]Death Moon 2	46	3192	46	3192	46	3192	150	02:56	ÔºÇÏØ∞Ô¶îÎß≥Ïπ®„Äì      	WinTer	
-628	[LN]Winter Sun	53	4394	53	4394	53	4394	144	03:34	WinTer	WinTer	
-629	[LN]Fantasmic 1	57	4792	57	4792	57	4792	131.8	03:14	WinTer	WinTer	
-630	[LN]Fantasmic 2	52	2383	52	2383	52	2383	140	03:11	WinTer	WinTer	
-631	[LN]Fantasmic 3	54	3354	54	3354	54	3354	140	01:59	WinTer	WinTer	
-632	[LN]ÍøßÁäÅÌòì[Îâµ]Îí§ÂØßÏÅìË¶Ω        	80	4935	80	4935	80	4935	180	02:42	WinTer	44teru-k	
-633	[LN]Eastern Youkai Beauty	49	3588	49	3588	49	3588	163.5	02:29	HolyO2	ZUN	
-634	[LN]Doll's Garden	65	2617	33	1582	65	2617	160	01:39	ÏÑ∏ÎìúÍ∏∞&ÏùåÎÖÑ     	NoeL , IRA	
-635	[SL][171/188/205]World's end	45	7446	50	7446	65	7446	205	02:51	Rustin	V+	
-636	[LN]C.R.Y	59	3404	59	3404	59	3404	142	02:48	ÔºÇÏØ∞Ô¶îÎß≥Ïπ®„Äì      	Unknown Artist	
-637	AIR GOD - Full , Long note ver.	70	12708	70	12708	70	12708	180	04:26	Cirno.C (BMS Copy),Ï∞°ÏñºÏüÅÏù¥    	SHIKI	
-638	[LN]ÓÄ∏ÌÅΩÊöéÊã≥Ìòì     	30	2365	40	3207	75	5884	160	02:38	Ï´òÈØ§  	ÎïúÎ†ò  	
-639	[150/150LN/180]What The Hell	61	4587	67	6272	75	4587	180	03:40	Genesis	Avril Lavigne(2011)	
-640	[LN]U&I ~Yuuhi no Kirei Naano Oka de~~	26	596	26	596	26	596	151	01:49	corenik	Hyakkoku Hajime	
-641	[LN]Hidamari Days	74	8565	74	8565	74	8565	134	04:36	Zenonia	SisterS	
-642	[LN]Niji wo Ametara	76	8239	76	8239	76	8239	123	04:40	Kanasando	fhana	
-643	[LN]final phase	71	3520	71	3520	71	3520	149	01:36	Hoto Cocoa	Poppin' Party	
-644	[LN]Stella Breeze	77	8701	77	8701	77	8701	148	04:00	Lostcool	Haruna Luna	
-645	[LN]Ashita no Kimi sae Ireba Ii	75	9149	75	9149	75	9149	178	04:57	Hoto Cocoa	ChouCho	
-646	[LN]CLICK	77	8819	77	8819	77	8819	135	04:22	ExiT	ClariS	
-647	[LN]Best Day of My Life (Gazzo R	42	3678	42	3678	42	3678	125	03:12	ArcherLove	American Authors	
-648	[LN]Hanjuuryoku no Machi	83	7310	83	7310	83	7310	170	03:10	MisterLuka	Ayo	
-649	[LN]Ai no Scenario	86	9917	86	9917	86	9917	180	04:22	Evening	yuikonnu	
-650	[LN]ROSE-1	13	948	26	1514	70	3648	175	02:15	Azer.yuner	ÁÅåÂàó  	
-651	[LN]Gengaozo ET ver.	84	7776	84	7776	84	7776	153	02:43	ÏïµÎ™ΩÓÄ∏Ïæ®    	-45	
-652	[LN]Gengaozo	80	6090	80	6090	80	6090	153	02:43	ÏïµÎ™ΩÓÄ∏Ïæ®    	-45	
-654	[LN]Color Paradise	2	254	2	270	26	809	96	02:05	rickyboi.o2SE	Pory	
-655	[LN]Electro Fantasy	3	295	9	555	33	2102	140	02:15	rickyboi.o2SE	BeautifulDay  	
-656	[LN]Tree of Grief	58	2743	58	2743	58	2743	160	02:04	ÏÇ∂‰ª∑ÌõôÔø°     	DJ TAKA	
-657	[LN]Odin	82	6303	82	6303	82	6303	163	02:14	CoolDoggie	Shiraishi	
-658	[LN]Snow Storm (1.1x)	72	4206	72	4206	72	4206	159	01:58	ÔºÇÏØ∞Ô¶îÎß≥Ïπ®„Äì      	DJ TAKA	
-659	[LN]Snow Storm (1.2x)	77	4206	77	4206	77	4206	174	01:48	ÔºÇÏØ∞Ô¶îÎß≥Ïπ®„Äì      	DJ TAKA	
-660	[LN]Naked Dive	91	12933	91	12933	91	12933	158	06:46	_S h i r o_	SCREEN mode	
-661	[LN]Missing U	3	328	4	538	35	1381	83	03:13	Pory	Pory	
-662	[LN]Ice Angel	78	11321	78	11321	78	11321	168	06:00	pporse	Yooh	
-663	[LN]Love Mode	33	3247	33	3247	33	3247	95	03:42	Bibir	Audition	
-664	[LN]Blade	29	1708	29	1708	29	1708	115	01:52	Nds	BeautifulDay	
-665	Bokura no 16bit warz	92	8719	92	8719	92	8719	122	03:55	Niro-	SasakureP	
-666	Unit Beta	105	5833	105	5833	105	5833	175	02:10	1 1 t h	Ladymade corestar	
-667	Just Awake	108	8129	108	8129	108	8129	191	03:40	Rustin	Fear, and Loathing in Las Vegas	
-668	Emerald Sword	105	8073	105	8073	105	8073	180	04:18	ÏùåÎÖÑ  	Alex Staropoli	
-669	KAMUI	95	3083	95	3083	95	3083	210	02:03	TH	ez2dj	
-670	Rozen Vampir	100	8208	85	4863	100	8208	166	02:01	zelly	zelly's music()	
-671	[LN] True Administrator	60	5585	82	6843	94	11096	163	03:30	Trapper	Unknown Artist	
-672	Idola	109	4000	109	4000	109	4000	201	02:12	SubTitle_	iconoclasm feat.GUMI	
-673	INSIDE IDENTITY	102	6625	102	6625	102	6625	186	03:00	ÏÑ∏ÎìúÍ∏∞   	Ï§ë2Î≥ë  	
-674	Bright Stream	90	9134	90	9134	90	9134	158	04:08	Ken Yu	Nana Mizuki	
-675	Chase The World	90	7025	37	3857	90	7025	170	03:40	DJZMO (FR:PLM)	May'n	
-676	Crisp + Electro Fantasy	97	3767	97	3767	97	3767	162	02:00	Neul	Yak_won	
-677	Ops:Code-Rapture-	108	4634	108	4634	108	4634	195	01:52	yamis0f	Getty vs DJ.DIA	
-678	The Lunatic Princess	92	8134	61	6413	92	8134	183.72	03:43	ÏùºÎ†àÎ∏êÏ¶à    	dBu music	
-679	Andromeda	93	4062	93	4062	93	4062	147	02:05	Genesis	nao.paradigm	
-680	Jitter Doll	102	9000	80	8000	102	9000	180	03:57	KEHC	Î†àÏò§Î£®Îäî ÏÇ¨ÎûëÏûÖÎãàÎã§.         	
-681	A Solution for Jealousy	101	7008	101	7008	101	7008	190	03:39	Snowkel and Ken Yu	HoneyWorks feat ?ÎΩ≠Í∂ç  	
-682	Love & Justice [Hand Crusher]	1	3849	1	3849	93	3849	200	01:56	KEHC copy	„Éï„É≠„É≥ / „É©„Ç∫„Éô„É™„É´        	
-683	Miracle Hinacle (Eurobeat Mix)	105	10000	109	11572	105	10000	162	04:05	Norzhen	IOSYS	
-684	Perspicuus Aestus	80	3524	108	4480	108	4480	185	01:47	„ÖÖ„ÖÖÌïòÍ≥†Ïã∂ÏùÄ ÌïúÏö∞        	Ryusse	
-685	BLACK or WHITE	108	4113	108	3460	108	4113	185	02:02	C.HoNoR VS TH	BlackYooh VS Siromaru	
-686	Letter	106	4829	106	4829	106	4829	198	01:57	ÌïúÏö∞  	Sonz	
-687	Catharsis no Tsuki	103	6861	103	6861	103	6861	200	03:00	Ïπ¥ÌÉÄÎ•¥ÏãúÏä§Ïùò Îã¨       	„Å≤„Å™„Éì„Çø‚ô™     	
-688	IX	98	4073	88	3509	98	4073	198	02:02	Delly.K	DJ YOSITAKA vs DJ TOTTO	
-689	Calamity Fortune	101	6057	101	6057	101	6057	200.18	02:16	WhiteAndBlack	LeaF	
-690	Last Remote Type Gamma	104	9010	104	9010	104	9010	186	03:58	Paladin.o2NS	Dark PHOENiX (Dark PHOENiX)	
-691	LegenD.	104	4875	104	4875	104	4875	206	02:04	26Î≤à ÌòúÎ¶¨   	Yooh	
-692	Harpe for Gaia	115	5152	115	5152	115	5152	188	02:11	KEHC	ira	
-693	Melt	105	7663	105	7663	105	7663	170	04:20	Í≤åÏù¥Í∞ÄÎêòÎäîÎÇ†ÍπåÏßÄ        	supercell	
-694	JEWELS	111	4745	111	4745	111	4745	190	01:53	1 1 t h	sunkyest	
-695	M-A	114	4742	62	3243	114	4742	200	02:04	Nong	Musical Masterpiece	
-696	Creamy Sky	114	4720	114	4720	114	4720	190	02:12	Sibal....	G2R 2014	
-697	The Snow White Princess Is...	116	5805	116	3989	116	5805	200	03:12	Eleventh‚òÖ 	HatsuneMIKU‚òÜ 	
-698	Rubik's Cube	114	7433	114	7433	114	7433	174.01	03:21	Ïπ¥ÎÇòÏÇ∞ÎèÑ    	ÌïòÏ∏†ÎÑ§ ÎØ∏Ïø†     	
-699	Hana Maru Sensation	108	7656	108	7656	108	7656	190.04	03:49	Ïπ¥ÎÇòÏÇ∞ÎèÑ&ÌòúÎ¶¨      	Little Non	
-700	Youma no Yakou ~ Apparitions Stalk the Night	108	5977	108	5977	108	5977	160	03:01	ÏïÑÌÅ¨ÏïÑÌÅ¨ÎÑ§Ïä§      	DARK PHOENIX	
-701	Battle! Puppet Liberation Front	63	3956	73	4376	119	6040	158	02:47	Eleventh,TH,ÎñÑÎÇÑÏù¥   	ÏöîÏ†ïÎåÄÏ†ÑÏüÅ     	
-702	[SHD]KAMUI	121	3083	121	4710	121	4710	210	02:03	Îí§Ï†∏ „Öã„Öã    	ez2dj	
-703	Kaze ni naritai to omotta kodomo	94	8118	94	8116	94	8116	182	04:28	ÌÅêÏù¥  	Î∞§Ìë∏ÌåÖ   	
-704	Dream Walker (HN)	103	4619	103	4619	103	4619	215	01:46	Hiro	Unknown Artist	
-705	Morgenglut 2012	114	6207	114	6207	114	6207	190	02:05	KH	sun3	
-706	BEMERA	124	6364	124	6364	124	6364	210	02:40	TDs	Yahpp	
-707	405nm	110	3634	34	1957	110	3634	177	01:51	Vol.4	Jubeat	
-708	Invisible	134	8888	134	8888	134	8888	191.96	03:37	Ïπ¥ÎÇòÏÇ∞ÎèÑ    	ÌÜ†ÏΩîÎÖ∏ÏΩîŒ±     	
-709	Last Remote - Type Beta	128	7004	128	7004	128	7004	186	03:18	Eleventh	Dark PHOENiX / ÏÜêÌÜ±  	
-710	800nm	125	8888	125	8888	125	8888	180	02:41	ÎãàÍº¨Ï∂î 800nm   	ryuÏÉàÎÅº  	
-711	INSECTICIDE	136	4747	62	3737	136	4747	199	02:10	C.HoNoR	Camelia	
-712	Joker [Crazy Density]	131	5677	131	5677	131	5677	184	02:10	1 1 t h	D.J.Nero	
-713	Elemental Creation	131	6536	131	6536	131	6536	212	02:07	GEAR - 2	DJ.AMURO & DJ YOSHITAKA	
-714	Blue Zenith	134	10000	134	10000	134	10000	200	04:15	CheolJu	XI	
-715	Volcarou	132	8160	132	8160	132	8160	191	02:16	DETRO	zelly	
-716	Asymmetry	127	10361	127	10361	127	10361	184	04:16	KEÏä§ÎüΩÍ≥† HCÌïú Ëâ≤ÁßÄÈ≠îÁ•û        	Î†àÏò§Î£®   	
-717	Angel Dust -New world-	134	5331	134	5331	134	5331	170	02:29	Eleventh	Lv.4	
-718	Unit Alpha	139	5001	139	5001	139	5001	208	02:03	1 1 t h	MANIERA	
-719	Her Majesty	142	6006	142	6006	142	6006	222	02:06	go to the gole	naotyu-	
-720	Puppet Ensemble	144	7654	82	4730	144	7654	200	02:58	WhiteAndBlack	Î∏úÏä§Ïπ¥Ìîº    	
-721	Mist TeK	145	5287	145	5287	145	5287	200	01:54	ÏïÑÌÅ¨ÎÑ§Ïä§    	ÎÑà 	
-722	SuicideGak Episode.1  Love & Justice	145	5261	145	5261	145	5261	200	01:56	Note by Sexigak	„Éï„É≠„É≥ / „É©„Ç∫„Éô„É™„É´        	
-723	Sayonara Planet Wars	143	5344	143	5344	143	5344	224	02:02	rocher	ÈªëÈ≠î  	
-724	Ops:Code-Rapture-	142	5483	142	5483	142	5483	195	01:55	Ïπ¥ÎÇòÏÇ∞ÎèÑ    	Getty vs DJ DiA	
-725	Blue-White Crazybits	159	5514	159	5514	159	5514	234	01:50	„Öó„Öú‚òÖ   	„Ñ±„Öä  	
-726	Fox4-Raize	147	5931	147	5931	147	5931	200	01:59	ÏïÑÌÅ¨ÎÑ§Ïä§    	Getty vs.DJ DiA	
-727	Blastix Riotz	100	4085	100	4284	100	4085	256	02:10	ÂãïÊ∞∏  	„Åã„ÇÅ„Çä„ÅÇ as "Bang Riot"    	
-728	BEAT-NEW-WORLD	134	7571	134	7571	134	7571	190	03:29	BeatGenesis	COOL&CREATE	
-729	[SHD] Quad Queens	129	4824	129	4824	129	4824	157	02:02	Snowkel	D.J. NERO	
-730	ANTI THE ‚àû HOLIC (Ex ver.) 	126	10259	126	10259	126	10259	191	03:42	Í∑úÎÖ∏  	cosMo@Êö¥Ëµ∞  	
-731	Etude for the Sinners [^o^]	126	4078	126	4078	126	4078	210	01:57	ŒëŒìKNESŒ¶   	ÏÜêÏù¥Ïó¨ ÏõÄÏßÅÏó¨Îùº       	
-732	GOODTEK	123	4729	123	4729	123	4735	190	02:10	ÏïÑÌÅ¨ÎÑ§Ïä§    	Ebimayo	
-733	[SHD] Magus Night	115	6360	115	6360	115	6360	167	02:56	LAST EPISODE ll	dBu music	
-734	Light of White Magic	98	5118	98	2559	98	5118	200	01:42	toy musical	z	
-735	JEHANNEDARC	116	5190	116	5190	116	5190	200	01:59	Guillotine & Ssg_Sac	BlackY.	
-736	Future Cider	98	4844	98	4844	98	4844	180	02:14	Destiny19	YUC'e	
-737	Toumei Elegy	98	6741	98	6741	98	6741	220	03:40	Destiny19	Konuko	
-738	MariannE	114	9509	114	9509	114	9509	191	03:56	Destiny19 & sexybaby	Yooh	
-739	Mopemope	137	3277	137	3277	137	3277	200	01:53	ÏïÑÌÅ¨ÎÑ§Ïä§    	Leaf	
-740	Ooi [Game Edit]	152	4983	152	4983	152	4983	216	02:01	Destiny19 & Genesis	O2i3	
-741	Acid Burst	120	5084	120	5084	120	5084	180	02:06	Destiny19	Memme	
-742	Bios	119	10571	119	10571	119	10571	194	04:20	reimu	Hiroyuki Sawano ft. Mika Kobayas	
-743	Rose Quartz	83	3749	48	3022	83	3749	146	02:01	KH	SHIKI	
-744	Kyoumei no True Force	94	9743	94	9743	94	9743	187	04:28	reimu	Hitomi Harada	
-745	Unit Gamma	148	4989	148	4989	148	4989	167	02:19	1 1 t h	HAELEQUIN	
-746	Red Goose	135	4703	135	4703	135	4703	200	02:06	zelly	jubeat	
-747	LegenD.	168	5884	168	5884	168	5884	205	02:02	JsjamÁúûVOSS SONG-3 	Yooh	
-748	Strawberry Crisis!!	125	10009	92	7924	125	10009	195	04:35	ÏùºÎ†àÎ∏êÏ¶à    	dBu music	
-749	[Sipal]Refrain of the Lovely Great War	120	11759	120	11750	120	11750	146	04:00	Shadowkun	21	
-750	The Maid and The Pocket Watch of Blood	134	13105	134	13105	134	13105	179.2	04:51	Genesis	Demetori	
-751	Go Beyond!!	123	4018	123	4018	123	4018	200	02:00	Rustin	To kill NWJ:Episode 4	
-752	Little hearts	125	6290	50	2626	125	6290	200	02:13	TH	BMS	
-753	High-Priestess	119	5348	119	5348	119	5348	196	02:30	Discharge	Luxion remixed by Lemon	
-754	FINAL AUDITION EPISODE 2-2	137	3516	61	1884	137	3516	200	01:35	Î∏êÏ¶à-DA-YO‚òÜ   	CRAZY ELEVENTH_	
-755	Toy War	94	4257	94	4257	94	4257	160	02:00	TH	M2U	
-756	Fiat Lux	130	5219	130	5219	130	5219	200	01:58	KEHC	Xi	
-757	Crazy Xenomorph	98	7129	98	7129	98	7129	195.72	03:42	NewsTimeK	Demetori	
-758	Fine Snow	129	7273	129	7273	129	7273	200	03:23	rocher	IOSYS	
-759	HAELE‚Ö¢ ~Angel World~ 	137	5878	137	5878	137	5878	185	02:08	ÏïÑÌÅ¨ÎÑ§!Ïä§!    	SDVX III	
-760	Butterfly Sculpture	122	5716	122	5716	122	5716	188	02:18	ÏùºÎ†àÎ∏êÏ¶à    	SID Sound	
-761	[LN]Identic Conflict (TV Size)	22	897	65	1774	65	1774	178	01:33	Tristan97	bbn	
-762	[LN]Precious You	75	8400	75	8400	75	8400	130	03:53	Arezo	Fujita Akane, Miyamoto Yume, et.	
-763	[LN]Other Side	77	6652	77	6652	77	6652	168	03:53	Moni [Fixed by grimmmsenpai]	FELT	
-764	[LN]Yoru ni Kakeru	78	10287	78	10287	78	10287	130	04:23	ruka	YOASOBI	
-765	[LN]Deep in Abyss	82	7622	82	7622	82	7622	135	03:44	Lostcool	Miyu Tomita & Mariya Ise	
-766	[LN]Kimiiro Signal	75	8218	75	8218	75	8218	164	04:42	Pikobaka	Haruna Luna	
-767	[LN]Muteki no Soldier	85	10195	85	10195	85	10195	210	05:08	Yanaginagi	Cuppp	
-768	[LN]B.B.K.K.B.K.K. (hurce Remix)	85	8951	85	8951	85	8951	172	04:27	bumpinho	nora2r	
-769	[LN]SAY BAY	70	4374	70	4374	70	4374	165	02:00	qodtjr	P*Light	
-770	[LN]Fortissimo -The Ultimate Crisis-	75	8439	75	8439	75	8439	145.5	05:01	Genesis	fripSide	
-771	[LN]Fortissimo -The Ultimate Crisis- (1.1x)	80	8439	80	8439	80	8439	160.05	04:33	Genesis	fripSide	
-772	[LN]Mottai Night Land	82	8903	82	8903	82	8903	160	04:00	Cuppp	Kyary Pamyu Pamyu	
-773	Hoshi no Utsuwa feat. Rapbit	73	5248	73	5248	73	5248	128	02:15	ByeForNow	Tamashi Oto Izumi	
-774	TYCOON	81	3082	81	3082	81	3082	170	01:48	TH	SOUND HOLIC feat. Nana Takahash	
-775	Intuition	82	5095	82	5095	82	5095	147	02:08	KEHC	yak_won	
-776	Necro Fantasy	86	6853	86	6853	86	6853	164	03:50	th	ZUN	
-777	Touhou Medley ~ Dragon's World	90	7229	90	5420	90	7427	160	03:35	ÏÑÄÎèÑÏö∞Íµ∞    	??	
-778	FEARLESS HERO	90	8888	90	8888	90	8888	175	04:10	ExiT & Ïï§Î∏î  	Mizuki Nana (ÎèÑÍ∑∏Îç∞Ïù¥Ï¶à' OP)    	
-779	Touhou Medley ~ Dragon's Mind	91	7173	91	7173	91	7173	178	03:26	ÏÑÄÎèÑÏö∞Íµ∞    	?	
-780	Desire Dream	92	9017	92	9017	92	9017	178	04:27	BEGIERDE DES ZAUBERER	Demetori (Demetori)	
-781	Chrono Diver -PENDULUMs-	144	4836	144	4836	144	4836	196	02:04	rocher	Áå´ÂèâL.E.D.Master+  	
-782	Raikou -3rd Desire-	95	5759	95	5759	95	5759	178	02:55	th	TatshMusicCircle (Tatsh)	
-783	Lamir [Mystery Destiny]	97	4511	97	4511	97	4511	200	02:17	1 1 t h	ÊøÄËæõ„Éû„Éã„Ç¢      	
-784	Terminated Protocol	98	6206	98	6206	98	6206	186	02:36	KEHC	KIEN	
-785	KillinG ME	106	7255	106	7255	106	7255	200	03:07	ÏïÑÌÅ¨ÎÑ§Ïä§    	ÎØºÏä§Ìä∏Î†ê    	
-786	EDM Jumpers ({E+H}DM Reboot)	74	8564	74	8564	74	8564	145	04:42	Evening	Camellia ft. Nanahira	
-787	L'erisia ~ Primary Logic	93	6552	93	6552	93	6552	234	03:41	HoNoR	Zektbach	
-788	Air - New World	100	5560	100	5560	100	5560	180	02:28	Nong	shiki	
-789	Jomanda	106	5373	40	1903	106	5373	195	02:05	LAST EPISODE l	ÏößÎî±  	
-790	[19+]Kimochi-E-Koto	105	6882	105	6882	105	6882	208	02:46	‚ô• 	DJ Sharpnel	
-791	Unit Beta	106	5833	106	5833	106	5833	175	02:10	1 1 t h	Ladymade corestar	
-792	Blue Rain - Dustbox RMX	106	4109	106	4109	106	4109	178	01:58	ÏïÑÌÅ¨ÎÑ§Ïä§    	SDVX II	
-793	G a i a	109	5659	109	5659	109	5659	180	02:04	GEAR - 1	Áå´ÂèâL.E.D.Master+  	
-794	Maybe able to fly	110	5720	110	5720	110	5720	173	02:11	Y.W	Mango War Episode I	
-795	Daily Lunch Special	110	5208	110	5208	110	5208	205	02:08	GEAR - 3	Lucky Vacuum	
-796	Lucid - New world	114	9205	90	7478	114	9205	175	03:35	HoNoR BreakerS	First Boss Song	
-797	Panic Holic	113	3674	113	3674	113	3674	220	01:43	Neul	C - Show	
-798	Ascension to Heaven -Miracle-	130	6306	60	3326	130	6306	200	02:39	Trapper	xi	
-799	Disruptive Diva	100	5117	100	5117	100	5117	188.7	03:05	Nong&Eleventh	Hatsune Miku	
-800	Hyperdis Part.3	97	3926	97	3926	97	3926	145	02:56	„Öó„Öú‚òÖ   	„Ñ±„Öä  	
-801	Vanitas	139	8855	139	8855	139	8855	200	04:20	HoNoR Pongu Rocher	Xi	
-802	-„ÖÅ- 	160	4601	160	4601	160	4601	175	01:20	ÎñÑÎÇÑÏù¥   	SHK	
-803	Shimizu Miharu	154	4013	1	4013	154	4013	203	01:24	ELEVENTH_	Î∞îÏãúÏÜå   	
-804	END TIME [GENESIS DIE]	158	9213	158	9213	158	9213	180	04:22	„ÖÅ„Öä 1 1 t h  	Cres / air	
-805	Ïú†ÏïÑÌïòÍ≤å ÌîºÏñ¥Îùº„ÄÅÎ¨µÏóºÏùò Î≤öÍΩÉ ÔΩû Border of Life              	106	12598	106	12800	106	12598	196	04:59	Genesis	Demetory	
-806	LUV„Éá„Ç£„ÉÜ„ÇØ„Çø     	90	3962	90	3962	90	3962	162	02:23	c g b	SOUND HOLIC	
-807	ÂÜ•ÁïåÂΩºÂ≤∏    	93	5474	93	2749	93	5474	200	02:05	ZUN(Arr.sun3)	zelly	
-808	[LN]Toumei na Kioku no Kazaana	90	10854	90	10854	90	10854	180	04:10	KenZ	Yuzuki Risa	
-809	Anelis (Long Ver.)	90	9783	90	9783	90	9783	180	05:35	Zola Nakano xNett	Áå´ÂèâMaster feat. ATSUMI UEDA  	
-810	EXILE	90	5517	90	5517	90	5517	157	02:06	MapleSyrup-	-45	
-811	YELL!	81	8323	81	8323	81	8323	170	05:00	Destiny19	DJ Genki vs Camellia feat. moim	
-812	Fight of Witch -Last Word-	42	3219	55	5000	85	5999	156	03:32	host112&zelly	dbu	
-813	Kagachi	81	4127	81	4127	81	4127	186	01:59	HoNOR	HoNoR	
-814	LA MD	76	10103	76	10103	76	10103	190	06:12	Wilben_Chan	Billx	
-815	HONEY‚ô°SUNRISE 	92	4409	92	4409	92	4409	190	01:46	jun with Aimee	TAEKXAS	
-816	Asgard	13	1086	37	3361	87	7501	130	03:45	nightshroud and PrinceO2jam	Yousei Teikoku	
-817	Wizdomiot	92	4057	92	4057	92	4057	200	02:34	SoF	LeaF	
-818	Crazy Tek (DJ Noriken Remix)	88	6206	88	6206	88	6206	170	02:30	Kim_GodSSI	P*Light	
-819	Dstorv [Other]	90	3477	90	3477	90	3477	191	02:04	Omino	Silentroom	
-820	For UltraPlayers	117	4849	117	4849	117	4849	201	01:59	rocher	cosMo@Êö¥Ëµ∞P [EXH]  	
-821	Mabinogi Login Theme	110	7282	110	7282	110	7282	180	02:24	Royal777 Ïù¥ÏßÄÎßå Í∏∞Î≥ë     	Unknown Artist	
-822	Cirno Break	116	3939	116	3939	116	3939	196	02:02	ÏïÑÌó§Í∞ÄÏò§Î•º ÎßõÎ≥¥Í≤å Ìï¥Ï£ºÎßà!       	ÏπòÎ•¥ÎÖ∏ Í∞ïÍ∞Ñ ÏÑπÏä§!       	
-823	Crossover!	88	6441	88	6441	88	6441	200	03:11	Ken Yu	Fear and Loathing	
-824	[176/168/160LN]Mai Hime	1	9184	1	9184	120	9697	160	03:41	Kajiura Yuki	?ÌåªË≠ö?  	
-825	Unlimited Spark (remake) -Lunatic-	112	12408	112	12408	112	12408	185	05:45	Entozer	t+Pazolite ft. Rizna	
-826	Artificial Flower	84	6234	84	6234	84	6234	170.04	04:11	yakumo	NSISN	
-827	Rightfully	20	1467	60	3741	47	2559	182	02:49	UN.378	MILI	
-828	Endless Night	85	9418	85	9418	85	9418	148	05:24	ÌöêÎ£ΩÏù¥   	3L	
-829	Shoujo - Reminiscing	86	5297	86	5297	86	5297	175	02:18	Ï£ºÏö∞ÏúÑ   	[NormalBpm161] Î†àÏù¥ request note	
-830	Strawberry Crisis!!	112	8827	112	8827	112	8827	190	03:40	Genesis	Demetori	
-831	perditus paradisus	83	3676	83	3676	83	3676	172	02:09	HoNoR	Iconoclasm	
-832	Proof of the Existence	30	1640	40	2009	75	3085	170	02:09	TH	Áå´ÂèâMaster+  	
-833	The Glory Days	86	6281	86	6281	86	6281	184	04:12	LCH vs Discharge	Supercell feat. Tia	
-834	Lose rein - Unreal Style	65	6242	65	6242	65	6242	151	00:00	Genesis	Dark PHOENiX (Dark PHOENiX)	
-835	FIRE FIRE -DARK BLAZE REMIX-	75	3720	75	3720	75	3720	177	01:56	Rocher	sdvx	
-836	PUPA	84	4493	84	4493	84	4493	202	02:05	KEHC	„É¢„É™„É¢„É™„ÅÇ„Å§„Åó       	
-837	Poodle	71	3285	71	3285	71	3285	160	02:01	tomlee3	Y & Co.	
-838	[LN]Dancing in the Velvet Moon	76	7892	76	7892	76	7892	140	04:09	DJZMO	Nana Mizuki	
-839	Baka Go Home	77	7231	77	7231	77	7231	158	03:26	ÏùåÎÖÑ&Î∞îÎûåÏù¥     	Milktub	
-840	Virtual to LIVE	72	7535	72	7535	72	7535	156	04:27	LostCool	Nijisanji	
-841	Catastrophe in Bhava-Agra ~ Wonderful Heaven 	92	9021	92	9021	92	9021	161	04:14	Tenshi	SWR	
-842	Kakumeisei Ousama Densenbyou	70	5574	70	5574	70	5574	200	03:20	Zenonia	Suzumu	
-843	Luna Clock ~ Luna Dial	100	8232	100	8232	100	8232	177.8	03:34	Genesis	Demetori	
-844	Smile‚ô• 	55	5920	55	5920	55	5920	157	03:24	ÌòúÎ¶¨  	Maple Story	
-845	Ikenai Borderline	94	10847	94	10847	94	10847	161	04:35	Reimu	WALKUERE	
-846	Storia	90	8571	90	8571	90	8571	180	03:58	dnaSoF	xi vs sakuzyo	
-847	Lu*nya*cy Act 2017 [Lunatic]	84	4265	84	4265	84	4265	222	02:21	Lunatic	Katagiri	
-848	Imperishable Night 2006 (2016 Refine)	73	5019	73	5019	73	5019	161	02:12	Destiny19	Yuuna Sasara feat. Tai no Kobon	
-849	I	107	4888	107	4888	107	4888	225	02:01	KenZ	Chroma	
-850	Lagtrain (Vo. Kaai Yuki)	85	5579	85	5579	85	5579	147	02:54	GENESIS + Ï∂îÏÑùÎßåÎëê    	Inaba Kumori	
-851	Angel Dust	89	4589	89	4589	89	4589	170	02:21	Akayro	LV.4	
-852	Candy Kingdom	96	5334	96	5334	96	5334	190	02:08	rocher	snail's house	
-853	Vampire's Territory	62	3706	62	3706	62	3706	140	02:00	Discharge	NOFX	
-854	Jang Yoon Jeong Twist	69	6022	69	6022	69	6022	160	03:18	„ÖÖ„Ñ± ÎÑå ÌóàÎ¶¨ÎîîÏä§ÌÅ¨        	Ïû•Ïú§Ï†ï LOVE   	
-855	Gokuraku Jodo	69	6761	69	6761	69	6761	131	03:35	Ï£ºÏö∞ÏúÑ   	Reisen Kill Series	
-856	Super Neko World	66	4011	66	4011	66	4011	190	02:35	D	nya~‚òÜ 	
-857	Ah Yeah	62	4213	52	3664	62	4213	135	02:56	ÌïòÎãàÌïòÎãà‚ô•     	EXID	
-858	Chinese Tea (Orchid Remix)	67	3176	67	3176	67	3176	188	01:52	Rocher	SDVX	
-859	Euthanasia	33	2596	49	4131	63	5224	152	04:18	ExiT	ÌïòÏ∏†ÎÑ§ ÎØ∏Ïø† (Hatsune Miku)     	
-860	Egg Break Rhapsody	20	1386	30	1909	73	3020	180	02:27	ÎãíÏ¢ÅÏØ©ÌÇµ    	ÂêÑÏÖ©Ïπ´Îè®ÎßêÎûóÎçú       	
-861	Bboom Bboom	54	5611	54	5611	54	5611	126	03:28	Schoolgirl	MOMOLAND	
-862	Rainbow Tylenol	27	1900	46	2700	74	3564	135	01:51	DJZMO	Kitsune^2	
-863	Light up My Love	73	3236	73	3236	73	3236	171	02:00	WhiteAndBlack	Ani feat. Moco	
-864	Re: End of a Dream	15	731	35	2066	72	3321	212	02:23	nightshroud	uma vs. Morimori Atsushi	
-865	Yume Chizu	71	4964	71	4964	71	4964	176	03:10	moni	yuikonnu	
-866	May I help you?	74	7487	74	7487	74	7487	150	03:30	LostCool	Swordy	
-1000	Don't interrupt me	64	6578	64	6578	64	6578	120	00:00	ÏùåÎÖÑ  	Kawada Mami	
-1001	Final Phase[134/149LN/149]	53	5741	75	7648	63	5741	149	03:56	Un.ÏèúÏ†≠  	Í≤ÄÏªÅÊé†ËºÉÁæö     	
-1002	Reincarnation	55	4221	55	4221	55	4221	148	04:42	Masquerade7	Yozuca & Faylan	
-1003	ÂìÄ want U 	75	4790	75	4790	75	4790	174	02:16	Lmn	„Åã„Å≠„Åì„Å°„ÅØ„Çã      	
-1004	UN-DELAYED	70	7858	70	7858	70	7858	145	04:17	KenZ	Miyuki Hashimoto	
-1005	Delete	75	6201	75	6201	75	6201	188	03:57	LostCool	Yuna (Kanda Sayaka)	
+1	Orange	50	4303	50	5068	50	5068	140	4:36	t0mlee3 vs. tomlee3	"Rie Kugimiya, Eri Kitamura & Yu"	
+2	phantasia ballad	68	4586	68	5931	68	5931	168	4:42	Eleventh	fripSide NAO - Demetori	
+3	D.O.A	53	5590	53	4022	53	4022	180	3:27	th	Hatsune Miku	
+4	Ice Angel	38	2343	38	6009	38	6009	168	5:59	pporse	Yooh	
+5	Kuusou Sekai to Omocha no Shinzo	91	5080	91	7100	91	7100	190	3:38	Cuppp	mafumafu	
+6	Hana no Iro	62	6506	62	4211	62	4211	180	4:00	Genesis	nano.RIPE	
+7	Kawaki Wo Ameku	69	2500	69	7043	69	7043	129	4:10	Flexo123	Minami	
+8	Black Hole -I-	67	1284	67	4524	67	4524	175	3:15	ªÓÀ¿»À°Ã	m1dy	
+9	Black Hole -V-	65	2481	65	3258	85	5152	203	2:41	ªÓÀ¿»À°Ã	M1DY	
+10	Still Into You	80	6264	80	7067	80	7067	136	3:32	Edifier (isroxck)	Paramore	
+11	Shinsaku no Shiawase wa Kochira!	70	7408	70	9027	70	9027	175	4:20	LostCool	Chino(CV.Minase Inori)	
+12	Meltdown [Ryu Remix]	37	6226	44	3458	54	4045	177	3:57	CRS	Hatsune Miku	
+13	Dear my Friend	50	7169	60	5000	70	5000	155	3:23	ExiT	BPM(129/141.9/154.8)	
+14	Future gazer	76	2934	76	6263	76	6263	151.8	3:43	Thanks for the song of genesis	fripSide	
+15	Childish War	85	6270	85	6760	85	6760	175	3:36	Kanasando & Hyeri	µÓ¿Ø&¿ØøÏ	
+16	[SHD]Electric Romeo	59	1599	59	3774	59	4275	141	2:24	Genesis	Globus-europa	
+17	Po Pi Po (Ryu Remix)	63	4319	63	5007	63	5007	168	3:13	Tasarr_ & ¿Ω≥‚	Hatsune Miku	
+18	choux a la creme	75	6000	46	2441	75	3172	192	2:08	ƒ´≥™ªÍµµ	kamome sano	
+19	Problem(Nightcore Ver.)	66	6447	66	2740	66	2740	123	2:44	Kanasando	Ariana Grande	
+20	Cirno's Perfect Math Class	70	3860	70	5770	70	5770	175	4:38	Brian.Han	ARM & miko	
+21	Night of Knights	70	9292	70	4847	70	4847	189	2:55	Nong	COOL&Create	
+22	ANTI THE HOLIC (Easy Ver.)	62	4916	62	5540	62	5540	170	4:14	Eleventh	Megurine Luka & Kagamine Rin	
+23	STEP(TV Size)	71	4798	71	2317	71	2317	146	1:34	Kanasando	ClariS	
+24	OVERDRIVERS	66	6050	66	3321	66	3321	177	1:56	Hyeri & ExiT	P*Light (Feat. mow*2)	
+25	Shinryaku no susume	88	3	88	6416	88	6416	185	3:14	Genesis	ULTRA PRISM	
+26	Striptease	64	7629	64	2972	64	2972	130	1:56	Kanasando	Rise Kujikawa	
+27	"Kochira, Koufuku Anshin Iinkai desu"	63	2577	63	5584	63	5584	128	4:44	Kanasando	Augusta	
+28	I'll Be There For You	65	4552	65	5760	65	5760	170	4:07	WhiteAndBlack & Exit	ICHIKO ( ´º´Ì™Œﬁ≈™§ÿ™ F OP)	
+29	Hoshi ga Furanai Machi	40	2904	40	7457	40	7457	165	5:51	pporse	Chroma	
+30	"Todoroke, Koi no Beanball!!"	74	7725	74	3310	74	3310	180	1:52	MonAmie	"Prim, Aka Bat, Ao Bat"	
+31	Saikyou Pare Parade	69	1051	69	6916	69	6916	175	4:21	Eleventh	"Haruhi, Minori, Yuko"	
+32	Bagsakan	59	2999	59	6508	59	6508	135	3:14	Schoolgirl	Parokya ni Edgar et al.	
+33	Be Starters!	78	4836	78	5736	78	5736	168	3:52	Sub / WhiteAndBlack	Eri Kitamura	
+34	Light Lag	74	7591	74	4141	74	4141	180	3:28	LCH	DECO*27	
+35	Chronoxia	76	4028	76	3734	76	3734	180	1:54	TD.FL*PR	DJ Totoriott	
+36	Midnight Circus	73	5321	73	6257	73	6257	149	3:09	HANU	Sunny Hill	
+37	Twisted Tree	83	2845	83	5000	83	5000	160	2:01	Rocher	Unknown Artist	
+38	Renai Circulation -Irony MIX-	36	5673	36	3626	36	3626	134	4:19	Tasarr_	Ù∂‡¥ŸËÌ≠	
+39	Marshmallow Justice	86	2975	86	6945	86	6945	176	4:10	∞‘¿Ãµ•æ≤	Eri Kitamura	
+40	Black Hole -VIII-	87	1090	87	4204	87	4204	170	2:15	¿Ω≥‚	P*Light	
+41	We Survive	62	8097	62	6841	62	6841	140	4:32	Eleventh	KOTOKO	
+42	Tear Rain	40	6558	40	3642	40	3642	128	4:07	KNH**	Amateras Records	
+43	Spaghetti Song	45	8176	45	2970	45	2970	132	1:52	Schoolgirl	Sexbomb Girls	
+44	Asa Made Halloween	53	7859	53	4725	53	4725	138	3:20	DJ / «œ«ˆ	Sound Horizon	
+45	Fantastic Future	89	7554	82	7507	89	7500	172	4:13	ExiT	Yukari Tamamura	
+46	empath144	67	5579	67	2828	67	2828	190	1:56	LCH	Yuuyu-P & Hatsune Miku	
+47	Kakuzetsu Thanatos	87	4326	87	6892	87	6892	200	3:37	WhiteAndBlack	Rohi	
+48	Deep in Abyss	71	4120	71	6531	71	6531	135	3:39	LostCool	Miyu Tomita & Mariya Ise	
+49	Nou Shou Sakuretsu Girl	62	5918	62	4704	62	4704	155	3:12	rocher	rerulili	
+50	Mugenkai Kasetsu Ticket	77	1012	77	5968	77	5968	168	5:01	LCH & Hyeri & ExiT	Meramipop	
+51	GypsyTronic 1.1x	80	7930	80	6622	80	6622	138	3:22	Sigak (fixed by ExiT)	M2U (1.1x by tomlee)	
+52	Dragon rider	81	8100	77	3137	89	3524	160	1:44	º®µµøÏ±∫	???	
+53	Otome-domo yo	74	5668	74	6230	74	6230	172	4:13	LostCool	CHiCO with HoneyWorks	
+54	Black Hole -II-	53	9192	53	2754	53	2754	180	2:21	Y..J	NOCE	
+55	Flash Back	75	4426	75	5440	75	5440	185	3:27	TH	Akiakane	
+56	Faint	54	3333	54	3786	54	3786	135	2:44	Genesis	Linkin Park	
+57	Hi High	77	1087	77	6901	77	6901	194	3:21	Flexo123	LOONA	
+58	[VSHD]AAA	66	5677	66	5492	66	5492	160	3:19	ElecNote	DM Ashura	
+59	Late in autumn	68	4940	68	4197	68	4197	149.5	3:34	Genesis	fripside	
+60	[SHD] Bride in Dream	44	13404	44	3269	44	3269	116	2:32	Niro-	BeautifulDay	
+61	Melt (Nagi ver.)	72	3355	72	4324	72	4324	170	3:01	Genesis	Supercell	
+62	PAPAYAPA BASS	32	7922	32	2685	32	2685	147	2:03	MapleSyrup-	Camellia feat. Nanahira	
+63	Coloring	16	9451	25	2500	48	3584	117.01	3:49	ExiT & Rustin	œ‹À∞Î¶Î˝ (Horie Yui)	
+64	Hype feat. Such (lapix Remix)	72	7300	72	7330	72	7330	175	4:38	Reba	PSYQUI	
+65	STELLAR WIND	78	3815	78	3122	78	3122	160	1:55	GG	L.E.D.	
+66	World's end Dancehall (Easy Ver)	41	5356	41	7446	41	7446	171	3:28	Rustin	"«œ√˜≥◊ πÃƒÌ,∏ﬁ±∏∏Æ≥◊ ∑Áƒ´"	
+67	World's end Dancehall	77	3767	77	8357	77	8357	171	3:33	Rustin	Iciko	
+68	The Everlasting Guilty Crown	72	5489	72	5188	72	5188	180	3:30	Kim_GodSSI	EGOIST/Supercell	
+69	Fukkireta	76	6915	40	2060	76	4105	150	1:34	TH	∑–	
+70	Haru no Hi	77	4149	77	5250	77	5250	180	3:46	WhiteAndBlack	™œ™Î™ﬁ™« ™Ø™Î™Î op	
+71	Powerless	48	3048	48	4318	48	4318	188	3:52	Rocher	NANO	
+72	Memory Of Snow	78	3866	78	6072	78	6072	150	4:12	Genesis	fripSide	
+73	Flowers in Full Bloom	33	4774	48	1947	68	2676	160	1:54	TH	T¨ß¨¡RA	
+74	Eternal Nocturne	82	754	82	7602	82	7602	166	5:02	Karasis	dBu	
+75	Yasashisa no Riyuu	76	4859	76	3737	76	3737	177	3:00	lms1065 :: Sub	Hyouka 01 OP	
+76	Dreamin' attraction!!(Extended)	80	8019	80	5443	80	5443	205	4:32	qodtjr	hino isuika	
+77	More One Night	76	6595	76	5686	76	5686	170	2:56	Minseok & Destiny19	Hige Driver	
+78	Koi wa Chaos Shimobe Nari (Easy)	60	7923	60	3940	60	3940	158	2:33	MonAmie	±‚æÓøÕ∂Û ≥ƒ∑Áƒ⁄æÁ 2OP	
+79	Snow Storm -euphoria-	83	9935	83	3680	83	3680	180	2:02	MonAmie	Yooh	
+80	Date a Live	98	8424	67	5338	98	7084	178	4:32	yakumo	sweet ARMS	
+81	Evidence	70	4622	70	6418	70	6418	160	4:45	¿Ω≥‚	DaisyxDaisy	
+82	No pain No game	68	8469	68	5317	68	5317	190	3:20	rocher	nano	
+83	#FairyJoke	66	1204	66	2777	66	2777	160	2:04	ƒ´≥™ªÍµµ	uno(IOSYS)	
+84	Miracle°ƒHinacle	64	3780	64	3300	64	3300	160	2:20	«˝∏Æ & ExiT	"IOSYS ""µøπÊ¿ØΩ…√ﬂ OST"""	
+85	Niji No Kakera	51	7180	51	1833	51	1833	132	1:32	SubTitle_	"Õ‡˘æ⁄∏ ""´’´Ï´Û´∫ OP""-aa"	
+86	Tsubomi	77	6762	77	8017	77	8017	184	5:03	mniii	Tatsumi Megumi feat. Sano Hiroak	
+87	Vitalization	76	5717	76	4002	76	4002	190	2:42	MonAmie	Nana Mizuki	
+88	CLICK	66	7810	66	6375	66	6375	135	4:28	ExiT	ClariS	
+89	I Am	65	8521	65	4925	65	4925	150	4:06	Genesis	Hitomi	
+90	The Great Escape	78	1800	78	5647	78	5647	150	3:21	Genesis	Boys Like Girls	
+91	[LN]Allegro Con Fuoco	44	8511	71	7134	82	9935	150	4:46	ÔøΩÔøΩÔøΩÔøΩ	Unknown Artist	
+92	ANOMALY	82	4537	82	6263	82	6263	210	4:22	qodtjr	Camellia	
+93	High Range Test	68	6235	68	3348	68	3348	180	1:31	«˝∏Æ	·¥“≥	
+94	Virtue and Vice	74	6537	74	5705	74	5705	145	3:28	«˝∏Æ	Fear And Loathing in Las Vegas	
+95	RELOADED	92	4896	92	10200	92	10200	173	5:00	ruka	EGOIST	
+96	MEMORIA	59	4860	59	3886	59	3886	141	3:11	MonAmie	Aoi Eir	
+97	Rainbow Cemetery	34	4824	64	5779	64	5779	126.3	2:38	HIGH	Michiru Yamane	
+98	Dreamin'	80	6700	80	3782	80	3782	156	1:50	KEHC	Feat. Ryu°Ÿ	
+99	This Night	82	9604	40	2326	82	3167	160	1:58	Vol.2	Jubeat	
+100	See visionS	74	8000	47	5172	74	8000	164	5:21	LCH	Kawada Mami	
+101	Einherjar	85	8000	85	8465	85	8465	160	3:49	KEHC	ETIA.	
+102	Sakura Stream	58	3755	58	4834	58	4834	173	3:50	WhiteAndBlack	Sound Online	
+103	YES or YES	70	7950	70	6566	70	6566	138	4:00	Destiny19	TWICE	
+104	Sky High	77	7228	34	2222	77	3332	150	2:09	SubTitle_	Cuvelia	
+105	Sparkling Daydream	80	5477	80	7306	80	7306	175	4:07	WhiteAndBlack / lms1065	ZAQ	
+106	Parousia	80	8758	80	5517	80	5517	158	3:29	HoNoR	Xi	
+107	Crisp	62	2600	74	3513	85	4632	175	2:02	HoNoR	Yak_won	
+108	Only My Railgun	72	3367	72	4534	72	4534	143	3:09	Th	æÓ∞˙√ 	
+109	Ladymade corestar	53	2926	53	3814	53	3814	175	2:10	1 1 t h	Unit.•‚ easy	
+110	Tetelestai	69	4154	40	2534	69	3375	160	2:13	rocher	sibyle	
+111	NO THANK YOU	89	2670	89	10963	89	10963	178	4:45	rocher	≥ı“ÙŒ¥¿¥	
+112	[SHD]Pure in Asia	79	3451	79	5643	79	5643	160	3:22	Genesis	ZUN	
+113	Synchrogazer	64	7900	64	4201	64	4201	159	3:14	Mizuku nana	Ó˙˝ÔÔæÛ›´∑´Û´’´©´Æ´¢	
+114	[SHD] Go Hell	56	464	56	3893	56	3893	145	2:18	Niro-	Red Pulse	
+115	A c i - L [Four Dimensions]	30	782	40	2545	76	4418	162	2:25	-45	zelly	
+116	Reincarnation	87	477	87	6505	87	6505	145	4:12	jj	ZUN	
+117	Miraizu (sana ver.)	73	470	73	4747	73	4747	178	3:25	Destiny19	HoneyWorks	
+118	TOKOHANA	68	422	68	6039	68	6039	169	4:21	KNH**	YANAGINAGI	
+119	[LN] Gale Street	86	464	86	8392	86	8392	157	3:12	KNH**	¿Ø¡§ºÆ / ƒË∞…±Ÿ¿∞∏«2ºº OP	
+120	Love Drunk	84	535	84	6660	84	6660	150	3:44	Genesis	Boys Like Girls	
+121	CHOIR JAIL	87	461	87	4484	87	4484	181	2:46	LCH & DJ	»≤»•º“≥‡Xæœ≥◊¡ˆæ∆ OP	
+122	New World	92	1112	92	7042	92	7042	195	4:08	SoF & Cuppp	Meika	
+123	Stella Breeze	64	1001	64	6785	64	6785	148	4:00	LostCool	Haruna Luna	
+124	Happy Girl	73	555	73	6288	73	6323	145	3:58	Ryu x3	æ∆∫¸∏ª ¡ª µÈæÓ∂Û OP	
+125	[LN]Lounge Cafe	78	803	49	6500	78	7642	140	3:29	Umneoyn	Unknown Artist	
+126	Otenba renjyou	47	3333	47	2046	47	2046	168	2:10	eleventh	"‘‘€∞¸≥Ò¥ﬁÂÓ2""""?)n"	
+127	Take Me Out	67	344	67	4166	67	4166	186	2:36	WhiteAndBlack	Las Vegas	
+128	Knowing	68	451	68	6210	68	6210	140	4:18	LCH	Ore no kanojo no uraomote OP	
+129	KAMAITACHI	77	778	84	4107	84	4107	165	2:09	Genesis & LFHL	beatmaniaIIDX14 GOLD	
+130	fantastic dreamer	88	1181	88	9850	88	9850	185	4:02	Niima	Machico	
+131	Robotic Girl	38	1088	38	4912	38	4912	160	3:41	Flexo123	Yunomi feat. Nicamoq	
+132	DAYS OF DASH	84	716	68	6224	86	7777	160	4:11	ExiT & Lolicon2 & Snowkel	Konomi Suzuki	
+133	Tonari Au	35	2314	35	5148	35	5148	140	4:30	Niro-	THE ORAL CIGARETTES	
+134	Realism	16	1857	28	3951	40	5150	161	4:05	MR.CHONG	Elisa	
+135	Goldrop [ Neverland ] x1.2	80	813	80	5321	80	5321	175	3:17	Destiny19 (sped up by tut234)	MAIKA	
+136	[E]	44	633	44	2873	44	2873	152	2:01	Tasarr_	dj MAX STEROID	
+137	Mione no Sekai	63	776	63	5500	63	5500	132	4:58	sound horizon	zelly	
+138	Colorful	68	830	68	6000	68	6000	178	4:29	0Exit2 [Re;]	ClariS	
+139	Dreaming Leaf	80	2975	80	7607	80	7607	170	3:43	¡æºˆ æ»∆ºƒ´∆‰ »∏ø¯	´Ê´Í´´/¸£™ø™Û	
+140	Hatsukoi no Ehon	72	6103	72	3834	72	3834	190	3:22	D	L.O.V.E.¢Ω	
+141	BLUE CLAPPER	44	1305	44	5459	44	5459	145	4:09	MapleSyrup-	hololive IDOL PROJECT	
+142	Courage	52	2743	52	4444	52	4444	196	4:10	WhiteAndBIG	Haruka Tomatsu [GGO OP2]	
+143	Love's Scenario	78	2457	78	6745	78	6745	180	4:20	LCH	Magic Kaito 1412 OP2	
+144	Join Forces	74	1790	74	6287	74	6287	140	4:02	LCH	fripside	
+145	Mottai Night Land	61	2697	61	6523	61	6523	160	3:54	Cuppp	Kyarypamyupamyu	
+146	"EX. Utakata, Ai no Mahoroba"	74	2487	62	2260	74	3486	155	2:51	TH	senya	
+147	Loop the Loop	56	4316	56	4719	56	4719	153	2:58	MonAmie	KOTOKO	
+148	FRANTIC ARCADE	51	4617	51	2820	51	2820	180	2:28	rocher	PrimeMIX	
+149	Maware! Setsugetsuka! (TEKINA REMIX)	84	8347	84	9096	84	9096	180	5:02	Rocher & BIG & W.B	 ∞⁄‡‰Í≈¸£ (TEKINA)	
+150	Joker [Full Density]	95	1989	48	3255	95	5503	184	2:10	1 1 t h	D.J.Nero	
+151	Promise of Summer	79	7445	66	4879	79	5935	185	3:57	LCH	DOG DAYS' ED Theme	
+152	[SHD]AAA	23	3333	31	2913	50	3693	160	3:17	MessaTsu.O2se	DM Ashura	
+153	Choose Me Darling (Easy Ver)	57	7338	57	3827	57	3827	150	2:48	D	StylipS	
+154	Follow Tomorrow (for future mix rearrange ver.)	60	2912	60	4380	60	4380	140	3:06	0Exit2 [Re;]	HHH°øMM°øST	
+155	Sociometry	28	4978	28	3684	56	4873	142	4:49	Yumel The Lightkeeper.o2SE	Kotoko	
+156	Hikaru Nara	76	8237	76	8263	76	8263	160	4:11	Wewoj	Goose House	
+157	Maware! Setsugetsuka!	63	3634	60	4841	63	5160	160	3:54	«œ«ˆ¥ﬁ&Rustin	±‚±≥º“≥‡¥¬ ªÛ√≥πﬁ¡ˆ æ æ∆!	
+158	[SHD] Christmas Memories	55	6746	55	2275	55	2275	170	1:46	MapleSyrup-	BeautifulDay	
+159	[SHD] Death Moon	46	8327	46	4166	46	4166	160	2:38	MapleSyrup-	SHK	
+160	Golden Time	54	3729	54	5270	54	5270	141	3:44	«œ«ˆ¥ﬁ	∞ÒµÁ≈∏¿”	
+161	Wan Wan Wan Wan N_1!!	49	7007	49	5652	49	5652	145	3:57	«œ«ˆ¥ﬁ	∞≥øÕ ∞°¿ß¥¬ æ≤±‚≥™∏ß	
+162	Viva Happy	54	6364	54	3994	54	3994	148	3:33	Hahyeon::«œ«ˆ¥ﬁ	ππø‰	
+163	[SHD] Cross Time !!	48	7734	48	3609	48	3609	160	2:30	Niro-	Brandy	
+164	Cool Edition	20	3440	20	2833	64	5603	147	3:46	Yumel The Lightkeeper	Kuwatani Natsuko	
+165	Wicked Fate	62	3985	62	3652	62	3652	140	1:53	Fiea	M2U	
+166	Friend Shitai	75	7777	75	5980	75	5980	148	3:34	∞‘¿Ãµ•æ≤	«–±≥ª˝»∞ OP Theme	
+167	Hoshizora no Ima	79	6165	79	6109	79	6109	185	3:57	MonAmie	ÔøΩÔøΩ	
+168	Dango Daikazoku (Asterisk Remix)	71	5433	71	6040	71	6040	175	3:53	LCH	Clannad ED Remix ver.	
+169	Vocaloid Remix song	68	10152	68	4619	68	4619	190	2:43	MONAMIE	 ∞™§‚¢	
+170	Save Your Smile	68	7173	68	7704	68	7704	140	4:15	±‘≥Î(HYERI)	S.I.D-Sound	
+171	Candy Magic	66	7281	66	3522	66	3522	160	3:33	Alices	MIMI	
+172	[LN] Stargazer	67	3239	67	3997	67	3997	174	2:27	windrush123	Lime	
+173	Parousia -End version-	80	10000	80	4639	80	4639	177.77	2:52	Eleventh	Xi	
+174	[SHD] Milk Chocolate	54	3848	54	4476	54	4476	124	2:47	Niro-	BeautifulDay	
+175	[LN]Pure in Asia	72	4723	72	7538	72	7538	160	3:21	DJZMO	dBu	
+176	Be My Friend	52	11287	52	3829	52	3760	145	3:45	ø°ø¢µ˚ «Æπˆ¿¸¿Ã¥Ÿ	◊ˆÏ—›ª	
+177	Crow Solace	90	4855	66	2852	90	4028	188	2:23	1 1 t h	m108	
+178	ANTI THE HOLIC	92	6666	92	8167	92	8167	170	4:14	Eleventh	RIN & RUKA	
+179	[SHD] %10	66	7975	66	3544	66	3544	130	2:02	Niro-	Pory	
+180	Dead End	79	5884	76	6872	79	7054	183	3:58	Masquerade7 - ÔøΩÔøΩÔøΩÔøΩÔø?	ﬁ´’µ	
+181	Asterism	77	4183	77	3257	77	3257	175	1:37	Discharge	ZUKI	
+182	sink to the deep sea world	82	4621	82	7918	82	7918	185	3:59	sankansuki	Chroma	
+183	Aqua Trytone	78	3963	78	9482	78	9482	183	5:40	HIGH	Halozy	
+184	Super Driver	86	3345	86	7144	86	7144	200	4:15	Nong	Aya hirano	
+185	Sleeping Terror	22	3284	22	2791	43	4377	154	4:21	Mr.Azaness007	dBu Music	
+186	Blue Bird	78	5778	78	4611	78	4611	152	2:33	Genesis	≥™∑Á≈‰ ¡˙«≥¿¸ 3±‚ OP	
+187	Mysterious Mountain	87	7193	87	10163	87	10163	185	5:17	∫ÿ∫ÿ¿ÃøÕºΩΩ√∫Ï¡Ó	Demetori	
+188	Cinderella Romance (Full Version)	35	8428	35	4857	67	6946	174	5:14	Mr.Azaness007	Tatsh Feat. Hatsune Miku	
+189	XROSS INFECTION	80	5282	80	4210	80	4210	194	1:57	MonAmie	BlackY vs Yooh	
+190	Pastel Rain	72	1850	72	6200	72	6200	135	3:16	quicalid4	Sangatsu no Phantasia	
+191	Rebellion Anthem	13	2022	31	3817	60	6201	170	5:11	Mr.Azaness007	Yousei Teikoku	
+192	Infinite Orbit	7	1788	16	1654	29	3408	144	4:43	Mr.Azaness007	FripSide	
+193	squartatrice	55	2190	65	2879	89	4317	180	2:14	1 1 t h	Miki Sayaka	
+194	One Room Sugar Life	70	4634	70	4717	70	4717	180	2:40	Flexo123	Minato Aqua	
+195	Ever Blue	14	4840	28	3866	56	5796	140	4:51	Mr.Azaness007	Hanon Hosho	
+196	"Please, Give Me A Lover"	62	3521	62	4129	62	4129	146	2:28	Nakano Yuko	Kkochpin	
+197	EOS	74	4061	74	3855	74	3855	175	2:32	ø°ø¢µ˚!	ginkiha	
+198	Discommunication Alien	39	4641	39	4229	39	4229	170	3:28	MapleSyrup-	Usada Pekora	
+199	AIR GOD - Full ver.	62	3681	62	6354	62	6354	180	4:26	Cirno.C (BMS Copy)	SHIKI	
+200	future my railgun	35	6104	64	5533	80	6296	152	3:40	¿Ω≥‚&skin	Fripside	
+201	Black Hole -IX-	55	2876	70	7368	85	8063	160	3:43	¿Ω≥‚	M1dy	
+202	Date a Live	33	3894	33	3316	54	4611	178	4:36	EvangelicZealous	Sweet ARMS	
+203	[LN]Heart	58	3044	58	2719	58	2719	135	1:44	Todestrieb	Moe Shop	
+204	Pure in Asia	58	407	58	6310	58	6310	160	3:21	º®µµøÏ±∫	§ª	
+205	Zenbu Kimi ga Ita kara Shittanda	81	2794	81	8640	81	8640	185	4:16	ruka	Suzuki Konomi	
+206	World's End Dancehall	97	345	97	7254	97	7254	171	3:33	th	°Ÿ ‚ﬁÎÂ´Î´´&Ù¯ÎÂ´ﬂ´Ø	
+207	Futari no Honey Boy	27	1209	27	2879	39	4059	151	3:44	Mr.Azaness007	Ayana Taketatsu & Yuiko Tatsumi	
+208	The Chaostic World-Full version	65	2585	65	9537	73	10058	138	5:04	Vivace&¿Ω≥‚	Fripside	
+209	Paranoia -UG-	87	4633	87	7290	87	7290	150	3:49	"Terion,Stella"	soso	
+210	Smiling	73	1964	73	4478	73	4478	172	2:30	Lime	Unknown Artist	
+211	Glow in The Darkness	21	1686	41	3638	51	5909	145	5:04	Mr.Azaness007	FripSide	
+212	Overfly	9	9246	19	2738	33	3383	134	4:30	Exit	ı“Ø ™Î™  (™œ™Î™  ™Î™ )	
+213	[LN]Shukusai no Elementalia	70	3331	70	5293	70	5293	150	2:36	Rora-	Ni-Sokkususu	
+214	Disorder	76	3192	76	3826	76	3826	193	2:14	Remuring	HyuN feat. YURI	
+215	Isshin Furan (feat ill.bell nqrse)	73	4023	73	6581	73	6581	142	3:18	Enie	Reol	
+216	The Storm	16	4354	26	2108	41	2971	160	2:51	∫⁄…´√÷¿’	Yanni	
+217	Little Busters! -Ecstacy Ver.-	69	2380	69	6674	69	6674	151	4:47	Genesis	Rita	
+218	MILLION KNIFE	88	3095	88	6036	88	6036	165	3:03	LAST EPISODE V	COOL&CREATE	
+219	Kyouki Ranbu	77	4296	77	3708	77	3708	230	2:26	Niro-	LeaF	
+220	[SHD] Lonely Song	68	3566	68	3305	68	3305	130	1:51	MapleSyrup-	BeautifulDay	
+221	Fortuna on The Sixteenth Night	13	2609	24	2903	35	4072	146	4:36	Mr.Azaness007	FripSide	
+222	Kikai Shoujo Gensou	86	7446	86	5283	86	5283	143	3:01	NewsTimeK	ËÌÔÒ®œ–	
+223	Neurotoxin	91	3404	91	2709	91	2709	180	2:13	BMS	ﬁ˚∂	
+224	I'm so Happy	73	12708	73	2257	73	2257	181	1:38	JUBEAT HARD COLLECTION	Ryu°Ÿ	
+225	%%	73	2365	73	3990	73	3990	145	2:24	discharge	apink	
+226	Towa no Kizuna x1.1	87	4587	53	4232	87	6355	158	3:16	"æÿ∫Ì,ø¿≈ı±Õ¬˙¿Ω"	Daisy x Daisy	
+227	Kaguyahime	87	596	87	9260	87	9260	154	4:22	Schoolgirl	Hatsuki Yura	
+228	Marisa Stole The Precious Mahjong Things	86	8565	86	8617	86	8617	170	3:32	Schoolgirl	IOSYS	
+229	Sword of Virgin	87	8239	87	9310	87	9310	149	4:29	±Õ¬˙¿Ω+W&B	fripside	
+230	Grimm (Kobaryo's FTN-Remix)	84	3520	84	6341	84	6341	200	3:42	Destiny19	RoughSketch feat.Aikapin	
+231	Calamell Dansen	82	8701	82	4320	82	4320	180	2:40	Nong	x1.2x1.05	
+232	Dead End	83	9149	83	4475	83	4475	183	2:27	TH	ﬁ´’µ	
+233	Crystallized	83	8819	83	6920	83	6920	174	3:39	Destiny19	Camellia	
+234	Far east nightbird	87	3678	18	1177	87	3333	180	1:57	JUBEAT HARD COLLECTION	ŸﬁÛ©Master	
+235	AREA 51	22	7310	35	1945	79	3139	187	1:45	¿Ω≥‚	96	
+236	Fantasia	76	9917	32	1328	76	3579	165	1:47	Vol.8	Jubeat	
+237	Snow Storm	5	948	21	1245	35	2192	145	2:15	Eyeson	DJ TAKA	
+238	Spring of Dreams	79	7776	79	8195	79	8195	153	4:42	KNH**	3L	
+239	Imaginary Forest	77	6090	77	7184	77	7184	180	4:10	WhiteAndBlack	™∏™Û(ÌªÊ‘™ŒÓÿP)	
+240	True Blue	77		77	3472	77	3472	164	2:01	TH	Unknown Artist	
+241	O p h e l i a	88	254	88	3577	88	3577	178	2:14	@	KBP - 2011	
+242	subconsciousness	66	295	61	2803	66	3221	136	2:28	KEHC	ÔøΩÎ∏ªÔøΩÔøΩ ??	
+243	Halcyon -Long Version-	80	2742	55	6650	80	6650	191	5:07	ELEVENTH	xi (191.00 / 152.80)	
+244	ZZ	76	6303	76	3535	76	3535	154	1:52	lms1065 :: Sub	D.J.Amuro	
+245	Pray's Color	76	4206	76	9343	76	9343	160	5:13	WhiteAndBlack	∏∂Ω√∑Œº∂∏” OP	
+246	Blue Idea	84	4206	55	2967	84	4678	189	2:48	WhiteAndBlack	u-f sequencer	
+247	Finding shiners	76	12933	73	4345	85	4453	151	3:32	º®µµøÏ±∫	[dBu Music]	
+248	Lexus cyanixs	82	328	82	4602	82	4602	180	2:26	@	ﬁ˚∂ (2009)	
+249	[SHD]The Festival of Ghost 2	58	11321	58	3714	58	3714	136	2:08	Niro-	Brandy	
+250	Little Braver	81	3247	81	5320	81	5320	128	3:16	TH	Girls Dead Monster	
+251	Black Hole-IV-	81	1708	81	3349	81	3349	180	2:05	ªÓÀ¿»À°Ã	M1DY	
+252	ForgoTTen World	78	8719	78	6139	78	6139	160	3:38	TH	SOUND HOLIC	
+253	Level 5 JudgeLight	68	5832	63	8199	79	8305	146	4:10	HoNoR & Tasarr	BPM 146/139/146	
+254	Akasha	73	8128	73	5365	73	5365	185	4:21	Trapper	xi	
+255	Niji No Ressha	7	8070	28	2540	68	4642	168	3:17	romnick100	NO NAME	
+256	Shoujo Vampire	81	3083	81	7421	81	7421	153	3:35	Schoolgirl	Oningyou ni Naritai (Yuuki Noel)	
+257	HOLOGRAM CIRCUS	72	8204	72	2757	72	2757	136	1:36	Schoolgirl	Omaru Polka	
+258	The Riddle Story	83	5585	83	3525	83	3525	175	2:24	HoNoR	Cranky	
+259	Skyclad Observer	77	4000	77	7236	77	7236	167	4:36	Mirror	™§™»™¶™´™ ™≥	
+260	Shinkai Shoujo	47	6624	47	4539	47	4539	137	3:36	Tasarr_	Miku (Vocal by Nobunaga)	
+261	Human Modification Part II	88	9134	88	3617	88	5132	166	2:01	¡÷ø¡∞∞¥Ÿ	ææ∆»¿œæÓ≥™ ¿Ã∞«¡¯¬•∂Û∞Ì	
+262	Connect	65	7018	65	4571	75	5527	175	4:27	Genesis	ClariS	
+263	[SHD] Bach Alive	44	3767	44	2941	44	2941	130	1:40	Niro-	BeautifulDay	
+264	[LN]Evans	83	4634	50	2278	83	3847	185	1:47	WhiteAndBlack	DJ Yoshitaka	
+265	Deaf to all but the Song Flower	65	8129	65	4310	65	4310	165	3:16	Genesis	sound sepher (Jun.A)	
+266	Absolute Soul	87	4061	87	3899	87	3899	188	1:31	KEHC	æ€º÷∑Á∆Æ µ‡ø¿ OP	
+267	Philosophyz	88	9000	88	7189	88	7189	160	4:50	Genesis	Mizutani Runa (NanosizeMir)	
+268	Windy Fairy	82	7008	82	3778	82	3778	180	1:58	3∑˘	DJ TOTTO	
+269	BAAM	58	3849	58	6237	58	6237	127	3:30	Schoolgirl	MOMOLAND	
+270	Fatally	50	10000	50	4737	50	4737	140	4:05	"∫Ï¡Ó,¡ˆøı¿Ã"	Duel savior	
+271	triple baka(Full version)	82	3524	82	7137	82	7137	180	3:54	¿Ω≥‚	"Hatsune Miku,Kasane teto,Akita"	
+272	Lunar Dial	10	4112	30	2281	38	4198	138	2:52	Tasarr_	ZUN	
+273	Reason for Transcending	77	4829	77	3637	77	3637	178	1:54	Rocher	Unknown Artist	
+274	Girl Front	65	6859	65	4642	65	4642	140	3:15	Sanni	ODD EYE CIRCLE	
+275	Railgun Girl Days	61	4073	61	4542	61	4542	144	3:28	Genesis	Rina Sato	
+276	BACK FOR MORE	59	6057	59	3100	59	3100	130	1:56	CheolJu	ø¡∞Ê¿Ã∫£¿Ã∫£	
+277	Electric Butterfly	83	9010	83	4974	83	4974	185	2:17	Rocher	e	
+278	Light My Fire	83	4875	83	5469	83	5469	186	3:48	lms1065 :: Sub	KOTOKO	
+279	SILHOUETTE (Naruto OP16)	59	5152	59	1956	59	1956	183	1:31	CheolJu	KANA BOON	
+280	Black or white	65	7663	65	3395	65	3395	185	2:00	Rocher	blackyooh siromaru	
+281	ZERO!!	79	4745	79	6035	79	6035	182	3:58	Rocher	0	
+282	Kagefumi	87	4742	87	6722	87	6722	174	3:55	DJ	nano.RIPE	
+283	Colorful Cookie	21	4720	79	3186	79	3186	180	1:57	LCH	Lucky Vacuum	
+284	Divine Intervention	73	5802	73	5148	73	5148	177	3:31	LCH	¿ßƒ° ≈©∑°«¡∆Æ øˆ≈©Ω∫ OP	
+285	Fragment of Tears	50	7433	80	3481	80	3481	175	2:06	≈©≈©≈™...	SYNC.ART'S	
+286	Avalon no Oka	72	7656	72	3489	72	3489	158	1:53	Niro-	Nekomata Master	
+287	Magicaride	72	5977	72	6666	72	6666	173	4:24	WhiteAndBlack	fripside	
+288	Grand Blue	25	3956	34	3955	41	6022	120	4:24	nightshroud	fripSide	
+289	Sirius	73	3083	73	7194	73	7194	176	4:23	»≠æÿ∫Ì&∑Œ∏Æƒ‹	≈≥∂Û≈≥ OP	
+290	TSAR BOMBA	78	8115	78	4218	78	4218	190	2:01	LCH	L.E.D	
+291	We Are Electric	44	4619	44	4263	44	4263	130	3:51	nightshroud	Flying Steps	
+292	Luminous Sword	15	6207	32	1626	54	3246	150	2:29	nightshroud	Kajiura Yuki	
+293	Fight!	12	6364	34	1561	88	3826	177	2:03	nightshroud	Kajiura Yuki	
+294	Decade	20	3633	40	5641	74	8906	154	6:31	nightshroud	fripSide	
+295	Scarlet Faith	71	8887	71	5307	71	5307	151	3:17	LCH	Nakamura Meiko	
+296	Late in Autumn	26	7000	36	5216	83	7321	143	5:39	nightshroud	fripSide	
+297	Reunion	74	8885	74	3467	74	3467	184	2:03	lms1065 :: Sub	Tatsh	
+298	Kawaru Mirai	75	4747	75	5566	75	5566	167	4:06	lms1065	ChouCho	
+299	LUVORATORRRRRY!	65	5677	65	4574	65	4574	128	3:24	LCH	reol	
+300	Decade -Another-	41	6536	41	5959	41	5959	140	7:10	nightshroud	fripSide	
+301	flower of bravery	76	10000	76	6235	76	6235	152	3:58	Royal777	FripSide	
+302	Black Bullet(TV size)	20	8160	65	2105	65	2105	155	1:32	LCH	fripSide	
+303	Seraphim	68	10361	68	3365	68	3365	186	1:59	MONAMIE	Yooh	
+304	Kasanaru Kage	69	5331	69	6616	69	6616	149	4:48	Genesis	Hearts Grow	
+305	Future Gazer -Another-	28	5001	28	2941	40	4321	152	3:37	nightshroud	fripSide	
+306	I wanna be a girl	54	6005	50	5280	54	6506	140	3:54	LostCool	Mafumafu	
+307	Alice in Rosso	12	7654	34	3011	46	4882	140	4:07	nightshroud ft. Mr.Azaness007	fripSide	
+308	ELPIS	67	5287	67	3335	67	3335	175	2:11	rocher&whiteandBlack	dj TAKA	
+309	Sister's Noise	22	5260	38	4621	73	7196	144	4:23	nightshroud	fripSide	
+310	Daily-Daily Dream	24	5344	38	4900	73	7000	170	5:10	nightshroud	KOTOKO	
+311	Follow Tomorrow	51	5481	51	2397	51	2397	140	2:02	TH	HHHxMMxST	
+312	Eternal Reality	28	5514	48	5101	48	5101	145	3:47	nightshroud	fripSide	
+313	Sacrament of Wilderness	46	5931	46	4566	75	6361	145	4:10	nightshroud	Nightwish	
+314	Fortissimo -From Insanity Affection-	22	4085	35	4504	52	6316	150	4:48	nightshroud	fripSide	
+315	Memory of Snow	19	7571	35	3866	85	6326	175	3:34	nightshroud	fripSide BPM[125/150/175]	
+316	Black Bullet	84	4823	84	7734	84	7734	155	4:29	ƒ´≥™ªÍµµ&«˝∏Æ	Fripside	
+317	IGNITE	86	10255	86	3357	86	3357	171	1:31	KEHC	æ∆ø¿¿Ã ø°¿Ã∑Á	
+318	Chikyuu Saigo no Kokuhaku o	86	4078	70	4379	86	5989	190	3:22	WhiteAndBlack	kemu	
+319	"Utakata, Ai no Mahoroba"	6	4728	24	1861	38	3341	155	3:54	nightshroud	Iceon ft. Senya	
+320	Akatsuki Zukuyo	69	6359	69	6179	69	6179	180	4:35	Destiny19	HoneyWorks	
+321	Paranoia	77	5118	77	7337	77	7337	150	3:49	"Terion,Stella"	Kano£®÷„“¨£©	
+322	Tsuki ni Murakumo Hana ni Kaze	22	5190	32	3097	40	4014	160	4:15	Lenye	Senya	
+323	498 Tokio	78	4844	78	5926	78	5926	195	3:47	LCH	Hige Driver	
+324	This game	84	6741	84	7662	84	7662	161.7	4:15	SubTitle_ // «˝∏Æ	No Game No Life 01 OP	
+325	ALRIGHT*	78	9509	78	6728	78	6728	184	4:07	Kanasando	Hagiwara Yukiho	
+326	AiAe	11	3277	24	2506	37	4017	180	3:58	Lenye	Yuyoyuppe	
+327	Borealis	86	4983	86	3693	86	3693	196	1:51	Rocher	ginkiha	
+328	COMA	73	5084	73	4547	73	4547	180	3:44	LCH	ensou feat.GUMI	
+329	Halcyon -Miracle-	84	10571	55	3790	84	6083	191	2:40	Trapper	xi	
+330	Natsu Matsuri	73	3748	73	6173	73	6173	141	4:01	Kanasando	Takatsuki Yayoi	
+331	Creamy Sky	98	9743	98	4256	98	4256	190	1:53	nightshroud	BTB	
+332	True Administrator	82	4987	82	6811	82	6811	163.01	3:30	Trapper	ZUN	
+333	Calc.	74	4703	74	6697	74	6697	173	3:55	LCH	Jimmy-Thumb P	
+334	[LN]Snow Storm	67	5884	67	4206	67	4206	145	2:19	£¢©nÊŸê∫ƒß°Î	DJ TAKA	
+335	Gigantic O.T.N. GIGA H	79	10008	79	5636	79	5636	180	3:38	«œ«ˆ¥ﬁ::Hahyeon	π¬ºø∂•¥Ÿ¿ÃΩ∫≈∞	
+336	Palette	94	11743	94	8490	94	8490	180	3:46	rocher	hanatan	
+337	[SL]Air-GOD	62	13104	62	6729	62	6729	180	2:26	¿Ω≥‚	shiki	
+338	Nippon Egao Hyakkei	80	4018	80	6442	80	6442	160.01	3:55	ƒ´≥™ªÍµµ	”˛˝ŸÔÕÏÈ⁄¶	
+339	Sora	71	6289	71	6167	71	6167	168.04	4:05	ƒ´≥™ªÍµµ	ø¿≈‰≥™Ω√ ƒ⁄≈‰∏Æ	
+340	Artificial Rose	75	5348	75	3449	75	3449	175	2:38	Discharge&LCH	¿Œ∞¯¿ÂπÃ	
+341	Colorful Skies	70	3512	70	2772	70	2772	146	1:57	lms1065 :: Sub	3R2 (Cytus)	
+342	Cage Breaker	69	4257	69	5720	69	5720	180	3:42	¿Ω≥‚	SID sound(Elika)	
+343	Vajra	84	5219	84	4345	84	4345	173	2:02	¡æºˆ¿«±ÿº∫æ»∆º∆“	DJ TOTTO VS ˜Õ˜Õ	
+344	Pa-Pi-Pu-Yeah!	77	7129	77	3057	77	3057	160.02	1:48	ƒ´≥™ªÍµµ	»˜∞‘µÂ∂Û¿Ãπˆ	
+345	Nine Point Eight	70	7273	46	1921	70	3200	164	2:28	≥Î∆Æ¬Ô¥¬ªÁ∂˜	Mili	
+346	Miiro	84	5878	84	5605	84	5605	195	3:00	SubTitle_	AKINO from bless4	
+347	Our Ship	63	5700	63	5607	63	5607	144	4:04	LyChee	Maika	
+348	Oboro	78	897	78	5496	78	5496	149	3:15	Erox	HHH & MM & ST	
+349	Blossoming Flowers	43	8400	43	4180	43	4180	138	3:42	Ken Yu	Senya	
+350	Preserved Valkyria	71	6652	71	3410	71	3410	146.67	2:05	CheolJu	™⁄™Œ™Ï™Í	
+351	Crisp	62	10287	62	2757	73	2900	175	2:07	Ken Yu	Yak Won	
+352	Kuusou Mesorogiwi	26	7622	26	2714	43	4339	230	3:57	Ken Yu	Yousei Teikoku	
+353	[SHD]%E - XT [O2 HDMIX]	19	8218	25	1735	40	3335	130	2:01	FF Ken Yu	Pory	
+354	AiAe	92	10195	92	8647	92	8647	180	3:58	KEHC	yuyoyupe	
+355	Tough & Alone	72	8951	72	4001	72	4001	150	2:56	LÔøΩÔøΩGÔøΩÔ	MYTH & ROID	
+356	TRIGGER HAPPY	65	4374	65	2681	65	2681	185	1:54	LCH	P*Light	
+357	Fairytale	86	8439	86	8490	86	8490	194	5:01	¢æ	buzzG(feat.´œ´∞)	
+358	ET - Cooled Edition !!	79	8439	79	7371	79	7371	157	3:29	Ken Yu	Natsuko Kuwatani	
+359	Kotoba Tsunagi	17	8903	34	3483	56	4706	176	4:18	Ken Yu	Hanatan	
+360	Knew Day	74	5248	74	7140	74	7140	150	3:52	Niima	(K)NoW_NAME	
+361	Rakuen Project (TV Size)	64	3082	64	3039	64	3039	135	1:36	Royal777	Ray	
+362	Reunion - Clear Version	22	5095	22	1383	59	4381	183	2:03	Mr.Azaness007 and Ken Yu	Tatsh	
+363	school O.T.N. GIGA H	71	6853	71	5636	71	5636	180	3:38	«œ«ˆ¥ﬁ::Hahyeon	π¬ºø∂•¥Ÿ¿ÃΩ∫≈∞	
+364	Last Fortune	49	7229	49	5895	49	5895	148	4:32	Ken Yu	?ï„É™?É„Éó?µ„Ç§??	
+365	Joker - Another	45	8887	45	3344	84	5019	184	2:10	Eleventh and Ken Yu	DJ Nero	
+366	Crow Song	57	7173	57	4950	76	5270	174	3:22	Ken Yu	Girls Dead Monster	
+367	NX - Crossing Field	43	9016	56	5988	71	6633	184	4:01	Ken Yu	LiSA	
+368	Snowscapes	72	4836	72	2901	72	2901	179	1:41	rocher	ginkiha	
+369	Dear You	84	5759	84	5144	84	5144	174	1:58	KEHC	DJ Genericname	
+370	KOKORO-Game box	68	4510	68	6599	68	6599	185	4:00	¿Ω≥‚	Hatsune Miku	
+371	Take Off	35	6206	35	3433	35	3433	132	3:22	Ken Yu	2:00 PM	
+372	Gate Openerz!	40	7218	40	4357	40	4357	199	4:23	Ken Yu and Thor	DJ Sharpnel	
+373	Knew Day -Another-	62	8564	62	6128	62	6128	150	3:52	Niima	(K)NoW_NAME	
+374	Yume (HGS Edition)	90	6551	90	5850	90	5850	190	3:15	Ken Yu	Devilish-P feat Gumi	
+375	Holography (HGS Edition)	85	5558	85	7345	85	7345	200	4:15	Ken Yu	Devilish-P feat Gumi	
+376	Hidamari Days	36	5372	36	5932	36	5932	134	4:36	Zenonia	SisterS	
+377	Cycle Hit	77	6881	77	6279	77	6279	175	3:38	Destiny19	KASAI HARCORES	
+378	Burst the Gravity	73	5832	73	7423	73	7423	148	4:27	±‘≥Î(«˝∏Æ)	"ALTIMA ""Accel World OP2"""	
+379	HAELE III ~Angel Worlds~	75	4107	75	3538	75	3538	185	2:10	KIWI & misSky	Yu_Asahina ft. Ritsuka	
+380	Doro no Bunzai de Watashi dake no Taisetsu o Ubaouda nante	83	5658	83	7200	83	7200	225	3:10	MapleSyrup-	TUYU	
+381	Itte.	76	5720	76	6388	76	6388	180	4:00	MapleSyrup-	Yorushika	
+382	Kan Saete Kuyashiiwa	75	5208	75	7300	75	7300	150	3:54	Luka	Zutto Mayonaka de Ii no ni.	
+383	Masquerade	64	9201	64	3839	64	3839	128	2:24	Royal777	M2U	
+384	Crystal World	81	3674	81	4085	81	4085	180	1:58	LCH	wa. remixed celas	
+385	STYX HELIX	73	6304	73	5423	73	5423	122.98	3:26	LunaticAnt	MYTH & ROID	
+386	Koi wa Chaos no Shimobe Nari	35	5115	57	6041	97	8724	158	3:57	"corenik, snowkel, nightshroud"	Tanaka Kero (MONACA)	
+387	Red -reduction division-	67	3926	67	8178	67	8178	135	4:37	Royal777	Unknown Artist	
+388	A Geisha's Dream (Extended Ver.)	50	8855	50	3873	50	3873	139.98	3:26	corenik	Naoki feat. SMiLE.dk	
+389	Can't Beat Airman	80	4596	80	7753	80	7753	175	4:26	WhiteAndBlack & ExiT	hanatan	
+390	Chain	79	4012	65	5663	79	6294	184.04	3:36	corenik	Back-On	
+391	Storm Flurry	15	9210	45	1671	70	3782	145	2:19	corenik and nightshroud	potatomania	
+392	Koisuru*Uchuu Sensou!!	9	12593	54	3156	54	3156	200	2:07	corenik & nightshroud	PRIM	
+393	Koi no Uta	66	3962	37	3304	66	4571	168	3:27	corenik	Suzaki Aya	
+394	Colorful	64	5474	64	4789	86	6422	178	4:09	PrinceO2jam	ClariS	
+395	[SHD]Magic°ƒWorld	78	10854	78	4546	78	4546	171	2:55	TH	Lyrics:Maon Kurosaki Music&Arra	
+396	Yasashisa no Riyuu	72	9783	83	4630	91	6260	177	4:16	Prikon & DJ & ExiT	Hyouka OST (ChouCho)	
+397	Who done it!	83	5517	72	4112	83	5045	154.9	2:34	¿œ∑π∫Ï¡Ó	ZUN	
+398	Nyan Cat	72	8323	72	4592	72	4592	142	1:55	Norjen	Unknown Artist	
+399	Cute Replain Great War	63	3219	63	3169	63	3169	180	2:12	WhiteAndBlack	Sound Sepher (Jun.A)	
+400	New gravity	54	4127	54	2615	54	2615	154	1:44	1 1 t h	starving trancer	
+401	Love Kami	69	10103	69	5871	69	5871	174	3:54	Genesis	Rita	
+402	Niji wo Ametara	71	4409	71	6873	71	6873	123	4:24	Kanasando	fhana	
+403	Credens Justitiam 1.15x	70	1086	70	5423	70	5423	156	3:11	KenZ	Yuki Kajiura	
+404	Ima Suki Ni Naru	74	4057	74	4425	74	4425	170	2:59	Alices	Nobunaga	
+405	NEUROTOXIN	90	6206	90	4637	90	4637	180	2:36	Blanctorche	ﬁ˚∂	
+406	Symphogear	82	3477	82	8045	82	8045	160	3:40	Fly	Takagaki Ayahi	
+407	Alteration	50	4849	75	4444	75	4444	160	2:45	ﬁ›ﬁ›πÃæÁ ≥™∂˚≤≤?	ZAQ	
+408	Azu No Yozora Shoukaihan	87	7282	87	6006	87	6006	185	2:58	Kanasando	Tokonokoa	
+409	Muteki no Soldier	77	3939	77	7606	77	7606	210	5:03	Cuppp	Maeda Jun x Yanagi Nagi	
+410	Tsubomi	69	6440	84	2797	84	2797	184	1:44	LCH	Tatsumi Megumi (feat.Sano Hiroa	
+411	FINAL DREAMING	48	9184	48	3053	48	3053	150	2:35	Genesis	"Creent, TY Brave"	
+412	Rolling Girl	68	12408	68	4728	68	4728	195	3:14	"Genesis,Eleventh"	Aki Akane	
+413	Love-coloured Master Spark	82	6234	82	7116	82	7116	183.7	3:26	Genesis	ZUN	
+414	Voyage1969	60	1467	38	3159	60	4303	167	2:56	Genesis	ZUN	
+415	What The Hell	61	9418	61	4586	61	4586	150	3:43	Genesis	Avril Lavigne(2011)	
+416	Tok Tok (Feat. SOYA)	52	5297	52	5590	52	5590	130	3:52	Genesis	∏∂¿Ã∆º ∏∂øÏΩ∫ (Mighty Mouth)	
+417	Reminiscing	34	8825	34	2343	34	2343	175	2:14	Reba	Shoujo	
+418	Reunion	92	3676	92	5080	92	5080	184	1:58	HIGH	Tatsh	
+419	Omega Rhythm	94	1640	94	6506	94	6506	173	3:00	Nope	Request REA	
+420	Hitomi no tsubasa	32	6281	45	3750	58	5000	144	3:33	Exit	access	
+421	Nagisa's Little Devil -Lovely Radio-	21	6227	43	2148	63	3591	190.04	1:51	ExiT	Jubeat Saucer	
+422	[SHD]Nagisa's Little Devil -Lovely Radio-	48	3720	72	3788	83	4266	190.04	1:51	ExiT	[º“æ«∏∂] Jubeat Saucer	
+423	Be Starters!	88	4493	88	6260	88	6260	168.04	3:54	ººµÂ±‚	Mayo Chiki! OP	
+424	[LN]Voyage1969	81	3285	81	7408	81	7408	167	2:53	Genesis (LN Edit by hh27v5)	ZUN	
+425	One Day	62	7891	62	6226	62	6226	178	4:20	ExiT	The ROOTLESS [ø¯««Ω∫OP]	
+426	Fool On The Fool	72	7231	72	7169	72	7169	155.4	4:15	Genesis / Eleventh	˝Ÿ€‹Ï£ÒÏœ≤ˆË	
+427	Fortissimo -The Ultimate Crisis-	20	7535	36	5261	51	5705	145.5	4:55	Genesis	fripSide	
+428	Chronos no Mori (Easy Ver)	67	9021	67	6882	67	6882	180	3:13	Genesis	Suzuki Saeko with TOMISIRO	
+429	Go to McDonald!!	49	5574	49	1599	49	1599	131	2:27	Bephilops & Sequencer	McGiygas	
+430	Say A Vengeance	77	8231	60	3289	77	4319	185	2:20	ExiT & WhiteAndBlack	Etia	
+431	Mellow Melody	83	5920	83	6000	83	6000	105	3:53	StelLa¿ß≥ (Windy)	Sola Ending-Full ver	
+432	Destin Histoire	69	10847	56	5404	69	6447	166	4:20	Genesis	yoshiki*lisa	
+433	Quad Queens	72	8571	72	3860	72	3860	157	2:03	MonAmie	DJ.Nero	
+434	Trip - innocent of D -	86	4265	74	7285	86	9292	164	4:17	ExiT & AyamTelur	Larval Stage Planning	
+435	Strength of a Thousand Men	96	5019	96	4916	96	4916	174	2:12	PrinceO2jam	Two Steps From Hell	
+436	Dancing in the velvet moon	40	4888	40	4798	73	6074	140	4:30	DJZMO	Nana Mizuki	
+437	Sense	75	5579	75	6050	75	6050	168	4:11	HIGH	Kawada Mami	
+438	Emerald Sword	1	4589	35	4500	43	4939	180	5:34	host112	Rhapsody	
+439	Starlog	75	5334	55	5015	75	7629	168	5:01	WhiteAndBlack	ChouCho	
+440	Six Trillion Years And Overnight Story (Kano)	24	3706	80	4476	85	5469	186	3:38	TH	kemu feat. Kano	
+441	Burst The Gravity	36	6022	46	6596	76	9870	148	4:25	ø¿≈ı±Õ¬˙¿Ω	Altima	
+442	[SHD]irony	58	6761	58	2904	58	2904	134	3:06	Genesis	Claris	
+443	Carry Me Away (Extended Mix)	72	4011	72	7725	72	7725	175	3:58	Destiny19	lapix	
+444	Let Me Hear	21	4213	32	1409	40	3725	184	3:46	MR.CHONG and Tree	"Fear, and Loathing in Las Vegas"	
+445	Sanctity	75	3176	75	2999	75	2999	143	2:18	TH	Rabpit(2012)	
+446	Other Side	70	2596	70	4836	70	4836	168	3:35	moni & Cuppp	FELT	
+447	Akasha	90	1386	25	2500	90	7591	185	4:23	WhiteAndBlack	Xi	
+448	REANIMATE	78	5611	78	4028	78	4028	174	2:31	Destiny19	Warak	
+449	Goldrop [ Neverland ]	69	1900	69	5321	69	5321	146	3:56	Destiny19	MAIKA	
+450	Two Faced Lovers	25	3234	25	2845	67	4284	159	3:09	Krustycrab & Ishimaru94	Hatsune Miku	
+451	Complex Image	71	731	71	5673	79	6480	158	2:54	Genesis	∫Æ≤ı√˘∆¸÷Æ ±	
+452	Yellow head joe	84	4964	23	1534	84	2975	187	1:36	TH	S-C-U	
+453	[LN]True Blue	37	7487	40	1932	85	5634	164	2:10	Rustin	dj TAKA feat.AiMEE	
+454	RAKUEN Project	78	8100	78	8097	78	8097	162	4:04	Sub // WhiteAndBlack	To LOVE™Î Trouble ~Darkness~	
+455	Dance of puNDarika 1.2x	74	6560	74	6558	74	6558	162	3:51	Genesis eleventh	Demetori // 1.2x	
+456	SHOOT!	80	8176	80	8176	80	8176	141	4:43	HIGH&Xyrlsz	RO-KYU-BU!	
+457	Mr.Brightside	84	7860	84	7859	84	7859	148	3:44	Genesis	The Killers	
+458	Tiny Little Adiantum	67	7554	67	7554	67	7554	186	5:02	LostCool	Shibayan Records (3L)	
+459	Real Force	70	5579	70	5579	70	5579	168	3:43	¿Ω≥‚&πŸ∂˜¿Ã	ELISA	
+460	Alice in Misanthrope	72	4326	72	4326	72	4326	172	2:25	Destiny19	LeaF	
+461	Heaven Is A Place On Earth	50	4120	60	5770	78	6866	166	4:15	nightshroud	fripSide	
+462	Kotonoha Clinic	70	5918	70	5918	70	5918	151	3:22	sana	Unknown Artist	
+463	Lucid	13	1012	32	1584	50	2281	175	1:55	CRS	DJ-EZ2DJ	
+464	Oceanus	98	7930	98	7930	98	7930	196	4:11	KIWI	CosMo@¯ÏÒÀP	
+465	Q&A Recital!	81	8100	81	8100	81	8100	182.04	4:50	lms1065 & ExiT	Haruka Tomatsu	
+466	Balance Doll	65	5670	65	5668	65	5668	145	4:21	Genesis	Prague	
+467	Wagamama Mirror Heart	87	9192	87	9192	87	9192	181	4:28	jakads	Â§ßÊ©ãÂΩ©È¶ô	
+468	Amphisbaena	75	4426	75	4426	75	4426	185	3:23	nightshroud	Mitsuyoshi Takenobu no Ani	
+469	Koi Yomi Zakura	71	3333	71	3333	71	3333	168	2:15	LCH	loos	
+470	Only My Railgun	14	1087	24	2178	44	5648	143	4:15	D12rwin	fripSide	
+471	Mirai Nostalgia	66	5678	66	5677	66	5677	164	4:41	æÿ∫Ì & ExiT	ŒÈ‹‚™ﬂ™Ê™≠(πÃ∑°≥ÎΩ∫≈⁄¡ˆæ∆ OP)	
+472	Archangel	78	4941	63	3524	78	4940	160	2:34	Sibokab_182	Two Steps From Hell	
+473	Outskirts of the Battle	79	13438	79	13404	79	13404	156.12	4:59	Trapper	ÔøΩÔ	
+474	Mynarco	78	3355	78	3355	78	3355	181	1:47	LCH	positive MAD-crew	
+475	Choose me Darling	77	7922	77	7922	77	7922	150	3:56	Un.Reimu	Stylips	
+476	Innumerable Eyes	95	9451	95	9451	95	9451	190	4:24	Ex2jam Úÿ-Boss 3	Demetori	
+477	Mmmmmmm	90	7300	90	7300	90	7300	192	2:46	Un.Reimu	DJ Sharpnel	
+478	Penguin	95	3815	95	3815	95	3815	170	1:36	Cuppp	Randy Mortimer	
+479	Ordinary World	78	5356	78	5356	78	5356	174	3:37	Cuppp	Meiko Nakamura	
+480	PONPONPON	70	3767	70	3767	70	3767	170	2:40	Cuppp	Twintale	
+481	Black Hole -III-	83	5489	83	5489	83	5489	165	3:20	ªÓÀ¿»À°Ã	m1dy	
+482	sugar sweet nightmare	80	6930	80	6915	80	6915	166	4:44	Genesis	È‚ÙπÏœ (CV.œ‹À∞Î¶Î˝)	
+483	HIGHSCHOOL OF THE DEAD	68	4149	68	4149	68	4149	190	3:21	Genesis	Kishida Kyoudan & THE Akeboshi	
+484	Otenba Renjyo	77	3048	77	3048	77	3048	168	2:06	Tangjinxi	"Touhou ""Canon"""	
+485	Return to Universe	76	3866	76	3866	76	3866	170	2:01	KNH**	Memme	
+486	unfinished	69	4774	69	4774	69	4774	146	3:18	TH	KOTOKO	
+487	[LN]fffff [O2 Version]	8	754	17	1413	62	3468	138	1:40	∂Ø∏–Õø—ª	Five Hammer	
+488	DISCOTHEQUE	70	4859	70	4859	70	4859	143	4:01	Genesis	Rosario + Vampire Capu2	
+489	Refrain of the Lovely Great War	81	8020	81	8019	81	8019	146	4:00	Shadowkun	21	
+490	Half Step	73	6595	73	6595	73	6595	170	4:11	Sibokab_182	Livetune ft. Hatsune Miku	
+491	ANTI+THE-EuphoriaHOLiC	85	7923	85	7923	85	7923	180	4:14	±©◊ﬂP	1 1 t h	
+492	EX.Aqua Trytone	99	9935	99	9935	99	9935	183	4:18	Genesis	Halozy (™π™ﬂ™∏™Â™Û / Vo.™€™ø™Î)	
+493	Border of Life	90	8427	90	8424	90	8424	156	4:20	Nong	dBu	
+494	Wind God Girl	80	4624	80	4622	80	4622	154.02	2:58	ZUN	jj	
+495	Border of Life ~Phantasm~	96	8469	96	8469	96	8469	160	4:22	ZUN	ÔøΩÔøΩÔøΩÔøΩÔøΩÔ?	
+496	Schrodinger's Cat	23	1204	33	2098	48	2630	187	1:50	Glenn Joseph	Cait Sith	
+497	Euphoric field	52	3780	52	3780	52	3780	150	3:54	Genesis	ELISA	
+498	Chronos no Mori -battle mix-	85	7180	85	7546	85	7546	180	3:13	Genesis	Suzuki Saeko with TOMISIRO	
+499	volcanic	84	6762	57	3403	84	6762	191	2:15	DETRO	jz	
+500	Straight Jet	65	5718	65	5717	65	5717	154	4:32	Mirror&Genesis	Kuribayashi Minami	
+501	Moon -Last Destiny-	77	7816	77	7810	77	7810	156	4:32	Iris & Yumel Eleventh.	Dj Taka Featuring Erika Mochizu	
+502	INNOCENCE -=Full=-	83	8521	83	8521	83	8521	183	4:40	ExiT & WhiteAndBlacK	’¿ÔÃ´®´§´Î	
+503	LUCID ~Another~	36	1800	52	2600	76	3800	175	2:00	ExiT	yak_won (EZ2ON)	
+504	Kanzen Kankaku Dreamer	97	8511	97	8511	97	8511	190	4:12	rocher	Unknown Artist	
+505	Mario Paint	71	4537	71	4537	71	4537	155	2:17	Akayro	ueotan	
+506	Toragara no Bishamonten	76	6235	76	6235	76	6235	149	3:30	Akayro	ZUN	
+507	Darlin' Dance	75	6537	75	6537	75	6537	153	3:23	Remuring x Flexo123 x ruka	Tsukino	
+508	Odo ru mizushibuki	78	4896	78	4896	78	4896	138	1:54	Akayro	ZUN	
+509	Kotoba Tsunagi	91	4860	91	4860	91	4860	176	2:18	MapleSyrup-	Hanatan	
+510	Lancelot ~ Flame of the Rebellion~	79	4824	79	4824	79	4824	206	2:04	Niro-	Penoreri	
+511	Ame to Petra	86	6700	86	6700	86	6700	195	3:11	quicalid4	Daidai Alice	
+512	Hajimete no Koi ga Owaru Toki	86	9604	86	9604	86	9604	180	4:51	quicalid4	Choucho	
+513	Recollection Endroll	83	8000	83	8000	83	8000	151	3:24	quicalid4	WaMi	
+514	Univer Page	84	8000	84	8000	84	8000	187	3:49	quicalid4	Mimori Suzuko	
+515	Septette for the Dead Princess	72	3755	72	3755	72	3755	145	2:16	Akayro	ZUN	
+516	Yoru ni Kakeru	74	7950	74	7950	74	7950	130	4:19	ruka	YOASOBI	
+517	Karma	70	7228	70	7228	70	7228	132	4:28	Remuring	Dareharu	
+518	Flowering	72	5477	72	5477	72	5477	148	3:44	Remuring	Dareharu	
+519	This Future (we didn't expect)	94	8758	94	8758	94	8758	180	4:14	Nakano Yuko	Camellia	
+520	dreamin' -happycore version	75	2600	75	2600	75	2600	190	1:44	Akaibito	AOiRO_Manbow with kagerow	
+521	Plumage	69	3367	69	3367	69	3367	190	2:23	qodtjr	brz1128	
+522	Lonely departure	37	2926	37	2926	37	2926	175	2:45	Wonki	Chroma	
+523	Vend	84	4154	84	4154	84	4154	128	3:02	spoonguy	Feryquitous	
+524	Hello Happiness	54	2670	54	2670	54	2670	182	1:45	araragigun	P*Light feat. mow*2	
+525	8bit Voyager	57	3451	57	3451	57	3451	182	2:15	qodtjr	Lime / Kankitsu	
+526	Tono Yokai Zensen	76	7900	76	7900	76	7900	180	3:36	Chenut BS	beatMARIO	
+527	Mad Moon Sonata	6	464	13	1112	23	1551	160	2:15	nao.paradigm	nao.paradigm	
+528	Gargoyle	9	782	15	1108	23	1539	150	2:35	_Spam	Sanxion7	
+529	PLASTIC GIRLS	6	477	13	879	24	1371	130	2:11	LucidKarn	wigen	
+530	Stunt Flying (O3 Remix)	6	470	12	868	24	1607	142	2:38	Ino	Sanxion7	
+531	Mermaid Girl -Eurobeat Remix-	5	422	20	1125	27	2034	150	2:11	Mr.Azaness007	Cream Puff & DJ Command	
+532	Winter In Wizard -Another-	4	464	15	1129	28	2253	148.4	3:07	Mr.Azaness007	Trans Siberian Orchestra	
+533	Motteke Sailor Fuku (REDALiCE Remix)	6	535	17	1616	32	2996	171	4:29	Mr.Azaness007	REDALiCE Feat. Lucky Star	
+534	[SHD]Eleventh Hour	7	461	10	637	32	1421	122	1:42	GMS	Hiro	
+535	Hana wa Odori Reya Iroha ni Ho	12	1112	22	2262	32	3720	160	4:05	Lenye	Team Hanayamata	
+536	Dareka Ga Nageta Ball	14	1001	31	4386	33	4201	132	4:59	"[4A] Romnick100, ILSPQ & Tree"	AKB48	
+537	Little Star	7	555	17	999	33	1789	183	1:59	Ken Yu	REDALiCE	
+538	Straight Jet	6	803	27	2647	33	3586	154	3:53	Romnick100 and Ken Yu	Minami Kuribayashi	
+539	Sweet Devil (Original)	35	3333	35	3333	35	3333	132	3:57	Ken Yu	Miku Hatsune	
+540	Meimetsu (inst)	4	344	12	948	36	1514	120	1:44	Pulse	Zakooon	
+541	Distorted Pain	7	451	14	841	37	5226	160	5:42	nightshroud & Lenye	Denkare	
+542	Fake or Fate	5	778	17	1716	37	3573	146	4:20	FF Ken Yu	Luka Migurine	
+543	Cyber Sparks	14	1181	21	2214	37	3500	192	4:03	Ken Yu	Tatsh	
+544	Blue Mind	9	1088	20	2488	38	3533	144	4:41	Ken Yu	Yui Sakakibara	
+545	Satori 3rd EyEs	9	716	28	1551	39	2586	191	2:33	nightshroud	Kucchi	
+546	Real Force - Another	21	2314	21	2314	39	3932	168	4:11	Mr.Azaness007 and Ken Yu	Elisa	
+547	Chase the World	22	1857	22	1857	40	4096	170	3:45	Ken Yu	May'n	
+548	Hishoku no Sora	6	813	20	1900	41	4493	169	4:16	Ken Yu	Mami Kawada	
+549	Midnight Lightning Bolt	5	633	23	1744	41	3502	155	3:10	Ken Yu	IOSYS	
+550	Jetstream!	5	776	24	2954	42	5371	170	4:30	romnick100	Dimrain47	
+551	Last Inferno	8	830	24	2466	45	4024	168	4:25	Mr.Azaness007	Ceui	
+552	Light My Fire	47	2975	47	2975	47	2975	186	2:35	Ken Yu	Kotoko	
+553	Crazy Hot	47	6103	47	6103	47	6103	162	5:19	PrinceO2jam	Touhou	
+554	Kachoufusetsu	10	1305	30	3505	54	6084	199	4:19	Ken Yu	Byakko	
+555	GIVE ME FIVE!	16	2743	39	5183	55	7300	190	5:01	romnick100	AKB48	
+556	Milchstra•‚e	57	2457	57	2457	57	2457	189	2:01	Alices	Buluka & Nilo	
+557	Scarlet	57	1790	57	1790	57	1790	175	1:37	KNH**	Sakakibara Yui	
+558	FUNKY SUMMER BEACH	57	2697	57	2697	57	2697	175	1:46	misSky	P*Light	
+559	Special Summer Campaign	74	2487	74	2487	74	2487	168	1:44	ø©∏ßø£! «÷ºΩΩ∫	Lucky Vacuum	
+560	ANGEL DUST	74	4316	74	4316	74	4316	170	2:30	Snowkel	Lv.4	
+561	Quo Vadis	76	4617	76	4617	76	4617	160	2:26	Discharge	M2U	
+562	Kimi no Shiranai Monogatari	78	8347	78	8347	78	8347	165	5:38	Ryu x3	supercell	
+563	Super Lovely	30	1989	50	2990	78	3794	170	2:02	HolyO2	EarBreaker	
+564	Marchen Debut!	78	7445	78	7445	78	7445	170	4:31	ƒ´≥™ªÍµµ	æ∆∫£ ≥™≥™	
+565	Snow Prism	78	3333	78	3333	78	3333	196	1:52	LCH	Qripsy Joybox	
+566	Signal Graph	80	7338	80	7338	80	7338	167	4:41	Ryu X3	ªÁ∂˚∞˙ º±∞≈øÕ √ ƒ›∏¥ OP	
+567	Macuilxochitl	66	2912	70	3251	79	3539	148	1:47	tomo	ze	
+568	Hoshi ga Matataku Konna Yoru ni	81	4978	81	4978	81	4978	182	3:49	SubTitle_	supercell	
+569	Hanarai	98	8237	98	8237	98	8237	180	4:07	HANU&LCH	style-3!	
+570	Byoumei Koi Wazurai	83	3634	83	3634	83	3634	160	2:57	Alices	HoneyWorks	
+571	Video Game Girl (ft. viewtifulda	83	6746	83	6746	83	6746	145	3:20	Destiny19	Vau Boy	
+572	Owari no Sekai Kara	84	8327	67	6262	84	8327	148	5:23	NOTERS GOT CRAZY¢æ	yanaginagii x Maeda Jun	
+573	CurTain Call MeMories	84	3729	84	3729	84	3729	173	1:50	«—øÏ	DJ ToTTo & Qrispy Joybox	
+574	Vanitas	84	7007	84	7007	84	7007	200	4:22	Semin & W.B	Xi	
+575	Rebellion	84	6364	84	6364	84	6364	160	4:02	ƒ´≥™ªÍµµ	∞°≥™«œ »˜∫Ò≈∞	
+576	Black Bullet	85	7734	85	7734	85	7734	155	4:29	ƒ´≥™ªÍµµ&«˝∏Æ	Fripside	
+577	Precious °Ÿ Star	87	3440	87	3440	87	3440	178	1:53	°⁄	toto	
+578	Toki (Sound piercer's Timesucker)	87	3985	87	3985	87	3985	184	2:27	Rocher	puru twk. sound piercer	
+579	Megalomania	86	7777	86	7777	86	7777	186.9	3:54	Genesis	Demetori	
+580	Mmmmmmm	85	6165	85	6165	85	6165	193	2:36	Destiny19	DJ Sharpnel	
+581	TIEFSEE	89	5433	89	5433	89	5433	165	2:19	ƒ´≥™ªÍµµ	SOUND HOLIC Vs. dj TAKA feat. Y	
+582	Life Garden (Extended Mix)	89	10152	89	10152	89	10152	149	4:58	Destiny & Nana-'s Collaboration	Yooh	
+583	18.Ï£ﬂ‰÷•¸£Ô  ¢¶ Ancients ients)	89	7177	62	5568	89	7173	160	3:21	ELEVENTH	ZUN	
+584	Raison d' Etre	90	7281	75	3894	90		175	2:12	HoNoR	Zektbach(Beatmania)	
+585	pure ruby	90	3240	90	3239	90	3239	178	2:12	¿œ∑π∫Ï¡Ó	SHIKI	
+586	Jidai Shoujo to Haikara Oyaji	96	10000	96	10000	96		178	3:26	Ex2jam Úÿ-Boss 1	DBU Music	
+587	Dragon and Girl and Decoherence	91	3848	91	3848	91		165	2:06	Discharge & KEHC	◊£™»·¥“≥™»´«´≥´“´Ï§—´Û´π	
+588	Last final	92	4730	40	2396	92	4723	200	1:39	¿œ∑π∫Ï¡Ó	«„ºº∞Ó	
+589	Necro Mangonia (No Ex2Jam)	92	11290	92	11287	92	11287	197.98	5:07	Crazy L-NGT	???	
+590	Athletic meet of sound toy	92	4855	92	4855	92		190	1:53	TH	Mr.T	
+591	Festa Illumination	93	6666	93	6666	93		170	3:16	ƒ´≥™ªÍµµ	Matsuri Tokagawa	
+592	IGNITE [EASY PATCH]	93	7975	93	7975	93		171	4:05	∞‘¿Ãµ•æ≤	Eir Aoi	
+593	Awakening Wolf's Instinct	94	5886	73	4542	94	5884	182	2:38	Eleventh	[ th10PH _ Boss ]	
+594	Preserved Valkyria	95	4183	95	4183	95		146.67	2:05	LCH	™⁄™Œ™Ï™Í	
+595	Sigmund	95	4621	95	4621	95		200	2:01	gram	Unknown Artist	
+596	God Knows -Eurobeat Remix-	36	3963	36	3963	58		159	4:52	Apenix ft Ishimaru	Aya Hirano	
+597	Agony	57	3345	57	3345	57		132	2:39	tangjinxi	KOTOKO	
+598	Ukigumo	65	3284	65	3284	65		178	2:18	LCH	Hige Driver	
+599	Just Hold on (To All Fighters)	59	5778	59	5778	59		170	4:27	Blocko	void	
+600	Synesthesia	86	7193	86	7193	86	7193	190	3:53	ruka	a_hisa	
+601	PEACE BREAKER	82	8428	82	8428	82	8428	160	4:51	Evening	xi	
+602	[LN]Saigetsu	65	5282	65	5282	65	5282	130	1:41	Genesis	ZUN	
+603	[LN]Seeker	40	1850	38	2044	38	2044	150	2:16	£¢©nÊŸê∫ƒß°Î	£¢©nÊŸê∫ƒß°Î	
+604	[LN]Canon O2 Version	39	2022	39	2022	39	2022	162	1:55	ªÓÀ¿»À°Ã	Dr.Flowershirts	
+605	[LN]Xp°¢Windows_	50	1788	50	1916	50	1788	110	1:27	£¢©nÊŸê∫ƒß°Î	Devil	
+606	Only my railgun	47	2198	47	2190	47	2190	143	1:39	Genesis	fripSide	
+607	[LN]Go Beat Crazy	57	4864	57	4634	57	4634	155	3:15	WinTer	Õ∑Œƒ◊÷D∫œºØ	
+608	[LN]Explosive 5	55	5305	55	4840	55	4840	144	3:27	WinTer	WinTer	
+609	[LN]Explosive 4	55	4054	55	3521	55	3521	110	3:33	WinTer	WinTer	
+610	[LN]Explosive 3	55	4546	55	4061	55	4061	131.96	3:21	WinTer	WinTer	
+611	[LN]Explosive 2	55	5118	55	4641	55	4641	146	3:14	WinTer	WinTer	
+612	[LN]Explosive 1	52	4118	52	3681	52	3681	114.87	3:12	WinTer	WinTer	
+613	[LN]Rage your dream	53	6546	53	6104	53	6104	119.96	4:35	WinTer	WinTer	
+614	[LN]Jack	53	3004	53	2876	53	2876	116	1:43	WinTer	WinTer	
+615	[LN]Temptation	54	4482	54	3894	54	3894	127	3:50	WinTer	WinTer	
+616	[LN]ª√œÎæ≥ΩÁ	52	3049	52	3044	52	3044	144	2:23	WinTer	WinTer	
+617	[LN]–¬…˙	9	407	16	765	51	2006	151	1:56	£¢©nÊŸê∫ƒß°Î	DM Ashura	
+618	[LN]¥Ê‘⁄	53	2794	53	2794	53	2794	130	1:41	ªÓÀ¿»À°Ã	∞Õ∫’	
+619	[LN]Kimi Ga Suki Da To Sakebitai	4	345	13	856	30	1973	142	2:37	¥Â≥§	BAAD	
+620	[LN]ªŸ√	25	1209	39	1590	63	2802	140	2:19	£¢©nÊŸê∫ƒß°Î	£¢©nÊŸê∫ƒß°Î	
+621	[LN]‘¬øÒSpecial	49	2585	49	2585	59	2774	170	1:59	£¢©nÊŸê∫ƒß°Î	£¢©nÊŸê∫ƒß°Î	
+622	[LN]Go Berzerk	40	4633	40	4633	75	4254	172	1:58	£¢©nÊŸê∫ƒß°Î	£¢©nÊŸê∫ƒß°Î	
+623	[LN]A.D.K.S.	50	1964	50	1964	50	1964	138	1:47	£¢©nÊŸê∫ƒß°Î	£¢©nÊŸê∫ƒß°Î	
+624	[LN]ŒﬁœﬁÃÙ’Ω	50	1686	50	1686	50	1686	139.43	2:04	£¢©nÊŸê∫ƒß°Î	£¢©nÊŸê∫ƒß°Î	
+625	[LN]Japanese Transformation	126	9248	126	9246	126	9246	260	3:44	LN by LunaticAnt	DJ.Kurara	
+626	[LN]√ÊÃıµƒ“’ ı	59	3331	59	3331	59	3331	160	1:49	ªÓÀ¿»À°Ã	Mephisto	
+627	[LN]Death Moon 2	46	3192	46	3192	46	3192	150	2:56	£¢©nÊŸê∫ƒß°Î	WinTer	
+628	[LN]Winter Sun	53	4394	53	4023	53	4023	144	3:34	WinTer	WinTer	
+629	[LN]Fantasmic 1	57	4792	57	4354	57	4354	131.8	3:14	WinTer	WinTer	
+630	[LN]Fantasmic 2	52	2383	52	2380	52	2380	140	3:11	WinTer	WinTer	
+631	[LN]Fantasmic 3	54	3354	54	3095	54	3095	140	1:59	WinTer	WinTer	
+632	[LN]Öf◊‡«˙[¥ª]µ⁄“ªòS’¬	80	4935	80	4296	80	4296	180	2:42	WinTer	44teru-k	
+633	[LN]Eastern Youkai Beauty	49	3588	49	3566	49	3566	163.5	2:29	HolyO2	ZUN	
+634	[LN]Doll's Garden	65	2617	33	1582	65	2609	160	1:39	ººµÂ±‚&¿Ω≥‚	"NoeL , IRA"	
+635	[SL][171/188/205]World's end	45	7446	50	7446	65	7446	205	2:51	Rustin	V+	
+636	[LN]C.R.Y	59	3404	59	3404	59	3404	142	2:48	£¢©nÊŸê∫ƒß°Î	Unknown Artist	
+637	"AIR GOD - Full , Long note ver."	70	12708	70	12708	70	12708	180	4:26	"Cirno.C (BMS Copy),¬ÙæÛ¿Ô¿Ã"	SHIKI	
+638	[LN]…Ÿ≈ÆÁ≤œÎ«˙	30	2365	40	3207	75	5884	160	2:38	¬“ÕÊ	∂´∑Ω	
+639	[150/150LN/180]What The Hell	61	4587	67	6272	75	4567	180	3:40	Genesis	Avril Lavigne(2011)	
+640	[LN]U&I ~Yuuhi no Kirei Naano Oka de~~	26	596	26	596	26	596	151	1:49	corenik	Hyakkoku Hajime	
+641	[LN]Hidamari Days	74	8565	74	8565	74	8565	134	4:36	Zenonia	SisterS	
+642	[LN]Niji wo Ametara	76	8239	76	8239	76	6059	123	4:40	Kanasando	fhana	
+643	[LN]final phase	71	3520	71	3520	71	4798	149	1:36	Hoto Cocoa	Poppin' Party	
+644	[LN]Stella Breeze	77	8701	77	8701	77	3520	148	4:00	Lostcool	Haruna Luna	
+645	[LN]Ashita no Kimi sae Ireba Ii	75	9149	75	9149	75	7754	178	4:57	Hoto Cocoa	ChouCho	
+646	[LN]CLICK	77	8819	77	8819	77	8819	135	4:22	ExiT	ClariS	
+647	[LN]Best Day of My Life (Gazzo R	42	3678	42	3678	42	3678	125	3:12	ArcherLove	American Authors	
+648	[LN]Hanjuuryoku no Machi	83	7310	83	7310	83	7310	170	3:10	MisterLuka	Ayo	
+649	[LN]Ai no Scenario	86	9917	86	9917	86	6183	180	4:22	Evening	yuikonnu	
+650	[LN]ROSE-1	13	948	26	1514	70	3640	175	2:15	Azer.yuner	Œ¥÷™	
+651	[LN]Gengaozo ET ver.	84	7776	84	7776	84	7776	153	2:43	æﬁ∏˘…ŸƒÍ	-45	
+652	[LN]Gengaozo	80	6090	80	6090	80	6090	153	2:43	æﬁ∏˘…ŸƒÍ	-45	
+654	[LN]Color Paradise	2	254	2	270	26	809	96	2:05	rickyboi.o2SE	Pory	
+655	[LN]Electro Fantasy	3	295	9	555	33	1542	140	2:15	rickyboi.o2SE	BeautifulDay	
+656	[LN]Tree of Grief	58	2743	58	2742	58	2742	160	2:04	ªÓÀ¿»À°Ã	DJ TAKA	
+657	[LN]Odin	82	6303	82	6303	82	6303	163	2:14	CoolDoggie	Shiraishi	
+658	[LN]Snow Storm (1.1x)	72	4206	72	4206	72	4206	159	1:58	£¢©nÊŸê∫ƒß°Î	DJ TAKA	
+659	[LN]Snow Storm (1.2x)	77	4206	77	4206	77	4206	174	1:48	£¢©nÊŸê∫ƒß°Î	DJ TAKA	
+660	[LN]Naked Dive	91	12933	91	12933	91	10846	158	6:46	_S h i r o_	SCREEN mode	
+661	[LN]Missing U	3	328	4	538	35	1380	83	3:13	Pory	Pory	
+662	[LN]Ice Angel	78	11321	78	11321	78	11321	168	6:00	pporse	Yooh	
+663	[LN]Love Mode	33	3247	33	3247	33	3247	95	3:42	Bibir	Audition	
+664	[LN]Blade	29	1708	29	1708	29	1708	115	1:52	Nds	BeautifulDay	
+665	Bokura no 16bit warz	92	8719	92	8719	92	8719	122	3:55	Niro-	SasakureP	
+666	Unit Beta	105	5833	105	5832	105	5832	175	2:10	1 1 t h	Ladymade corestar	
+667	Just Awake	108	8129	108	8128	108	8128	191	3:40	Rustin	"Fear, and Loathing in Las Vegas"	
+668	Emerald Sword	105	8073	105	8070	105	8070	180	4:18	¿Ω≥‚	Alex Staropoli	
+669	KAMUI	95	3083	95	3083	95	3083	210	2:03	TH	ez2dj	
+670	Rozen Vampir	100	8208	85	4863	100	8204	166	2:01	zelly	zelly's music()	
+671	[LN] True Administrator	60	5585	82	6811	94	11096	163	3:30	Trapper	Unknown Artist	
+672	Idola	109	4000	109	4000	109	4000	201	2:12	SubTitle_	iconoclasm feat.GUMI	
+673	INSIDE IDENTITY	102	6625	102	6624	102	6624	186	3:00	ººµÂ±‚	¡ﬂ2∫¥	
+674	Bright Stream	90	9134	90	9134	90	9134	158	4:08	Ken Yu	Nana Mizuki	
+675	Chase The World	90	7025	37	3849	90	7018	170	3:40	DJZMO (FR:PLM)	May'n	
+676	Crisp + Electro Fantasy	97	3767	97	3767	97	3767	162	2:00	Neul	Yak_won	
+677	Ops:Code-Rapture-	108	4634	108	4634	108	4634	195	1:52	yamis0f	Getty vs DJ.DIA	
+678	The Lunatic Princess	92	8134	61	6406	92	8129	183.72	3:43	¿œ∑π∫Ï¡Ó	dBu music	
+679	Andromeda	93	4062	93	4061	93	4061	147	2:05	Genesis	nao.paradigm	
+680	Jitter Doll	102	9000	80	8000	102	9000	180	3:57	KEHC	∑πø¿∑Á¥¬ ªÁ∂˚¿‘¥œ¥Ÿ.	
+681	A Solution for Jealousy	101	7008	101	7008	101	7008	190	3:39	Snowkel and Ken Yu	HoneyWorks feat ?ñÈÇ£	
+682	Love & Justice [Hand Crusher]	1	3849	1	3849	93	3849	200	1:56	KEHC copy	´’´Ì´Û / ´È´∫´Ÿ´Í´Î	
+683	Miracle Hinacle (Eurobeat Mix)	105	10000	109	11572	105	10000	162	4:05	Norzhen	IOSYS	
+684	Perspicuus Aestus	80	3524	108	4480	108	4480	185	1:47	§µ§µ«œ∞ÌΩÕ¿∫ «—øÏ	Ryusse	
+685	BLACK or WHITE	108	4113	108	3459	108	4112	185	2:02	C.HoNoR VS TH	BlackYooh VS Siromaru	
+686	Letter	106	4829	106	4829	106	4829	198	1:57	«—øÏ	Sonz	
+687	Catharsis no Tsuki	103	6861	103	6859	103	6859	200	3:00	ƒ´≈∏∏£Ω√Ω∫¿« ¥ﬁ	™“™ ´”´ø¢‹	
+688	IX	98	4073	88	3507	98	4073	198	2:02	Delly.K	DJ YOSITAKA vs DJ TOTTO	
+689	Calamity Fortune	101	6057	101	6057	101	6057	200.18	2:16	WhiteAndBlack	LeaF	
+690	Last Remote Type Gamma	104	9010	104	9010	104	9010	186	3:58	Paladin.o2NS	Dark PHOENiX (Dark PHOENiX)	
+691	LegenD.	104	4875	104	4875	104	4875	206	2:04	26π¯ «˝∏Æ	Yooh	
+692	Harpe for Gaia	115	5152	115	5152	115	5152	188	2:11	KEHC	ira	
+693	Melt	105	7663	105	7663	105	7663	170	4:20	∞‘¿Ã∞°µ«¥¬≥Ø±Ó¡ˆ	supercell	
+694	JEWELS	111	4745	111	4745	111	4745	190	1:53	1 1 t h	sunkyest	
+695	M-A	114	4742	62	3243	114	4742	200	2:04	Nong	Musical Masterpiece	
+696	Creamy Sky	114	4720	114	4720	114	4720	190	2:12	Sibal....	G2R 2014	
+697	The Snow White Princess Is...	116	5805	116	3986	116	5802	200	3:12	Eleventh°⁄	HatsuneMIKU°Ÿ	
+698	Rubik's Cube	114	7433	114	7433	114	7433	174.01	3:21	ƒ´≥™ªÍµµ	«œ√˜≥◊ πÃƒÌ	
+699	Hana Maru Sensation	108	7656	108	7656	108	7656	190.04	3:49	ƒ´≥™ªÍµµ&«˝∏Æ	Little Non	
+700	Youma no Yakou ~ Apparitions Stalk the Night	108	5977	108	5977	108	5977	160	3:01	æ∆≈©æ∆≈©≥◊Ω∫	DARK PHOENIX	
+701	Battle! Puppet Liberation Front	63	3956	73	4376	119	6040	158	2:47	"Eleventh,TH,ãö≥•¿Ã"	ø‰¡§¥Î¿¸¿Ô	
+702	[SHD]KAMUI	121	3083	121	4710	121	4710	210	2:03	µ⁄¡Æ §ª§ª	ez2dj	
+703	Kaze ni naritai to omotta kodomo	94	8118	94	8113	94	8113	182	4:28	≈•¿Ã	π„«™∆√	
+704	Dream Walker (HN)	103	4619	103	4619	103	4619	215	1:46	Hiro	Unknown Artist	
+705	Morgenglut 2012	114	6207	114	6207	114	6207	190	2:05	KH	sun3	
+706	BEMERA	124	6364	124	6364	124	6364	210	2:40	TDs	Yahpp	
+707	405nm	110	3634	34	1952	110	3633	177	1:51	Vol.4	Jubeat	
+708	Invisible	134	8888	134	8887	134	8887	191.96	3:37	ƒ´≥™ªÍµµ	≈‰ƒ⁄≥Îƒ⁄•·	
+709	Last Remote - Type Beta	128	7004	128	7000	128	7000	186	3:18	Eleventh	Dark PHOENiX / º’≈È	
+710	800nm	125	8888	125	8885	125	8885	180	2:41	¥œ≤ø√ﬂ 800nm	ryuªı≥¢	
+711	INSECTICIDE	136	4747	62	3737	136	4747	199	2:10	C.HoNoR	Camelia	
+712	Joker [Crazy Density]	131	5677	131	5677	131	5677	184	2:10	1 1 t h	D.J.Nero	
+713	Elemental Creation	131	6536	131	6536	131	6536	212	2:07	GEAR - 2	DJ.AMURO & DJ YOSHITAKA	
+714	Blue Zenith	134	10000	134	10000	134	10000	200	4:15	CheolJu	XI	
+715	Volcarou	132	8160	132	8160	132	8160	191	2:16	DETRO	zelly	
+716	Asymmetry	127	10361	127	10361	127	10361	184	4:16	KEΩ∫∑¥∞Ì HC«— ﬂ‰‚≥ÿ™„Í	∑πø¿∑Á	
+717	Angel Dust -New world-	134	5331	134	5331	134	5331	170	2:29	Eleventh	Lv.4	
+718	Unit Alpha	139	5001	139	5001	139	5001	208	2:03	1 1 t h	MANIERA	
+719	Her Majesty	142	6006	142	6005	142	6005	222	2:06	go to the gole	naotyu-	
+720	Puppet Ensemble	144	7654	82	4730	144	7654	200	2:58	WhiteAndBlack	∫ÓΩ∫ƒ´««	
+721	Mist TeK	145	5287	145	5287	145	5287	200	1:54	æ∆≈©≥◊Ω∫	≥ 	
+722	SuicideGak Episode.1  Love & Justice	145	5261	145	5260	145	5260	200	1:56	Note by Sexigak	´’´Ì´Û / ´È´∫´Ÿ´Í´Î	
+723	Sayonara Planet Wars	143	5344	143	5344	143	5344	224	2:02	rocher	˝Ÿÿ™	
+724	Ops:Code-Rapture-	142	5483	142	5481	142	5481	195	1:55	ƒ´≥™ªÍµµ	Getty vs DJ DiA	
+725	Blue-White Crazybits	159	5514	159	5514	159	5514	234	1:50	§«§Ã°⁄	§°§∫	
+726	Fox4-Raize	147	5931	147	5931	147	5931	200	1:59	æ∆≈©≥◊Ω∫	Getty vs.DJ DiA	
+727	Blastix Riotz	100	4085	100	4284	100	4085	256	2:10	‘—Áµ	"™´™·™Í™¢ as "" Riot""ss L"	
+728	BEAT-NEW-WORLD	134	7571	134	7571	134	7571	190	3:29	BeatGenesis	COOL&CREATE	
+729	[SHD] Quad Queens	129	4824	129	4823	129	4823	157	2:02	Snowkel	D.J. NERO	
+730	ANTI THE °ƒ HOLIC (Ex ver.)	126	10259	126	10255	126	10255	191	3:42	±‘≥Î	cosMo@¯ÏÒÀ	
+731	Etude for the Sinners [^o^]	126	4078	126	4078	126	4078	210	1:57	•¡•√KNES•’	º’¿Ãø© øÚ¡˜ø©∂Û	
+732	GOODTEK	123	4729	123	4728	123	4734	190	2:10	æ∆≈©≥◊Ω∫	Ebimayo	
+733	[SHD] Magus Night	115	6360	115	6359	115	6359	167	2:56	LAST EPISODE ll	dBu music	
+734	Light of White Magic	98	5118	98	2559	98	5118	200	1:42	toy musical	z	
+735	JEHANNEDARC	116	5190	116	5190	116	5190	200	1:59	Guillotine & Ssg_Sac	BlackY.	
+736	Future Cider	98	4844	98	4844	98	4844	180	2:14	Destiny19	YUC'e	
+737	Toumei Elegy	98	6741	98	6741	98	6741	220	3:40	Destiny19	Konuko	
+738	MariannE	114	9509	114	9509	114	9509	191	3:56	Destiny19 & sexybaby	Yooh	
+739	Mopemope	137	3277	137	3277	137	3277	200	1:53	æ∆≈©≥◊Ω∫	Leaf	
+740	Ooi [Game Edit]	152	4983	152	4983	152	4983	216	2:01	Destiny19 & Genesis	O2i3	
+741	Acid Burst	120	5084	120	5084	120	5084	180	2:06	Destiny19	Memme	
+742	Bios	119	10571	119	10571	119	10571	194	4:20	reimu	Hiroyuki Sawano ft. Mika Kobayas	
+743	Rose Quartz	83	3749	48	3022	83	3748	146	2:01	KH	SHIKI	
+744	Kyoumei no True Force	94	9743	94	9743	94	9743	187	4:28	reimu	Hitomi Harada	
+745	Unit Gamma	148	4989	148	4987	148	4987	167	2:19	1 1 t h	HAELEQUIN	
+746	Red Goose	135	4703	135	4703	135	4703	200	2:06	zelly	jubeat	
+747	LegenD.	168	5884	168	5884	168	5884	205	2:02	JsjamÚÿVOSS SONG-3	Yooh	
+748	Strawberry Crisis!!	125	10009	92	7907	125	10008	195	4:35	¿œ∑π∫Ï¡Ó	dBu music	
+749	[Sipal]Refrain of the Lovely Great War	120	11759	120	11734	120	11734	146	4:00	Shadowkun	21	
+750	The Maid and The Pocket Watch of Blood	134	13105	134	13104	134	13104	179.2	4:51	Genesis	Demetori	
+751	Go Beyond!!	123	4018	123	4018	123	4018	200	2:00	Rustin	To kill NWJ:Episode 4	
+752	Little hearts	125	6290	50	2626	125	6289	200	2:13	TH	BMS	
+753	High-Priestess	119	5348	119	5348	119	5348	196	2:30	Discharge	Luxion remixed by Lemon	
+754	FINAL AUDITION EPISODE 2-2	137	3516	61	1882	137	3512	200	1:35	∫Ï¡Ó-DA-YO°Ÿ	CRAZY ELEVENTH_	
+755	Toy War	94	4257	94	4257	94	4257	160	2:00	TH	M2U	
+756	Fiat Lux	130	5219	130	5219	130	5219	200	1:58	KEHC	Xi	
+757	Crazy Xenomorph	98	7129	98	7129	98	7129	195.72	3:42	NewsTimeK	Demetori	
+758	Fine Snow	129	7273	129	7273	129	7273	200	3:23	rocher	IOSYS	
+759	HAELE•≤ ~Angel World~	137	5878	137	5878	137	5878	185	2:08	æ∆≈©≥◊!Ω∫!	SDVX III	
+760	Butterfly Sculpture	122	5716	122	5700	122	5700	188	2:18	¿œ∑π∫Ï¡Ó	SID Sound	
+761	[LN]Identic Conflict (TV Size)	22	897	65	1774	65	1774	178	1:33	Tristan97	bbn	
+762	[LN]Precious You	75	8400	75	8400	75	8400	130	3:53	Arezo	"Fujita Akane, Miyamoto Yume, et."	
+763	[LN]Other Side	77	6652	77	6652	77	6652	168	3:53	Moni [Fixed by grimmmsenpai]	FELT	
+764	[LN]Yoru ni Kakeru	78	10287	78	10287	78	10287	130	4:23	ruka	YOASOBI	
+765	[LN]Deep in Abyss	82	7622	82	7622	82	7622	135	3:44	Lostcool	Miyu Tomita & Mariya Ise	
+766	[LN]Kimiiro Signal	75	8218	75	8218	75	8218	164	4:42	Pikobaka	Haruna Luna	
+767	[LN]Muteki no Soldier	85	10195	85	10195	85	10195	210	5:08	Yanaginagi	Cuppp	
+768	[LN]B.B.K.K.B.K.K. (hurce Remix)	85	8951	85	8951	85	8951	172	4:27	bumpinho	nora2r	
+769	[LN]SAY BAY	70	4374	70	4374	70	4374	165	2:00	qodtjr	P*Light	
+770	[LN]Fortissimo -The Ultimate Crisis-	75	8439	75	8439	75	8439	145.5	5:01	Genesis	fripSide	
+771	[LN]Fortissimo -The Ultimate Crisis- (1.1x)	80	8439	80	8439	80	8439	160.05	4:33	Genesis	fripSide	
+772	[LN]Mottai Night Land	82	8903	82	8903	82	8903	160	4:00	Cuppp	Kyary Pamyu Pamyu	
+773	Hoshi no Utsuwa feat. Rapbit	73	5248	73	5248	73	5248	128	2:15	ByeForNow	Tamashi Oto Izumi	
+774	TYCOON	81	3082	81	3082	81	3082	170	1:48	TH	SOUND HOLIC feat. Nana Takahash	
+775	Intuition	82	5095	82	5095	82	5095	147	2:08	KEHC	yak_won	
+776	Necro Fantasy	86	6853	86	6853	86	6853	164	3:50	th	ZUN	
+777	Touhou Medley ~ Dragon's World	90	7229	90	5420	90	7427	160	3:35	º®µµøÏ±∫	??	
+778	FEARLESS HERO	90	8888	90	8887	90	8887	175	4:10	ExiT & æÿ∫Ì	Mizuki Nana (µµ±◊µ•¿Ã¡Ó' OP)	
+779	Touhou Medley ~ Dragon's Mind	91	7173	91	7173	91	7173	178	3:26	º®µµøÏ±∫	?	
+780	Desire Dream	92	9017	92	9016	92	9016	178	4:27	BEGIERDE DES ZAUBERER	Demetori (Demetori)	
+781	Chrono Diver -PENDULUMs-	144	4836	144	4836	144	4836	196	2:04	rocher	ŸﬁÛ©L.E.D.Master+	
+782	Raikou -3rd Desire-	95	5759	95	5759	95	5759	178	2:55	th	TatshMusicCircle (Tatsh)	
+783	Lamir [Mystery Destiny]	97	4511	97	4510	97	4510	200	2:17	1 1 t h	Ã≠„Ù´ﬁ´À´¢	
+784	Terminated Protocol	98	6206	98	6206	98	6206	186	2:36	KEHC	KIEN	
+785	KillinG ME	106	7255	106	7218	106	7218	200	3:07	æ∆≈©≥◊Ω∫	πŒΩ∫∆Æ∑º	
+786	EDM Jumpers ({E+H}DM Reboot)	74	8564	74	8564	74	8564	145	4:42	Evening	Camellia ft. Nanahira	
+787	L'erisia ~ Primary Logic	93	6552	93	6551	93	6551	234	3:41	HoNoR	Zektbach	
+788	Air - New World	100	5560	100	5558	100	5558	180	2:28	Nong	shiki	
+789	Jomanda	106	5373	40	1903	106	5372	195	2:05	LAST EPISODE l	øÍµ¸	
+790	[19+]Kimochi-E-Koto	105	6882	105	6881	105	6881	208	2:46	¢æ	DJ Sharpnel	
+791	Unit Beta	106	5833	106	5832	106	5832	175	2:10	1 1 t h	Ladymade corestar	
+792	Blue Rain - Dustbox RMX	106	4109	106	4107	106	4107	178	1:58	æ∆≈©≥◊Ω∫	SDVX II	
+793	G a i a	109	5659	109	5658	109	5658	180	2:04	GEAR - 1	ŸﬁÛ©L.E.D.Master+	
+794	Maybe able to fly	110	5720	110	5720	110	5720	173	2:11	Y.W	Mango War Episode I	
+795	Daily Lunch Special	110	5208	110	5208	110	5208	205	2:08	GEAR - 3	Lucky Vacuum	
+796	Lucid - New world	114	9205	90	7474	114	9201	175	3:35	HoNoR BreakerS	First Boss Song	
+797	Panic Holic	113	3674	113	3674	113	3674	220	1:43	Neul	C - Show	
+798	Ascension to Heaven -Miracle-	130	6306	60	3326	130	6304	200	2:39	Trapper	xi	
+799	Disruptive Diva	100	5117	100	5115	100	5115	188.7	3:05	Nong&Eleventh	Hatsune Miku	
+800	Hyperdis Part.3	97	3926	97	3926	97	3926	145	2:56	§«§Ã°⁄	§°§∫	
+801	Vanitas	139	8855	139	8855	139	8855	200	4:20	HoNoR Pongu Rocher	Xi	
+802	-§±-	160	4601	160	4596	160	4596	175	1:20	ãö≥•¿Ã	SHK	
+803	Shimizu Miharu	154	4013	1	4012	154	4012	203	1:24	ELEVENTH_	πŸΩ√º“	
+804	END TIME [GENESIS DIE]	158	9213	158	9210	158	9210	180	4:22	§±§∫ 1 1 t h	Cres / air	
+805	¿Øæ∆«œ∞‘ ««æÓ∂Û°¢π¨ø∞¿« ∫¢≤… ¢¶ Border of Life	106	12598	106	12795	106	12593	196	4:59	Genesis	Demetory	
+806	LUV´«´£´∆´Ø´ø	90	3962	90	3962	90	3962	162	2:23	c g b	SOUND HOLIC	
+807	Ÿ¢Õ£˘®‰Õ	93	5474	93	2749	93	5474	200	2:05	ZUN(Arr.sun3)	zelly	
+808	[LN]Toumei na Kioku no Kazaana	90	10854	90	10854	90	10854	180	4:10	KenZ	Yuzuki Risa	
+809	Anelis (Long Ver.)	90	9783	90	9783	90	9783	180	5:35	Zola Nakano xNett	ŸﬁÛ©Master feat. ATSUMI UEDA	
+810	EXILE	90	5517	90	5517	90	5517	157	2:06	MapleSyrup-	-45	
+811	YELL!	81	8323	81	8323	81	8323	170	5:00	Destiny19	DJ Genki vs Camellia feat. moim	
+812	Fight of Witch -Last Word-	42	3219	55	4998	85	5995	156	3:32	host112&zelly	dbu	
+813	Kagachi	81	4127	81	4127	81	4127	186	1:59	HoNOR	HoNoR	
+814	LA MD	76	10103	76	10103	76	10103	190	6:12	Wilben_Chan	Billx	
+815	HONEY¢ΩSUNRISE	92	4409	92	4409	92	4409	190	1:46	jun with Aimee	TAEKXAS	
+816	Asgard	13	1086	37	3361	87	7501	130	3:45	nightshroud and PrinceO2jam	Yousei Teikoku	
+817	Wizdomiot	92	4057	92	4057	92	4057	200	2:34	SoF	LeaF	
+818	Crazy Tek (DJ Noriken Remix)	88	6206	88	6206	88	6206	170	2:30	Kim_GodSSI	P*Light	
+819	Dstorv [Other]	90	3477	90	3477	90	3477	191	2:04	Omino	Silentroom	
+820	For UltraPlayers	117	4849	117	4849	117	4849	201	1:59	rocher	cosMo@¯ÏÒÀP [EXH]	
+821	Mabinogi Login Theme	110	7282	110	7282	110	7282	180	2:24	Royal777 ¿Ã¡ˆ∏∏ ±‚∫¥	Unknown Artist	
+822	Cirno Break	116	3939	116	3939	116	3939	196	2:02	æ∆«Ï∞°ø¿∏¶ ∏¿∫∏∞‘ «ÿ¡÷∏∂!	ƒ°∏£≥Î ∞≠∞£ ºΩΩ∫!	
+823	Crossover!	88	6441	88	6440	88	6440	200	3:11	Ken Yu	Fear and Loathing	
+824	[176/168/160LN]Mai Hime	1	9184	1	9184	120	9531	160	3:41	Kajiura Yuki	?∆÷”…?	
+825	Unlimited Spark (remake) -Lunatic-	112	12408	112	12408	112	12408	185	5:45	Entozer	t+Pazolite ft. Rizna	
+826	Artificial Flower	84	6234	84	6234	84	6234	170.04	4:11	yakumo	NSISN	
+827	Rightfully	20	1467	60	3741	47	2559	182	2:49	UN.378	MILI	
+828	Endless Night	85	9418	85	9418	85	9418	148	5:24	»∫∑Ó¿Ã	3L	
+829	Shoujo - Reminiscing	86	5297	86	5297	86	5297	175	2:18	¡÷øÏ¿ß	[NormalBpm161] ∑π¿Ã request note	
+830	Strawberry Crisis!!	112	8827	112	8825	112	8825	190	3:40	Genesis	Demetori	
+831	perditus paradisus	83	3676	83	3676	83	3676	172	2:09	HoNoR	Iconoclasm	
+832	Proof of the Existence	30	1640	40	2009	75	3085	170	2:09	TH	ŸﬁÛ©Master+	
+833	The Glory Days	86	6281	86	6281	86	6281	184	4:12	LCH vs Discharge	Supercell feat. Tia	
+834	Lose rein - Unreal Style	65	6242	65	6227	65	6227	151	0:00	Genesis	Dark PHOENiX (Dark PHOENiX)	
+835	FIRE FIRE -DARK BLAZE REMIX-	75	3720	75	3720	75	3720	177	1:56	Rocher	sdvx	
+836	PUPA	84	4493	84	4493	84	4493	202	2:05	KEHC	´‚´Í´‚´Í™¢™ƒ™∑	
+837	Poodle	71	3285	71	3285	71	3285	160	2:01	tomlee3	Y & Co.	
+838	[LN]Dancing in the Velvet Moon	76	7892	76	7891	76	7891	140	4:09	DJZMO	Nana Mizuki	
+839	Baka Go Home	77	7231	77	7231	77	7231	158	3:26	¿Ω≥‚&πŸ∂˜¿Ã	Milktub	
+840	Virtual to LIVE	72	7535	72	7535	72	7535	156	4:27	LostCool	Nijisanji	
+841	Catastrophe in Bhava-Agra ~ Wonderful Heaven	92	9021	92	9021	92	9021	161	4:14	Tenshi	SWR	
+842	Kakumeisei Ousama Densenbyou	70	5574	70	5574	70	5574	200	3:20	Zenonia	Suzumu	
+843	Luna Clock ~ Luna Dial	100	8232	100	8231	100	8231	177.8	3:34	Genesis	Demetori	
+844	Smile¢æ	55	5920	55	5920	55	5920	157	3:24	«˝∏Æ	Maple Story	
+845	Ikenai Borderline	94	10847	94	10847	94	10847	161	4:35	Reimu	WALKUERE	
+846	Storia	90	8571	90	8571	90	8571	180	3:58	dnaSoF	xi vs sakuzyo	
+847	Lu*nya*cy Act 2017 [Lunatic]	84	4265	84	4265	84	4265	222	2:21	Lunatic	Katagiri	
+848	Imperishable Night 2006 (2016 Refine)	73	5019	73	5019	73	5019	161	2:12	Destiny19	Yuuna Sasara feat. Tai no Kobon	
+849	I	107	4888	107	4888	107	4888	225	2:01	KenZ	Chroma	
+850	Lagtrain (Vo. Kaai Yuki)	85	5579	85	5579	85	5579	147	2:54	GENESIS + √ﬂºÆ∏∏µŒ	Inaba Kumori	
+851	Angel Dust	89	4589	89	4589	89	4589	170	2:21	Akayro	LV.4	
+852	Candy Kingdom	96	5334	96	5334	96	5334	190	2:08	rocher	snail's house	
+853	Vampire's Territory	62	3706	62	3706	62	3706	140	2:00	Discharge	NOFX	
+854	Jang Yoon Jeong Twist	69	6022	69	6022	69	6022	160	3:18	§µ§° ≥Õ «„∏ÆµΩ∫≈©	¿Â¿±¡§ LOVE	
+855	Gokuraku Jodo	69	6761	69	6761	69	6761	131	3:35	¡÷øÏ¿ß	Reisen Kill Series	
+856	Super Neko World	66	4011	66	4011	66	4011	190	2:35	D	nya~°Ÿ	
+857	Ah Yeah	62	4213	52	3664	62	4213	135	2:56	«œ¥œ«œ¥œ¢æ	EXID	
+858	Chinese Tea (Orchid Remix)	67	3176	67	3176	67	3176	188	1:52	Rocher	SDVX	
+859	Euthanasia	33	2596	49	4131	63	5224	152	4:18	ExiT	«œ√˜≥◊ πÃƒÌ (Hatsune Miku)	
+860	Egg Break Rhapsody	20	1386	30	1909	73	3020	180	2:27	¥”¡º¬Ì≈µ	 ¿ºÕƒ©µƒ∏ª∂˛¥˙	
+861	Bboom Bboom	54	5611	54	5611	54	5611	126	3:28	Schoolgirl	MOMOLAND	
+862	Rainbow Tylenol	27	1900	46	2700	74	3564	135	1:51	DJZMO	Kitsune^2	
+863	Light up My Love	73	3236	73	3234	73	3234	171	2:00	WhiteAndBlack	Ani feat. Moco	
+864	Re: End of a Dream	15	731	35	2066	72	3321	212	2:23	nightshroud	uma vs. Morimori Atsushi	
+865	Yume Chizu	71	4964	71	4964	71	4964	176	3:10	moni	yuikonnu	
+866	May I help you?	74	7487	74	7487	74	7487	150	3:30	LostCool	Swordy	
+1000	Don't interrupt me	64	6578	64	6578	64	6578	120	0:00	¿Ω≥‚	Kawada Mami	
+1001	Final Phase[134/149LN/149]	53	5741	75	7648	63	5741	149	3:56	Un.Ω¡´	∞Àƒæ’”ŒÚ÷æ	
+1002	Reincarnation	55	4221	55	4221	55	4221	148	4:42	Masquerade7	Yozuca & Faylan	
+1003	‰Ó want U	75	4790	75	4790	75	4790	174	2:16	Lmn	™´™Õ™≥™¡™œ™Î	
+1004	UN-DELAYED	70	7858	70	7858	70	7858	145	4:17	KenZ	Miyuki Hashimoto	
+1005	Delete	75	6201	75	6201	75	6201	188	3:57	LostCool	Yuna (Kanda Sayaka)	

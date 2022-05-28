@@ -560,27 +560,26 @@ async def startserver(ctx):
     record_score_status = await ctx.send('Running `Record Scores` Module... Estimated Time `%s Minute`' % (sleep_timer))   
     await asyncio.sleep(sleep_timer_to_seconds)
     bot.load_extension('cogs.scores.record_score')
-    print("[Score Recording] Starting timer...")
+    print("[ONLINE] Record Scores Module")
     await record_score_status.edit(content="`Record Scores Module` Online!")
 
 @bot.command(name='stopserver')
 @commands.has_role(os.getenv('adminrole'))
 async def stopserver(ctx):
-    path = r"%s" % os.getenv('SERVER_PATH')
-    close_path = os.path.join(path, "Stop_Server.bat")
-    p = subprocess.Popen(str(close_path), cwd=path)
-    stdout, stderr = p.communicate()
-    
     try: 
         bot.unload_extension('cogs.scores.record_score')
-        await ctx.send(content="`record_scores` Cog successfully unloaded!")
-        await asyncio.sleep(10)
+        await ctx.send("`Record Scores Module` Offline! ")
+        await asyncio.sleep(5)
         print("Successfully unloaded record scores")
     except:
         print("record_scores not online")
+    path = r"%s" % os.getenv('SERVER_PATH')
+    close_path = os.path.join(path, "Stop_Server.bat")
+    p = subprocess.Popen(str(close_path), cwd=path)
+    stdout, stderr = p.communicate()       
     #os.system("start " + '"" ' + '"' + os.getenv('SERVER_PATH') + "\Stop Server.bat" + '"')
     print('[%s][%s] has stopped the server' % (now,ctx.message.author))
-    await ctx.send('`O2JAM Server Closed!' % (ctx.message.author))
+    await ctx.send('`O2JAM Server` Closed!')
     
 
 

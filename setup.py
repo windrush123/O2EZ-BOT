@@ -22,7 +22,7 @@ def main():
     create_highscores_db()
     if success_count == 6: 
         print("[SUCCESS] Database Complete...")
-        ans = input("Do you want to import the songlist to Database? [Y/N]")
+        ans = input("Do you want to import the songlist to Database? [Y/N]\nInput: ")
         if any(ans.lower() == f for f in ["yes", 'y', '1']):
             songlist_to_db()
         elif any(ans.lower() == f for f in ["no", 'n', '0']):
@@ -37,7 +37,7 @@ def songlist_to_db():
         print("[SUCCESS] FINISHED SETTING UP. YOU CAN NOW RUN THE DISCORD BOT.")
         quit()           
     except TypeError:
-        retry = input("Do you want to retry adding songs? [y/n]")
+        retry = input("Do you want to retry adding songs? [Y/N]\nInput: ")
         if any(retry.lower() == f for f in ["yes", 'y', '1']):
             songlist_to_db()
         elif any(retry.lower() == f for f in ["no", 'n', '0']):
@@ -48,7 +48,6 @@ def alter_member_tbl():
     cursor = conncreate 
     global success_count
     try:
-        
         cursor.execute("""
         ALTER TABLE dbo.member ADD 
         discorduid varchar(50);""")
