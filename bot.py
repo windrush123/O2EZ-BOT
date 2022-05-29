@@ -516,11 +516,12 @@ async def relinkinvite(ctx, invlink, discorduid):
 @bot.command(name='reloadscores')
 async def reloadscore(ctx):
     sleep_timer = os.getenv('timer_scorereading')
+    bot.unload_extension('cogs.scores.record_score')
     sleep_timer_to_seconds = int(sleep_timer) * 60
     print("Trying to reload the record_scores")
     message = await ctx.send("To prevent duplication on scores, Reloading `record_scores` cog will start in 1 minute.")
     await asyncio.sleep(sleep_timer_to_seconds)
-    bot.reload_extension('cogs.scores.record_score')
+    bot.load_extension('cogs.scores.record_score')
     await message.edit(content="`record_scores` Cog successfully reloaded!")
     print("Successfully reloaded record scores")   
 
