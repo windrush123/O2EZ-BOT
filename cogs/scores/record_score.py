@@ -1,4 +1,5 @@
 import os
+from mysqlx import ProgrammingError
 import pyodbc
 import glob
 import re
@@ -131,10 +132,10 @@ class record_score(commands.Cog):
         verified_score_format.append(int(score_line[12])) # maxjam
         verified_score_format.append(int(score_line[13])) # total_score
             
-        score_v2 = record_score.scorev2(self, score_line[7],score_line[8],score_line[9],score_line[10], chart_notecount)
+        score_v2 = record_score.scorev2(self, int(score_line[7]),int(score_line[8]),int(score_line[9]),int(score_line[10]), chart_notecount)
         verified_score_format.append(int(score_v2)) # score v2
 
-        accuracy = record_score.hitcount_to_accuracy(self, score_line[7],score_line[8],score_line[9],score_line[10])
+        accuracy = record_score.hitcount_to_accuracy(self, int(score_line[7]),int(score_line[8]),int(score_line[9]),int(score_line[10]))
         verified_score_format.append(float(accuracy)) # Accuracy
 
         hitcount = int(score_line[7]) + int(score_line[8]) + int(score_line[9]) + int(score_line[10])
@@ -143,42 +144,48 @@ class record_score(commands.Cog):
 
         verified_score_format.append(score_line[1]) # date_played
         verified_score_format.append(date_verified) # date_verified
-
-        cursor.execute("""INSERT INTO dbo.userscores (usernick, id, channel,
-            chart_id, chart_name, chart_artist, chart_difficulty, chart_level,
-            cool, good, bad, miss, maxcombo, maxjam, total_score,score_v2,accuracy,
-            song_clear,date_played,date_verified)
-            
-            VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)
-            """,
-            verified_score_format)
-        cursor.commit()
-
-        # Get Score_ID by fetching the latest inserted score
-        # inefficienct, will update
-        f = cursor.execute("""SELECT @@IDENTITY""")
-        for row in f:
-            verified_score_format.insert(0, row[0])
-        record_score.highscore_to_db(self, verified_score_format)
-
-        # Checking if there is a Async event already running. 
-        # https://stackoverflow.com/a/70066649
         try:
-            loop = asyncio.get_running_loop()
-        except RuntimeError:  # 'RuntimeError: There is no current event loop...'
-            loop = None
+            cursor.execute("""INSERT INTO dbo.userscores (usernick, id, channel,
+                chart_id, chart_name, chart_artist, chart_difficulty, chart_level,
+                cool, good, bad, miss, maxcombo, maxjam, total_score,score_v2,accuracy,
+                song_clear,date_played,date_verified)
+                
+                VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)
+                """,
+                verified_score_format)
+            cursor.commit()
 
-        if loop and loop.is_running():
+            # Get Score_ID by fetching the latest inserted score
+            # inefficienct, will update
+            f = cursor.execute("""SELECT @@IDENTITY""")
+            for row in f:
+                verified_score_format.insert(0, row[0])
+            record_score.highscore_to_db(self, verified_score_format)
+
+            # Checking if there is a Async event already running. 
+            # https://stackoverflow.com/a/70066649
             
-            # print('Async event loop already running. Adding coroutine to the event loop.')
-            tsk = loop.create_task(record_score.send_score(self, verified_score_format[0]))
-            # ^-- https://docs.python.org/3/library/asyncio-task.html#task-object
-            # Optionally, a callback function can be executed when the coroutine completes
-            # tsk.add_done_callback(
-            #    lambda t: print(f'Task done with result = {t.result()}'))
-        else:
-            print('Starting new event loop')
-            asyncio.run(record_score.send_score(self, verified_score_format[0]))                                        
+
+            if ((hitcount / chart_notecount)*100) >= 10.0:
+                try:
+                    loop = asyncio.get_running_loop()
+                except RuntimeError:  # 'RuntimeError: There is no current event loop...'
+                    loop = None
+
+                if loop and loop.is_running():
+                    
+                    # print('Async event loop already running. Adding coroutine to the event loop.')
+                    tsk = loop.create_task(record_score.send_score(self, verified_score_format[0]))
+                    # ^-- https://docs.python.org/3/library/asyncio-task.html#task-object
+                    # Optionally, a callback function can be executed when the coroutine completes
+                    # tsk.add_done_callback(
+                    #    lambda t: print(f'Task done with result = {t.result()}'))
+                else:
+                    print('Starting new event loop')
+                    asyncio.run(record_score.send_score(self, verified_score_format[0])) 
+        except ProgrammingError:
+            print("[ERROR] There's a problem inserting the score to database. [invalid parameters]")
+            print(verified_score_format)                                       
             
     def highscore_to_db(self, score):
         cursor = conncreate
@@ -250,16 +257,19 @@ class record_score(commands.Cog):
 
     def scorev2(self, cool, good, bad, miss, notecount):
             # Formula by Schoolgirl
-        return 1000000*((cool+(0.35*good))-(bad/notecount)*(cool+good+bad+miss))/notecount
+        # return 1000000*((cool+(0.30*good))-(bad/notecount)*(cool+good+bad+miss))/notecount
+        # return (150*cool + 75*good + 10*bad)/(150*(cool + good + bad + miss))
+        return 1000000*(cool+0.1*good-bad-3*miss)/notecount
 
     def notecount_to_accuracy(self, cool, good, bad, miss, notecount):
             # Formula by Schoolgirl
         # hitcount = int(cool) + int(good) + int(bad) + int(miss)
-        return (cool + (0.75*good) + (0.25*bad))/notecount * 100
+        return (cool + (0.50*good) + (0.15*bad))/notecount * 100
 
     def hitcount_to_accuracy(self, cool, good, bad, miss):
         hitcount = int(cool) + int(good) + int(bad) + int(miss)
-        return (cool + (0.75*good) + (0.25*bad))/hitcount * 100
+        # return (cool + (0.50*good) + (0.15*bad))/hitcount * 100
+        return (100*cool + 75*good - 75*bad - 100*miss)/(100*hitcount)*100
 
 
     def IsPassed(self, chart_id, difficulty, hitcount):
@@ -310,7 +320,7 @@ class record_score(commands.Cog):
                 bad=str(row[11])
                 miss =str(row[12])
                 maxcombo=str(row[13])
-                totalscore =str(row[15])
+                totalscore = str(row[15])
                 scorev2 = str(row[16])
                 accuracy = str(round(row[17],2))
                 passed = row[18]
@@ -356,9 +366,9 @@ class record_score(commands.Cog):
         **Good:** %s
         **Miss:** %s""" % (good, miss), inline=True)
         embed.add_field(name="Max Combo", value="%s" % (maxcombo), inline=False)
-        #embed.add_field(name="Max Jam", value="500", inline=True)
+       # embed.add_field(name="Max Jam", value="500", inline=True)
         #embed.add_field(name="Total Score", value="%s" % (totalscore), inline=True)
-        embed.add_field(name="ScoreV2", value="%s" % (scorev2), inline=True)
+        embed.add_field(name="Score", value="%s" % (scorev2), inline=True)
         embed.add_field(name="Accuracy", value=accuracy + "%", inline=True)
         embed.add_field(name=u"\u200B", value="Date Played: <t:%d:f>" % (time.time()), inline=False)
         #embed.set_footer(text=f"Date Played: <t:%d:f>" (time.time()))

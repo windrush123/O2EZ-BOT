@@ -16,7 +16,7 @@ def songlist_main():
     main_path = os.path.dirname(os.path.abspath(__file__))
     txt_dir = os.path.join(main_path + '\songlist.txt')
     try:
-        with open(txt_dir, 'r', encoding='ANSI') as read_list:
+        with open(txt_dir, 'r', encoding='UTF-8') as read_list:
             song_lines=read_list.readlines()
             cursor = conncreate
             #cursor.execute("DBCC CHECKIDENT ('dbo.songlist', reseed, 0)")
@@ -30,16 +30,19 @@ def songlist_main():
             cursor.execute("DBCC CHECKIDENT ('dbo.songlist', reseed, 0)")
             cursor.commit()
             
-            for line in song_lines:
-                line_count += 1
-                
+            for line in song_lines:                               
                 # Convert txt lines into array
                 line = line.strip('\n')
                 re.split(r't\+', line)
                 line = line.split("\t")
-                #print(line)
+                line = [x for x in line if x]
                 try:
-                   insert_song(line)
+                    if len(line) == 12: 
+                        insert_song(line)
+                        line_count += 1
+                    else: 
+                        print("Counted %d Parameters, skipping..." % (len(line)))
+                        print("Parameter Skipped: " + str(line))
                 except:   
                     print("[ERROR] Please make sure the data is correct. [Line: %d]  " % (line_count))
                     cursor.execute("DELETE FROM dbo.songlist")
@@ -59,7 +62,7 @@ def update_songlist():
     main_path = os.path.dirname(os.path.abspath(__file__))
     txt_dir = os.path.join(main_path + r'\update_songlist.txt')
     try:
-        with open(txt_dir, 'r', encoding='ANSI') as read_list:
+        with open(txt_dir, 'r', encoding='UTF-8') as read_list:
             song_lines=read_list.readlines()
             cursor = conncreate
             line_count = 0
@@ -79,7 +82,7 @@ def update_songlist():
                         songlines = row
                 except:
                     print("Something went wrong finding the ojn_id...")
-                if fetch == 1: # Removing song from the current pool.
+                if fetch == 1: # Replacing OJN ID
                     cursor.execute("""UPDATE dbo.songlist SET 
                     ojn_id=NULL 
                     WHERE 
@@ -88,17 +91,22 @@ def update_songlist():
                     print("REMOVE FROM SONGLIST POOL: [CHART ID: %d][OJN ID: %s] %s - %s [%s]" % (songlines[0], str(songlines[0]),str(songlines[2]),str(songlines[11]),str(songlines[10])))
                     try: insert_song(line)                       
                     except: raise TypeError("[ERROR] Please make sure the songlist data is correct. [Line: %d]"% (line_count))                             
-                elif fetch == 0: # Adding new Song to the pool.
+                elif fetch == 0: # Adding new Song to the pool with unused OJN ID
                     try: insert_song(line)                      
                     except: raise TypeError("[ERROR] Please make sure the songlist data is correct. [Line: %d]"% (line_count))  
     except:
         print("Error reading update_songlist.txt")
 
+# Bring back the song from the current mappool
+def restore_song(chartid, ojn):
+
+    pass
+
 def update_song_metadata():
     main_path = os.path.dirname(os.path.abspath(__file__))
     txt_dir = os.path.join(main_path + r'\update_song_metadata.txt')
     try:
-        with open(txt_dir, 'r', encoding='ANSI') as read_list:
+        with open(txt_dir, 'r', encoding='UTF-8') as read_list:
             song_lines=read_list.readlines()
             cursor = conncreate
             line_count = 0

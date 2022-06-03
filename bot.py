@@ -519,7 +519,7 @@ async def reloadscore(ctx):
     bot.unload_extension('cogs.scores.record_score')
     sleep_timer_to_seconds = int(sleep_timer) * 60
     print("Trying to reload the record_scores")
-    message = await ctx.send("To prevent duplication on scores, Reloading `record_scores` cog will start in 1 minute.")
+    message = await ctx.send("To prevent duplication on scores, Reloading `record_scores` cog will start in %d minute." % (sleep_timer))
     await asyncio.sleep(sleep_timer_to_seconds)
     bot.load_extension('cogs.scores.record_score')
     await message.edit(content="`record_scores` Cog successfully reloaded!")
@@ -537,7 +537,7 @@ async def unload_record(ctx):
 async def unload_record(ctx):
     sleep_timer = os.getenv('timer_scorereading')
     sleep_timer_to_seconds = int(sleep_timer) * 60
-    message = await ctx.send("To prevent duplication on scores, loading `record_scores` cog will start in 1 minute.")
+    message = await ctx.send("To prevent duplication on scores, loading `record_scores` cog will start in %d minute." % (sleep_timer))
     await asyncio.sleep(sleep_timer_to_seconds)
     bot.load_extension('cogs.scores.record_score')
     await message.edit(content="`record_scores` Cog successfully loaded!")
