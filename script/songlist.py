@@ -3,6 +3,8 @@ import os
 import re
 from mysqlx import IntegrityError
 import pyodbc
+import sys
+
 
 from pathlib import Path
 from dotenv import load_dotenv
@@ -38,7 +40,8 @@ def songlist_main():
                 line = [x for x in line if x]
                 try:
                     if len(line) == 12: 
-                        insert_song(line)
+                        chartid = insert_song(line)
+                        rename_songlist_bg(line[0], chartid)
                         line_count += 1
                     else: 
                         print("Counted %d Parameters, skipping..." % (len(line)))
@@ -58,6 +61,15 @@ def songlist_main():
         print("Error reading songlist.txt...")
     return 
 
+def rename_songlist_bg(ojnid, chartid):       
+    songbg_path = os.getenv('songbgfilepath')
+    bgfileformat = 'o2ma'+str(ojnid)+'.jpg'
+    old_name_path = os.path.join(songbg_path, bgfileformat)
+    new_name_path = os.path.join(songbg_path, str(chartid) + '.jpg')
+    if os.path.exists(old_name_path) == True:
+        os.rename(old_name_path, new_name_path)
+    
+
 def update_songlist():
     main_path = os.path.dirname(os.path.abspath(__file__))
     txt_dir = os.path.join(main_path + r'\update_songlist.txt')
@@ -71,7 +83,6 @@ def update_songlist():
                 line = line.strip('\n')
                 re.split(r't\+', line)
                 line = line.split("\t")
-
                 fetch = 0
                 try:
                     a = cursor.execute("SELECT * FROM dbo.songlist WHERE ojn_id=? ", line[0])  
@@ -99,8 +110,96 @@ def update_songlist():
 
 # Bring back the song from the current mappool
 def restore_song(chartid, ojn):
-
     pass
+
+def restore_highscore():      
+    try:
+        cursor = conncreate
+        score_count = 0
+        y = cursor.execute("SELECT COUNT(*) FROM dbo.userscores")
+        for row in y:
+            score_count = row[0]
+        highscore_count = 0
+        for i in range(1, score_count):
+            x = cursor.execute("""SELECT * FROM (
+            SELECT ROW_NUMBER() OVER (ORDER BY score_id) AS rownumber, * 
+            FROM dbo.userscores
+            )
+            AS MyTable 
+            WHERE rownumber=?""", i)
+            score = []
+            for rowb in x:
+                score = [elem for elem in rowb]
+                score.pop(0)
+            try:
+                find_score = cursor.execute("""SELECT * FROM dbo.user_highscores WHERE 
+                chart_id=? AND id=? AND chart_difficulty=?""" , score[4], score[2], score[7])
+                count_score = 0
+                for row in find_score:
+                    count_score += 1
+                    old_highscore = row.score_v2
+                if count_score == 0:
+                    cursor.execute("""INSERT INTO dbo.user_highscores VALUES
+                    (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)""",
+                    score[4], # chart_id
+                    score[7], # chart_diff
+                    score[0], # score_id
+                    score[2], # id
+                    score[1], # usernick
+                    score[9], # cool
+                    score[10], # good
+                    score[11], # bad
+                    score[12], # miss
+                    score[13], # max combo
+                    score[14], # max jam
+                    score[15], # total score
+                    score[16], #  score v2
+                    score[17], #  accuracy
+                    score[18], # song clear
+                    score[19])  # date_played
+                    cursor.commit()
+                    print('[Highscore Added][%s][%s] %s - %s : cool: %s good: %s bad: %s miss: %s [Max Combo:%s] [Acc: %s]  [Score: %s]' 
+                    % (score[1] ,score[7],score[5], score[6], 
+                    score[9],score[10],score[11],score[12], 
+                    score[13],round(score[17],2) ,score[16]))
+                    highscore_count += 1
+                else:
+                    if int(score[17]) > old_highscore:
+                        cursor.execute("""UPDATE dbo.user_highscores SET 
+                        score_id=?, cool=?, good=?, bad=?, miss=?, maxcombo=?,
+                        maxjam=?, total_score=?, score_v2=?,
+                        accuracy=?, song_clear=?, date_played=?
+                        WHERE 
+                        id=? AND chart_id=? AND chart_difficulty=?""",    
+                        score[0],  # score_id
+                        score[9],  # cool
+                        score[10], # good
+                        score[11], # bad
+                        score[12], # miss
+                        score[13], # maxcombo
+                        score[14], # maxjam
+                        score[15], # total_score
+                        score[16], # score v2
+                        score[17], # accuracy
+                        score[18], # song clear
+                        score[19], # date_played
+
+                        score[2],  # id
+                        score[4],  # chart_id
+                        score[7])  # chart_diff
+
+                        cursor.commit()
+                        print('[Highscore Replaced][%s][%s] %s - %s : cool: %s good: %s bad: %s miss: %s [Max Combo:%s] [Acc: %s] [Score: %s]' 
+                        % (score[1] ,score[7],score[5], score[6], 
+                        score[9],score[10],score[11],score[12], 
+                        score[13], round(score[17],2) , score[16]))
+                        highscore_count += 1
+                i += 1
+            except IndexError: print("Index Error")
+        else: print("%d Total score count\n%d Total Highscores Processed" % (score_count, highscore_count))
+    except Exception as E: print("Something is wrong when restoring users Highscores \n%s"% (E))
+
+
 
 def update_song_metadata():
     main_path = os.path.dirname(os.path.abspath(__file__))
@@ -181,6 +280,7 @@ def insert_song(songlines):
     for row in f:
         chart_id = row[0]
     print('ADDED TO DATABASE: [CHART ID: %d][OJN ID: %s] %s - %s [%s]' % (chart_id, str(songlines[0]),str(songlines[1]),str(songlines[11]),str(songlines[10])))
+    return chart_id
 
 
 def delete_songlist():
