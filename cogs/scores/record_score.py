@@ -215,10 +215,10 @@ class record_score(commands.Cog):
             score[18], # song clear
             score[19])  # date_played
             cursor.commit()
-            print('[New Record][%s][%s] %s - %s : cool: %s good: %s bad: %s miss: %s [Max Combo:%s] [Score: %s]' 
+            print('[New Record][%s][%s] %s - %s : cool: %s good: %s bad: %s miss: %s [Max Combo:%s] [Acc: %s]  [Score: %s]' 
             % (score[1] ,score[7],score[5], score[6], 
             score[9],score[10],score[11],score[12], 
-            score[13],score[16]))
+            score[13],round(score[17],2) ,score[16]))
         else:
             if int(score[17]) > old_highscore:
                 cursor.execute("""UPDATE dbo.user_highscores SET 
@@ -245,21 +245,21 @@ class record_score(commands.Cog):
                 score[7])  # chart_diff
 
                 cursor.commit()
-                print('[HIGH SCORE][%s][%s] %s - %s : cool: %s good: %s bad: %s miss: %s [Max Combo:%s] [Score: %s]' 
+                print('[HIGH SCORE][%s][%s] %s - %s : cool: %s good: %s bad: %s miss: %s [Max Combo:%s] [Acc: %s] [Score: %s]' 
                 % (score[1] ,score[7],score[5], score[6], 
                 score[9],score[10],score[11],score[12], 
-                score[13],score[16]))
+                score[13], round(score[17],2) , score[16]))
             else:
-                print('[Verified][%s][%s] %s - %s : cool: %s good: %s bad: %s miss: %s [Max Combo:%s] [Total Score: %s]' 
+                print('[Verified][%s][%s] %s - %s : cool: %s good: %s bad: %s miss: %s [Max Combo:%s] [Acc: %s] [Total Score: %s]' 
                 % (score[1] ,score[7],score[5], score[6], 
                 score[9],score[10],score[11],score[12], 
-                score[13],score[16]))  
+                score[13], round(score[17],2) , score[16]))  
 
     def scorev2(self, cool, good, bad, miss, notecount):
             # Formula by Schoolgirl
-        # return 1000000*((cool+(0.30*good))-(bad/notecount)*(cool+good+bad+miss))/notecount
-        # return (150*cool + 75*good + 10*bad)/(150*(cool + good + bad + miss))
-        return 1000000*(cool+0.1*good-bad-3*miss)/notecount
+        score = 1000000*(cool+0.1*good-bad-3*miss)/notecount
+        if score > 0: return score
+        else: return 0
 
     def notecount_to_accuracy(self, cool, good, bad, miss, notecount):
             # Formula by Schoolgirl
@@ -341,7 +341,7 @@ class record_score(commands.Cog):
             diff_name = 'Hard Difficulty'
             diff_color = 0xFF0000 # Red
 
-        bgfileformat = 'o2ma'+str(song[0])+'.jpg'
+        bgfileformat = str(song[0])+'.jpg'
         current_bg_path = os.path.join(songbg_path, bgfileformat)
         if os.path.exists(current_bg_path) == False:
             current_bg_path = os.path.join(songbg_path, "_blank.jpg")

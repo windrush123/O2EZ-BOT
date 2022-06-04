@@ -8,6 +8,8 @@ def main():
 [3] Bring back song to the mappool [...]
 [4] Change song metadata (update_song_metadata.txt).
 [5] Delete all data from songlist database.
+-----------------------------------
+[a] Run a Highscore checker in a database.
 Input: """)
     if ans == "1":
         ans2 = input("This will delete existing songlist and highscore data. Do you see you want to proceed...? [Y/N]\nInput: ")
@@ -33,6 +35,9 @@ Input: """)
         elif any(ans.lower() == f for f in ["no", 'n', '0']):
             main()
         else: main()
+    elif ans == "a":
+        songlist.restore_highscore()
+        main()
     else: main()
 main()
     
