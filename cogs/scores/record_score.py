@@ -264,12 +264,11 @@ class record_score(commands.Cog):
     def notecount_to_accuracy(self, cool, good, bad, miss, notecount):
             # Formula by Schoolgirl
         # hitcount = int(cool) + int(good) + int(bad) + int(miss)
-        return (cool + (0.50*good) + (0.15*bad))/notecount * 100
+        return ((200*cool)+(150*good)+(50*bad))/(200*notecount)*100
 
     def hitcount_to_accuracy(self, cool, good, bad, miss):
         hitcount = int(cool) + int(good) + int(bad) + int(miss)
-        # return (cool + (0.50*good) + (0.15*bad))/hitcount * 100
-        return (100*cool + 75*good - 75*bad - 100*miss)/(100*hitcount)*100
+        return ((200*cool)+(150*good)+(50*bad))/(200*hitcount)*100
 
 
     def IsPassed(self, chart_id, difficulty, hitcount):
