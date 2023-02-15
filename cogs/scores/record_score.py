@@ -165,8 +165,8 @@ class record_score(commands.Cog):
             # Checking if there is a Async event already running. 
             # https://stackoverflow.com/a/70066649
             
-
-            if ((hitcount / chart_notecount)*100) >= 10.0:
+            # Ignores short plays for recently played message
+            if ((hitcount / chart_notecount)*100) >= 0.1:
                 try:
                     loop = asyncio.get_running_loop()
                 except RuntimeError:  # 'RuntimeError: There is no current event loop...'
@@ -373,5 +373,5 @@ class record_score(commands.Cog):
         #embed.set_footer(text=f"Date Played: <t:%d:f>" (time.time()))
         await channel.send("Recently Played by: %s" % (usernick),file=file, embed=embed)
 
-def setup(bot):
-    bot.add_cog(record_score(bot))
+async def setup(client):
+    await client.add_cog(record_score(client))

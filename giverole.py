@@ -24,25 +24,28 @@ conncreate = pyodbc.connect('driver={%s};server=%s;database=%s;uid=%s;pwd=%s' %
 
 
 
-intents = discord.Intents.default()
+intents = discord.Intents.all()
+client = discord.Client(intents=intents)
+intents.members = True
+
 intents.members = True
 intents.guilds = True
 
 client = discord.Client(intents=intents)
 
-bot = commands.Bot(command_prefix='!', intents=intents)
+client = commands.Bot(command_prefix='!', intents=intents)
 
-@bot.event
+@client.event
 async def on_ready():
     invitelink = sys.argv[1]
-    channel = bot.get_channel(int(os.getenv('privatechannelmsg')))
+    channel = client.get_channel(int(os.getenv('privatechannelmsg')))
     cursor = conncreate
     a = cursor.execute("SELECT discorduid FROM dbo.discordinv WHERE invlink=?", invitelink)
     for row in a:
         discorduid = (row.discorduid)
     cursor.execute("UPDATE dbo.member SET discorduid=? WHERE invlink=?", discorduid, invitelink)
     cursor.commit()
-    guild = bot.get_guild(int(os.getenv('guildid')))
+    guild = client.get_guild(int(os.getenv('guildid')))
     member = guild.get_member(discorduid)
     role = discord.utils.get(member.guild.roles, name="Member")
     await member.add_roles(role)
@@ -64,4 +67,4 @@ async def on_ready():
     time.sleep(3)
     exit()
 
-bot.run(os.getenv('TOKEN'))
+client.run(os.getenv('TOKEN'))

@@ -22,10 +22,11 @@ conncreate = pyodbc.connect('driver={%s};server=%s;database=%s;uid=%s;pwd=%s' %
 
 now = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
-intents = discord.Intents.default()
+intents = discord.Intents.all()
+client = discord.Client(intents=intents)
 intents.members = True
 
-bot = commands.Bot(command_prefix='!', intents=intents)
+client = commands.Bot(command_prefix='!', intents=intents)
 
 invites = {}
 
@@ -34,19 +35,19 @@ def find_invite_by_code(invite_list, code):
         if inv.code == code:          
             return inv
 
-@bot.event
+@client.event
 async def on_ready():
-    for guild in bot.guilds:
+    for guild in client.guilds:
         invites[guild.id] = await guild.invites()        
     print('[%s] ----- BOT ONLINE -----' % (now))
 
-@bot.event
+@client.event
 async def on_member_join(member):
     cursor = conncreate
     botinvite = ban = 0
     username = ''
-    PubChannel = bot.get_channel(int(os.getenv('publicchannelmsg')))
-    PrivChannel = bot.get_channel(int(os.getenv('privatechannelmsg')))
+    PubChannel = client.get_channel(int(os.getenv('publicchannelmsg')))
+    PrivChannel = client.get_channel(int(os.getenv('privatechannelmsg')))
 
     invites_after_join = await member.guild.invites()
     invites_before_join = invites[member.guild.id]
@@ -124,14 +125,14 @@ async def on_member_join(member):
 
     invites[member.guild.id] = invites_after_join 
 
-@bot.event
+@client.event
 async def on_member_remove(member):
     cursor = conncreate
     registered = 0
     ban = 0
     unusedinvite = 0
-    PubChannel = bot.get_channel(int(os.getenv('publicchannelmsg')))
-    PrivChannel = bot.get_channel(int(os.getenv('privatechannelmsg')))
+    PubChannel = client.get_channel(int(os.getenv('publicchannelmsg')))
+    PrivChannel = client.get_channel(int(os.getenv('privatechannelmsg')))
     #Check if user registered before leaving the server
     a = cursor.execute("SELECT userid,invlink,usernick FROM dbo.member where discorduid=?", member.id)
     for row in a:
@@ -192,8 +193,8 @@ async def on_member_remove(member):
 # User Commands
 #----------------------------------
 
-@bot.remove_command('help')
-@bot.command(name='help')
+@client.remove_command('help')
+@client.command(name='help')
 @commands.has_role(os.getenv('memberrole'))
 async def help(ctx):
     await ctx.send(
@@ -213,7 +214,7 @@ User Related:
     If you forget your username and password. (Make sure your DMs are open). ```
             ''')
 
-@bot.command(name='unstuck')
+@client.command(name='unstuck')
 @commands.has_role(os.getenv('memberrole'))
 async def unstuck(ctx):
     cursor = conncreate
@@ -241,7 +242,7 @@ async def unstuck(ctx):
     else:
         await ctx.send('Username not found!')
 
-@bot.command(name='online')
+@client.command(name='online')
 @commands.has_role(os.getenv('memberrole'))
 async def online(ctx):
     print('[%s][%s#%s] has printed Online users' % (now,ctx.message.author.name,ctx.message.author.discriminator))
@@ -291,7 +292,7 @@ async def online(ctx):
                         i += 1
                         await message.edit(embed = pages[i])
                 try:
-                    reaction, user = await bot.wait_for('reaction_add', timeout = 30.0, check = check)
+                    reaction, user = await client.wait_for('reaction_add', timeout = 30.0, check = check)
                     await message.remove_reaction(reaction, user)
                 except:
                     break
@@ -301,7 +302,7 @@ async def online(ctx):
         await ctx.send(embed=page)         
 
 
-@bot.command(name='profile')
+@client.command(name='profile')
 @commands.has_role(os.getenv('memberrole'))
 async def profile(ctx, *, member: discord.Member=None):
         # if user is not mentioned
@@ -356,7 +357,7 @@ async def profile(ctx, *, member: discord.Member=None):
             else: await ctx.send("Profile not found, users have to play once before getting a profile.")
         else: await ctx.send("User not yet Registered!")
 
-@bot.command(name='accountdetails')
+@client.command(name='accountdetails')
 @commands.has_role(os.getenv('memberrole'))
 async def accountdetails(ctx):
     cursor = conncreate
@@ -389,7 +390,7 @@ async def accountdetails(ctx):
 #-----------------------------------------------
 #               Admin Commands
 #-----------------------------------------------
-@bot.command(name='helpadmin')
+@client.command(name='helpadmin')
 @commands.has_role(os.getenv('adminrole'))
 async def helpadmin(ctx):
     await ctx.send(
@@ -412,11 +413,11 @@ General Category:
  !stopserver
     Stop the O2Jam Server```''')
 
-@bot.command(name='createinv')
+@client.command(name='createinv')
 @commands.has_role(os.getenv('adminrole'))
 async def createinv(ctx):
     #creating invite link
-    RegistrationChannel = bot.get_channel(int(os.getenv('registrationchannel')))
+    RegistrationChannel = client.get_channel(int(os.getenv('registrationchannel')))
     invitelink = await RegistrationChannel.create_invite(max_uses=1,unique=True)
     discordlink = invitelink.url
     invlink = discordlink.replace("https://discord.gg/","") 
@@ -429,7 +430,7 @@ async def createinv(ctx):
     await ctx.send(invitelink)
     invites[ctx.guild.id] = await ctx.guild.invites()
     
-@bot.command(name='deleteinv')
+@client.command(name='deleteinv')
 @commands.has_role(os.getenv('adminrole'))
 async def deleteinv(ctx, invlink):
     invite_count = 0
@@ -447,12 +448,12 @@ async def deleteinv(ctx, invlink):
         sender = ctx.message.author   
         print("[%s][%s] DELETED Invite Code: %s" %(now, sender, invlink))      
         await ctx.send(embed=embed)
-        await bot.delete_invite(invlink)
+        await client.delete_invite(invlink)
     else:
         await ctx.send("Invite code not Found")
 
 # Sync player names
-@bot.command(name='syncnames')
+@client.command(name='syncnames')
 @commands.has_role(os.getenv('adminrole'))
 async def syncnames(ctx):
     ign = users = []
@@ -479,7 +480,7 @@ async def syncnames(ctx):
             break
            
 
-@bot.command(name='relinkdiscord')
+@client.command(name='relinkdiscord')
 @commands.has_role(os.getenv('adminrole'))
 async def relinkdiscord(ctx, ign, discorduid):
     cursor = conncreate
@@ -495,7 +496,7 @@ async def relinkdiscord(ctx, ign, discorduid):
         await ctx.send("`%s` discorduid set to `%s`" % (user.strip(), discorduid))
     else: await ctx.send("IGN not found!")
 
-@bot.command(name='relinkinvite')
+@client.command(name='relinkinvite')
 @commands.has_role(os.getenv('adminrole'))
 async def relinkinvite(ctx, invlink, discorduid):
     cursor = conncreate
@@ -513,37 +514,37 @@ async def relinkinvite(ctx, invlink, discorduid):
     else: await ctx.send("Invite Code not found!")
 
 @commands.has_role(os.getenv('adminrole'))
-@bot.command(name='reloadscores')
+@client.command(name='reloadscores')
 async def reloadscore(ctx):
     sleep_timer = os.getenv('timer_scorereading')
-    bot.unload_extension('cogs.scores.record_score')
+    await client.unload_extension('cogs.scores.record_score')
     sleep_timer_to_seconds = int(sleep_timer) * 60
     print("Trying to reload the record_scores")
     message = await ctx.send("To prevent duplication on scores, Reloading `record_scores` cog will start in %s minute(s)." % (sleep_timer))
     await asyncio.sleep(sleep_timer_to_seconds)
-    bot.load_extension('cogs.scores.record_score')
+    await client.load_extension('cogs.scores.record_score')
     await message.edit(content="`record_scores` Cog successfully reloaded!")
     print("Successfully reloaded record scores")   
 
-@bot.command(name='unload_record')
+@client.command(name='unload_record')
 @commands.has_role(os.getenv('adminrole'))
 async def unload_record(ctx):
-    bot.unload_extension('cogs.scores.record_score')
+    await client.unload_extension('cogs.scores.record_score')
     await ctx.send(content="`record_scores` Cog successfully unloaded!")
     print("Successfully unloaded record scores")
 
-@bot.command(name='load_record')
+@client.command(name='load_record')
 @commands.has_role(os.getenv('adminrole'))
 async def unload_record(ctx):
     sleep_timer = os.getenv('timer_scorereading')
     sleep_timer_to_seconds = int(sleep_timer) * 60
     message = await ctx.send("To prevent duplication on scores, loading `record_scores` cog will start in %s minute(s)." % (sleep_timer))
     await asyncio.sleep(sleep_timer_to_seconds)
-    bot.load_extension('cogs.scores.record_score')
+    await client.load_extension('cogs.scores.record_score')
     await message.edit(content="`record_scores` Cog successfully loaded!")
     print("Successfully loaded record scores")      
 
-@bot.command(name='startserver')
+@client.command(name='startserver')
 @commands.has_role(os.getenv('adminrole'))
 async def startserver(ctx):  
     sleep_timer = os.getenv('timer_scorereading')
@@ -556,19 +557,19 @@ async def startserver(ctx):
     print('[%s][%s] has started the Server' % (now,ctx.message.author))
     await ctx.send('`O2JAM Server` Online!')
     print('O2JAM Server Online!')
-    await asyncio.sleep(5)
+    time.sleep(5)
     print('Running Record Scores Module...')
     record_score_status = await ctx.send('Running `Record Scores` Module... Estimated Time `%s minute(s)`' % (sleep_timer))   
-    await asyncio.sleep(sleep_timer_to_seconds)
-    bot.load_extension('cogs.scores.record_score')
+    time.sleep(sleep_timer_to_seconds)
+    await client.load_extension('cogs.scores.record_score')
     print("[ONLINE] Record Scores Module")
     await record_score_status.edit(content="`Record Scores Module` Online!")
 
-@bot.command(name='stopserver')
+@client.command(name='stopserver')
 @commands.has_role(os.getenv('adminrole'))
 async def stopserver(ctx):
     try: 
-        bot.unload_extension('cogs.scores.record_score')
+        await client.unload_extension('cogs.scores.record_score')
         await ctx.send("`Record Scores Module` Offline! ")
         await asyncio.sleep(5)
         print("Successfully unloaded record scores")
@@ -666,4 +667,4 @@ async def accountdetails_error(ctx, error):
 
 #bot.load_extension('cogs.scores.record_score')
 
-bot.run(os.getenv('TOKEN'))
+client.run(os.getenv('TOKEN'))
