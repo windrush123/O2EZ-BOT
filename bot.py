@@ -90,6 +90,8 @@ async def on_member_join(member):
                 if ban >= 1:
                     removeban(username)
                     await PrivChannel.send("`%s#%s` re-joined the server using direct invite and successfully unbanned `User_ID: %s` `Invite Code: %s`" % (member.name, member.discriminator, username.strip(), invite.code))
+                    role = discord.utils.get(member.guild.roles, name="Member")
+                    await member.add_roles(role)
                     return None
                 await PrivChannel.send("`%s#%s` has joined the server using direct invite `Invite Code: %s`" % (member.name, member.discriminator, invite.code))
                 print("[%s] %s#%s has joined the server using direct invite Invite Code: %s" % (now, member.name, member.discriminator, invite.code))
@@ -105,9 +107,9 @@ async def on_member_join(member):
         embedVar.add_field(name="UserID:", value="%s#%s" % (member.id, member.discriminator), inline=True)
         embedVar.add_field(name="Invite Code: ", value=invite, inline=True)
         await PrivChannel.send(embed=embedVar)
-        #public Channel Send
-        PublicembedVar = discord.Embed(title="%s#%s has joined the server" % (member.name, member.discriminator), description="", color=0x00ff00)
-        await PubChannel.send(embed=PublicembedVar)
+        # public Channel Send 
+        # PublicembedVar = discord.Embed(title="%s#%s has joined the server" % (member.name, member.discriminator), description="", color=0x00ff00)
+        # await PubChannel.send(embed=PublicembedVar)
         cursor.execute("UPDATE dbo.discordinv SET discorduid=? WHERE invlink=?", member.id,invite)
         cursor.commit()
 
@@ -476,6 +478,7 @@ async def syncnames(ctx):
                         await member.edit(nick=row.usernick)
         except TypeError:  
             print("[%s] Sync Names finished!" % (now))
+            await ctx.send("Sync Names finished!")
             break
            
 
@@ -549,7 +552,7 @@ async def startserver(ctx):
     sleep_timer = os.getenv('timer_scorereading')
     sleep_timer_to_seconds = int(sleep_timer) * 60
     path = r"%s" % os.getenv('SERVER_PATH')
-    open_path = os.path.join(path, "Start_Server.bat")
+    open_path = os.path.join(path, "Start Server.bat")
     p = subprocess.Popen(str(open_path), cwd=path)
     stdout, stderr = p.communicate()
     #os.system("start " + '"" ' + '"' + os.getenv('SERVER_PATH') + "\Start Server.bat" + '"')
@@ -575,7 +578,7 @@ async def stopserver(ctx):
     except:
         print("record_scores not online")
     path = r"%s" % os.getenv('SERVER_PATH')
-    close_path = os.path.join(path, "Stop_Server.bat")
+    close_path = os.path.join(path, "Stop Server.bat")
     p = subprocess.Popen(str(close_path), cwd=path)
     stdout, stderr = p.communicate()       
     #os.system("start " + '"" ' + '"' + os.getenv('SERVER_PATH') + "\Stop Server.bat" + '"')

@@ -4,6 +4,7 @@ import re
 from mysqlx import IntegrityError
 import pyodbc
 import sys
+import shutil
 
 
 from pathlib import Path
@@ -41,7 +42,7 @@ def songlist_main():
                 try:
                     if len(line) == 12: 
                         chartid = insert_song(line)
-                        rename_songlist_bg(line[0], chartid)
+                        # rename_songlist_bg(line[0], chartid)
                         line_count += 1
                     else: 
                         print("Counted %d Parameters, skipping..." % (len(line)))
@@ -68,7 +69,6 @@ def rename_songlist_bg(ojnid, chartid):
     new_name_path = os.path.join(songbg_path, str(chartid) + '.jpg')
     if os.path.exists(old_name_path) == True:
         os.rename(old_name_path, new_name_path)
-    
 
 def update_songlist():
     main_path = os.path.dirname(os.path.abspath(__file__))
@@ -99,14 +99,22 @@ def update_songlist():
                     WHERE 
                     ojn_id=?""", line[0])
                     cursor.commit()
-                    print("REMOVE FROM SONGLIST POOL: [CHART ID: %d][OJN ID: %s] %s - %s [%s]" % (songlines[0], str(songlines[0]),str(songlines[2]),str(songlines[11]),str(songlines[10])))
-                    try: insert_song(line)                       
+                    print("REMOVE FROM SONGLIST POOL: [CHART ID: %d][OJN ID: %s] %s - %s [%s]" % (songlines[0], str(line[0]),str(songlines[2]),str(songlines[11]),str(songlines[10])))
+                    try: 
+                        insert_song(line)
+                        rename_songlist_bg(line[0],songlines[0])                
                     except: raise TypeError("[ERROR] Please make sure the songlist data is correct. [Line: %d]"% (line_count))                             
                 elif fetch == 0: # Adding new Song to the pool with unused OJN ID
-                    try: insert_song(line)                      
+                    try: 
+                        insert_song(line)
+                        chart_id = 0
+                        f = cursor.execute("SELECT * FROM dbo.songlist WHERE ojn_id=?", line[0])
+                        for row in f:
+                            chart_id = row[0]  
+                        rename_songlist_bg(line[0], chart_id)                       
                     except: raise TypeError("[ERROR] Please make sure the songlist data is correct. [Line: %d]"% (line_count))  
-    except:
-        print("Error reading update_songlist.txt")
+    except Exception as e:
+        print(e)
 
 # Bring back the song from the current mappool
 def restore_song(chartid, ojn):
