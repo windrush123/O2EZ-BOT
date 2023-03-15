@@ -453,6 +453,28 @@ async def deleteinv(ctx, invlink):
     else:
         await ctx.send("Invite code not Found")
 
+@bot.command(name='deleteallinv')
+@commands.has_role(os.getenv('adminrole'))
+async def deleteallinv(ctx):
+    cursor = conncreate
+    unused_invlink_count = 0
+    invlink = []
+    a = cursor.execute("SELECT * FROM dbo.discordinv")
+    for row in a:
+        unused_invlink_count += 1
+        invlink.append(row.invlink)
+    if unused_invlink_count == 0: await ctx.send("No unused Invite link found!")    
+    else:
+        x = 0
+        while x < unused_invlink_count:
+            cursor.execute("DELETE FROM dbo.discordinv WHERE invlink=?", invlink[x])
+            cursor.commit()
+            print(invlink)
+            await bot.delete_invite(invlink[x])
+            print("Deleted Invite Link: %s" % invlink[x])        
+            x += 1
+        await ctx.send("%s Records Deleted" % unused_invlink_count)    
+
 # Sync player names
 @bot.command(name='syncnames')
 @commands.has_role(os.getenv('adminrole'))
