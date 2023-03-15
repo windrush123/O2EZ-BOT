@@ -403,6 +403,8 @@ General Category:
     Create an invite link
  !deleteinv [invite link or code]
     Deletes an invite link
+ !deleteallinv
+    Deletes all unused invite link
  !syncnames
     Sync players name to their discord
  !relinkdiscord [IGN] [Discorduid]
