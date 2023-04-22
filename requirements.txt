@@ -1,4 +1,0 @@
-discord.py
-pyodbc
-python-dotenv
-mysql-connector-python
