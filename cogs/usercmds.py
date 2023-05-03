@@ -1,9 +1,14 @@
 import discord
 import os
 import pyodbc
-import logsconfig
+import utils.logsconfig as logsconfig
 import datetime
-from discord.ext import commands 
+
+from discord import app_commands
+import core.sendscore as sendscore
+
+from discord.ext import commands
+ 
 
 logger = logsconfig.logging.getLogger("bot")
 
@@ -157,6 +162,13 @@ class usercmds(commands.Cog):
 
     @commands.command()
     @commands.has_role(os.getenv('memberrole'))
+    async def score(self, ctx, scoreid: int):
+        async with ctx.typing():
+            channel = ctx.channel.id
+            await sendscore.SendScore.send_score(self, channel, scoreid)
+
+    @commands.command()
+    @commands.has_role(os.getenv('memberrole'))
     async def accountdetails(self, ctx):
         cursor = conncreate
         registered = 0
@@ -185,5 +197,31 @@ class usercmds(commands.Cog):
             logger.info("Error: User not Found.")
             await ctx.send("%s Error: User not Found." % (ctx.message.author.mention))
 
+
+    @profile.error
+    async def profile_error(ctx, error):
+        if isinstance(error, (commands.MissingRole, commands.MissingAnyRole)):
+            logger.info("[%s#%s] is trying to print a profile but has no role" % (ctx.message.author.name,ctx.message.author.discriminator))       
+
+    @online.error
+    async def online_error(ctx, error):
+        if isinstance(error, (commands.MissingRole, commands.MissingAnyRole)):
+            logger.info("[%s][%s#%s] is trying to print profile but has no role." % (ctx.message.author.name,ctx.message.author.discriminator))
+
+    @unstuck.error
+    async def unstuck_error(ctx, error):
+        if isinstance(error, (commands.MissingRole, commands.MissingAnyRole)):
+            logger.info("[%s#%s] is trying to use unstuck but has no role." % (ctx.message.author.name,ctx.message.author.discriminator))
+    
+    @accountdetails.error
+    async def accountdetails_error(ctx, error):
+        if isinstance(error, (commands.MissingRole, commands.MissingAnyRole)):
+            logger.info("[%s#%s] is trying to use accountdetails but has no role." % (ctx.message.author.name,ctx.message.author.discriminator))
+    
+    @score.error
+    async def score_error(ctx, error):
+        if isinstance(error, (commands.MissingRole, commands.MissingAnyRole)):
+            logger.info("[%s#%s] is trying to use score but has no role." % (ctx.message.author.name,ctx.message.author.discriminator))
+            
 async def setup(bot):
     await bot.add_cog(usercmds(bot))

@@ -2,7 +2,7 @@ import discord
 import os
 import subprocess
 import pyodbc
-import logsconfig
+import utils.logsconfig as logsconfig
 import datetime
 from discord.ext import commands 
 
@@ -41,66 +41,6 @@ class admin(commands.Cog):
     !stopserver
         Stop the O2Jam Server```''')
 
-    #@commands.command()
-    #@commands.has_role(os.getenv('adminrole'))
-    #async def createinv(self, ctx):
-    #    #creating invite link
-    #    RegistrationChannel = self.bot.get_channel(int(os.getenv('registrationchannel')))
-    #    invitelink = await RegistrationChannel.create_invite(max_uses=1,unique=True)
-    #    discordlink = invitelink.url
-    #    invlink = discordlink.replace("https://discord.gg/","") 
-    #    #storing in db
-    #    cursor = conncreate
-    #    cursor.execute("INSERT INTO dbo.discordinv (invlink,used) VALUES (?,'False')", invlink)
-    #    cursor.commit()
-    #    sender = ctx.message.author
-    #    print('[%s][%s] has created an invite link: %s' % (now,sender,invitelink.url))
-    #    await ctx.send(invitelink)
-    #    invites[ctx.guild.id] = await ctx.guild.invites()
-        
-    #@commands.command()
-    #@commands.has_role(os.getenv('adminrole'))
-    #async def deleteinv(self, ctx, invlink):
-    #    invite_count = 0
-    #    cursor = conncreate
-    #    invlink = invlink.replace("https://discord.gg/","")
-    #    a = cursor.execute("SELECT invlink,discorduid FROM dbo.discordinv WHERE invlink=?", invlink)
-    #    for row in a:
-    #        invitelink = (row.invlink)
-    #        discorduid = (row.discorduid)
-    #        invite_count += 1
-    #    if invite_count >= 1:       
-    #        embed=discord.Embed(title="Invite Code found: `%s`" % invitelink, description="Deleted Successfully!", color=0xff0000)
-    #        cursor.execute("DELETE FROM dbo.discordinv WHERE invlink=?", invlink)
-    #        cursor.commit()
-    #        sender = ctx.message.author   
-    #        print("[%s][%s] DELETED Invite Code: %s" %(now, sender, invlink))      
-    #        await ctx.send(embed=embed)
-    #        await self.bot.delete_invite(invlink)
-    #    else:
-    #        await ctx.send("Invite code not Found")
-
-    #@commands.command()
-    #@commands.has_role(os.getenv('adminrole'))
-    #async def deleteallinv(ctx):
-    #    cursor = conncreate
-    #    unused_invlink_count = 0
-    #    invlink = []
-    #    a = cursor.execute("SELECT * FROM dbo.discordinv")
-    #    for row in a:
-    #        unused_invlink_count += 1
-    #        invlink.append(row.invlink)
-    #    if unused_invlink_count == 0: await ctx.send("No unused Invite link found!")    
-    #    else:
-    #        x = 0
-    #        while x < unused_invlink_count:
-    #            cursor.execute("DELETE FROM dbo.discordinv WHERE invlink=?", invlink[x])
-    #            cursor.commit()
-    #            print(invlink)
-    #            await bot.delete_invite(invlink[x])
-    #            print("Deleted Invite Link: %s" % invlink[x])        
-    #            x += 1
-    #        await ctx.send("%s Records Deleted" % unused_invlink_count)    
 
     # Sync player names
     @commands.command()
@@ -199,5 +139,36 @@ class admin(commands.Cog):
     @commands.has_role(os.getenv('adminrole'))
     async def logs(self, ctx):
         await ctx.send(file=discord.File("logs/infos.log"))
+
+    @helpadmin.error
+    async def helpadmin_error(ctx, error):
+        if isinstance(error, (commands.MissingRole, commands.MissingAnyRole)): 
+            logger.info("[%s#%s] !helpadmin command error, No Role!" % (ctx.message.author.name,ctx.message.author.discriminator)) 
+
+    @startserver.error
+    async def startserver_error(ctx, error):
+        if isinstance(error, (commands.MissingRole, commands.MissingAnyRole)): 
+            logger.info("[%s#%s] is trying to start the server." % (ctx.message.author.name,ctx.message.author.discriminator))
+
+    @stopserver.error
+    async def stopserver_error(ctx, error):
+        if isinstance(error, (commands.MissingRole, commands.MissingAnyRole)):        
+            logger.info("[%s#%s] is trying to stop the server." % (ctx.message.author.name,ctx.message.author.discriminator))
+    
+    @syncnames.error
+    async def syncnames_error(ctx, error):
+        if isinstance(error, (commands.MissingRole, commands.MissingAnyRole)):
+           logger.info("[%s#%s] is trying to sync name." % (ctx.message.author.name,ctx.message.author.discriminator))
+    
+    @relinkdiscord.error
+    async def relinkdiscord_error(ctx, error):
+        if isinstance(error, (commands.MissingRole, commands.MissingAnyRole)):
+           logger.info("[%s#%s] is trying to relinkdiscord." % (ctx.message.author.name,ctx.message.author.discriminator))
+
+    @relinkinvite.error
+    async def relinkinvite_error(ctx, error):
+        if isinstance(error, (commands.MissingRole, commands.MissingAnyRole)):
+           logger.info("[%s#%s] is trying to relinkinvite." % (ctx.message.author.name,ctx.message.author.discriminator))
+
 async def setup(bot):
     await bot.add_cog(admin(bot))
