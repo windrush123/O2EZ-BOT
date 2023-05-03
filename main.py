@@ -26,12 +26,12 @@ cogs = [
             #"recentlyplayed",
             "usercmds",
             "registration",
+            "invites",
         ]
 
 @bot.event
 async def on_ready():
     logger.info(f"User: {bot.user} (ID:{bot.user.id})")
-    
 
     #await utils.load_videocmds(bot)
     for extension in cogs:
