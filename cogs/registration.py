@@ -114,6 +114,7 @@ class registration_form(discord.ui.Modal, title="O2EZ Registration Form"):
             sql = "DELETE FROM dbo.discordinv WHERE invlink=?"
             cursor.execute(sql, (invite_code))
             cursor.commit()
+            logger.info(f"Registered - ID:[{getid}]{self.username.value} / {self.ign.value} [{interaction.user.id}: {invite_code}] ")
       
         await interaction.user.add_roles(member_role)
 
@@ -129,9 +130,25 @@ class registration_form(discord.ui.Modal, title="O2EZ Registration Form"):
         await channel.send(embed=embed)
         await interaction.response.send_message(f"Thank you, {self.user.nick} {self.user.id}", ephemeral=True)
         
+        
     async def on_error(self, interaction: discord.Interaction, error : Exception):
         if error == type(ValueError):
             await interaction.response.send_message(error, ephemeral=True)
+        channel = interaction.guild.get_channel(int(os.getenv("privatechannelmsg")))
+        await interaction.response.send_message(f"""We encountered an issue while attempting to submit your form. 
+                                                Our Moderation team has been notified and will provide assistance as soon as possible.""", ephemeral=True)
+        embed = discord.Embed(title=f"{str(type(error))}",
+                              description=error,
+                              color=discord.Color.red())
+        embed.add_field(name="Username", value=self.username.value, inline=True)
+        embed.add_field(name="IGN", value=self.ign.value, inline=True)
+        embed.add_field(name="password", value=self.password.value, inline=True)
+        embed.add_field(name="password2", value=self.conf_password.value, inline=True)
+        embed.add_field(name="Invite", value=self.invite_link, inline=True)
+        embed.add_field(name="DiscordID", value=interaction.user.id, inline=True)
+        embed.set_author(name="Error Report")
+        await channel.send(embed=embed)
+        logger.error(error)
         print(type(error), error, error.__traceback__)
 
 class Registration(commands.Cog):
@@ -143,6 +160,7 @@ class Registration(commands.Cog):
     def cog_unload(self):
         pass
         logger.error("This error was handled with option 1 from ?tag treeerrorcog")
+
 
     @app_commands.command(name="register", description='Open the Registration Form.')
     async def register(self, interaction: discord.Interaction) -> None: 

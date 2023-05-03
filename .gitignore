@@ -1,7 +1,6 @@
 *.env
 *.jpg
 *.pyc
+*.log
 SongBg/
-Logs/bot.log
-Logs/botlog.txt
-Logs/infos.log
+
