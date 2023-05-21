@@ -16,30 +16,29 @@ SERVER_PATH=
 
 
 # Roles
-adminrole=
-memberrole=
+memberroleid=
 adminroleid=
 
-# Discord Server ID and Channel ID
+# Discord Server ID
 guildid=
 
-# Channel where new user get informed how to access the server.
+# Channel ID where new user get informed how to access the server.
 registrationchannel=
 
-# Channel where bot can send and seen by everyone
+# Channel id where bot can send and seen by everyone
 publicchannelmsg=
 
-# Admin only channel for Bot logs
+# Channel id for Admin only channel for Bot logs
 privatechannelmsg=
 
-# Discord Embed for Score Recording
+# Channel ID for Discord Embed for Score Recording
 recentlyplayedmsg=
 
 # Song Background File path
 songbgfilepath=
 
 # Score Text File path (Default: C:\O2JamLog\Game\)
-playerscoresfilepath=
+playerscoresfilepath=C:\O2JamLog\Game\
 
 # Logs for score recording
 verifiedscoresfilepath=

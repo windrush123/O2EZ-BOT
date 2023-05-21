@@ -22,6 +22,14 @@ intents.message_content = True
 
 guildid = discord.Object(id=(os.getenv('guildid')))
 
+
+class registration_button(discord.ui.View):
+    @discord.ui.button(label="Register", style=discord.ButtonStyle.green)
+    async def button_callback(self, interaction: discord.Interaction, button):
+        register_modal = registration_form()
+        register_modal.user = interaction.user
+        await interaction.response.send_modal(register_modal)
+
 class registration_form(discord.ui.Modal, title="O2EZ Registration Form"):
     username = discord.ui.TextInput(
         style=discord.TextStyle.short,
@@ -171,10 +179,14 @@ class Registration(commands.Cog):
         logger.info("Cog Unloaded - registration")
 
     @app_commands.command(name="register", description='Open the Registration Form.')
-    async def register(self, interaction: discord.Interaction) -> None: 
-        register_modal = registration_form()
-        register_modal.user = interaction.user
-        await interaction.response.send_modal(register_modal)
+    async def register(self, interaction: discord.Interaction) -> None:
+
+        message = """Welcome to O2EZ!
+
+To access other channels, kindly proceed with the registration process by clicking the button below. Ensure that you input the Discord invite you received in the designated Invitation Link box.
+
+Please be advised that refraining from leaving the Discord server is crucial, as failure to do so may result in your account being restricted."""
+        await interaction.response.send_message(message, view=registration_button())
 
 async def setup(bot: commands.Bot):
     await bot.add_cog(Registration(bot))

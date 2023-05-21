@@ -223,6 +223,7 @@ class usercmds(commands.Cog):
     @app_commands.checks.has_role(member_role_id)
     @app_commands.command(name="online", description='Check who is playing on the server.')
     async def online(self, interaction: discord.Interaction):
+        await interaction.response.defer()
         results = []
         with conncreate.cursor() as cursor:
             query = "SELECT SUB_CH, USER_ID FROM dbo.T_o2jam_login"
@@ -244,10 +245,10 @@ class usercmds(commands.Cog):
                 base_embed=discord.Embed(title="Online Users", color=0xB00B69,)
             )
             embs = view.get_page(1)
-            await interaction.response.send_message(embeds=embs, view=view, ephemeral=True)
+            await interaction.followup.send(embeds=embs, view=view, ephemeral=True)
         else:         
             page = discord.Embed (title = " ", description = "No one is online.", color=0x00ffff)
-            await interaction.response.send_message(embed=page, ephemeral=True)
+            await interaction.followup.send(embed=page, ephemeral=True)
 
     @app_commands.checks.has_role(member_role_id)
     @app_commands.command(name="unstuck", description="Try this command if can't get passed Channel Selection")
@@ -340,13 +341,14 @@ class usercmds(commands.Cog):
                 await interaction.followup.send(embed=profile, view=view)
                 logger.info("[%s#%s] printed their profile." % (interaction.message.author.name,interaction.message.author.discriminator))
             else: 
-                await interaction.response.send_message("Profile not found, users have to play once before getting a profile.")
+                await interaction.followup.send("Profile not found, users have to play once before getting a profile.")
         else: 
-            await interaction.response.send_message("User not yet Registered!")
+            await interaction.followup.send("User not yet Registered!")
 
     @app_commands.command(name="leaderboard", description="Check server leaderboards.")
     @app_commands.checks.has_role(member_role_id)
     async def leaderboard(self, interaction: discord.Interaction):
+        await interaction.response.defer()
         discorduid = interaction.user.id
         with conncreate.cursor() as cursor:
             query = """SELECT id FROM dbo.member WHERE discorduid=?"""
@@ -371,7 +373,7 @@ class usercmds(commands.Cog):
         for row in char_rows:
             embed.add_field(name=f"{count}. {row[2]}", value=f"Playcount: {row[5]}", inline=False)
             count += 1
-        await interaction.response.send_message(embed=embed)
+        await interaction.followup.send(embed=embed)
 
     @commands.command()
     @commands.has_role(member_role_id)
@@ -383,6 +385,7 @@ class usercmds(commands.Cog):
     @app_commands.command(name="accountdetails", description="Take a look at your account information.")
     @app_commands.checks.has_role(member_role_id)
     async def accountdetails(self, interaction: discord.Interaction):
+        await interaction.response.defer()
         discorduid = interaction.user.id
         with conncreate.cursor() as cursor:
             query = "SELECT usernick,userid,passwd from dbo.member where discorduid=?"
@@ -392,33 +395,10 @@ class usercmds(commands.Cog):
                 password = str(row.passwd)
         if username:
             logger.info("[%s#%s] asked for their account details." % (interaction.user.name,interaction.user.discriminator))
-            await interaction.response.send_message(f"\nThis message will be deleted in 30 seconds.\n```username: {username} \npassword: {password}```", ephemeral=True, delete_after=30)
+            await interaction.followup.send(f"\nThis message will be deleted in 30 seconds.\n```username: {username} \npassword: {password}```", ephemeral=True, delete_after=30)
         else:
             logger.info(f"{interaction.user.name} Error: User not Found.")
-            await interaction.response.send_message(f"{interaction.user.name} Error: User not Found.", ephemeral=True)
-
-
-
-    @profile.error
-    async def profile_error(ctx, error):
-        if isinstance(error, (commands.MissingRole, commands.MissingAnyRole)):
-            logger.info("[%s#%s] is trying to print a profile but has no role" % (ctx.message.author.name,ctx.message.author.discriminator))       
-
-    @online.error
-    async def online_error(ctx, error):
-        if isinstance(error, (commands.MissingRole, commands.MissingAnyRole)):
-            logger.info("[%s][%s#%s] is trying to print profile but has no role." % (ctx.message.author.name,ctx.message.author.discriminator))
-
-    @unstuck.error
-    async def unstuck_error(ctx, error):
-        if isinstance(error, (commands.MissingRole, commands.MissingAnyRole)):
-            logger.info("[%s#%s] is trying to use unstuck but has no role." % (ctx.message.author.name,ctx.message.author.discriminator))
-
-    
-    @score.error
-    async def score_error(ctx, error):
-        if isinstance(error, (commands.MissingRole, commands.MissingAnyRole)):
-            logger.info("[%s#%s] is trying to use score but has no role." % (ctx.message.author.name,ctx.message.author.discriminator))
-            
+            await interaction.followup.send(f"{interaction.user.name} Error: User not Found.", ephemeral=True)
+       
 async def setup(bot):
     await bot.add_cog(usercmds(bot))
