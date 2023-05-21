@@ -1,3 +1,6 @@
-
+*.env
 *.jpg
 *.pyc
+*.log
+SongBg/
+Logs/
