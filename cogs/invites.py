@@ -27,9 +27,9 @@ class Invites(commands.Cog):
         self.invites = {}
 
     def cog_load(self):
-        pass
+        logger.info("Cog Loaded - invites")
     def cog_unload(self):
-        pass
+        logger.info("Cog Unloaded - invites")
     
     def find_invite_by_code(self, invite_list, code):      
             for inv in invite_list:            

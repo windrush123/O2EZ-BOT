@@ -23,10 +23,11 @@ bot = commands.Bot(command_prefix="!", intents=intents)
 
 cogs = [
             "admin",
-            #"recentlyplayed",
+            "recentlyplayed",
             "usercmds",
             "registration",
             "invites",
+            "activity"
         ]
 
 @bot.event
@@ -45,10 +46,10 @@ async def on_ready():
         guildid = discord.Object(id=825723912729002004)
         bot.tree.copy_global_to(guild=guildid)
         synced = await bot.tree.sync(guild=guildid)
-        print(f"synced {len(synced)} commands")
+        logger.info(f"Synced a Total of {len(synced)} Commands")
         
     except Exception as e:
-        print(e)
+        logger.info(f"Error loading Slash Commands \n{e}")
     
 
-bot.run(os.getenv('TOKEN'), root_logger=True)
+bot.run(os.getenv('TOKEN'), root_logger=True) 
