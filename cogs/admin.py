@@ -96,7 +96,7 @@ class admin(commands.Cog):
             await asyncio.sleep(3)
             await interaction.followup.send(f"Successfully changed ign. `{newign}`")
         else:    
-            await interaction.response.send_message(f"Cannot find user ")
+            await interaction.followup.send(f"Cannot find user ")
 
 
     # Sync player names
@@ -135,6 +135,7 @@ class admin(commands.Cog):
     @app_commands.checks.has_role(admin_role_id)
     async def relinkdiscord(self, interaction: discord.Interaction, member: discord.Member, ign: str):
         user = None
+        await interaction.response.defer()
         with conncreate.cursor() as cursor:
             query = "SELECT usernick FROM dbo.member WHERE usernick=?"
             cursor.execute(query, (ign))
@@ -145,13 +146,14 @@ class admin(commands.Cog):
                 cursor.execute("UPDATE dbo.member SET discorduid=? WHERE usernick=?", member.id, user.strip())
                 cursor.commit()
             logger.info("Updated [%s] account [IGN: %s]" % (member.name, user.strip()))
-            await interaction.response.send_message("Updated [%s] account [IGN: %s]" % (member.name, user.strip()))
+            await interaction.followup.send("Updated [%s] account [IGN: %s]" % (member.name, user.strip()))
         else: 
-            await interaction.response.send_message("IGN not found!")
+            await interaction.followup.send("IGN not found!")
 
     @app_commands.command(name="relinkinvite", description="Relink DiscordUID and Invites.")
     @app_commands.checks.has_role(admin_role_id)
     async def relinkinvite(self, interaction: discord.Interaction, member: discord.Member, invlink: str):
+        await interaction.response.defer()
         invitelink = invlink.replace("https://discord.gg/","")
         valid_invitelink = False
         with conncreate.cursor() as cursor:
@@ -164,64 +166,38 @@ class admin(commands.Cog):
                 cursor.execute("UPDATE dbo.discordinv SET discorduid=?,used='True' WHERE invlink=?", member.id, invitelink)
                 cursor.commit()
                 logger.info("Relink Invite:[%s] = DiscordUID [%s]" % (invitelink, member.name))
-                await interaction.response.send_message("Successfully relinked discord invite `%s` to user <@%s>" % (invitelink, member.id))
+                await interaction.followup.send("Successfully relinked discord invite `%s` to user <@%s>" % (invitelink, member.id))
             else: 
-                await interaction.response.send_message("Invite Code not found!")
+                await interaction.followup.send("Invite Code not found!")
 
     @app_commands.command(name='startserver', description='Start O2Jam Server.')
     @app_commands.checks.has_role(admin_role_id)
     async def startserver(self, interaction: discord.Interaction):
+        await interaction.response.defer()
         server_path = pathlib.Path(os.getenv('SERVER_PATH'))
         start_path = server_path / "Start Server.bat"
         process = await asyncio.create_subprocess_exec(str(start_path), cwd=str(server_path))
         await process.communicate()
         logger.info(f"[{interaction.user.name}] has started the server.")
-        await interaction.response.send_message("`O2JAM Server` Started!")
+        await interaction.followup.send("`O2JAM Server` Started!")
 
     @app_commands.command(name='stopserver', description='Stop O2Jam Server.')
     @app_commands.checks.has_role(admin_role_id)
     async def stopserver(self, interaction: discord.Interaction):
+        await interaction.response.defer()
         server_path = pathlib.Path(os.getenv('SERVER_PATH'))
         close_path = server_path / "Stop Server.bat"
         process = await asyncio.create_subprocess_exec(str(close_path), cwd=str(server_path))
         await process.communicate()
         logger.info(f"[{interaction.user.name}] has stopped the server")
-        await interaction.response.send_message("`O2JAM Server` Closed!")
+        await interaction.followup.send("`O2JAM Server` Closed!")
 
     @app_commands.command(name='logs', description='Send Bot log file.')
     @app_commands.checks.has_role(admin_role_id)
     async def logs(self, interaction: discord.Interaction):
+        await interaction.response.defer()
+        await asyncio.sleep(3)
         await interaction.response.send_message(file=discord.File("logs/infos.log"))
-
-    @helpadmin.error
-    async def helpadmin_error(ctx, error):
-        if isinstance(error, (commands.MissingRole, commands.MissingAnyRole)): 
-            logger.info("[%s#%s] !helpadmin command error, No Role!" % (ctx.message.author.name,ctx.message.author.discriminator)) 
-
-    @startserver.error
-    async def startserver_error(ctx, error):
-        if isinstance(error, (commands.MissingRole, commands.MissingAnyRole)): 
-            logger.info("[%s#%s] is trying to start the server." % (ctx.message.author.name,ctx.message.author.discriminator))
-
-    @stopserver.error
-    async def stopserver_error(ctx, error):
-        if isinstance(error, (commands.MissingRole, commands.MissingAnyRole)):        
-            logger.info("[%s#%s] is trying to stop the server." % (ctx.message.author.name,ctx.message.author.discriminator))
-    
-    @syncnames.error
-    async def syncnames_error(ctx, error):
-        if isinstance(error, (commands.MissingRole, commands.MissingAnyRole)):
-           logger.info("[%s#%s] is trying to sync name." % (ctx.message.author.name,ctx.message.author.discriminator))
-    
-    @relinkdiscord.error
-    async def relinkdiscord_error(ctx, error):
-        if isinstance(error, (commands.MissingRole, commands.MissingAnyRole)):
-           logger.info("[%s#%s] is trying to relinkdiscord." % (ctx.message.author.name,ctx.message.author.discriminator))
-
-    @relinkinvite.error
-    async def relinkinvite_error(ctx, error):
-        if isinstance(error, (commands.MissingRole, commands.MissingAnyRole)):
-           logger.info("[%s#%s] is trying to relinkinvite." % (ctx.message.author.name,ctx.message.author.discriminator))
 
 async def setup(bot):
     await bot.add_cog(admin(bot))

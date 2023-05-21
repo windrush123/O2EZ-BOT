@@ -21,7 +21,7 @@ intents = discord.Intents.default()
 intents.message_content = True
 
 guildid = discord.Object(id=(os.getenv('guildid')))
-
+admin_role_id = int(os.getenv('adminroleid'))
 
 class registration_button(discord.ui.View):
     @discord.ui.button(label="Register", style=discord.ButtonStyle.green)
@@ -178,15 +178,18 @@ class Registration(commands.Cog):
     def cog_unload(self):
         logger.info("Cog Unloaded - registration")
 
+    @app_commands.checks.has_role(admin_role_id)
     @app_commands.command(name="register", description='Open the Registration Form.')
     async def register(self, interaction: discord.Interaction) -> None:
+        channel = interaction.channel
 
         message = """Welcome to O2EZ!
 
-To access other channels, kindly proceed with the registration process by clicking the button below. Ensure that you input the Discord invite you received in the designated Invitation Link box.
+If you want to check out the other channels, make sure to register first. Just click the button below to get started. Remember to enter the Discord invite you received in the Invitation Link box.
 
-Please be advised that refraining from leaving the Discord server is crucial, as failure to do so may result in your account being restricted."""
-        await interaction.response.send_message(message, view=registration_button())
+Also, it's important to stay in the Discord server once you join, as leaving may lead to your account being restricted. Enjoy your time on O2EZ!"""
+        await channel.send(message, view=registration_button())
+        await interaction.response.send_message("Registration Message Sent!\nYou may dissmiss this message.", ephemeral=True)
 
 async def setup(bot: commands.Bot):
     await bot.add_cog(Registration(bot))
