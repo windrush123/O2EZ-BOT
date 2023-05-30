@@ -59,15 +59,15 @@ class RecentlyPlayed(commands.Cog):
 
     @record.before_loop
     async def before_record(self):
-        print('[Score Recording] Timer Started')
+        logger.info('[Score Recording] Timer Started')
         await self.bot.wait_until_ready()
 
     @record.after_loop
     async def on_record_cancel(self):
         if self.record.is_being_cancelled():
-            print('[Score Recording] Finishing loop before closing...')
+            logger.info('[Score Recording] Finishing loop before closing...')
             self.record.stop() 
-            print('[Score Recording] Closed !')
+            logger.info('[Score Recording] Closed !')
 
     async def read_scores(self):
         scorelist = []

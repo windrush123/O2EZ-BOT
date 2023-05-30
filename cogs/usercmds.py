@@ -212,6 +212,24 @@ class usercmds(commands.Cog):
             await interaction.response.send_message("You don't have the required role for this command.", ephemeral=True)
         else:
             logger.info(error)
+
+    @app_commands.checks.has_role(member_role_id)
+    @app_commands.command(name="help", description='Get help about the bot.')
+    async def help(self, interaction: discord.Interaction) -> None:
+        command_list = """
+        `/online` - Check who is playing on the server.
+        `/profile` - Display user data, recently plays, and top plays.
+        `/unstuck` -  Try this command if can't get passed Channel Selection.
+        `/changepassword` - Change your account password.
+        `/leaderboard` -  Check server leaderboards.
+        `/accountdetails` - Take a look at your account information.`
+        """
+        embed = discord.Embed(title="List of available of Commands",
+                                description=command_list,
+                                color=discord.Color.green())
+        await interaction.response.send_message(embed=embed, ephemeral=True)
+
+
     @app_commands.checks.has_role(member_role_id)
     @app_commands.command(name="changepassword", description='Change your account password.')
     async def changepassword(self, interaction: discord.Interaction) -> None:
@@ -339,7 +357,7 @@ class usercmds(commands.Cog):
                 await asyncio.sleep(3)
                 view.default_embed = profile         
                 await interaction.followup.send(embed=profile, view=view)
-                logger.info("[%s#%s] printed their profile." % (interaction.message.author.name,interaction.message.author.discriminator))
+                logger.info("[%s#%s] printed their profile." % (interaction.message.author,interaction.message.author.discriminator))
             else: 
                 await interaction.followup.send("Profile not found, users have to play once before getting a profile.")
         else: 
@@ -385,7 +403,7 @@ class usercmds(commands.Cog):
     @app_commands.command(name="accountdetails", description="Take a look at your account information.")
     @app_commands.checks.has_role(member_role_id)
     async def accountdetails(self, interaction: discord.Interaction):
-        await interaction.response.defer()
+        #await interaction.response.defer()
         discorduid = interaction.user.id
         with conncreate.cursor() as cursor:
             query = "SELECT usernick,userid,passwd from dbo.member where discorduid=?"
@@ -395,10 +413,10 @@ class usercmds(commands.Cog):
                 password = str(row.passwd)
         if username:
             logger.info("[%s#%s] asked for their account details." % (interaction.user.name,interaction.user.discriminator))
-            await interaction.followup.send(f"\nThis message will be deleted in 30 seconds.\n```username: {username} \npassword: {password}```", ephemeral=True, delete_after=30)
+            await interaction.response.send_message(f"\nThis message will be deleted in 30 seconds.\n```username: {username} \npassword: {password}```", ephemeral=True, delete_after=30)
         else:
             logger.info(f"{interaction.user.name} Error: User not Found.")
-            await interaction.followup.send(f"{interaction.user.name} Error: User not Found.", ephemeral=True)
+            await interaction.response.send_message(f"{interaction.user.name} Error: User not Found.", ephemeral=True)
        
 async def setup(bot):
     await bot.add_cog(usercmds(bot))

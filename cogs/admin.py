@@ -73,6 +73,27 @@ class admin(commands.Cog):
         Stop the O2Jam Server```''')
 
 
+    @app_commands.command(name="helpadmin", description="Send list of available admin commands")
+    @app_commands.checks.has_role(admin_role_id)
+    async def helpadmin(self, interaction: discord.Interaction) -> None:
+        command_list = """
+        `/helpadmin` - Shows this message.
+        `/startserver` - Start the O2Jam Server.
+        `/stopserver`  - Stop the O2Jam Server. 
+        `/createinv` - Create an invite link.
+        `/deleteinv [Invite Link/Code]`  - Deletes an invite link.
+        `/deleteallinv` - Deletes all unused invite link.
+        `/syncnames`  - Sync players name to their discord.
+        `/relinkdiscord [Member] [IGN]`  - Link user to his current discorduid.
+        `/relinkinvite [Invite Link/Code] [Discorduid]` - Link discorduid and invite code.
+        `/reloadcog [cog]` - Reload Discord Bot Cogs.
+        """
+        embed = discord.Embed(title="List of Available Admin Commands",
+                              description=command_list,
+                              color=discord.Color.green())
+        await interaction.response.send_message(embed=embed, ephemeral=True)
+
+
     @app_commands.command(name="changeign", description="Sends a detailed user profile")
     @app_commands.checks.has_role(admin_role_id)
     async def changeign(self, interaction: discord.Interaction, member: discord.Member, newign: str = None):
@@ -97,6 +118,29 @@ class admin(commands.Cog):
             await interaction.followup.send(f"Successfully changed ign. `{newign}`")
         else:    
             await interaction.followup.send(f"Cannot find user ")
+
+
+    @app_commands.command(name="reloadcog", 
+                          description="Reload Discord Bot Cogs."
+                          )
+    @app_commands.checks.has_role(admin_role_id)
+    @app_commands.choices(cogs=[
+        app_commands.Choice(name="admin", value="cogs.admin"),
+        app_commands.Choice(name="recentlyplayed", value="recentlyplayed"),
+        app_commands.Choice(name="usercmds", value="usercmds"),
+        app_commands.Choice(name="registration", value="registration"),
+        app_commands.Choice(name="invites", value="invites"),
+        app_commands.Choice(name="activity", value="activity")
+        ])
+    async def reloadcog(self, 
+                        interaction: discord.Interaction, 
+                        cogs: app_commands.Choice[str]):
+        try:
+            await self.bot.reload_extension(name=cogs.value)
+            await interaction.response.send_message(f"`{cogs.name}` Reloaded")
+        except Exception as e:
+            logger.info(e)
+            await interaction.response.send_message(e)        
 
 
     # Sync player names

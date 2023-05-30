@@ -136,7 +136,7 @@ class registration_form(discord.ui.Modal, title="O2EZ Registration Form"):
         embed.add_field(name="DiscordID", value=interaction.user.id, inline=True)
         embed.set_author(name="Member Registration")
         await channel.send(embed=embed)
-        await interaction.response.send_message(f"Thank you, {self.user.nick} {self.user.id}", ephemeral=True)
+        #await interaction.response.send_message(f"Thank you, {self.user.nick} {self.user.id}", ephemeral=True)
         
         
     async def on_error(self, interaction: discord.Interaction, error : Exception):
@@ -183,7 +183,7 @@ class Registration(commands.Cog):
     async def register(self, interaction: discord.Interaction) -> None:
         channel = interaction.channel
 
-        message = """Welcome to O2EZ!
+        message = """## Welcome to O2EZ!
 
 If you want to check out the other channels, make sure to register first. Just click the button below to get started. Remember to enter the Discord invite you received in the Invitation Link box.
 
