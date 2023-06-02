@@ -47,31 +47,6 @@ class admin(commands.Cog):
         else:
             logger.info(error)
 
-    @commands.command()
-    @commands.has_role(os.getenv('adminroleid'))
-    async def helpadmin(self, ctx):
-        await ctx.send(
-            '''```
-    General Category:
-    !helpadmin
-        Shows this message
-    !createinv
-        Create an invite link
-    !deleteinv [invite link or code]
-        Deletes an invite link
-    !deleteallinv
-        Deletes all unused invite link
-    !syncnames
-        Sync players name to their discord
-    !relinkdiscord [Memberd] [IGN]
-        Link user to his current discorduid
-    !relinkinvite [Invite Link/Code] [Discorduid]
-        Link discorduid to invite code
-    !startserver
-        Start the O2Jam Server
-    !stopserver
-        Stop the O2Jam Server```''')
-
 
     @app_commands.command(name="helpadmin", description="Send list of available admin commands")
     @app_commands.checks.has_role(admin_role_id)
@@ -96,28 +71,27 @@ class admin(commands.Cog):
 
     @app_commands.command(name="changeign", description="Sends a detailed user profile")
     @app_commands.checks.has_role(admin_role_id)
-    async def changeign(self, interaction: discord.Interaction, member: discord.Member, newign: str = None):
+    async def changeign(self, interaction: discord.Interaction, member: discord.Member, new_ign: str):
         await interaction.response.defer()
         discorduid = member.id
         with conncreate.cursor() as cursor:
             query = "SELECT usernick FROM dbo.member WHERE discorduid=?"
-            cursor.execute(query, (discorduid))
-            for row in cursor:
-                id = str.strip(row.id)
-                ign = str.strip(row.usernick)
-        if ign:
+            old_ign = cursor.execute(query, (discorduid)).fetchone()[0]
+
+        if old_ign:
             with conncreate.cursor() as cursor:
+                print(new_ign, discorduid)
                 query = "UPDATE dbo.member SET usernick=? WHERE discorduid=?"
-                cursor.execute(query, (newign ,discorduid))
+                cursor.execute(query, (new_ign ,discorduid))
                 cursor.commit()
-                query = "UPDATE dbo.T_o2jam_charinfo SET USER_NICKNAME=? WHERE USER_INDEX_ID=?"
-                cursor.execute(query, (newign ,id))
+                query = "UPDATE dbo.T_o2jam_charinfo SET USER_NICKNAME=? WHERE USER_NICKNAME=?"
+                cursor.execute(query, (new_ign , old_ign))
                 cursor.commit()
-            await member.edit(nick=newign)
+            await member.edit(nick=new_ign)
             await asyncio.sleep(3)
-            await interaction.followup.send(f"Successfully changed ign. `{newign}`")
+            await interaction.followup.send(f"IGN Successfully Changed. [`{old_ign}`] -> `[{new_ign}]`")
         else:    
-            await interaction.followup.send(f"Cannot find user ")
+            await interaction.followup.send(f"Cannot find user.")
 
 
     @app_commands.command(name="reloadcog", 
@@ -126,11 +100,11 @@ class admin(commands.Cog):
     @app_commands.checks.has_role(admin_role_id)
     @app_commands.choices(cogs=[
         app_commands.Choice(name="admin", value="cogs.admin"),
-        app_commands.Choice(name="recentlyplayed", value="recentlyplayed"),
-        app_commands.Choice(name="usercmds", value="usercmds"),
-        app_commands.Choice(name="registration", value="registration"),
-        app_commands.Choice(name="invites", value="invites"),
-        app_commands.Choice(name="activity", value="activity")
+        app_commands.Choice(name="recentlyplayed", value="cogs.recentlyplayed"),
+        app_commands.Choice(name="usercmds", value="cogs.usercmds"),
+        app_commands.Choice(name="registration", value="cogs.registration"),
+        app_commands.Choice(name="invites", value="cogs.invites"),
+        app_commands.Choice(name="activity", value="cogs.activity")
         ])
     async def reloadcog(self, 
                         interaction: discord.Interaction, 
@@ -144,7 +118,8 @@ class admin(commands.Cog):
 
 
     # Sync player names
-    @app_commands.command(name="syncnames", description="Sync Disord Names to their In-Game Name")
+    @app_commands.command(name="syncnames", 
+                          description="Sync Disord Names to their In-Game Name")
     @app_commands.checks.has_role(admin_role_id)
     async def syncnames(self, interaction: discord.Interaction):
         await interaction.response.defer()
@@ -162,18 +137,21 @@ class admin(commands.Cog):
                 if admin_id in member.roles:
                     logger.info(f'{member.name} is Admin, Skipping...')
                 else:
-                    if member.name != name:
+                    if member.nick != name:
+                        if not member.nick:
+                            logger.info(f"{member.nick} has None as their discord nick. Skipping...")
+                            continue
+                        print(member.nick)
+                        print(name)
                         await member.edit(nick=name)
                         logger.info(f"{member.name} Changed into {name}")
                         count =+ 1
+                    
             else:
                 await member.edit(nick="UNREGISTERED")
                 logger.info(f"{member.name} {member.id} Not found in the database. Skipping...")
         else:
-            await interaction.followup.send(f"{count} Total Names Synced.")
-                
-                
-            
+            await interaction.followup.send(f"{count} Total Names Synced. Total Members: {len(all_members)}")
             
     @app_commands.command(name="relinkdiscord", description="Relink O2JAM Account discordUID ")
     @app_commands.checks.has_role(admin_role_id)
@@ -241,7 +219,7 @@ class admin(commands.Cog):
     async def logs(self, interaction: discord.Interaction):
         await interaction.response.defer()
         await asyncio.sleep(3)
-        await interaction.response.send_message(file=discord.File("logs/infos.log"))
+        await interaction.followup.send(file=discord.File("logs/infos.log"))
 
 async def setup(bot):
     await bot.add_cog(admin(bot))

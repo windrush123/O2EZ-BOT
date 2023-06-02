@@ -30,20 +30,27 @@ class Profile(discord.ui.View):
         super().__init__(timeout=timeout)
         self.default_embed = None
         self.usernick = None
+        self.user_id = None
         self.mentioned_user = None
         
+        
 
+    async def on_timeout(self) -> None:
+        for item in self.children:
+            item.disabled = True
+        await self.message.edit(view=self)
 
     @discord.ui.button(label='Profile', style=discord.ButtonStyle.gray)
     async def profile_default(self, interaction: discord.Interaction, button: discord.ui.Button): 
         await interaction.response.defer()
         await asyncio.sleep(1)
         await interaction.edit_original_response(embed=self.default_embed)
+        self.message = await interaction.original_response()
 
-
+    # Top Played
 
     @discord.ui.button(label='Top Played', style=discord.ButtonStyle.green)
-    async def top_played(self, interaction: discord.Interaction, button: discord.ui.Button):    
+    async def top_played(self, interaction: discord.Interaction, button: discord.ui.Button):   
         with conncreate.cursor() as cursor:
             query = """
                 SELECT TOP 10
@@ -58,12 +65,12 @@ class Profile(discord.ui.View):
                     END AS song_level
                 FROM user_highscores
                 JOIN songlist ON user_highscores.chart_id = songlist.chart_id
-                WHERE user_highscores.usernick = ?
+                WHERE user_highscores.id = ?
                 AND user_highscores.song_clear = 'True'
                 AND user_highscores.chart_difficulty  = 2
                 ORDER BY song_level DESC;
                 """
-            cursor.execute(query, (self.usernick))
+            cursor.execute(query, (self.user_id))
             rows = [list(row) for row in cursor.fetchall()]
             
         embed = discord.Embed(title=f"Top 10 Plays",
@@ -72,22 +79,22 @@ class Profile(discord.ui.View):
         embed.set_author(name="%s#%s Profile" % (self.mentioned_user.name, self.mentioned_user.discriminator), icon_url=self.mentioned_user.avatar)
         count = 1
         for score_row in rows:
-            embed.add_field(name=f"{count}. Lv. {score_row[19]} {score_row[16]} - {score_row[18]} Chart By: {score_row[17]}", 
-                            value=f"Score: {score_row[12]} Acc: {round(score_row[13],2)} ({score_row[5]}/{score_row[6]}/{score_row[7]}/{score_row[8]}) (Combo: x{score_row[9]})", 
+            embed.add_field(name=f"{count}. [Lv. {score_row[19]}] {score_row[16]} - {score_row[18]} \nChart By: {score_row[17]}", 
+                            value=f"Score: `{score_row[12]}` Acc: `{round(score_row[13],2)}` (`{score_row[5]}`/`{score_row[6]}`/`{score_row[7]}`/`{score_row[8]}`) (Combo: `x{score_row[9]}`)", 
                             inline=False)
             count += 1
         embed.set_thumbnail(url=self.mentioned_user.avatar)
         await interaction.response.defer()
         await asyncio.sleep(1)
         await interaction.edit_original_response(embed=embed)
-
-
+        self.message = await interaction.original_response()
+    # Recently Played
 
     @discord.ui.button(label='Recently Played', style=discord.ButtonStyle.blurple)
     async def recently_played(self, interaction: discord.Interaction, button: discord.ui.Button):
         with conncreate.cursor() as cursor:
-            query = "SELECT TOP 10 * from userscores WHERE usernick=? ORDER BY date_verified DESC"
-            cursor.execute(query, (self.usernick))
+            query = "SELECT TOP 10 * from userscores WHERE id=? ORDER BY date_verified DESC"
+            cursor.execute(query, (self.user_id))
             rows = [list(row) for row in cursor.fetchall()]
 
         embed = discord.Embed(title=f"{self.usernick} Recently Played",
@@ -96,14 +103,21 @@ class Profile(discord.ui.View):
         embed.set_author(name="%s#%s Profile" % (self.mentioned_user.name, self.mentioned_user.discriminator), icon_url=self.mentioned_user.avatar)
         count = 1
         for score_row in rows:
-            embed.add_field(name=f"Lv. {score_row[8]} {score_row[5]} - {score_row[6]}", 
-                            value=f"Score: {score_row[16]} Acc: {round(score_row[17],2)} ({score_row[9]}/{score_row[10]}/{score_row[11]}/{score_row[12]}) (Combo: x{score_row[13]})", 
-                            inline=False)
+            if score_row[18]:
+                embed.add_field(name=f"[Cleared][Lv. {score_row[8]}] {score_row[5]} - {score_row[6]}", 
+                                value=f"Score: `{score_row[16]}` Acc: `{round(score_row[17],2)}` (`{score_row[9]}`/`{score_row[10]}`/`{score_row[11]}`/`{score_row[12]}`) (Combo: `x{score_row[13]}`)", 
+                                inline=False)
+            else:
+                embed.add_field(name=f"[Failed][Lv. {score_row[8]}] {score_row[5]} - {score_row[6]}", 
+                                value=f"Score: `{score_row[16]}` Acc: `{round(score_row[17],2)}` (`{score_row[9]}`/`{score_row[10]}`/`{score_row[11]}`/`{score_row[12]}`) (Combo: `x{score_row[13]}`)", 
+                                inline=False)
             count += 1
         embed.set_thumbnail(url=self.mentioned_user.avatar)
         await interaction.response.defer()
         await asyncio.sleep(1)
         await interaction.edit_original_response(embed=embed)
+        self.message = await interaction.original_response()
+
 
 class Change_Password(discord.ui.Modal, title="Account Change Password"):
     old_password = discord.ui.TextInput(
@@ -153,7 +167,6 @@ class Change_Password(discord.ui.Modal, title="Account Change Password"):
         channel = int(os.getenv('privatechannelmsg'))
         if isinstance(error, ValueError):
             if str(error) == 'wrong_pass':
-                print()
                 await interaction.response.send_message("The current password you entered is incorrect. Please double-check your password and try again.", ephemeral=True)
             elif str(error) == "pass_not_matched":
                 await interaction.response.send_message("The new password you entered does not match the confirmation password. Please double-check your passwords and try again..", ephemeral=True)
@@ -168,7 +181,7 @@ class Change_Password(discord.ui.Modal, title="Account Change Password"):
                     username = row.userid
                     usernick = row.usernick
                     old_password = row.passwd 
-            print(error)
+            logger.info(error)
             embed = discord.Embed(title=f"{str(type(error))}",
                               description="Error",
                               color=discord.Color.red())
@@ -182,7 +195,7 @@ class Change_Password(discord.ui.Modal, title="Account Change Password"):
             await channel.send(embed=embed)
             
             logger.error(error)
-            print(type(error), error, error.__traceback__)
+            logger.info(type(error), error, error.__traceback__)
 
 class usercmds(commands.Cog):
     
@@ -244,16 +257,21 @@ class usercmds(commands.Cog):
         await interaction.response.defer()
         results = []
         with conncreate.cursor() as cursor:
-            query = "SELECT SUB_CH, USER_ID FROM dbo.T_o2jam_login"
-            results = cursor.execute(query).fetchall()
+            query = "SELECT SUB_CH, USER_INDEX_ID, USER_ID FROM dbo.T_o2jam_login"
+            cursor.execute(query)
+            results = cursor.fetchall()
+
         online_user = []
-        for row in results:
-            if row[0] == 0:
-                row[0] = "CH1"
-                online_user.append(" - ".join(row))
-            else:
-                row[0] = "CH2"
-                online_user.append(" - ".join(row))
+        with conncreate.cursor() as cursor:
+            for row in results:
+                query = "SELECT USER_NICKNAME FROM dbo.T_o2jam_charinfo WHERE USER_INDEX_ID=?"
+                cursor.execute(query, (row[1],))
+                ign = cursor.fetchone()[0]
+                if row[0] == 0:
+                    online_user.append(f"CH1 - {ign}")
+                else:
+                    online_user.append(f"CH2 - {ign}")
+
         online_user.sort()
 
         if len(online_user) > 0:
@@ -278,7 +296,7 @@ class usercmds(commands.Cog):
         #check if user is registered
         with conncreate.cursor() as cursor:
             query = "SELECT userid FROM dbo.member WHERE discorduid=?"
-            cursor.execute(query, (discorduid))    
+            cursor.execute(query, (discorduid))
             for row in cursor:
                 userids = str.strip(row.userid)
         if userids:
@@ -302,62 +320,62 @@ class usercmds(commands.Cog):
     @app_commands.checks.has_role(member_role_id)
     async def profile(self, interaction: discord.Interaction, member: discord.Member=None):
         await interaction.response.defer(thinking=True)
-        view = Profile()
+        view = Profile(timeout=60.0)
+        onlinestatus = 0
+
         # if user is not mentioned
         if not member:
             member = interaction.user
             view.mentioned_user = interaction.user
         else:
             view.mentioned_user = member
-        onlinestatus = 0
+
         discorduid = member.id
         #check if user/sender is registered 
         with conncreate.cursor() as cursor:
-            query = "SELECT usernick from dbo.member where discorduid=?"
+            query = "SELECT usernick FROM dbo.member where discorduid=?"
             view.usernick = str.strip(cursor.execute(query, (discorduid)).fetchone()[0])
-        
+          
         if view.usernick:
             with conncreate.cursor() as cursor:
-                query = "SELECT USER_INDEX_ID,USER_NICKNAME, Level, Battle, Experience FROM dbo.T_o2jam_charinfo where USER_NICKNAME=?"
-                cursor.execute(query, view.usernick)
-                
-                for row in cursor:
-                    index_id = (row.USER_INDEX_ID)
-                    ign = (row.USER_NICKNAME)
-                    level = (row.Level)
-                    PlayCount = (row.Battle)
-                    Exp = (row.Experience)
-                    userdata = True
+                query = "SELECT USER_INDEX_ID, Level, Battle, Experience FROM dbo.T_o2jam_charinfo where USER_NICKNAME=?"
+                result = cursor.execute(query, (view.usernick,)).fetchone()
+                view.user_id = result[0]
+                level = result[1]
+                PlayCount = result[2]
+                Exp = result[3]
+
             #check if user/sender profile data exists
-            if userdata:
+            if view.user_id:
                 with conncreate.cursor() as cursor:
-                    query = "SELECT registdate FROM dbo.member where usernick=?"
-                    register_date = cursor.execute (query, (ign)).fetchone()[0]
+                    query = "SELECT registdate FROM dbo.member where id=?"
+                    register_date = cursor.execute (query, (view.user_id)).fetchone()[0]
                 dateformat ='%Y-%m-%d %H:%M:%S.%f'
                 datejoined = datetime.datetime.strptime(str(register_date),dateformat)
                 profile = discord.Embed (title = " ", description = " ", color=0x00ffff)
                 
                 profile.set_author(name="%s#%s Profile" % (member.name, member.discriminator), icon_url=member.avatar)
                 profile.set_thumbnail(url=member.avatar)
-                profile.add_field(name="ID", value="%s" % (index_id), inline=True)
-                profile.add_field(name="In-Game Name", value="%s" % (ign), inline=True)
+                profile.add_field(name="ID", value="%s" % (view.user_id), inline=True)
+                profile.add_field(name="In-Game Name", value="%s" % (view.usernick), inline=True)
                 profile.add_field(name="Level", value="%s" % (level), inline=True)
                 profile.add_field(name="Playcount", value="%s" % (PlayCount), inline=True)
                 profile.add_field(name="Experience", value="%s" % (Exp), inline=True)
                 profile.add_field(name="Date Joined", value="%s" % (datejoined.strftime("%B %d %Y")), inline=True)
                 
                 with conncreate.cursor() as cursor:
-                    query = "SELECT USER_ID FROM dbo.T_o2jam_login WHERE USER_ID=?"
-                    onlinestatus = cursor.execute(query,  (ign)).fetchone()
+                    query = "SELECT USER_INDEX_ID FROM dbo.T_o2jam_login WHERE USER_INDEX_ID=?"
+                    onlinestatus = cursor.execute(query,  (view.user_id)).fetchone()
                 if onlinestatus:
-                    profile.set_footer(text="🟢 Online")               
+                    profile.set_footer(text="🟢 Online")
                 else: 
                     profile.set_footer(text="🔴 Offline")
                 
                 await asyncio.sleep(3)
                 view.default_embed = profile         
                 await interaction.followup.send(embed=profile, view=view)
-                logger.info("[%s#%s] printed their profile." % (interaction.message.author,interaction.message.author.discriminator))
+                view.message = await interaction.original_response()
+                logger.info("[%s#%s] printed their profile." % (interaction.user.name,interaction.user.discriminator))
             else: 
                 await interaction.followup.send("Profile not found, users have to play once before getting a profile.")
         else: 
@@ -417,6 +435,11 @@ class usercmds(commands.Cog):
         else:
             logger.info(f"{interaction.user.name} Error: User not Found.")
             await interaction.response.send_message(f"{interaction.user.name} Error: User not Found.", ephemeral=True)
-       
+    
+    @commands.Cog.listener()
+    async def  on_command_error(self, ctx, error):
+        if isinstance(error, commands.CommandNotFound):
+            await ctx.send("We have migrated all command into Slash`(/)` Commands.\nType `/help` to send the list of available commands.")
+
 async def setup(bot):
     await bot.add_cog(usercmds(bot))

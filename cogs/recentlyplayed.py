@@ -158,18 +158,19 @@ class RecentlyPlayed(commands.Cog):
             score_v2 = RecentlyPlayed.scorev2(self, int(score_line[7]),int(score_line[8]),int(score_line[9]),int(score_line[10]), chart_notecount)
             verified_score_format.append(int(score_v2)) # score v2
         except ZeroDivisionError:
-            print(f"[ERROR] Notecount not found! Invalid ojn_id: {chart_notecount}")
+            logger.info(f"[ERROR] Notecount not found! Invalid ojn_id: {chart_notecount}")
             return   
 
         accuracy = RecentlyPlayed.hitcount_to_accuracy(self, int(score_line[7]),int(score_line[8]),int(score_line[9]),int(score_line[10]))
         verified_score_format.append(float(accuracy)) # Accuracy
 
         hitcount = int(score_line[7]) + int(score_line[8]) + int(score_line[9]) + int(score_line[10])
-        IsClear = RecentlyPlayed.IsPassed(self, chartid, score_line[5], hitcount)
+        IsClear = RecentlyPlayed.IsPassed(self, chartid, int(score_line[5]), hitcount)
         verified_score_format.append(IsClear) # Song clear
 
         verified_score_format.append(score_line[1]) # date_played
         verified_score_format.append(date_verified) # date_verified
+        print(verified_score_format)
         try:
             with conncreate.cursor() as cursor:
                 cursor.execute("""INSERT INTO dbo.userscores (usernick, id, channel,
@@ -188,7 +189,7 @@ class RecentlyPlayed(commands.Cog):
                 getid = int(row[0])          
                 verified_score_format.insert(0, getid)
                 RecentlyPlayed.highscore_to_db(self, verified_score_format)
-                # await RecentlyPlayed.score(self, verified_score_format[0])
+                #await RecentlyPlayed.score(self, verified_score_format[0])
         except ProgrammingError:
             logger.info("[ERROR] There's a problem inserting the score to database. [invalid parameters]")
             logger.info(verified_score_format)                                        
@@ -310,20 +311,21 @@ class RecentlyPlayed(commands.Cog):
                 return {}
 
     def IsPassed(self, chart_id, difficulty, hitcount):
+        notecount = 0
         with conncreate.cursor() as cursor:
-            query = "SELECT easy_notecount, normal_notecount, hard_notecount FROM dbo.songlist WHERE chart_id = ?"
-            chart = cursor.execute(query, (chart_id,))
+            query = "SELECT easy_notecount, normal_notecount, hard_notecount FROM dbo.songlist WHERE chart_id=?"
+            result = cursor.execute(query, (chart_id)).fetchone()
             difficulty_mapping = {
-                0: 'easy_notecount',
-                1: 'normal_notecount',
-                2: 'hard_notecount'
+                0: result[0],
+                1: result[1],
+                2: result[2]
             }
-            notecount = None
-            if difficulty in difficulty_mapping:
-                column_name = difficulty_mapping[difficulty]
-                for row in chart:
-                    notecount = getattr(row, column_name)
-            return notecount is not None and notecount <= int(hitcount)
+            
+        notecount = difficulty_mapping.get(difficulty) 
+        if notecount <= int(hitcount): 
+            return True          
+        else: 
+            return False
 
     # Discord Embed
 
@@ -382,17 +384,14 @@ class RecentlyPlayed(commands.Cog):
         member = self.bot.get_user(int(discorduid))
 
         # Discord Embed
-
+        embed=discord.Embed(title="[Lv. %s] %s" % (chart_level, chart_data['chart_name']) , 
+            description="%s\nChart by: %s" % (chart_data['chart_artist'],chart_data['charter']), 
+            color=diff_color) 
         if passed == False:
-            embed=discord.Embed(title="[F][Lv. %s] %s" % (chart_level, chart_data['chart_name']) , 
-            description="%s\nChart by: %s" % (chart_data['chart_artist'],chart_data['charter']), 
-            color=diff_color) 
+            embed.set_author(name=f"{member.display_name} - Failed", icon_url=member.display_avatar)
         else: 
-            embed=discord.Embed(title="[Lv. %s] %s" % (chart_level, chart_data['chart_name']) , 
-            description="%s\nChart by: %s" % (chart_data['chart_artist'],chart_data['charter']), 
-            color=diff_color) 
-        
-        embed.set_author(name=f"{member.display_name} recently played", icon_url=member.display_avatar)
+            embed.set_author(name=f"{member.display_name} - Cleared", icon_url=member.display_avatar)
+            
         embed.set_thumbnail(url="attachment://" + bgfileformat)
         embed.add_field(name=diff_name, value="""
         **Cool:** %s
@@ -476,8 +475,8 @@ class RecentlyPlayed(commands.Cog):
 
         else:
             # Sort by score v2
-            clear_player_scores.sort(key=lambda x: x[7])
-            failed_player_scores.sort(key=lambda x: x[7])
+            clear_player_scores.sort(key=lambda x: x[7], reverse=True)
+            failed_player_scores.sort(key=lambda x: x[7], reverse=True)
         
         # Discord Embed
 
@@ -492,15 +491,15 @@ class RecentlyPlayed(commands.Cog):
             embed.add_field(name="Cleared", value="------------------------------", inline=False)
             for score_line in clear_player_scores:
                 count += 1
-                embed.add_field(name=f"{count}. {score_line[0]} - [{round(score_line[6],2)}%] [{round(score_line[7])}]",
-                                value=f"Combo: x{score_line[5]} - [{score_line[1]} - {score_line[2]} - {score_line[3]} - {score_line[4]}]",
+                embed.add_field(name=f"{count}. {score_line[0]} - [`{round(score_line[6],2)}%`] [`{round(score_line[7])}`]",
+                                value=f"Combo: `x{score_line[5]}` - [`{score_line[1]}` - `{score_line[2]}` - `{score_line[3]}` - `{score_line[4]}`]",
                                 inline=False)
         if len(failed_player_scores) > 0:
             embed.add_field(name="Failed", value="------------------------------", inline=False) 
             for score_line in failed_player_scores:
                 count += 1
-                embed.add_field(name=f"{count}. {score_line[0]} - [{round(score_line[6],2)}%] [{round(score_line[7])}]",
-                                value=f"Combo: x{score_line[5]} - [{score_line[1]} - {score_line[2]} - {score_line[3]} - {score_line[4]}]",
+                embed.add_field(name=f"{count}. {score_line[0]} - [`{round(score_line[6],2)}%`] [`{round(score_line[7])}`]",
+                                value=f"Combo: `x{score_line[5]}` - [`{score_line[1]}` - `{score_line[2]}` - `{score_line[3]}` - `{score_line[4]}`]",
                                 inline=False)
         date_played = datetime.now().strftime("%Y-%m-%d %H:%M:%S") 
         embed.set_footer(text=f"ID: {lobby_scores[0][0]} Date Verified: {date_played}")  

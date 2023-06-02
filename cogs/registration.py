@@ -1,3 +1,4 @@
+from typing import Optional
 import discord
 import pyodbc
 import utils.logsconfig as logsconfig
@@ -24,11 +25,15 @@ guildid = discord.Object(id=(os.getenv('guildid')))
 admin_role_id = int(os.getenv('adminroleid'))
 
 class registration_button(discord.ui.View):
-    @discord.ui.button(label="Register", style=discord.ButtonStyle.green)
+    def __init__(self):
+        super().__init__(timeout=None)
+
+    @discord.ui.button(label="Register", style=discord.ButtonStyle.green, custom_id="registration_button")
     async def button_callback(self, interaction: discord.Interaction, button):
         register_modal = registration_form()
         register_modal.user = interaction.user
         await interaction.response.send_modal(register_modal)
+        print("Button Clicked!")
 
 class registration_form(discord.ui.Modal, title="O2EZ Registration Form"):
     username = discord.ui.TextInput(
@@ -178,6 +183,15 @@ class Registration(commands.Cog):
     def cog_unload(self):
         logger.info("Cog Unloaded - registration")
 
+    async def setup_hook(self) -> None:
+        # Register the persistent view for listening here.
+        # Note that this does not send the view to any message.
+        # In order to do this you need to first send a message with the View, which is shown below.
+        # If you have the message_id you can also pass it as a keyword argument, but for this example
+        # we don't have one.
+        self.add_view(registration_button())
+
+
     @app_commands.checks.has_role(admin_role_id)
     @app_commands.command(name="register", description='Open the Registration Form.')
     async def register(self, interaction: discord.Interaction) -> None:
@@ -187,9 +201,11 @@ class Registration(commands.Cog):
 
 If you want to check out the other channels, make sure to register first. Just click the button below to get started. Remember to enter the Discord invite you received in the Invitation Link box.
 
-Also, it's important to stay in the Discord server once you join, as leaving may lead to your account being restricted. Enjoy your time on O2EZ!"""
+__Also, it's important to stay in the Discord server once you join, as leaving may lead to your account being restricted.__
+
+Enjoy your time on **O2EZ**!"""
         await channel.send(message, view=registration_button())
-        await interaction.response.send_message("Registration Message Sent!\nYou may dissmiss this message.", ephemeral=True)
+        await interaction.response.send_message("Registration Message Sent!\nYou may dismiss this message.", ephemeral=True)
 
 async def setup(bot: commands.Bot):
     await bot.add_cog(Registration(bot))
