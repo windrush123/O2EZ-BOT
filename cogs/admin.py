@@ -59,9 +59,11 @@ class admin(commands.Cog):
         `/deleteinv [Invite Link/Code]`  - Deletes an invite link.
         `/deleteallinv` - Deletes all unused invite link.
         `/syncnames`  - Sync players name to their discord.
+        `/syncban` - Run a ban checker if the users is not in the server anymore.
         `/relinkdiscord [Member] [IGN]`  - Link user to his current discorduid.
         `/relinkinvite [Invite Link/Code] [Discorduid]` - Link discorduid and invite code.
         `/reloadcog [cog]` - Reload Discord Bot Cogs.
+        `/forcergistration` - Force Registration of member if something goes wrong.
         """
         embed = discord.Embed(title="List of Available Admin Commands",
                               description=command_list,
@@ -80,7 +82,6 @@ class admin(commands.Cog):
 
         if old_ign:
             with conncreate.cursor() as cursor:
-                print(new_ign, discorduid)
                 query = "UPDATE dbo.member SET usernick=? WHERE discorduid=?"
                 cursor.execute(query, (new_ign ,discorduid))
                 cursor.commit()
@@ -95,8 +96,7 @@ class admin(commands.Cog):
 
 
     @app_commands.command(name="reloadcog", 
-                          description="Reload Discord Bot Cogs."
-                          )
+                          description="Reload Discord Bot Cogs.")
     @app_commands.checks.has_role(admin_role_id)
     @app_commands.choices(cogs=[
         app_commands.Choice(name="admin", value="cogs.admin"),
@@ -116,14 +116,13 @@ class admin(commands.Cog):
             logger.info(e)
             await interaction.response.send_message(e)        
 
-
     # Sync player names
     @app_commands.command(name="syncnames", 
                           description="Sync Disord Names to their In-Game Name")
     @app_commands.checks.has_role(admin_role_id)
     async def syncnames(self, interaction: discord.Interaction):
         await interaction.response.defer()
-        count = 0 
+        syncnames_count = 0
         all_members = interaction.guild.members 
         admin_id = discord.utils.get(interaction.guild.roles, id=admin_role_id)
         for member in all_members:
@@ -133,27 +132,90 @@ class admin(commands.Cog):
                 cursor.execute(query,(member.id))
                 for row in cursor:
                     name = str.strip(row.usernick)
+            if member.bot:
+                logger.info((f"{member.name} is a bot. Skipping..."))
+                continue
             if name:          
                 if admin_id in member.roles:
                     logger.info(f'{member.name} is Admin, Skipping...')
+                    continue
                 else:
-                    if member.nick != name:
-                        if not member.nick:
-                            logger.info(f"{member.nick} has None as their discord nick. Skipping...")
-                            continue
-                        print(member.nick)
-                        print(name)
+                    if member.global_name != name:
                         await member.edit(nick=name)
-                        logger.info(f"{member.name} Changed into {name}")
-                        count =+ 1
+                        logger.info(f"{member.global_name} Changed into {name}")
+                        syncnames_count =+ 1
                     
             else:
                 await member.edit(nick="UNREGISTERED")
-                logger.info(f"{member.name} {member.id} Not found in the database. Skipping...")
+                logger.info(f"{member.name} {member.id} Not yet registered")
         else:
-            await interaction.followup.send(f"{count} Total Names Synced. Total Members: {len(all_members)}")
+            await interaction.followup.send(f"{syncnames_count} Total Names Synced. Total Members: {len(all_members)}")
+
+    @app_commands.command(name="syncban", 
+                          description="Run a ban checker if the user is not in the server anymore.")
+    @app_commands.checks.has_role(admin_role_id)
+    async def syncban(self, interaction: discord.Interaction):
+        await interaction.response.defer()
+        bancount = 0
+        
+        with conncreate.cursor() as cursor:
+            query = "SELECT discorduid FROM dbo.member"
+            result = cursor.execute(query).fetchall()
+            discorduid = [row[0] for row in result]
+        for discord_id in discorduid:
+            if discord_id is None: continue
+            username = None
+            user_index = None
+            if interaction.guild.get_member(int(discord_id)) is None:
+                currently_banned = False               
+                with conncreate.cursor() as cursor:
+                    query = "SELECT userid FROM dbo.member WHERE discorduid=?"
+                    cursor.execute(query, int(discord_id))
+                    for row in cursor:
+                        username = row[0].strip()
+                    if username is None:
+                        logger.info(f"{discord_id} not found in the database.")
+                        continue
+
+                    query = "SELECT USER_INDEX_ID FROM dbo.T_o2jam_charinfo WHERE USER_ID=?"
+                    cursor.execute(query, (username))
+                    for row in cursor:
+                        user_index = row[0]
+
+                    if user_index is None:
+                        with conncreate.cursor() as cursor:
+                            query = "DELETE FROM dbo.member WHERE discorduid=?;"
+                            cursor.execute(query, (discord_id))
+                            cursor.commit()
+                            logger.info(f"{username} Deleted from dbo.member since the user have not played once.")
+                            continue
+
+                    # Check if Currently Banned
+                    query = "SELECT * FROM dbo.T_o2jam_banishment WHERE USER_INDEX_ID=?"
+                    result = cursor.execute(query, user_index)
+                    for row in result:
+                        currently_banned = True
+
+                if currently_banned == False:
+                    with conncreate.cursor() as cursor:
+                        ban_query = "INSERT INTO dbo.T_o2jam_banishment (USER_INDEX_ID,USER_ID,Ban_date) VALUES (?,?,CURRENT_TIMESTAMP)"
+                        cursor.execute(ban_query, (user_index, username))
+                        cursor.commit()
+                    logger.info(f"[{username.strip()}] has been added into banishment table.")
+                    bancount += 1
+                else:
+                    continue
+        else:
+            with conncreate.cursor() as cursor:
+                query = "SELECT USER_INDEX_ID, USER_ID, Ban_date FROM dbo.T_o2jam_banishment"
+                result = cursor.execute(query).fetchall()
+                ban_list = [row for row in result]
+                logger.info(f"Ban List: {ban_list}")
+
+            await interaction.followup.send(f"`{bancount}` Total New Banned Players. \n`{len(ban_list)}` Total Banned Players.\n check `/logs` for details.")
             
-    @app_commands.command(name="relinkdiscord", description="Relink O2JAM Account discordUID ")
+
+    @app_commands.command(name="relinkdiscord", description="Relink O2JAM Account discordUID")
     @app_commands.checks.has_role(admin_role_id)
     async def relinkdiscord(self, interaction: discord.Interaction, member: discord.Member, ign: str):
         user = None
@@ -184,13 +246,89 @@ class admin(commands.Cog):
             for row in cursor:
                 invitelink = (row.invlink)
                 valid_invitelink = True
-            if valid_invitelink == True:
+            if valid_invitelink:
                 cursor.execute("UPDATE dbo.discordinv SET discorduid=?,used='True' WHERE invlink=?", member.id, invitelink)
                 cursor.commit()
                 logger.info("Relink Invite:[%s] = DiscordUID [%s]" % (invitelink, member.name))
                 await interaction.followup.send("Successfully relinked discord invite `%s` to user <@%s>" % (invitelink, member.id))
             else: 
                 await interaction.followup.send("Invite Code not found!")
+
+
+    @app_commands.command(name='forceregistration', 
+                          description='Force Registration of member if something goes wrong.')
+    @app_commands.checks.has_role(admin_role_id)
+    async def forceregistration(self, interaction: discord.Interaction, 
+                                member: discord.Member, 
+                                username: str, 
+                                password: str,
+                                ign: str, 
+                                invlink: str):
+        await interaction.response.defer()
+        
+        mod_channel = interaction.guild.get_channel(int(os.getenv("privatechannelmsg")))
+        general_channel = interaction.guild.get_channel(int(os.getenv("publicchannelmsg")))
+        member_role = discord.utils.get(interaction.guild.roles, name="Member")   
+        invite_code = invlink.replace("https://discord.gg/","")
+
+        # Check Invite Link if valid
+        with conncreate.cursor() as cursor:
+            sql = """SELECT * FROM dbo.discordinv WHERE invlink=?"""
+            cursor.execute(sql , (invite_code))
+            row = cursor.fetchone()
+            if row is None:
+                interaction.followup.send(f"Invalid Invite Link. `{invite_code}`")
+                return
+
+        # Check if discordid is already linked
+        with conncreate.cursor() as cursor:
+            sql = """SELECT * FROM dbo.member WHERE discorduid=?"""
+            row = cursor.execute(sql , (member.id)).fetchone()
+            if row is not None:
+                interaction.followup.send(f"Discord Account already linked to an existing O2JAM Account. `{row}`")
+                return
+
+        try:
+            with conncreate.cursor() as cursor:
+                query = """INSERT INTO dbo.member 
+                (userid, usernick, sex, passwd, registdate, id9you, discorduid, invlink)
+                VALUES
+                (?,?,'True',?,CURRENT_TIMESTAMP, '-1', ?, ?)"""
+                query_values = (username, ign, password, member.id,invlink)
+                cursor.execute(query, query_values)
+                cursor.commit()
+                cursor.execute("SELECT @@IDENTITY AS id")
+                row = cursor.fetchone()
+                getid = int(row[0])
+                sql = "DELETE FROM dbo.discordinv WHERE invlink=?"
+                cursor.execute(sql, (invite_code))
+                cursor.commit()
+                logger.info(f"Registered - ID:[{getid}]{username} / {ign} [{member.id}: {invite_code}] ")
+            await interaction.followup.send(f"**{member.mention} Successfully Registered!**\nIn 30 seconds, you will be given a member role and access to the server.\nPlease take a moment to read the rules and follow them. We want to keep this place friendly and fun for everyone.\n\nWe hope you enjoy your stay here.")
+            await asyncio.sleep(30)
+           
+            await member.add_roles(member_role)
+            await member.edit(nick=ign)
+            await general_channel.send(f"""Welcome to O2EZ! {member.mention}
+
+Please take a moment to read the rules and follow them. We want to keep this place friendly and fun for everyone. 
+We hope you enjoy your stay here.""" )
+
+            embed = discord.Embed(title=f"New User: {member.name}",
+                              description="DEBUG",
+                              color=discord.Color.green())
+            embed.add_field(name="ID", value=getid, inline=True)
+            embed.add_field(name="Username", value=username, inline=True)
+            embed.add_field(name="IGN", value=ign, inline=True)
+            embed.add_field(name="Invite", value=invite_code, inline=True)
+            embed.add_field(name="DiscordID", value=member.id, inline=True)
+            embed.set_author(name="Member Registration")
+            await mod_channel.send(embed=embed)
+        except Exception as e: 
+            logger.info(f"Force Registration Failed!\n{e}")
+            await interaction.followup.send(f"Force Registration Failed!\n{e}")
+
+
 
     @app_commands.command(name='startserver', description='Start O2Jam Server.')
     @app_commands.checks.has_role(admin_role_id)

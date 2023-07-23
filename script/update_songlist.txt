@@ -1,0 +1,112 @@
+2028	Akari Has Arrived!	75	7483	75	7483	75	7483	136	03:06	Leeju	GYARI	
+2029	Roki	62	6189	62	6189	62	6189	150	03:46	Remuring	Calliope Mori	
+2030	Tsukiyo ni Mau Koi no Hana	93	8072	93	8072	93	8072	186	03:51	_Reimu	Active Planets, ういにゃす & AUG	
+2031	Find the way	92	7360	92	7360	92	7360	178	03:50	Suzuha_l	FELT	
+2032	Time for the Moon Night	70	6872	70	6872	70	6872	170	03:48	Jinjin	GFRIEND	
+2033	GHOST	90	10462	90	10462	90	10462	182	04:44	shadow-	Hoshimachi Suisei	
+2034	God-ish	64	4467	64	4467	64	4467	142	03:18	Remuring	Tsukino	
+2035	MORE	90	7358	90	7358	90	7358	142	03:38	shadow	K/DA	
+2036	Look at Me !	73	5400	73	5400	73	5400	180	02:55	Lung_P	Kyrrin & Miruku	
+2037	Little Sea	75	5257	75	5257	75	5257	188	03:40	_Reimu	Kessoku band	
+2038	Magatsu yami ni utau	100	6358	100	6358	100	6358	204	03:10	yellEx	ELFENSJoN	
+2039	Yuuga ni Sakase, Sumizome no Sakura ~ Border of Life	130	10365	130	10365	130	10365	135	04:09	zenonia1155	Marcia	
+2040	Shuwa*Shuwa Parfait	58	4015	58	4015	58	4015	155	02:31	Remuring	Neko Hacker feat. ななひら    	
+2041	One Day Sky	88	9160	88	9160	88	9160	185	04:37	Enie	鈴木このみ     	
+2042	Signal (ft. SUCH)	59	10179	59	10179	59	10179	175	05:12	Lung_P	Rejection	
+2043	Signal	89	9735	89	9735	89	9735	175	05:12	_Reimu	rejection/Such	
+2044	Pink Kurage to, Sotto, Kiss o Shita.	107	10739	107	10739	107	10739	194	03:52	aci	ShinRa-Bansho	
+2045	Theme 113	77	4810	77	4810	77	4810	170	02:08	Arona	Nor	
+2046	true DJ MAG top ranker's song Zenpen	93	14208	93	14208	93	14208	170	06:17	paulkappa	sabi (Katagiri Remi)	
+2047	twitter	122	8303	122	8303	122	8303	210	03:52	roko100789	devilish5150 feat.Gumi	
+2049	Digital Life Hacker	92	8240	92	8240	92	8240	160	03:29	LostCool	wotoha	
+2050	Music Revolver	78	3480	78	3480	78	3480	168	02:09	Entozer	Zeami	
+2051	Class::CIEL_N_PROTECTA;	88	8963	88	8963	88	8963	125	04:18	Kim_GodSSI	Ar no Surge OST	
+2052	Painful Fate	85	3622	85	3622	85	3622	192	02:00	BEMANI Sound Team '?ュ룊Master' 	Unknown Artist	
+2053	Flower Flag	48	4841	48	4841	48	4841	160	04:27	17VA	FELT	
+2055	Burger of Life ~80% Frying~	79	3186	79	3186	79	3186	151.81	01:50	corenik	unknown	
+2056	[ET]Classical Insanity	22	1594	33	2315	44	2747	175	02:05	삶价훙￡    	DM Ashura	
+2057	DEATH IDENTITY MOON	77	5650	77	5650	77	5650	150	03:16	ShadowKun	???	
+2058	Naked Arm	65	8296	65	8296	65	8296	155	04:45	RubyTheSpammer	TM Revolution	
+2059	[151/185/168] Shunkan Sentimental	60	6436	80	6436	70	6436	168	03:32	DJZMO	《멀裂조쏜減可FA》ED4        	
+2060	Wriggle Buggle -DB Style-	127	6028	127	6028	127	6028	180	02:11	RubyTheSpammer	I DUN CARE LOL	
+2061	AiAe type - λ 	130	10093	130	10093	130	10093	180	03:55	LunaticAnt	ゆよゆっぺ (yuyoyuppe)     	
+2062	Volcanic Rim Stage	102	6334	102	6334	102	6334	165	03:25	HIGH	Hideyuki Fukasawa	
+2063	BLUE DRAGON	120	4520	120	4520	120	4520	191	03:20	TH & C.HoNoR	BLUE DRAGON	
+2064	Curtain Call Memories	135	4575	135	4564	135	4575	173	01:51	주우위 Qrispy Joybox Series2   	[NormalBpm138]	
+2065	[SHD]Eternal Nocturne	110	9700	69	9300	110	9700	166.06	05:02	DJZMO	dBu	
+2066	Celestial Exploring	73	8399	73	8399	73	8399	170	04:19	Nananana	a_hisa	
+2067	Online (Extended)	74	7182	74	7182	74	7182	172	04:02	Nananana	lapix	
+2068	7thHVN	54	5077	54	5077	54	5077	175	03:03	Nananana	cold kiss	
+2069	Magnolia	86	9012	86	9012	86	9012	160	03:53	Kim_GodSSI	M2U feat. グリリ   	
+2070	RUSH E 2	57	6499	57	6499	57	6499	185	02:41	Flexo123	Sheet Music Boss	
+2071	Just dance (sped up)	37	4902	37	4902	37	4902	155	03:09	Flexo123	Lady Gaga	
+2072	DANGEROOOOUS JUNGLE	72	4437	72	4437	72	4437	160	02:15	Flexo123	Laur	
+2073	As If It's Your Last	46	4538	46	4538	46	4538	125	03:34	Flexo123	BLACKPINK	
+2074	Mermaid girl (STARLiGHT Mix)	56	5905	56	5905	56	5905	140	03:09	Flexo123	Cream puff	
+2075	After Burner	83	5054	83	5054	83	5054	191	02:30	it doesnt count	ねこかぶりサイクロン(xi+ねこみり	
+2076	Shukusei!! Loli-kami Requiem *	67	7100	67	7100	67	7100	165	04:32	StellaMori	Shigure Ui	
+2077	Be Happy☆ 	63	6393	63	6393	63	6393	158	04:22	SurfChu85	3L	
+2078	You	102	5318	102	5318	102	5318	190	02:27	Akayro	mitssi feat. SeeUさ 	
+2079	[LN]BlythE:ExtenD	116	6494	116	6494	116	6494	182	02:31	Flexo123	M2U remixed celas feat. ARU	
+2080	Kotonoha	73	4988	73	4988	73	4988	171	03:11	xxxxxx2800	Piko	
+2081	Good morning my dream (Aiobahn & KATOMORI Ver.)	34	3873	34	3873	34	3873	128	04:15	MapleSyrup-	Ruka, Mona, Miki from AIKATSU*ST	
+2082	Kakurenbocchi	84	5762	84	5762	84	5762	195	03:09	xxxxxx2800	TUYU	
+2083	Divine Spell	90	8895	90	8895	90	8895	160	04:42	KenZ	TRUE	
+2084	Mushi no Sumu Tokoro	86	9670	86	9670	86	9670	161	04:28	Remuring	Camellia feat. Nana Takahashi	
+2085	Knew day	115	8133	115	8133	115	8133	150	03:52	Zenonia	(K)NoW_NAME	
+2086	Identity Part IV	49	2279	49	2279	49	2279	140	01:54	Bruce	SHK	
+2087	Nou Shou Sakuretsu Girl	56	4634	56	4634	56	4634	155	03:06	Degeneracy	れるりり    	
+2088	Nemurenu Ukiyo No Tsukiakari	78	4365	78	4365	78	4365	147	03:12	tangjinxi	Foxtail-Grass Studio	
+2089	Windland	79	6313	79	6313	79	6313	170	03:48	tangjinxi	埋葬  	
+2090	You Are Fucking Noob!!!!	59	6431	59	6431	59	6431	150	04:12	tangjinxi	かめりあ    	
+2091	summertime	80	7630	80	7630	80	7630	132	04:37	Arona	cinnamons & evening cinema	
+2092	Shinkai Shoujou	35	3224	35	3224	35	3224	137	03:34	Cuppp	Miku (Vocal by Nobunaga)	
+2093	Rubicon	67	6050	67	6050	67	6050	165	04:03	LostCool	Sangatsu no Phantasia	
+2094	Infinity Mofulity	130	10296	130	10296	130	10296	180	03:58	LostCool	Camellia feat. Nanahira	
+2095	Cappuccino	51	5190	51	5190	51	5190	145	03:36	Nananana	YUC'e	
+2096	Second Run	38	2234	38	2234	38	2234	190	01:58	roko100789	Nauts	
+2097	Xue Mao Jiao	33	3445	33	3445	33	3445	115	03:31	Terni	Xiao Panpan & Xiao Fengfeng	
+2098	Odo	82	6014	82	6014	82	6014	128	03:29	Remuring	:irai	
+2099	Territory Battle	57	3009	57	3009	57	3009	140	01:50	Remuring	ツユ  	
+2100	Last Proof	83	8188	83	8188	83	8188	196	04:45	Koibenii	ZAQ	
+2101	banana man	73	4800	73	4800	73	4800	135	02:16	Jinjin	sa10	
+2102	Violet Perfume	64	3404	64	3404	64	3404	140	01:50	Wilben_Chan	SHK	
+2103	THE SEVENS CODE	57	3419	57	3419	57	3419	150	01:56	_Kobii	Feryquitous	
+2104	Goodbye Sengen	50	4747	50	4747	50	4747	170	02:54	Koibenii	Nakiri Ayame	
+2105	Colorful World	74	7754	74	7754	74	7754	131	04:33	_Reimu	Kariya seirai	
+2106	Comet (2019 Reworks)	53	6217	53	6217	53	6217	174	04:07	Lung_P	you feat. nayuta	
+2107	Knight Rider (Extended Mix)	120	8917	120	8917	120	8917	200	03:39	yellEx	USAO	
+2108	[LN]Silent Rush	102	7056	102	7056	102	7056	158	02:34	aci	Soleily	
+2109	Elektrick U-Phoria	74	4315	74	4315	74	4315	180	02:03	merchee	DJ Noriken	
+2110	Kawaikute Gomen	83	8870	83	8870	83	8870	160	03:39	Arona	HoneyWorks feat. Capi	
+2111	Polaris	58	3573	58	3573	58	3573	138	02:18	alwlqkrtk	Banami	
+2112	Over and over	82	10535	82	10535	82	10535	183	04:44	xxxxxx2800	Nagi Yanagi	
+2114	Neon Light (YUKIYANAGI's 170 Remix)	77	7275	77	7275	77	7275	170	04:13	My Angel Koishi	TEMPLIME feat. Hoshimiya Toto	
+2115	Balloon Party [seibin Remix]	74	5731	74	5731	74	5731	145	03:54	yellEx	ミツキヨ    	
+2116	8th Planet	76	4038	76	4038	76	4038	158	01:56	Nananana	P4koo	
+2117	breath of stella	87	7800	87	7800	87	7800	176	03:54	yellEx	相宮零   	
+2118	Hana no Tou	78	11093	78	11093	78	11093	170	04:33	Emida	さユり   	
+2119	Kimi iro Subliminal	84	5816	84	5816	84	5816	150	03:08	yellEx	senya	
+2120	Lockdown	90	5694	90	5694	90	5694	175	03:29	LostCool	PIKASONIC & Tatsunoshin (ft. NEO	
+2121	Kaikai Kitan	81	7200	81	7200	81	7200	185	03:38	Lung_P	Eve	
+2122	RPG	94	9700	94	9700	94	9700	175	04:09	yellEx	School Food Punishment	
+2123	Itsuka Otona ni Nareru to Ii ne.	74	6740	74	6740	74	6740	176	02:55	Emida	TUYU	
+2124	Decoboco Speedster	83	4338	83	4338	83	4338	172	02:07	alwlqkrtk	Nana Abe & Shin Sato	
+2125	Catch the Moment	87	9604	87	9604	87	9604	190	04:30	Hehoooh	LiSA	
+2126	Louder than steel	94	10350	94	10350	94	10350	190	04:43	Emida	龍5150 	
+2127	finorza	134	11695	134	11695	134	11695	225	04:45	tyrcs	Camellia feat. Nanahira	
+2128	Giri The Giri	81	5530	81	5530	81	5530	215	02:31	Emida	Slax	
+2129	Sis x Love ft. Narumi Sena x Narumi Mona	79	8218	79	8218	79	8218	167	03:32	Emida	HoneyWork	
+2130	Merry Bad Otome feat. PANXI	84	7598	84	7598	84	7598	162	03:06	Emida	lapix	
+2131	Aoi	76	8300	76	8300	76	8300	164	04:14	Lung_P	サカナクション       	
+2132	Karakara	87	8500	87	8500	87	8500	190	04:07	Muses	結束バンド     	
+2133	Fairytale	77	8493	77	8493	77	8493	194	05:00	Hehoooh	Cillia	
+2134	Green Green	79	6776	79	6776	79	6776	150	03:20	zenonia1155	Happy Kuru Kuru	
+2135	Summerland	53	3661	53	3661	53	3661	138	02:11	merchee	Lime	
+2136	Palette	72	6382	72	6382	72	6382	148	03:43	Suzuha_l	Tia	
+2137	START	91	6591	91	6591	91	6591	175	03:29	Begin	舞花  	
+2138	Black Princess	92	8145	92	8145	92	8145	154	04:11	eZmmR	葉月ゆら    	
+2139	Exit This Earth's Atomosphere	100	9272	100	9272	100	9272	170	05:32	Destiny19	Camellia	
+2140	Black Princess [1.15x]	130	8145	130	8145	130	8145	177	03:39	eZmmR	葉月ゆら    	
+2141	Break Free ft. Zedd	90	6017	90	6017	90	6017	168.38	02:48	shadowkun-	Nightcore	
+2142	Blade of Hope	95	11217	95	11217	95	11217	188	04:45	shadowkun- & nightshroud	sweet ARMS	

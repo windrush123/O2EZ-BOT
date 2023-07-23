@@ -52,4 +52,4 @@ async def on_ready():
         logger.info(f"Error loading Slash Commands \n{e}")
     
 
-bot.run(os.getenv('TOKEN'), root_logger=True) 
+bot.run(os.getenv('TOKEN'), root_logger=True)

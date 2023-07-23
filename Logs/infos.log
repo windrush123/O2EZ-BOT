@@ -1,4 +1,28 @@
-WARNING    - 2023-05-03 03:30:06,195 - client          : PyNaCl is not installed, voice will NOT be supported
-INFO       - 2023-05-03 03:30:06,199 - client          : logging in using static token
-INFO       - 2023-05-03 03:30:07,993 - gateway         : Shard ID None has connected to Gateway (Session ID: e5a9eea4550f446abc0d3728dfa3d996).
-INFO       - 2023-05-03 03:30:10,008 - main            : User: Jojojam#9860 (ID:825724329559457802)
+WARNING    - 2023-07-23 17:12:44,924 - client          : PyNaCl is not installed, voice will NOT be supported
+INFO       - 2023-07-23 17:12:44,926 - client          : logging in using static token
+INFO       - 2023-07-23 17:12:46,732 - gateway         : Shard ID None has connected to Gateway (Session ID: 818f363910e65f44b785cf5a5c9a510a).
+INFO       - 2023-07-23 17:12:48,748 - main            : User: Jojojam#9860 (ID:825724329559457802)
+INFO       - 2023-07-23 17:12:48,804 - admin           : Cog Loaded - admin
+INFO       - 2023-07-23 17:12:49,015 - recentlyplayed  : Cog Loaded - recentlyplayed
+INFO       - 2023-07-23 17:12:49,062 - usercmds        : Cog Loaded - usercmds
+INFO       - 2023-07-23 17:12:49,080 - registration    : Cog Loaded - registration
+INFO       - 2023-07-23 17:12:49,112 - invites         : Cog Loaded - invites
+INFO       - 2023-07-23 17:12:49,136 - activity        : Cog Loaded - activity
+INFO       - 2023-07-23 17:12:49,137 - recentlyplayed  : [Score Recording] Timer Started
+INFO       - 2023-07-23 17:12:49,519 - main            : Synced a Total of 22 Commands
+INFO       - 2023-07-23 17:13:02,454 - admin           : [iam_windy] has started the server.
+INFO       - 2023-07-23 17:18:49,180 - recentlyplayed  : [New Record][windrush][2] Choose Me Darling (Easy Ver) - StylipS : cool: 3133 good: 653 bad: 0 miss: 41 [Max Combo:824] [Acc: 94.66]  [Score: 803579]
+INFO       - 2023-07-23 17:25:49,165 - recentlyplayed  : [New Record][windrush][2] Signal (ft. SUCH) - Rejection : cool: 8350 good: 1777 bad: 8 miss: 44 [Max Combo:2946] [Acc: 95.14]  [Score: 824020]
+INFO       - 2023-07-23 17:31:49,173 - recentlyplayed  : [NEW HIGHSCORE][windrush][2] Be Happy¡Ù  - 3L : cool: 5845 good: 517 bad: 0 miss: 31 [Max Combo:1104] [Acc: 97.49]  [Score: 907821]
+INFO       - 2023-07-23 17:37:49,167 - recentlyplayed  : [Verified][windrush][2] Kakumeisei Ousama Densenbyou - Suzumu : cool: 4454 good: 1079 bad: 1 miss: 40 [Max Combo:723] [Acc: 94.43]  [Score: 796716]
+INFO       - 2023-07-23 17:43:49,145 - recentlyplayed  : [Verified][windrush][2] Palette - Tia : cool: 5265 good: 1031 bad: 14 miss: 72 [Max Combo:956] [Acc: 94.67]  [Score: 805092]
+INFO       - 2023-07-23 17:49:49,140 - recentlyplayed  : [New Record][windrush][2] Neon Light (YUKIYANAGI's 170 Remix) - TEMPLIME feat. Hoshimiya Toto : cool: 6164 good: 980 bad: 14 miss: 117 [Max Combo:611] [Acc: 94.88]  [Score: 810584]
+INFO       - 2023-07-23 17:53:49,153 - recentlyplayed  : [Verified][windrush][2] RAKUEN Project - To LOVEªë Trouble ~Darkness~ : cool: 7 good: 3 bad: 0 miss: 34 [Max Combo:9] [Acc: 21.02]  [Score: 0]
+INFO       - 2023-07-23 17:54:49,162 - recentlyplayed  : [Verified][windrush][2] RAKUEN Project - To LOVEªë Trouble ~Darkness~ : cool: 1933 good: 482 bad: 12 miss: 84 [Max Combo:256] [Acc: 91.5]  [Score: 212078]
+INFO       - 2023-07-23 17:56:49,161 - recentlyplayed  : [Verified][windrush][2] Mynarco - positive MAD-crew : cool: 1024 good: 355 bad: 19 miss: 49 [Max Combo:221] [Acc: 89.5]  [Score: 266318]
+INFO       - 2023-07-23 17:58:49,148 - recentlyplayed  : [Verified][windrush][2] [LN]Lounge Cafe - Unknown Artist : cool: 2454 good: 564 bad: 12 miss: 107 [Max Combo:530] [Acc: 91.81]  [Score: 284925]
+INFO       - 2023-07-23 18:03:49,159 - recentlyplayed  : [Verified][windrush][2] 498 Tokio - Hige Driver : cool: 4063 good: 1160 bad: 23 miss: 110 [Max Combo:496] [Acc: 92.21]  [Score: 645629]
+INFO       - 2023-07-23 18:08:49,168 - recentlyplayed  : [NEW HIGHSCORE][windrush][2] World's end Dancehall - Iciko : cool: 6132 good: 2017 bad: 49 miss: 159 [Max Combo:786] [Acc: 91.62]  [Score: 694950]
+INFO       - 2023-07-23 18:16:49,163 - recentlyplayed  : [Verified][windrush][2] Spring of Dreams - 3L : cool: 6597 good: 1430 bad: 18 miss: 150 [Max Combo:817] [Acc: 93.64]  [Score: 765344]
+INFO       - 2023-07-23 18:50:00,506 - admin           : [iam_windy] has stopped the server
+INFO       - 2023-07-23 19:31:27,284 - gateway         : Shard ID None has successfully RESUMED session 818f363910e65f44b785cf5a5c9a510a.

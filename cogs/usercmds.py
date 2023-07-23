@@ -33,8 +33,6 @@ class Profile(discord.ui.View):
         self.user_id = None
         self.mentioned_user = None
         
-        
-
     async def on_timeout(self) -> None:
         for item in self.children:
             item.disabled = True
@@ -73,16 +71,21 @@ class Profile(discord.ui.View):
             cursor.execute(query, (self.user_id))
             rows = [list(row) for row in cursor.fetchall()]
             
-        embed = discord.Embed(title=f"Top 10 Plays",
+        embed = discord.Embed(title=f"{self.usernick} - Top 10 Plays",
                                 description=" ",
                                 color=discord.Color.green())
-        embed.set_author(name="%s#%s Profile" % (self.mentioned_user.name, self.mentioned_user.discriminator), icon_url=self.mentioned_user.avatar)
+        embed.set_author(name=f"{self.mentioned_user.display_name} Profile", icon_url=self.mentioned_user.avatar)
         count = 1
-        for score_row in rows:
-            embed.add_field(name=f"{count}. [Lv. {score_row[19]}] {score_row[16]} - {score_row[18]} \nChart By: {score_row[17]}", 
-                            value=f"Score: `{score_row[12]}` Acc: `{round(score_row[13],2)}` (`{score_row[5]}`/`{score_row[6]}`/`{score_row[7]}`/`{score_row[8]}`) (Combo: `x{score_row[9]}`)", 
-                            inline=False)
-            count += 1
+        if not rows:
+            embed.add_field(name=f"No Top Played found in the database",
+                            value="Try clearing some songs.",
+                            inline=True)
+        else:
+            for score_row in rows:
+                embed.add_field(name=f"{count}. [Lv. {score_row[19]}] {score_row[16]} - {score_row[18]} \nChart By: {score_row[17]}", 
+                                value=f"Score: `{score_row[12]}` Acc: `{round(score_row[13],2)}` (`{score_row[5]}`/`{score_row[6]}`/`{score_row[7]}`/`{score_row[8]}`) (Combo: `x{score_row[9]}`)", 
+                                inline=False)
+                count += 1
         embed.set_thumbnail(url=self.mentioned_user.avatar)
         await interaction.response.defer()
         await asyncio.sleep(1)
@@ -97,21 +100,26 @@ class Profile(discord.ui.View):
             cursor.execute(query, (self.user_id))
             rows = [list(row) for row in cursor.fetchall()]
 
-        embed = discord.Embed(title=f"{self.usernick} Recently Played",
+        embed = discord.Embed(title=f"{self.usernick} - Recently Played",
                               description=" ",
                               color=discord.Color.green())
-        embed.set_author(name="%s#%s Profile" % (self.mentioned_user.name, self.mentioned_user.discriminator), icon_url=self.mentioned_user.avatar)
+        embed.set_author(name=f"{self.mentioned_user.display_name} Profile", icon_url=self.mentioned_user.avatar)
         count = 1
-        for score_row in rows:
-            if score_row[18]:
-                embed.add_field(name=f"[Cleared][Lv. {score_row[8]}] {score_row[5]} - {score_row[6]}", 
-                                value=f"Score: `{score_row[16]}` Acc: `{round(score_row[17],2)}` (`{score_row[9]}`/`{score_row[10]}`/`{score_row[11]}`/`{score_row[12]}`) (Combo: `x{score_row[13]}`)", 
-                                inline=False)
-            else:
-                embed.add_field(name=f"[Failed][Lv. {score_row[8]}] {score_row[5]} - {score_row[6]}", 
-                                value=f"Score: `{score_row[16]}` Acc: `{round(score_row[17],2)}` (`{score_row[9]}`/`{score_row[10]}`/`{score_row[11]}`/`{score_row[12]}`) (Combo: `x{score_row[13]}`)", 
-                                inline=False)
-            count += 1
+        if not rows:
+            embed.add_field(name=f"No Recently Played found in the database",
+                            value="Play one song.",
+                            inline=True)
+        else:
+            for score_row in rows:
+                if score_row[18]:
+                    embed.add_field(name=f"[Cleared][Lv. {score_row[8]}] {score_row[5]} - {score_row[6]}", 
+                                    value=f"Score: `{score_row[16]}` Acc: `{round(score_row[17],2)}` (`{score_row[9]}`/`{score_row[10]}`/`{score_row[11]}`/`{score_row[12]}`) (Combo: `x{score_row[13]}`)", 
+                                    inline=False)
+                else:
+                    embed.add_field(name=f"[Failed][Lv. {score_row[8]}] {score_row[5]} - {score_row[6]}", 
+                                    value=f"Score: `{score_row[16]}` Acc: `{round(score_row[17],2)}` (`{score_row[9]}`/`{score_row[10]}`/`{score_row[11]}`/`{score_row[12]}`) (Combo: `x{score_row[13]}`)", 
+                                    inline=False)
+                count += 1
         embed.set_thumbnail(url=self.mentioned_user.avatar)
         await interaction.response.defer()
         await asyncio.sleep(1)
@@ -154,6 +162,8 @@ class Change_Password(discord.ui.Modal, title="Account Change Password"):
             raise ValueError("wrong_pass")
         if self.new_password.value != self.confirm_password.value:
             raise ValueError("pass_not_matched")
+        if " " in self.new_password.value:
+            raise ValueError("invalid_text_format")
         
         with conncreate.cursor() as cursor:
             query = """UPDATE dbo.member 
@@ -164,15 +174,15 @@ class Change_Password(discord.ui.Modal, title="Account Change Password"):
         await interaction.response.send_message("Your password has been successfully updated.", ephemeral=True)
 
     async def on_error(self, interaction: discord.Interaction, error : Exception):
-        channel = int(os.getenv('privatechannelmsg'))
+        mod_channel = int(os.getenv('privatechannelmsg'))
         if isinstance(error, ValueError):
-            if str(error) == 'wrong_pass':
-                await interaction.response.send_message("The current password you entered is incorrect. Please double-check your password and try again.", ephemeral=True)
-            elif str(error) == "pass_not_matched":
-                await interaction.response.send_message("The new password you entered does not match the confirmation password. Please double-check your passwords and try again..", ephemeral=True)
-        else: 
-            await interaction.response.send_message("We encountered an issue while attempting to submit your form. Our Moderation team has been notified and will provide assistance as soon as possible.",                                 
-            ephemeral=True)
+            error_messages = {
+                'wrong_pass': "Your current password is incorrect. Please try again.",
+                'pass_not_matched': "The passwords you entered do not match. Please double-check your passwords and try again.",
+                'invalid_text_format' : 'Please remove any spaces from any of the textbox and try again.\nSpaces are not allowed because they can cause errors and security issues.'
+            }
+            error_msg = error_messages.get(str(error), "We encountered an error while processing your request. Please try again later.")
+            await interaction.response.send_message(error_msg, ephemeral=True)
           
             with conncreate.cursor() as cursor:
                 query = """SELECT * FROM dbo.member WHERE discorduid=?"""
@@ -192,7 +202,7 @@ class Change_Password(discord.ui.Modal, title="Account Change Password"):
             embed.add_field(name="UserInput: Old_Password", value=self.old_password.value, inline=True)
             embed.add_field(name="UserInput: New_password", value=self.new_password.value, inline=True)
             embed.add_field(name="UserInput: Conf_password", value=self.confirm_password.value, inline=True)
-            await channel.send(embed=embed)
+            await mod_channel.send(embed=embed)
             
             logger.error(error)
             logger.info(type(error), error, error.__traceback__)
@@ -219,6 +229,13 @@ class usercmds(commands.Cog):
     ):
         pass
 
+    def cooldown_for_everyone_but_me(interaction: discord.Interaction) -> Optional[app_commands.Cooldown]:
+        admin_role_id = int(os.getenv('adminroleid'))
+        for role in interaction.user.roles:
+            if role.id == admin_role_id:
+                return None
+        return app_commands.Cooldown(1, 60.0)
+
     async def cog_app_command_error(self, interaction: discord.Interaction, error: AppCommandError):
         if isinstance(error, (app_commands.errors.MissingRole, app_commands.MissingAnyRole)):
             logger.info(f"{interaction.user.name} don't have the required role for this command.")
@@ -227,23 +244,25 @@ class usercmds(commands.Cog):
             logger.info(error)
 
     @app_commands.checks.has_role(member_role_id)
+    @app_commands.checks.dynamic_cooldown(cooldown_for_everyone_but_me)
     @app_commands.command(name="help", description='Get help about the bot.')
     async def help(self, interaction: discord.Interaction) -> None:
         command_list = """
         `/online` - Check who is playing on the server.
         `/profile` - Display user data, recently plays, and top plays.
-        `/unstuck` -  Try this command if can't get passed Channel Selection.
+        `/unstuck` -  Try this command if can't get enter Channel Selection.
         `/changepassword` - Change your account password.
         `/leaderboard` -  Check server leaderboards.
-        `/accountdetails` - Take a look at your account information.`
+        `/accountdetails` - Take a look on your account information.
         """
-        embed = discord.Embed(title="List of available of Commands",
+        embed = discord.Embed(title="List of Available User Commands",
                                 description=command_list,
                                 color=discord.Color.green())
         await interaction.response.send_message(embed=embed, ephemeral=True)
 
 
     @app_commands.checks.has_role(member_role_id)
+    @app_commands.checks.dynamic_cooldown(cooldown_for_everyone_but_me)
     @app_commands.command(name="changepassword", description='Change your account password.')
     async def changepassword(self, interaction: discord.Interaction) -> None:
         changepass_modal = Change_Password()
@@ -252,6 +271,7 @@ class usercmds(commands.Cog):
 
 
     @app_commands.checks.has_role(member_role_id)
+    @app_commands.checks.dynamic_cooldown(cooldown_for_everyone_but_me)
     @app_commands.command(name="online", description='Check who is playing on the server.')
     async def online(self, interaction: discord.Interaction):
         await interaction.response.defer()
@@ -287,7 +307,8 @@ class usercmds(commands.Cog):
             await interaction.followup.send(embed=page, ephemeral=True)
 
     @app_commands.checks.has_role(member_role_id)
-    @app_commands.command(name="unstuck", description="Try this command if can't get passed Channel Selection")
+    @app_commands.checks.dynamic_cooldown(cooldown_for_everyone_but_me)
+    @app_commands.command(name="unstuck", description="Try this command if can't get enter Channel Selection")
     async def unstuck(self, interaction: discord.Interaction):
         await interaction.response.defer()
         discorduid = interaction.user.id
@@ -317,6 +338,7 @@ class usercmds(commands.Cog):
             await interaction.followup.send('Username not found!')
         
     @app_commands.command(name="profile", description="Sends a detailed user profile")
+    @app_commands.checks.dynamic_cooldown(cooldown_for_everyone_but_me)
     @app_commands.checks.has_role(member_role_id)
     async def profile(self, interaction: discord.Interaction, member: discord.Member=None):
         await interaction.response.defer(thinking=True)
@@ -334,27 +356,33 @@ class usercmds(commands.Cog):
         #check if user/sender is registered 
         with conncreate.cursor() as cursor:
             query = "SELECT usernick FROM dbo.member where discorduid=?"
-            view.usernick = str.strip(cursor.execute(query, (discorduid)).fetchone()[0])
+            cursor.execute(query, (discorduid))
+            for row in cursor:
+                view.usernick = str.strip(row[0])
+            if row is None:
+                await interaction.followup.send("Userdata not found in database. Missing: Discord ID.")
+                return           
           
         if view.usernick:
             with conncreate.cursor() as cursor:
                 query = "SELECT USER_INDEX_ID, Level, Battle, Experience FROM dbo.T_o2jam_charinfo where USER_NICKNAME=?"
-                result = cursor.execute(query, (view.usernick,)).fetchone()
-                view.user_id = result[0]
-                level = result[1]
-                PlayCount = result[2]
-                Exp = result[3]
+                result = cursor.execute(query, (view.usernick))
+                for row in result:
+                    view.user_id = row[0]
+                    level = row[1]
+                    PlayCount = row[2]
+                    Exp = row[3]
 
             #check if user/sender profile data exists
             if view.user_id:
                 with conncreate.cursor() as cursor:
-                    query = "SELECT registdate FROM dbo.member where id=?"
-                    register_date = cursor.execute (query, (view.user_id)).fetchone()[0]
+                    query = "SELECT registdate FROM dbo.member where discorduid=?"
+                    register_date = cursor.execute (query, (discorduid)).fetchone()[0]
                 dateformat ='%Y-%m-%d %H:%M:%S.%f'
                 datejoined = datetime.datetime.strptime(str(register_date),dateformat)
                 profile = discord.Embed (title = " ", description = " ", color=0x00ffff)
                 
-                profile.set_author(name="%s#%s Profile" % (member.name, member.discriminator), icon_url=member.avatar)
+                profile.set_author(name=f"{member.global_name} Profile", icon_url=member.avatar)
                 profile.set_thumbnail(url=member.avatar)
                 profile.add_field(name="ID", value="%s" % (view.user_id), inline=True)
                 profile.add_field(name="In-Game Name", value="%s" % (view.usernick), inline=True)
@@ -375,36 +403,38 @@ class usercmds(commands.Cog):
                 view.default_embed = profile         
                 await interaction.followup.send(embed=profile, view=view)
                 view.message = await interaction.original_response()
-                logger.info("[%s#%s] printed their profile." % (interaction.user.name,interaction.user.discriminator))
+                logger.info(f"{interaction.user.global_name} used a profile command.")
             else: 
-                await interaction.followup.send("Profile not found, users have to play once before getting a profile.")
+                await interaction.followup.send("You cannot generate a profile yet. You need to play at least one game before you can create your profile.")
         else: 
             await interaction.followup.send("User not yet Registered!")
 
     @app_commands.command(name="leaderboard", description="Check server leaderboards.")
+    @app_commands.checks.dynamic_cooldown(cooldown_for_everyone_but_me)
     @app_commands.checks.has_role(member_role_id)
     async def leaderboard(self, interaction: discord.Interaction):
         await interaction.response.defer()
+        logger.info(f"{interaction.user.name} used a command leaderboard.")
         discorduid = interaction.user.id
         with conncreate.cursor() as cursor:
-            query = """SELECT id FROM dbo.member WHERE discorduid=?"""
+            query = """SELECT usernick FROM dbo.member WHERE discorduid=?"""
             cursor.execute(query, (discorduid))
             for row in cursor:
-                player_id = row.id
+                ign = (row.usernick)
         with conncreate.cursor() as cursor:
             query = """SELECT rank
                     FROM (
                         SELECT USER_INDEX_ID, USER_NICKNAME, Battle, RANK() OVER (ORDER BY battle DESC) as rank
                         FROM dbo.T_o2jam_charinfo
                     ) t
-                    WHERE USER_INDEX_ID = ?"""
-            cursor.execute(query, (player_id))
+                    WHERE USER_NICKNAME = ?"""
+            cursor.execute(query, (ign))
             for row in cursor:
                 player_rank = (row.rank)
             query = """ SELECT TOP 10 * FROM dbo.T_o2jam_charinfo ORDER BY Battle DESC;"""
             cursor.execute(query)
             char_rows = [list(row) for row in cursor.fetchall()]
-        embed = discord.Embed(title="O2EZ Leaderboard", description=f"Your Rank: {player_id}" ,color=0x00ffff)
+        embed = discord.Embed(title="O2EZ Leaderboard", description=f"Your Rank: {player_rank}" ,color=0x00ffff)
         count = 1
         for row in char_rows:
             embed.add_field(name=f"{count}. {row[2]}", value=f"Playcount: {row[5]}", inline=False)
@@ -420,6 +450,7 @@ class usercmds(commands.Cog):
 
     @app_commands.command(name="accountdetails", description="Take a look at your account information.")
     @app_commands.checks.has_role(member_role_id)
+    @app_commands.checks.dynamic_cooldown(cooldown_for_everyone_but_me)
     async def accountdetails(self, interaction: discord.Interaction):
         #await interaction.response.defer()
         discorduid = interaction.user.id
@@ -430,16 +461,25 @@ class usercmds(commands.Cog):
                 username = str(row.userid)
                 password = str(row.passwd)
         if username:
-            logger.info("[%s#%s] asked for their account details." % (interaction.user.name,interaction.user.discriminator))
+            logger.info(f"{interaction.user.global_name} asked for their account details.")
             await interaction.response.send_message(f"\nThis message will be deleted in 30 seconds.\n```username: {username} \npassword: {password}```", ephemeral=True, delete_after=30)
         else:
-            logger.info(f"{interaction.user.name} Error: User not Found.")
+            logger.info(f"{interaction.user.global_name} Error: User not Found.")
             await interaction.response.send_message(f"{interaction.user.name} Error: User not Found.", ephemeral=True)
-    
+
+
+# Error handling
+
     @commands.Cog.listener()
     async def  on_command_error(self, ctx, error):
         if isinstance(error, commands.CommandNotFound):
-            await ctx.send("We have migrated all command into Slash`(/)` Commands.\nType `/help` to send the list of available commands.")
+            msg = await ctx.send("We have migrated all commands into Slash`(/)` Commands.\nType `/help` to send the list of available commands.")
+            await msg.delete(delay=30)
+
+    async def on_app_command_error(self, interaction: discord.Interaction, error: app_commands.AppCommandError):
+        if isinstance(error, app_commands.errors.CommandOnCooldown):
+            await interaction.response.send_message(f"Slow down! Try again in {round(error.retry_after)} seconds.", ephemeral=True, delete_after=8.0)
+
 
 async def setup(bot):
     await bot.add_cog(usercmds(bot))

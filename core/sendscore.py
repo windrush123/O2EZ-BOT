@@ -36,19 +36,19 @@ class SendScore(commands.Bot):
             find_score = cursor.execute("SELECT * FROM dbo.userscores WHERE score_id=?", scoreid)
 
             for row in find_score:
-                    scores = row
-                    usernick = row[1]
-                    chart_diff = row[7]
-                    chart_level = str(row[8])
-                    cool = str(row[9])
-                    good= str(row[10])
-                    bad=str(row[11])
-                    miss =str(row[12])
-                    maxcombo=str(row[13])
-                    totalscore = str(row[15])
-                    scorev2 = str(row[16])
-                    accuracy = str(round(row[17],2))
-                    passed = row[18]
+                scores = row
+                usernick = row[1]
+                chart_diff = row[7]
+                chart_level = str(row[8])
+                cool = str(row[9])
+                good= str(row[10])
+                bad=str(row[11])
+                miss =str(row[12])
+                maxcombo=str(row[13])
+                totalscore = str(row[15])
+                scorev2 = str(row[16])
+                accuracy = str(round(row[17],2))
+                passed = row[18]
 
             find_chartdetails = cursor.execute("SELECT * FROM dbo.songlist WHERE chart_id=?", scores[4])
             for row in find_chartdetails:    
@@ -98,7 +98,6 @@ class SendScore(commands.Bot):
             embed.add_field(name=u"\u200B", value="Date Played: <t:%d:f>" % (time.time()), inline=False)
             #embed.set_footer(text=f"Date Played: <t:%d:f>" (time.time()))
             await channel.send("Recently Played by: %s" % (usernick),file=file, embed=embed)
-            print(type(self))
     
     async def send_multi_lobby(self, scoreline):
          pass

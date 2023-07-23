@@ -20,6 +20,7 @@ intents = discord.Intents.default()
 intents.message_content = True
 
 guildid = discord.Object(id=(os.getenv('guildid')))
+admin_role_id = int(os.getenv('adminroleid'))
 
 class Invites(commands.Cog):
     def __init__(self, bot):
@@ -47,11 +48,11 @@ class Invites(commands.Cog):
         botinvite = 0
         ban = 0
         username = ''
-        PubChannel = self.bot.get_channel(int(os.getenv('publicchannelmsg')))
-        PrivChannel = self.bot.get_channel(int(os.getenv('privatechannelmsg')))
-
+        general_channel = self.bot.get_channel(int(os.getenv('publicchannelmsg')))
+        mod_channel = self.bot.get_channel(int(os.getenv('privatechannelmsg')))
         invites_after_join = await member.guild.invites()
         invites_before_join = self.invites[member.guild.id]
+
         usedinvites = list(set(set(invites_before_join).symmetric_difference(set(invites_after_join))))
 
         with conncreate.cursor() as cursor:
@@ -64,7 +65,8 @@ class Invites(commands.Cog):
                 query = "SELECT USER_ID from dbo.T_o2jam_banishment where USER_ID=?"
                 ban_query = cursor.execute(query, (username))
                 IsBanned = ban_query.fetchone()
-                if IsBanned: ban == 1
+                if IsBanned: 
+                    ban == 1
        
     
         # if bot generated invite
@@ -81,20 +83,20 @@ class Invites(commands.Cog):
         elif not len(usedinvites):
             for invite in invites_before_join:
                 if invite.uses < Invites.find_invite_by_code(self, invites_after_join, invite.code).uses: 
-                    PublicembedVar = discord.Embed(title="%s#%s has joined" % (member.name, member.discriminator), description="", color=0x00ff00)
-                    await PubChannel.send(embed=PublicembedVar)              
+                    PublicembedVar = discord.Embed(title=f"{member.name} has joined", description="", color=0x00ff00)
+                    await general_channel.send(embed=PublicembedVar)              
                     if ban >= 1:
                         with conncreate.cursor() as cursor:
                             query = "DELETE FROM dbo.T_o2jam_banishment where USER_ID=?"
                             cursor.execute(query, (username.strip()))
                             cursor.commit()
 
-                        logger.info("`%s#%s` re-joined the server using direct invite and successfully unbanned `Username: %s` `Invite Code: %s`" % (member.name, member.discriminator, username.strip(), invite.code))
-                        await PrivChannel.send("`%s#%s` re-joined the server using direct invite and successfully unbanned `Username: %s` `Invite Code: %s`" % (member.name, member.discriminator, username.strip(), invite.code))
+                        logger.info(f"[Username: {username.strip()} Invite Code: {invite.code}] {member.name} re-joined the server using direct invite and successfully unbanned.")
+                        await mod_channel.send(f"[Username: `{username.strip()}` Invite Code: `{invite.code}`] `{member.name}` re-joined the server using direct invite and successfully unbanned.")
                         return None
                     
-                    await PrivChannel.send("`%s#%s` has joined the server using direct invite `Invite Code: %s`" % (member.name, member.discriminator, invite.code))
-                    logger.info("%s#%s has joined the server using direct invite Invite Code: %s" % (member.name, member.discriminator, invite.code))
+                    await mod_channel.send(f"`{member.name}` has joined the server using direct invite. Invite Code: `{invite.code}`")
+                    logger.info(f"{member.name} has joined the server using direct invite. Invite Code: {invite.code}")
 
 
         # If user is new to the server and uses the bot generated invite code.
@@ -105,18 +107,14 @@ class Invites(commands.Cog):
                 cursor.execute(query, values)
                 cursor.commit()   
             
-            #Private Channel Send          
-            embedVar = discord.Embed(title="%s#%s has joined the server" % (member.name, member.discriminator), description="", color=0x00ff00)
+            # Mod Channel Send          
+            embedVar = discord.Embed(title=f"{member.name} has joined the server", description="", color=0x00ff00)
             embedVar.add_field(name="Username:", value=member.name, inline=True)
-            embedVar.add_field(name="UserID:", value="%s#%s" % (member.id, member.discriminator), inline=True)
+            embedVar.add_field(name="UserID:", value=f"{member.id}", inline=True)
             embedVar.add_field(name="Invite Code: ", value=invite, inline=True)      
-            await PrivChannel.send(embed=embedVar)
-
-            #public Channel Send
-            PublicembedVar = discord.Embed(title="%s#%s has joined the server" % (member.name, member.discriminator), description="", color=0x00ff00)
-            await PubChannel.send(embed=PublicembedVar)
-            logger.info(f"Recently Joined the server: {member.name}#{member.discriminator} UID:{member.id} Invite Code: {invite}")
+            await mod_channel.send(embed=embedVar)
             
+            logger.info(f"{member.name} has joined the server. UID:{member.id} Invite Code: {invite}")
 
         elif ban >= 1 and botinvite == 1: 
             try:
@@ -131,12 +129,12 @@ class Invites(commands.Cog):
 
                     logger.info("[Invite Link: %s] Deleted from the Database." % (invite))
             except Exception as e:
-                logger.warning(f"There's some problem deleting the invite link from the Database [{invite}]\n{e}")
+                logger.info(f"There's some problem deleting the invite link from the Database [{invite}]\n{e}")
 
-            logger.info("%s#%s re-joined the server using the Bot Generated Invite Code [User_ID: %s][Invite Code: %s]" % 
-                        (member.name, member.discriminator,username.strip(), invite))            
-            await PrivChannel.send("`%s#%s` re-joined the server using Bot Generated Invite link and successfully unbanned `User_ID: %s` `Invite Link: %s`" % 
-                                   (member.name, member.discriminator, username.strip(), invite))
+            logger.info("%s re-joined the server using the Bot Generated Invite Code [User_ID: %s][Invite Code: %s]" % 
+                        (member.name, username.strip(), invite))            
+            await mod_channel.send("`%s` re-joined the server using Bot Generated Invite link and successfully unbanned `User_ID: %s` `Invite Link: %s`" % 
+                                   (member.name, username.strip(), invite))
                           
         self.invites[member.guild.id] = invites_after_join 
 
@@ -145,8 +143,8 @@ class Invites(commands.Cog):
         registered = 0
         ban = 0
         unusedinvite = 0
-        PubChannel = self.bot.get_channel(int(os.getenv('publicchannelmsg')))
-        PrivChannel = self.bot.get_channel(int(os.getenv('privatechannelmsg')))
+        general_channel = self.bot.get_channel(int(os.getenv('publicchannelmsg')))
+        mod_channel = self.bot.get_channel(int(os.getenv('privatechannelmsg')))
 
         #Check if user registered before leaving the server
         with conncreate.cursor() as cursor:
@@ -174,24 +172,28 @@ class Invites(commands.Cog):
                     values = (userindexid, userids)
                     cursor.execute(ban_query, values)
                     cursor.commit()
-                    logger.info("[IGN:%s] has been added into banishment table" % (usernick.strip()))
+                    logger.info(f"[username:{usernick.strip()}] has been added into banishment table")
 
                 # Private channel message
-                embedVar = discord.Embed(title="%s#%s has left the server" % (member.name, member.discriminator), description="", color=0xff0000)
+                embedVar = discord.Embed(title=f"{member.name} has left the server", description="", color=0xff0000)
                 embedVar.add_field(name="Username:", value=userids, inline=True)
                 embedVar.add_field(name="UserID:", value=member.id, inline=True)
                 embedVar.add_field(name="Invite Code: ", value=invlink, inline=True)
-                await PrivChannel.send(embed=embedVar)
+                await mod_channel.send(embed=embedVar)
 
                 # Public channel message
-                PublicembedVar = discord.Embed(title="%s#%s has left the server" % (member.name, member.discriminator), description="In-Game Name: %s" % (usernick), color=0xff0000)
-                await PubChannel.send(embed=PublicembedVar)
-                logger.info("[IGN:%s] %s#%s has left the server" % (usernick.strip(), member.name, member.discriminator))
+                logger.info(f"{usernick.strip()} {member.name} has left the server")
                 
             else:
-                logger.info("%s#%s has left the server [Registered but never played]" % (member.name, member.discriminator))
-                PrivembedVar = discord.Embed(title="%s#%s has joined the server" % (member.name, member.discriminator), description="", color=0xff0000)
-                await PrivChannel.send(embed=PrivembedVar)
+                with conncreate.cursor() as cursor:
+                    query = "DELETE FROM dbo.member WHERE discorduid=?;"
+                    cursor.execute(query, (member.id))
+                    cursor.commit()
+                    logger.info(f"{member.name} userdata deleted from dbo.member since the user have not played once.")
+
+                logger.info(f"{member.name} has left the server [Registered but never played]")
+                PrivembedVar = discord.Embed(title=f"{member.name} has left the server [Registered but never played]", description="Also, Data deleted from dbo.member", color=0xff0000)
+                await mod_channel.send(embed=PrivembedVar)
                 
         # If a Player did not registered before leaving.
         else: 
@@ -210,24 +212,24 @@ class Invites(commands.Cog):
                     logger.info("Invite link successfully deleted!")
             else: 
                 # If no Invite found
-                await PrivChannel.send("%s#%s has left the server but invite link was not found in the database! probably someone made a direct invite?" % (member.name, member.discriminator))
-                logger.info("%s#%s has left the server but invite link was not found in the database." % (member.name, member.discriminator))
+                await mod_channel.send(f"{member.name} has left the server but invite link was not found in the database! probably someone made a direct invite?")
+                logger.info(f"{member.name} has left the server but invite link was not found in the database! probably someone made a direct invite?")
                 return None
 
-            await PrivChannel.send("%s#%s has left the server but never registered!" % (member.name, member.discriminator))
-            PublicembedVar = discord.Embed(title="%s#%s has left the server" % (member.name, member.discriminator), description="In-Game Name: Not Registered", color=0xff0000)
-            await PubChannel.send(embed=PublicembedVar)
-            logger.info("%s#%s Has left the server but never registered" % (member.name, member.discriminator))   
+            await mod_channel.send(f"{member.name} has left the server but never registered.")
+            logger.info(f"{member.name} has left the server but never registered.")   
         self.invites[member.guild.id] = await member.guild.invites()
 
-
-        # Commands
+    
+    
+    # Commands
         
     # Creating invite link
-    @commands.command()
-    @commands.has_role(os.getenv('adminrole'))
-    async def createinv(self, ctx):
-
+    @app_commands.command(name="createinv", 
+                          description="Create an invite link")
+    @app_commands.checks.has_role(admin_role_id)
+    async def createinv(self, interaction: discord.Interaction):
+        await interaction.response.defer()
         RegistrationChannel = self.bot.get_channel(int(os.getenv('registrationchannel')))
         invitelink = await RegistrationChannel.create_invite(max_uses=1,unique=True)
         discordlink = invitelink.url
@@ -238,15 +240,16 @@ class Invites(commands.Cog):
             cursor.execute(invite_link_query, (invlink))
             cursor.commit()
         
-        sender = ctx.message.author
+        sender = interaction.user.name
         logger.info('[%s] has created an invite link: %s' % (sender,invitelink.url))
-        await ctx.send(invitelink)
-        self.invites[ctx.guild.id] = await ctx.guild.invites()
+        await interaction.followup.send(invitelink)
+        self.invites[interaction.guild.id] = await interaction.guild.invites()
         
-    @commands.command()
-    @commands.has_role(os.getenv('adminrole'))
-    async def deleteinv(self, ctx, invlink):
-
+    @app_commands.command(name="deleteinv", 
+                          description="Delete an invite link")
+    @app_commands.checks.has_role(admin_role_id)
+    async def deleteinv(self, interaction: discord.Interaction):
+        await interaction.response.defer()
         invlink = invlink.replace("https://discord.gg/","")
         with conncreate.cursor() as cursor:
             query = "SELECT invlink FROM dbo.discordinv WHERE invlink=?"
@@ -259,18 +262,20 @@ class Invites(commands.Cog):
                 delete_query = "DELETE FROM dbo.discordinv WHERE invlink=?"
                 cursor.execute(delete_query, (invlink))
                 cursor.commit()
-            sender = ctx.message.author   
+            sender = interaction.user.name
             logger.info("[%s] DELETED Invite Code: %s" %(sender, invlink))      
-            await ctx.send(embed=embed)
+            await interaction.followup.send(embed=embed)
             await self.bot.delete_invite(invlink)
-            self.invites[ctx.guild.id] = await ctx.guild.invites()
+            self.invites[interaction.guild.id] = await interaction.guild.invites()
         else:
-            await ctx.send("Invite code not Found")
+            await interaction.followup.send("Invite code not Found")
 
-    @commands.command()
-    @commands.has_role(os.getenv('adminrole'))
-    async def deleteallinv(self, ctx):
-        invlink = []  
+    @app_commands.command(name="deleteallinv", 
+                          description="Deletes all unused invite link.")
+    @app_commands.checks.has_role(admin_role_id)
+    async def deleteallinv(self, interaction: discord.Interaction):
+        await interaction.response.defer()
+        invlink = ()  
         with conncreate.cursor() as cursor:
             query = "SELECT * FROM dbo.discordinv"
             cursor.execute(query)
@@ -283,35 +288,17 @@ class Invites(commands.Cog):
                     delete_query = "DELETE FROM dbo.discordinv WHERE invlink=?"
                     cursor.execute(delete_query, (invlink[x][1]))
                     cursor.commit()
-                await self.bot.delete_invite(invlink[x][1])      
+                    logger.info(f"[{invlink[x][1]}] : Invite Code Delete from Database.")   
+                try:
+                    await self.bot.delete_invite(invlink[x][1])
+                except discord.NotFound:
+                    logger.info(f"[{invlink[x][1]}] : Not Found in Guild Invites.")
                 x += 1
-            await ctx.send("%s Records Deleted" % x)
+            await interaction.followup.send("%s Records Deleted" % x)
             logger.info(f"{x} Records Deleted")
         else:
-            await ctx.send("No unused Invite link found!")        
-        self.invites[ctx.guild.id] = await ctx.guild.invites() 
-
-    # Error handling
-
-    @createinv.error
-    async def createinv_error(self, ctx, error):
-        if isinstance(error, (commands.MissingRole, commands.MissingAnyRole)):
-            logger.info("[%s#%s] is trying to create an invite link." % (ctx.message.author.name,ctx.message.author.discriminator))
-        
-
-    @deleteinv.error
-    async def deleteinv_error(self, ctx, error):
-        if isinstance(error, (commands.MissingRole, commands.MissingAnyRole)):
-            logger.info("[%s#%s] is trying to delete an invite link." % (ctx.message.author.name,ctx.message.author.discriminator))
-        elif isinstance(error, (commands.MissingRequiredArgument)):
-            await ctx.send("Invalid Syntax: `!deleteinv [Invite Link/Code]`")
-    
-    @deleteallinv.error
-    async def deleteallinv_error(self, ctx, error):
-        if isinstance(error, (commands.MissingRole, commands.MissingAnyRole)):
-            logger.info("[%s#%s] is trying to delete an invite link." % (ctx.message.author.name,ctx.message.author.discriminator))
-        elif isinstance(error, (commands.MissingRequiredArgument)):
-            await ctx.send("Invalid Syntax: `!deleteinv [Invite Link/Code]`")
+            await interaction.followup.send("No unused Invite link found!")        
+        self.invites[interaction.guild.id] = await interaction.guild.invites() 
 
 async def setup(bot: commands.Bot):
     await bot.add_cog(Invites(bot))

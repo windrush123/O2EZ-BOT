@@ -1,6 +1,7 @@
 from typing import Optional
 import discord
 import pyodbc
+import asyncio
 import utils.logsconfig as logsconfig
 
 import datetime
@@ -30,10 +31,17 @@ class registration_button(discord.ui.View):
 
     @discord.ui.button(label="Register", style=discord.ButtonStyle.green, custom_id="registration_button")
     async def button_callback(self, interaction: discord.Interaction, button):
-        register_modal = registration_form()
-        register_modal.user = interaction.user
-        await interaction.response.send_modal(register_modal)
-        print("Button Clicked!")
+        with conncreate.cursor() as cursor:
+            query = "SELECT * FROM dbo.member WHERE discorduid=?"
+            IsRegistered = cursor.execute(query, (interaction.user.id)).fetchone()
+        if not IsRegistered:
+            register_modal = registration_form()
+            register_modal.user = interaction.user
+            await interaction.response.send_modal(register_modal)
+        else:
+            await interaction.response.send_message(f"You are already registered with this Discord account.\nIf you forgot your account details, please contact our Discord Moderators.",
+                                                    ephemeral=True)
+
 
 class registration_form(discord.ui.Modal, title="O2EZ Registration Form"):
     username = discord.ui.TextInput(
@@ -83,7 +91,8 @@ class registration_form(discord.ui.Modal, title="O2EZ Registration Form"):
         invite_code = self.invite_link.value.replace("https://discord.gg/","")
         exist_username = False
         exist_ign = False
-        channel = interaction.guild.get_channel(int(os.getenv("privatechannelmsg")))
+        mod_channel = interaction.guild.get_channel(int(os.getenv("privatechannelmsg")))
+        general_channel = interaction.guild.get_channel(int(os.getenv("publicchannelmsg")))
         member_role = discord.utils.get(interaction.guild.roles, name="Member")   
 
         with conncreate.cursor() as cursor:
@@ -99,20 +108,19 @@ class registration_form(discord.ui.Modal, title="O2EZ Registration Form"):
             for row in cursor:
                 exist_ign = True
             if exist_ign: raise ValueError("ign_exist")
-               
-        if " " in self.password.value:
-            raise ValueError("pass_format_error")
         
         if self.password.value != self.conf_password.value:
             raise ValueError("conf_pass")
         
         with conncreate.cursor() as cursor:
             sql = """SELECT * FROM dbo.discordinv WHERE invlink=?"""
-            cursor.execute(sql , invite_code)
-            for row in cursor:
-                valid_code = True
-        if valid_code == False:
-            raise ValueError("invalid_invite")
+            cursor.execute(sql , (invite_code))
+            row = cursor.fetchone()
+            if row is None:
+                raise ValueError("invalid_invite")
+
+        if any(" " in value for value in [self.password.value, self.ign.value, self.username.value]):
+            raise ValueError("invalid_text_format")
         
              
         with conncreate.cursor() as cursor:
@@ -129,9 +137,9 @@ class registration_form(discord.ui.Modal, title="O2EZ Registration Form"):
             cursor.commit()
             logger.info(f"Registered - ID:[{getid}]{self.username.value} / {self.ign.value} [{interaction.user.id}: {invite_code}] ")
       
-        await interaction.user.add_roles(member_role)
+        await interaction.user.edit(nick=self.ign.value)
 
-        embed = discord.Embed(title=f"New User: {self.username.value}",
+        embed = discord.Embed(title=f"New User: {interaction.user.name}",
                               description="DEBUG",
                               color=discord.Color.green())
         embed.add_field(name="ID", value=getid, inline=True)
@@ -140,27 +148,31 @@ class registration_form(discord.ui.Modal, title="O2EZ Registration Form"):
         embed.add_field(name="Invite", value=invite_code, inline=True)
         embed.add_field(name="DiscordID", value=interaction.user.id, inline=True)
         embed.set_author(name="Member Registration")
-        await channel.send(embed=embed)
-        #await interaction.response.send_message(f"Thank you, {self.user.nick} {self.user.id}", ephemeral=True)
+        await mod_channel.send(embed=embed)
+        await interaction.response.send_message("### Successfully Registered!\nIn 30 seconds, you will be given a member role and access to the server.\nPlease take a moment to read the rules and follow them. We want to keep this place friendly and fun for everyone.\n\nWe hope you enjoy your stay here. ", 
+                                                ephemeral=True, delete_after=30.0)
+        await asyncio.sleep(30)
+        await interaction.user.add_roles(member_role)
+        await general_channel.send(f"Welcome to O2EZ! {interaction.user.mention}" )
         
         
     async def on_error(self, interaction: discord.Interaction, error : Exception):
         if isinstance(error, ValueError):
             error_messages = {
-                'username_exist': "The username you entered already exists. Please choose a different username and try again.",
-                'ign_exist': "The In-Game name you entered already exists. Please choose a different in-game name and try again.",
-                'pass_format_error': "The password you entered does not meet the required format. Please choose a password that meets the requirements and try again.",
+                'username_exist': "The username you entered is already in use. Please choose a different username and try again.",
+                'ign_exist': "The In-Game name you entered is already in use. Please choose a different in-game name and try again.",
                 'conf_pass': "The passwords you entered do not match. Please double-check your passwords and try again.",
+                'invalid_text_format' : 'Please remove any spaces from any of the textbox and try again.\nSpaces are not allowed because they can cause errors and security issues.',
                 'invalid_invite': "The Discord invite link you entered is invalid. Please enter a valid invite link and try again."
             }
             error_msg = error_messages.get(str(error), "We encountered an error while processing your request. Please try again later.")
             await interaction.response.send_message(error_msg, ephemeral=True)
         else:
-            channel = interaction.guild.get_channel(int(os.getenv("privatechannelmsg")))
+            mod_channel = interaction.guild.get_channel(int(os.getenv("privatechannelmsg")))
             await interaction.response.send_message(f"""We encountered an issue while attempting to submit your form. 
                                                     Our Moderation team has been notified and will provide assistance as soon as possible.""", ephemeral=True)
-            logger.error(error)
-            print(type(error), error, error.__traceback__)
+            logger.info(error)
+            logger.info(type(error), error, error.__traceback__)
             embed = discord.Embed(title=f"{str(type(error))}",
                                 description=error,
                                 color=discord.Color.red())
@@ -171,7 +183,7 @@ class registration_form(discord.ui.Modal, title="O2EZ Registration Form"):
             embed.add_field(name="Invite", value=self.invite_link, inline=True)
             embed.add_field(name="DiscordID", value=interaction.user.id, inline=True)
             embed.set_author(name="Registration Error Report")
-            await channel.send(embed=embed)
+            await mod_channel.send(embed=embed)
         
 
 class Registration(commands.Cog):
@@ -180,6 +192,7 @@ class Registration(commands.Cog):
         self.invites = {}
     def cog_load(self):
         logger.info("Cog Loaded - registration")
+        
     def cog_unload(self):
         logger.info("Cog Unloaded - registration")
 
@@ -205,7 +218,7 @@ __Also, it's important to stay in the Discord server once you join, as leaving m
 
 Enjoy your time on **O2EZ**!"""
         await channel.send(message, view=registration_button())
-        await interaction.response.send_message("Registration Message Sent!\nYou may dismiss this message.", ephemeral=True)
+        await interaction.response.send_message("Registration Message Sent!\n**Remember to invoke this command again if the bot needed a restart.**\nYou may dismiss this message.", ephemeral=True)
 
 async def setup(bot: commands.Bot):
     await bot.add_cog(Registration(bot))
