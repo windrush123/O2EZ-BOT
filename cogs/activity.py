@@ -8,11 +8,21 @@ from discord.ext import commands, tasks
 import utils.logsconfig as logsconfig
 logger = logsconfig.logging.getLogger("bot")
 
-conncreate = pyodbc.connect('driver={%s};server=%s;database=%s;uid=%s;pwd=%s' % 
-( os.getenv('DRIVER'), os.getenv('SERVER'), os.getenv('DATABASE'), os.getenv('UID'), os.getenv('PASS') ) )
+sql_driver = os.getenv('DRIVER')
+sql_server = os.getenv('SERVER')
+sql_database = os.getenv('DATABASE')
+sql_username = os.getenv('UID')
+sql_password = os.getenv('PASS')
+
+connection_string = "driver={%s};server=%s;database=%s;uid=%s;pwd=%s"
+conncreate = pyodbc.connect(connection_string % (sql_driver,
+                                                 sql_server,
+                                                 sql_database,
+                                                 sql_username,
+                                                 sql_password))
 
 class Activity(commands.Cog):
-    def __init__(self, bot): 
+    def __init__(self, bot):
         self.bot = bot
         self.activity.start()
 
@@ -23,7 +33,7 @@ class Activity(commands.Cog):
     def cog_load(self):
         logger.info("Cog Loaded - activity")
 
-    @tasks.loop(minutes=1)  
+    @tasks.loop(minutes=1)
     async def activity(self):
         await Activity.set_activity(self)
 
@@ -46,5 +56,4 @@ class Activity(commands.Cog):
                
 
 async def setup(bot: commands.Bot):
-    await bot.add_cog(Activity(bot))  
-    
+    await bot.add_cog(Activity(bot))
