@@ -13,6 +13,7 @@ logger = logsconfig.logging.getLogger("bot")
 intents = discord.Intents.all()
 intents.message_content = True
 bot = commands.Bot(command_prefix="!", intents=intents)
+guild_id = int(os.getenv('guildid'))
 
 cogs = [
             "admin",
@@ -35,7 +36,7 @@ async def on_ready():
             logger.error("Failed to load extension %s", extension)
             logger.error(traceback.print_exc())
     try:
-        guildid = discord.Object(id=825723912729002004)
+        guildid = discord.Object(id=guild_id)
         bot.tree.copy_global_to(guild=guildid)
         synced = await bot.tree.sync(guild=guildid)
         logger.info("Synced a Total of %d Commands", len(synced))

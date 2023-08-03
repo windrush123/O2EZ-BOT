@@ -64,6 +64,7 @@ class admin(commands.Cog):
         `/relinkinvite [Invite Link/Code] [Discorduid]` - Link discorduid and invite code.
         `/reloadcog [cog]` - Reload Discord Bot Cogs.
         `/forcergistration` - Force Registration of member if something goes wrong.
+        `/unstuckall` - Unstuck everyone.
         """
         embed = discord.Embed(title="List of Available Admin Commands",
                               description=command_list,
@@ -356,8 +357,22 @@ We hope you enjoy your stay here.""" )
     @app_commands.checks.has_role(admin_role_id)
     async def logs(self, interaction: discord.Interaction):
         await interaction.response.defer()
-        await asyncio.sleep(3)
         await interaction.followup.send(file=discord.File("logs/infos.log"))
+
+    @app_commands.command(name='unstuckall', description='Unstuck Everyone.')
+    @app_commands.checks.has_role(admin_role_id)
+    async def unstuckall(self, interaction: discord.Interaction):
+        await interaction.response.defer()
+        with conncreate.cursor() as cursor:
+            query = "SELECT COUNT (*) FROM dbo.T_o2jam_login"
+            count = cursor.execute(query).fetchone[0]
+            if count > 0: 
+                query = "DELETE FROM dbo.T_o2jam_login"
+                cursor.execute(query).fetchone[0]
+                cursor.commit()
+                await interaction.followup.send(f"{count} Total Unstucked.")
+            else:
+                await interaction.followup.send("No one is currently Stucked.")
 
 async def setup(bot):
     await bot.add_cog(admin(bot))

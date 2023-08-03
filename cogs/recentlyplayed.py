@@ -1,11 +1,7 @@
 import os
 from mysqlx import ProgrammingError
 import pyodbc
-import glob
-import re
 import asyncio
-import time
-import math
 from pathlib import Path
 from dotenv import load_dotenv
 from datetime import datetime, timedelta
@@ -103,7 +99,8 @@ class RecentlyPlayed(commands.Cog):
             if len(value) == 1:
                 unique_items.append(value[0])
             else:
-                await RecentlyPlayed.MP_Score(self, value)
+                if value[0][5] == 2:
+                    await RecentlyPlayed.MP_Score(self, value)
         for item in unique_items:
             chart_data = RecentlyPlayed.get_chart_details(self, int(item[4]))
             if int(item[5]) == 2:
@@ -398,8 +395,7 @@ class RecentlyPlayed(commands.Cog):
     # Discord Embed
 
     # Singleplayer Score Discord Embed
-    async def SP_Score(self, scoreline): 
-        await asyncio.sleep(1)       
+    async def SP_Score(self, scoreline):       
         songbg_path = os.getenv('songbgfilepath')
         channel = self.bot.get_channel(int(os.getenv('recentlyplayedmsg')))
         usernick = scoreline[3]
@@ -417,19 +413,19 @@ class RecentlyPlayed(commands.Cog):
             difficulty = 0
             chart_notecount = chart_data['easy_notecount']
             chart_level = chart_data["easy_level"]
-            diff_color = 0x00FF00 # Green
+            # diff_color = 0x00FF00 # Green
         elif scoreline[5] == 1:
             diff_name = "Normal Difficulty"
             difficulty = 1
             chart_notecount = chart_data['normal_notecount']
             chart_level = chart_data["normal_level"]
-            diff_color = 0xFFFF00 # Yellow
+            # diff_color = 0xFFFF00 # Yellow
         else:
             diff_name = "Hard Difficulty"
             difficulty = 2
             chart_notecount = chart_data['hard_notecount']
             chart_level = chart_data["hard_level"]
-            diff_color = 0xFF0000 # Red
+            # diff_color = 0xFF0000 # Red
         
         scorev2 = round(RecentlyPlayed.scorev2(self, cool, good, bad, miss, chart_notecount))
         accuracy = round(RecentlyPlayed.hitcount_to_accuracy(self, cool, good, bad, miss),2)
@@ -452,13 +448,16 @@ class RecentlyPlayed(commands.Cog):
         member = self.bot.get_user(int(discorduid))
 
         # Discord Embed
-        embed=discord.Embed(title="[Lv. %s] %s" % (chart_level, chart_data['chart_name']) , 
-            description="%s\nChart by: %s" % (chart_data['chart_artist'],chart_data['charter']), 
-            color=diff_color) 
         if passed == False:
-            embed.set_author(name=f"{member.global_name} - Failed", icon_url=member.display_avatar)
-        else: 
-            embed.set_author(name=f"{member.global_name} - Cleared", icon_url=member.display_avatar)
+            embed=discord.Embed(title="[Lv. %s] %s" % (chart_level, chart_data['chart_name']) , 
+            description="%s\nChart by: %s" % (chart_data['chart_artist'],chart_data['charter']), 
+            color=0xFF0000) # Red
+            embed.set_author(name=f"{usernick} - Failed", icon_url=member.display_avatar)
+        else:
+            embed=discord.Embed(title="[Lv. %s] %s" % (chart_level, chart_data['chart_name']) , 
+            description="%s\nChart by: %s" % (chart_data['chart_artist'],chart_data['charter']), 
+            color=0x00FF00) # Green 
+            embed.set_author(name=f"{usernick} - Cleared", icon_url=member.display_avatar)
             
         embed.set_thumbnail(url="attachment://" + bgfileformat)
         embed.add_field(name=diff_name, value="""

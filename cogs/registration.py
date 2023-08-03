@@ -29,7 +29,7 @@ class registration_button(discord.ui.View):
     def __init__(self):
         super().__init__(timeout=None)
 
-    @discord.ui.button(label="Register", style=discord.ButtonStyle.green, custom_id="registration_button")
+    @discord.ui.button(label="Register", style=discord.ButtonStyle.green, custom_id="persistent:register_button")
     async def button_callback(self, interaction: discord.Interaction, button):
         with conncreate.cursor() as cursor:
             query = "SELECT * FROM dbo.member WHERE discorduid=?"
@@ -192,18 +192,10 @@ class Registration(commands.Cog):
         self.invites = {}
     def cog_load(self):
         logger.info("Cog Loaded - registration")
+        self.add_view(registration_button())
         
     def cog_unload(self):
         logger.info("Cog Unloaded - registration")
-
-    async def setup_hook(self) -> None:
-        # Register the persistent view for listening here.
-        # Note that this does not send the view to any message.
-        # In order to do this you need to first send a message with the View, which is shown below.
-        # If you have the message_id you can also pass it as a keyword argument, but for this example
-        # we don't have one.
-        self.add_view(registration_button())
-
 
     @app_commands.checks.has_role(admin_role_id)
     @app_commands.command(name="register", description='Open the Registration Form.')

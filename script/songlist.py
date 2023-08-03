@@ -7,8 +7,6 @@ import pyodbc
 from pathlib import Path
 from dotenv import load_dotenv
 
-from core import HighScoreManager
-
 
 load_dotenv()
 

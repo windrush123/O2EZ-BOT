@@ -36,12 +36,11 @@ class Profile(discord.ui.View):
     async def on_timeout(self) -> None:
         for item in self.children:
             item.disabled = True
-        await self.message.edit(view=self)
+        await self.message.edit(view=None)
 
     @discord.ui.button(label='Profile', style=discord.ButtonStyle.gray)
     async def profile_default(self, interaction: discord.Interaction, button: discord.ui.Button): 
         await interaction.response.defer()
-        await asyncio.sleep(1)
         await interaction.edit_original_response(embed=self.default_embed)
         self.message = await interaction.original_response()
 
@@ -49,6 +48,7 @@ class Profile(discord.ui.View):
 
     @discord.ui.button(label='Top Played', style=discord.ButtonStyle.green)
     async def top_played(self, interaction: discord.Interaction, button: discord.ui.Button):   
+        await interaction.response.defer()
         with conncreate.cursor() as cursor:
             query = """
                 SELECT TOP 10
@@ -71,7 +71,7 @@ class Profile(discord.ui.View):
             cursor.execute(query, (self.user_id))
             rows = [list(row) for row in cursor.fetchall()]
             
-        embed = discord.Embed(title=f"{self.usernick} - Top 10 Plays",
+        embed = discord.Embed(title=f"Top 10 Plays",
                                 description=" ",
                                 color=discord.Color.green())
         embed.set_author(name=f"{self.mentioned_user.display_name} Profile", icon_url=self.mentioned_user.avatar)
@@ -87,20 +87,19 @@ class Profile(discord.ui.View):
                                 inline=False)
                 count += 1
         embed.set_thumbnail(url=self.mentioned_user.avatar)
-        await interaction.response.defer()
-        await asyncio.sleep(1)
         await interaction.edit_original_response(embed=embed)
         self.message = await interaction.original_response()
     # Recently Played
 
     @discord.ui.button(label='Recently Played', style=discord.ButtonStyle.blurple)
     async def recently_played(self, interaction: discord.Interaction, button: discord.ui.Button):
+        await interaction.response.defer()
         with conncreate.cursor() as cursor:
             query = "SELECT TOP 10 * from userscores WHERE id=? ORDER BY date_verified DESC"
             cursor.execute(query, (self.user_id))
             rows = [list(row) for row in cursor.fetchall()]
 
-        embed = discord.Embed(title=f"{self.usernick} - Recently Played",
+        embed = discord.Embed(title=f"Recently Played",
                               description=" ",
                               color=discord.Color.green())
         embed.set_author(name=f"{self.mentioned_user.display_name} Profile", icon_url=self.mentioned_user.avatar)
@@ -120,9 +119,7 @@ class Profile(discord.ui.View):
                                     value=f"Score: `{score_row[16]}` Acc: `{round(score_row[17],2)}` (`{score_row[9]}`/`{score_row[10]}`/`{score_row[11]}`/`{score_row[12]}`) (Combo: `x{score_row[13]}`)", 
                                     inline=False)
                 count += 1
-        embed.set_thumbnail(url=self.mentioned_user.avatar)
-        await interaction.response.defer()
-        await asyncio.sleep(1)
+        embed.set_thumbnail(url=self.mentioned_user.avatar)    
         await interaction.edit_original_response(embed=embed)
         self.message = await interaction.original_response()
 
@@ -211,6 +208,7 @@ class usercmds(commands.Cog):
     
     def __init__(self, bot):
         self.bot = bot
+        self.bot.remove_command('help')
         
     def cog_load(self):
         tree = self.bot.tree
@@ -274,7 +272,7 @@ class usercmds(commands.Cog):
     @app_commands.checks.dynamic_cooldown(cooldown_for_everyone_but_me)
     @app_commands.command(name="online", description='Check who is playing on the server.')
     async def online(self, interaction: discord.Interaction):
-        await interaction.response.defer()
+        await interaction.response.defer(ephemeral=True)
         results = []
         with conncreate.cursor() as cursor:
             query = "SELECT SUB_CH, USER_INDEX_ID, USER_ID FROM dbo.T_o2jam_login"
@@ -301,7 +299,7 @@ class usercmds(commands.Cog):
                 base_embed=discord.Embed(title="Online Users", color=0xB00B69,)
             )
             embs = view.get_page(1)
-            await interaction.followup.send(embeds=embs, view=view, ephemeral=True)
+            await interaction.followup.send(embeds=embs, ephemeral=True, view=view)
         else:         
             page = discord.Embed (title = " ", description = "No one is online.", color=0x00ffff)
             await interaction.followup.send(embed=page, ephemeral=True)
@@ -382,7 +380,7 @@ class usercmds(commands.Cog):
                 datejoined = datetime.datetime.strptime(str(register_date),dateformat)
                 profile = discord.Embed (title = " ", description = " ", color=0x00ffff)
                 
-                profile.set_author(name=f"{member.global_name} Profile", icon_url=member.avatar)
+                profile.set_author(name=f"{view.usernick} Profile", icon_url=member.avatar)
                 profile.set_thumbnail(url=member.avatar)
                 profile.add_field(name="ID", value="%s" % (view.user_id), inline=True)
                 profile.add_field(name="In-Game Name", value="%s" % (view.usernick), inline=True)
@@ -398,8 +396,6 @@ class usercmds(commands.Cog):
                     profile.set_footer(text="🟢 Online")
                 else: 
                     profile.set_footer(text="🔴 Offline")
-                
-                await asyncio.sleep(3)
                 view.default_embed = profile         
                 await interaction.followup.send(embed=profile, view=view)
                 view.message = await interaction.original_response()
