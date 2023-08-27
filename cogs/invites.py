@@ -27,8 +27,12 @@ class Invites(commands.Cog):
         self.bot = bot
         self.invites = {}
 
-    def cog_load(self):
+    async def cog_load(self):
         logger.info("Cog Loaded - invites")
+        for guild in self.bot.guilds:
+            # Adding each guild's invites to our dict
+            self.invites[guild.id] = await guild.invites()
+
     def cog_unload(self):
         logger.info("Cog Unloaded - invites")
     
@@ -36,12 +40,6 @@ class Invites(commands.Cog):
             for inv in invite_list:            
                 if inv.code == code:                      
                     return inv
-
-    @commands.Cog.listener()
-    async def on_ready(self): 
-        for guild in self.bot.guilds:
-            # Adding each guild's invites to our dict
-            self.invites[guild.id] = await guild.invites()
 
     @commands.Cog.listener()
     async def on_member_join(self, member):
@@ -57,86 +55,101 @@ class Invites(commands.Cog):
 
         with conncreate.cursor() as cursor:
             query = "SELECT userid FROM dbo.member WHERE discorduid=?"
-            username_query = cursor.execute(query, (member.id))
-            username = username_query.fetchone()
-
+            cursor.execute(query, (member.id))
+            for row in cursor:
+                username = (row.userid)
+            
         if username:
             with conncreate.cursor() as cursor:
-                query = "SELECT USER_ID from dbo.T_o2jam_banishment where USER_ID=?"
+                query = "SELECT COUNT (*) FROM dbo.T_o2jam_banishment WHERE USER_ID=?"
                 ban_query = cursor.execute(query, (username))
-                IsBanned = ban_query.fetchone()
-                if IsBanned: 
-                    ban == 1
+                ban = ban_query.fetchone()[0]
        
-    
         # if bot generated invite
         if len(usedinvites):
             invitelink = str(usedinvites[0])
             invite = invitelink.replace("https://discord.gg/","")
             with conncreate.cursor() as cursor:
-                invitelink_query = cursor.execute('SELECT invlink FROM dbo.discordinv where invlink=?', invite)
-                for row in invitelink_query: 
-                    botinvite += 1
-                    
+                query = "SELECT COUNT (*) FROM dbo.discordinv where invlink=?"
+                botinvite = cursor.execute(query, (invite)).fetchone()[0]
+
+            # If new user
+            if ban == 0:
+                with conncreate.cursor() as cursor:
+                    query = "UPDATE dbo.discordinv SET discorduid=? WHERE invlink=?"
+                    values = (member.id, invite)
+                    cursor.execute(query, values)
+                    cursor.commit()
+                
+                ModEmbed = discord.Embed(title="{} has joined the server".format(member.name),
+                            description="",
+                            color=0x00ff00)
+                # Mod Channel Send
+                ModEmbed.add_field(name="Discord Username", value=member.name, inline=True)
+                ModEmbed.add_field(name="UserID", value=member.id, inline=True)
+                ModEmbed.add_field(name="Invite Code", value=invite, inline=True)                
+                logger.info(f"{member.name} has joined the server. UID:{member.id} Invite Code: {invite}")
+            
+            # If existing user who leave the server and got banned.
+            else:
+                try:
+                    with conncreate.cursor() as cursor:
+                        removeban_query =  "DELETE FROM dbo.T_o2jam_banishment where USER_ID=?"
+                        cursor.execute(removeban_query, (username.strip()))
+                        cursor.commit()
+                        logger.info(f"{username} has been removed from banishment table")
+
+                        delete_invlink_query = "DELETE FROM dbo.discordinv WHERE invlink=?"
+                        cursor.execute(delete_invlink_query ,(invite))
+                        cursor.commit()
+                        logger.info("[Invite Link: %s] Deleted from the Database." % (invite))
+                except Exception as e:
+                    logger.info(f"There's some problem deleting the invite link from the Database [{invite}]\n{e}")
+
+                logger.info("%s re-joined the server using the Bot Generated Invite Code [User_ID: %s][Invite Code: %s]" % 
+                            (member.name, username.strip(), invite))
+                
+                ModEmbed = discord.Embed(title="{} has joined the server".format(member.name),
+                            description="Re-joined using Bot Generated Invite Link",
+                            color=0x00ff00)
+                ModEmbed.add_field(name="O2EZ Username", value=username.strip(), inline=True)
+                ModEmbed.add_field(name="UserID", value=member.id, inline=True)
+                ModEmbed.add_field(name="Invite Code", value=invite, inline=True)
+                ModEmbed.set_footer(text="Account Status: UNBANNED")
+
         # if direct invite with many uses
         # PS: "usedinvites" randomly returns no index so this is for error handling      
         elif not len(usedinvites):
             for invite in invites_before_join:
                 if invite.uses < Invites.find_invite_by_code(self, invites_after_join, invite.code).uses: 
-                    PublicembedVar = discord.Embed(title=f"{member.name} has joined", description="", color=0x00ff00)
-                    await general_channel.send(embed=PublicembedVar)              
+                    #PublicembedVar = discord.Embed(title=f"{member.name} has joined the server", description="", color=0x00ff00)
+                    #await general_channel.send(embed=PublicembedVar)              
                     if ban >= 1:
                         with conncreate.cursor() as cursor:
                             query = "DELETE FROM dbo.T_o2jam_banishment where USER_ID=?"
                             cursor.execute(query, (username.strip()))
                             cursor.commit()
-
+                        
                         logger.info(f"[Username: {username.strip()} Invite Code: {invite.code}] {member.name} re-joined the server using direct invite and successfully unbanned.")
-                        await mod_channel.send(f"[Username: `{username.strip()}` Invite Code: `{invite.code}`] `{member.name}` re-joined the server using direct invite and successfully unbanned.")
-                        return None
-                    
-                    await mod_channel.send(f"`{member.name}` has joined the server using direct invite. Invite Code: `{invite.code}`")
-                    logger.info(f"{member.name} has joined the server using direct invite. Invite Code: {invite.code}")
+                        ModEmbed = discord.Embed(title="{} has joined the server.".format(member.name),
+                            description="Re-joined using Direct Invite.",
+                            color=0x00ff00)
+                        ModEmbed.add_field(name="O2EZ Username", value=username.strip(), inline=True)
+                        ModEmbed.add_field(name="UserID", value=member.id, inline=True)
+                        ModEmbed.add_field(name="Invite Code", value=invite, inline=True)
+                        ModEmbed.set_footer(text="Account Status: UNBANNED")
+                        
+                    else:
+                        ModEmbed = discord.Embed(title="{} joined the server using DIRECT INVITE.".format(member.name),
+                            description="WARNING: This user cannot register using Direct Invite Code.",
+                            color=0x00ff00)
+                        ModEmbed.add_field(name="Discord Username", value=member.name, inline=True)
+                        ModEmbed.add_field(name="UserID", value=member.id, inline=True)
+                        ModEmbed.add_field(name="DIRECT INVITE", value=invite, inline=True)
+                        logger.info("{} joined the server using Direct Invite.".format(member.name))
 
-
-        # If user is new to the server and uses the bot generated invite code.
-        if ban == 0 and botinvite == 1: 
-            with conncreate.cursor() as cursor:
-                query = "UPDATE dbo.discordinv SET discorduid=? WHERE invlink=?"
-                values = (member.id, invite)
-                cursor.execute(query, values)
-                cursor.commit()   
-            
-            # Mod Channel Send          
-            embedVar = discord.Embed(title=f"{member.name} has joined the server", description="", color=0x00ff00)
-            embedVar.add_field(name="Username:", value=member.name, inline=True)
-            embedVar.add_field(name="UserID:", value=f"{member.id}", inline=True)
-            embedVar.add_field(name="Invite Code: ", value=invite, inline=True)      
-            await mod_channel.send(embed=embedVar)
-            
-            logger.info(f"{member.name} has joined the server. UID:{member.id} Invite Code: {invite}")
-
-        elif ban >= 1 and botinvite == 1: 
-            try:
-                with conncreate.cursor() as cursor:
-                    removeban_query =  "DELETE FROM dbo.T_o2jam_banishment where USER_ID=?"
-                    cursor.execute(removeban_query, (username.strip()))
-                    cursor.commit()
-
-                    delete_invlink_query = "DELETE FROM dbo.discordinv WHERE invlink=?"
-                    cursor.execute(delete_invlink_query ,(invite))                    
-                    cursor.commit()
-
-                    logger.info("[Invite Link: %s] Deleted from the Database." % (invite))
-            except Exception as e:
-                logger.info(f"There's some problem deleting the invite link from the Database [{invite}]\n{e}")
-
-            logger.info("%s re-joined the server using the Bot Generated Invite Code [User_ID: %s][Invite Code: %s]" % 
-                        (member.name, username.strip(), invite))            
-            await mod_channel.send("`%s` re-joined the server using Bot Generated Invite link and successfully unbanned `User_ID: %s` `Invite Link: %s`" % 
-                                   (member.name, username.strip(), invite))
-                          
-        self.invites[member.guild.id] = invites_after_join 
+        await mod_channel.send(embed=ModEmbed)
+        self.invites[member.guild.id] = invites_after_join
 
     @commands.Cog.listener()
     async def on_member_remove(self, member):
@@ -146,7 +159,7 @@ class Invites(commands.Cog):
         general_channel = self.bot.get_channel(int(os.getenv('publicchannelmsg')))
         mod_channel = self.bot.get_channel(int(os.getenv('privatechannelmsg')))
 
-        #Check if user registered before leaving the server
+        # Check if user registered before leaving the server
         with conncreate.cursor() as cursor:
             member_query = "SELECT userid,invlink,usernick FROM dbo.member where discorduid=?"
             cursor.execute(member_query, (member.id))
@@ -174,34 +187,41 @@ class Invites(commands.Cog):
                     cursor.commit()
                     logger.info(f"[username:{usernick.strip()}] has been added into banishment table")
 
-                # Private channel message
-                embedVar = discord.Embed(title=f"{member.name} has left the server", description="", color=0xff0000)
-                embedVar.add_field(name="Username:", value=userids, inline=True)
-                embedVar.add_field(name="UserID:", value=member.id, inline=True)
-                embedVar.add_field(name="Invite Code: ", value=invlink, inline=True)
-                await mod_channel.send(embed=embedVar)
-
-                # Public channel message
                 logger.info(f"{usernick.strip()} {member.name} has left the server")
-                
+                # Private channel message
+                ModEmbed = discord.Embed(title="{} has left the server.".format(member.name),
+                                    description="",
+                                    color=0xff0000)
+                ModEmbed.add_field(name="Username", value=userids, inline=True)
+                ModEmbed.add_field(name="UserID", value=member.id, inline=True)
+                ModEmbed.add_field(name="Invite Code ", value=invlink, inline=True)
+                ModEmbed.set_footer(text="Account Status: BANNED")
+    
             else:
+
                 with conncreate.cursor() as cursor:
                     query = "DELETE FROM dbo.member WHERE discorduid=?;"
                     cursor.execute(query, (member.id))
                     cursor.commit()
                     logger.info(f"{member.name} userdata deleted from dbo.member since the user have not played once.")
-
+                
+                ModEmbed = discord.Embed(title="{} has left the server [Registered but never played].".format(member.name),
+                                    description="Login data has been deleted from the database.",
+                                    color=0xff0000)
+                ModEmbed.add_field(name="Username:", value=userids, inline=True)
+                ModEmbed.add_field(name="UserID:", value=member.id, inline=True)
+                ModEmbed.add_field(name="Invite Code: ", value=invlink, inline=True)
+                ModEmbed.set_footer(text="Account Status: DELETED")
                 logger.info(f"{member.name} has left the server [Registered but never played]")
-                PrivembedVar = discord.Embed(title=f"{member.name} has left the server [Registered but never played]", description="Also, Data deleted from dbo.member", color=0xff0000)
-                await mod_channel.send(embed=PrivembedVar)
                 
         # If a Player did not registered before leaving.
         else: 
             # check Invite link
             with conncreate.cursor() as cursor:
                 invite_query = "SELECT invlink FROM dbo.discordinv where discorduid=?"
-                cursor.execute(invite_query, (member.id)) 
-                unusedinvite = cursor.fetchone()
+                cursor.execute(invite_query, (member.id))
+                for row in cursor:
+                    unusedinvite = (row.invlink)
 
             if unusedinvite:
                 # Delete Invite link
@@ -209,21 +229,24 @@ class Invites(commands.Cog):
                     invite_delete_query = "DELETE FROM dbo.discordinv where discorduid=?"
                     cursor.execute(invite_delete_query, (member.id))
                     cursor.commit()
-                    logger.info("Invite link successfully deleted!")
+                ModEmbed = discord.Embed(title="{} has left the server and did not registered.".format(member.name),
+                                    description="Unused Invite link has been deleted from databse.",
+                                    color=0xff0000)
+                logger.info(f"{member.name} has left the server but never registered.")  
+                logger.info("Unused invite link successfully deleted!")
             else: 
                 # If no Invite found
-                await mod_channel.send(f"{member.name} has left the server but invite link was not found in the database! probably someone made a direct invite?")
+                ModEmbed = discord.Embed(title="{} has left the server.".format(member.name),
+                                    description="Invite Code was not found in the database. Probably a direct invite.",
+                                    color=0xff0000)
                 logger.info(f"{member.name} has left the server but invite link was not found in the database! probably someone made a direct invite?")
-                return None
-
-            await mod_channel.send(f"{member.name} has left the server but never registered.")
-            logger.info(f"{member.name} has left the server but never registered.")   
+        
+        await mod_channel.send(embed=ModEmbed)
         self.invites[member.guild.id] = await member.guild.invites()
 
     
-    
     # Commands
-        
+
     # Creating invite link
     @app_commands.command(name="createinv", 
                           description="Create an invite link")
