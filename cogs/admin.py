@@ -365,14 +365,15 @@ We hope you enjoy your stay here.""" )
         await interaction.response.defer()
         with conncreate.cursor() as cursor:
             query = "SELECT COUNT (*) FROM dbo.T_o2jam_login"
-            count = cursor.execute(query).fetchone[0]
+            count = cursor.execute(query).fetchone()[0]
             if count > 0: 
                 query = "DELETE FROM dbo.T_o2jam_login"
-                cursor.execute(query).fetchone[0]
+                cursor.execute(query)
                 cursor.commit()
+                logger.info(f"{count} Total Unstucked.")
                 await interaction.followup.send(f"{count} Total Unstucked.")
             else:
-                await interaction.followup.send("No one is currently Stucked.")
+                await interaction.followup.send("No one is currently stucked.")
 
 async def setup(bot):
     await bot.add_cog(admin(bot))
